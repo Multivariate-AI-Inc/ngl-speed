@@ -5,3 +5,4 @@ export default async function GET(req, res) {
   const postData = await getPostData(url);
   res.status(200).json(postData);
 }
+export const runtime = "nodejs" | "edge";
