@@ -8,20 +8,8 @@ import LoadMoreButton from "../elements/LoadMoreButton";
 
 export default function BlogSection2({ allPosts }) {
   const [post, setPost] = useState(allPosts);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   try {
-  //     fetch("/api/routes")
-  //       .then((res) => res.json())
-  //       .then((data) => console.log(data));
-  //     setLoading(false);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // });
-  // if (loading) return <p>Blogs are loading</p>;
-  // if (!post) return <p>blogs not found</p>;
   return (
     <section className="section mt-80">
       <div className="container">
@@ -102,7 +90,6 @@ export default function BlogSection2({ allPosts }) {
             })}
           </div>
           <div className="mt-20 mb-30 text-center">
-            {" "}
             <LoadMoreButton
               posts={post}
               setPosts={setPost}

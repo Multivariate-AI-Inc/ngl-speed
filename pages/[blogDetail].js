@@ -8,25 +8,27 @@ import { getAllPosts, getPostData, getPostSlug } from "../lib/posts";
 import FeaturedImage from "../components/elements/FeaturedImage";
 import Date from "../components/elements/Date";
 import { parse } from "node-html-parser";
+import { useRouter } from "next/router";
+import Preloader from "../components/elements/Preloader";
 
-export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
-// generating static props
-export async function getServerSideProps({ params }) {
-  // getting post data based on slug
-  const postData = await getPostData(params.blogDetail);
-  //getting all posts for suggested posts
-  const suggestedPosts = await getAllPosts();
-  // post content
-  const postDataContent = await postData.content;
-  // returning props to access in the component
-  return {
-    props: {
-      postData,
-      suggestedPosts,
-      postDataContent,
-    },
-  };
-}
+// export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
+// // generating static props
+// export async function getServerSideProps({ params }) {
+//   // getting post data based on slug
+//   const postData = await getPostData(params.blogDetail);
+//   //getting all posts for suggested posts
+//   const suggestedPosts = await getAllPosts();
+//   // post content
+//   const postDataContent = await postData.content;
+//   // returning props to access in the component
+//   return {
+//     props: {
+//       postData,
+//       suggestedPosts,
+//       postDataContent,
+//     },
+//   };
+// }
 // // generating static paths using slugs from the wp data
 // export async function getStaticPaths() {
 //   // getting slugs to provide in static props function
@@ -59,14 +61,18 @@ const getReadingTimeFromHTML = (htmlString) => {
   const readingTime = calculateReadingTime(text);
   return readingTime;
 };
-const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
+const BlogDetails = () => {
+  const [postData, setPostData] = useState(null);
+  const [suggestedPosts, setSuggestedPosts] = useState(null);
   const [scroll, setScroll] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [headingData, setHeadingData] = useState([]);
-  const readingTime = getReadingTimeFromHTML(postDataContent);
-  const sections = extractNodeList(postDataContent);
+  const [readingTime, setReadingTime] = useState(9);
+  const [sections, setSections] = useState(null);
   const tocRef = useRef();
   const blogDetailRef = useRef();
+  const router = useRouter();
+  const { blogDetail } = router.query;
   // for toggling sticky classes for table of contents tried with intersection observer api but didn't worked as intended
   // useEffect(() => {
   //   if (sections.length > 0) {
@@ -103,7 +109,38 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   //     };
   //   }
   // }, [sections]);
-
+  useEffect(() => {
+    if (blogDetail) {
+      async function fetchSinglePostData() {
+        try {
+          const response = await fetch(`/api/${blogDetail}/routes`);
+          const data = await response.json();
+          if (data) {
+            setPostData(data);
+            const content = await data.content;
+            setReadingTime(getReadingTimeFromHTML(content));
+            setSections(extractNodeList(content));
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      async function fetchBlogs() {
+        try {
+          const response = await fetch("/api/blogs/routes");
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const result = await response.json();
+          setSuggestedPosts(result);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      fetchBlogs();
+      fetchSinglePostData();
+    }
+  }, [blogDetail]);
   const tocScrollControl = useCallback(() => {
     let tocHeight = tocRef.current?.offsetHeight;
     let blogDetailHeight = blogDetailRef.current?.offsetHeight;
@@ -143,9 +180,11 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   }, [scroll, tocScrollControl]);
 
   useEffect(() => {
-    const data = extractHeadings(postData.content);
-    setHeadingData(data);
-  }, [postData.content]);
+    if (postData) {
+      const data = extractHeadings(postData.content);
+      setHeadingData(data);
+    }
+  }, [postData]);
   function extractHeadings(htmlString) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
@@ -174,52 +213,55 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   }
   return (
     <>
-      <PageHead title={postData.title} />
-      <Layout>
-        <div className="section mt-35">
-          <div className="container">
-            <div className="breadcrumbs">
-              <ul>
-                <li>
-                  <Link href="/">
-                    <svg
-                      className="w-6 h-6 icon-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
-                    </svg>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link href={postData.slug}>{postData.title}</Link>
-                </li>
-              </ul>
+      {!postData ? (
+        <Preloader />
+      ) : (
+        <>
+          <PageHead title={postData.title} />
+          <Layout>
+            <div className="section mt-35">
+              <div className="container">
+                <div className="breadcrumbs">
+                  <ul>
+                    <li>
+                      <Link href="/">
+                        <svg
+                          className="w-6 h-6 icon-16"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                          />
+                        </svg>
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/blog">Blog</Link>
+                    </li>
+                    <li>
+                      <Link href={postData.slug}>{postData.title}</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="section mt-40" ref={blogDetailRef}>
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-9 col-lg-8">
-                <div className="content-single" id="content">
-                  <h2 className="color-brand-1 mb-50" id="section1">
-                    {postData.title}
-                  </h2>
-                  <div className="mb-40">
-                    {/* <Image
+            <div className="section mt-40" ref={blogDetailRef}>
+              <div className="container">
+                <div className="row">
+                  <div className="col-xl-9 col-lg-8">
+                    <div className="content-single" id="content">
+                      <h2 className="color-brand-1 mb-50" id="section1">
+                        {postData.title}
+                      </h2>
+                      <div className="mb-40">
+                        {/* <Image
                       layout="responsive"
                       width={100}
                       height={100}
@@ -228,17 +270,17 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                       priority={true}
                       alt="iori"
                     /> */}
-                    <FeaturedImage
-                      post={postData}
-                      styleClasses="bd-rd8"
-                      priority={true}
-                      height={500}
-                    />
-                  </div>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: postData.content }}
-                  ></div>
-                  {/* <p className="color-grey-900 font-lg-bold mb-25">
+                        <FeaturedImage
+                          post={postData}
+                          styleClasses="bd-rd8"
+                          priority={true}
+                          height={500}
+                        />
+                      </div>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: postData.content }}
+                      ></div>
+                      {/* <p className="color-grey-900 font-lg-bold mb-25">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Quisque ornare pellentesque sollicitudin. Suspendisse
                     potenti. Fusce ex risus, iaculis sit amet sapien nec,
@@ -446,40 +488,42 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                     voluptatibus iste eum iusto nobis sit aspernatur iusto ab
                     atque animi ut voluptas dolorem.
                   </p> */}
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4">
-                <div
-                  className={
-                    !scroll ? "sidebar-author" : "sticky-bar-blog stick-blog"
-                  }
-                  ref={tocRef}
-                >
-                  <div className="box-author">
-                    <Link href="#">
-                      <Image
-                        layout="responsive"
-                        width={100}
-                        height={100}
-                        src="/assets/imgs/page/homepage1/author.png"
-                        alt="iori"
-                      />
-                    </Link>
-                    <div className="author-info">
-                      <Link href="#">
-                        <span className="font-md-bold color-brand-1 author-name">
-                          {postData.author.node.name}
-                        </span>
-                      </Link>
-                      <span className="font-xs color-grey-500 department">
-                        <Date dateString={postData.date} />
-                      </span>
-                      <span className="font-xs color-grey-500 icon-read">
-                        {readingTime} min read
-                      </span>
                     </div>
                   </div>
-                  {/* <div className="mt-25">
+                  <div className="col-xl-3 col-lg-4">
+                    <div
+                      className={
+                        !scroll
+                          ? "sidebar-author"
+                          : "sticky-bar-blog stick-blog"
+                      }
+                      ref={tocRef}
+                    >
+                      <div className="box-author">
+                        <Link href="#">
+                          <Image
+                            layout="responsive"
+                            width={100}
+                            height={100}
+                            src="/assets/imgs/page/homepage1/author.png"
+                            alt="iori"
+                          />
+                        </Link>
+                        <div className="author-info">
+                          <Link href="#">
+                            <span className="font-md-bold color-brand-1 author-name">
+                              {postData.author.node.name}
+                            </span>
+                          </Link>
+                          <span className="font-xs color-grey-500 department">
+                            <Date dateString={postData.date} />
+                          </span>
+                          <span className="font-xs color-grey-500 icon-read">
+                            {readingTime} min read
+                          </span>
+                        </div>
+                      </div>
+                      {/* <div className="mt-25">
                     <Link className="btn btn-border mr-10 mb-10" href="#">
                       Marketing
                     </Link>
@@ -487,27 +531,30 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                       Business
                     </Link>
                   </div> */}
-                  <div className="mt-50">
-                    <h6 className="color-brand-1 mb-15">Table of contents</h6>
-                    <ul className="list-number">
-                      {headingData.length > 0 &&
-                        headingData.map((item, index) => {
-                          return (
-                            <li key={index}>
-                              <Link
-                                href={`#${Object.keys(item)[0]}`}
-                                style={
-                                  activeSection === `${Object.keys(item)[0]}`
-                                    ? { color: "#06d6a0" }
-                                    : { color: "#3d565f" }
-                                }
-                              >
-                                {Object.values(item)[0]}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      {/* <li>
+                      <div className="mt-50">
+                        <h6 className="color-brand-1 mb-15">
+                          Table of contents
+                        </h6>
+                        <ul className="list-number">
+                          {headingData.length > 0 &&
+                            headingData.map((item, index) => {
+                              return (
+                                <li key={index}>
+                                  <Link
+                                    href={`#${Object.keys(item)[0]}`}
+                                    style={
+                                      activeSection ===
+                                      `${Object.keys(item)[0]}`
+                                        ? { color: "#06d6a0" }
+                                        : { color: "#3d565f" }
+                                    }
+                                  >
+                                    {Object.values(item)[0]}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          {/* <li>
                         {" "}
                         <Link
                           href="#section2"
@@ -559,46 +606,57 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                           Making good descriptive
                         </Link>
                       </li> */}
-                    </ul>
-                  </div>
-                  <div className="mt-50 d-flex align-item-center">
-                    {" "}
-                    <strong className="font-xs-bold color-brand-1 mr-20">
-                      Share
-                    </strong>
-                    <div className="list-socials mt-0 d-inline-block">
-                      {" "}
-                      <Link className="icon-socials icon-facebook" href="#" />
-                      <Link className="icon-socials icon-instagram" href="#" />
-                      <Link className="icon-socials icon-twitter" href="#" />
+                        </ul>
+                      </div>
+                      <div className="mt-50 d-flex align-item-center">
+                        {" "}
+                        <strong className="font-xs-bold color-brand-1 mr-20">
+                          Share
+                        </strong>
+                        <div className="list-socials mt-0 d-inline-block">
+                          {" "}
+                          <Link
+                            className="icon-socials icon-facebook"
+                            href="#"
+                          />
+                          <Link
+                            className="icon-socials icon-instagram"
+                            href="#"
+                          />
+                          <Link
+                            className="icon-socials icon-twitter"
+                            href="#"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div
+                className="border-bottom bd-grey-80 mt-30"
+                id="blogDetailBorderBottom"
+              />
             </div>
-          </div>
-          <div
-            className="border-bottom bd-grey-80 mt-30"
-            id="blogDetailBorderBottom"
-          />
-        </div>
-        <div className="section mt-50">
-          <div className="container">
-            <h3 className="color-brand-1">Recommended articles</h3>
-            <div className="row mt-50">
-              {suggestedPosts.nodes.slice(6, 9).map((item, index) => (
-                <BlogCard
-                  key={index}
-                  title={item.title}
-                  date={item.date}
-                  readTimeTag={item.readTime}
-                  excerpt={item.excerpt}
-                  tag={item.tag}
-                  post={item}
-                  slug={item.slug}
-                />
-              ))}
-              {/* <div className="col-lg-4 col-md-6 mb-30 item-article featured">
+
+            {suggestedPosts && (
+              <div className="section mt-50">
+                <div className="container">
+                  <h3 className="color-brand-1">Recommended articles</h3>
+                  <div className="row mt-50">
+                    {suggestedPosts.nodes.slice(6, 9).map((item, index) => (
+                      <BlogCard
+                        key={index}
+                        title={item.title}
+                        date={item.date}
+                        readTimeTag={item.readTime}
+                        excerpt={item.excerpt}
+                        tag={item.tag}
+                        post={item}
+                        slug={item.slug}
+                      />
+                    ))}
+                    {/* <div className="col-lg-4 col-md-6 mb-30 item-article featured">
                 <div className="card-blog-grid card-blog-grid-3 hover-up">
                   <div className="card-image">
                     <Link href="/blog-detail">
@@ -712,53 +770,56 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                   </div>
                 </div>
               </div> */}
-            </div>
-          </div>
-        </div>
-        <section className="section mt-50">
-          <div className="container">
-            <div className="box-newsletter box-newsletter-2">
-              <div className="row align-items-center">
-                <div className="col-lg-6 col-md-7 m-auto text-center">
-                  <span className="font-lg color-brand-1">Newsletter</span>
-                  <h2 className="color-brand-1 mb-15 mt-5">
-                    Subcribe our newsletter
-                  </h2>
-                  <p className="font-md color-grey-500">
-                    Do not miss the latest information from us about the
-                    trending in the market. By clicking the button, you are
-                    agreeing with our Term &amp; Conditions
-                  </p>
-                  <div className="form-newsletter mt-30">
-                    <form action="#">
-                      <input type="text" placeholder="Enter you mail .." />
-                      <button
-                        className="btn btn-submit-newsletter"
-                        type="submit"
-                      >
-                        <svg
-                          className="w-6 h-6 icon-16"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </button>
-                    </form>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </Layout>
+            )}
+            <section className="section mt-50">
+              <div className="container">
+                <div className="box-newsletter box-newsletter-2">
+                  <div className="row align-items-center">
+                    <div className="col-lg-6 col-md-7 m-auto text-center">
+                      <span className="font-lg color-brand-1">Newsletter</span>
+                      <h2 className="color-brand-1 mb-15 mt-5">
+                        Subcribe our newsletter
+                      </h2>
+                      <p className="font-md color-grey-500">
+                        Do not miss the latest information from us about the
+                        trending in the market. By clicking the button, you are
+                        agreeing with our Term &amp; Conditions
+                      </p>
+                      <div className="form-newsletter mt-30">
+                        <form action="#">
+                          <input type="text" placeholder="Enter you mail .." />
+                          <button
+                            className="btn btn-submit-newsletter"
+                            type="submit"
+                          >
+                            <svg
+                              className="w-6 h-6 icon-16"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                              />
+                            </svg>
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </Layout>
+        </>
+      )}
     </>
   );
 };
