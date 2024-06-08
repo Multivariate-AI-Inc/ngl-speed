@@ -1,3 +1,4 @@
+"use client";
 import BlogSection1 from "../components/blog/blogSection1";
 import BlogSection2 from "../components/blog/blogSection2";
 import Layout from "../components/layout/Layout";
@@ -7,7 +8,7 @@ import { getAllPosts } from "../lib/posts";
 import { useEffect, useState } from "react";
 import Preloader from "../components/elements/Preloader";
 
-// export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
+export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
 // export async function getServerSideProps() {
 //   const allPosts = await getAllPosts();
 //   return {
