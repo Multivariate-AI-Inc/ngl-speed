@@ -12,7 +12,7 @@ import PageHead from "../components/elements/PageHead";
 import Preloader from "../components/elements/Preloader";
 // import { getAllPosts, getPostSlug } from "../lib/posts";
 
-export const runtime = "nodejs" | "edge";
+export const runtime = "experimental-edge";
 // export async function getServerSideProps({ params }) {
 //   //getting all posts for suggested posts
 //   const suggestedPosts = await getAllPosts();

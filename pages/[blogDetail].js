@@ -11,7 +11,7 @@ import { parse } from "node-html-parser";
 import { useRouter } from "next/router";
 import Preloader from "../components/elements/Preloader";
 
-export const runtime = "nodejs" | "edge";
+export const runtime = "experimental-edge";
 // // generating static props
 // export async function getServerSideProps({ params }) {
 //   // getting post data based on slug

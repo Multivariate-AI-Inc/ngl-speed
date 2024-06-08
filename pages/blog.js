@@ -7,7 +7,7 @@ import { getAllPosts } from "../lib/posts";
 import { useEffect, useState } from "react";
 import Preloader from "../components/elements/Preloader";
 
-export const runtime = "nodejs" | "edge";
+export const runtime = "experimental-edge";
 // export async function getServerSideProps() {
 //   const allPosts = await getAllPosts();
 //   return {
