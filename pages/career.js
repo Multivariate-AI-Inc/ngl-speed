@@ -19,6 +19,7 @@ export async function getStaticProps({ params }) {
     props: {
       suggestedPosts,
     },
+    revalidate: 10,
   };
 }
 const career = ({ suggestedPosts }) => {

@@ -24,6 +24,7 @@ export async function getStaticProps({ params }) {
       suggestedPosts,
       postDataContent,
     },
+    revalidate: 10,
   };
 }
 // generating static paths using slugs from the wp data

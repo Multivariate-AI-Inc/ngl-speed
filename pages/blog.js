@@ -10,6 +10,7 @@ export async function getStaticProps() {
     props: {
       allPosts,
     },
+    revalidate: 10,
   };
 }
 const Blog = ({ allPosts }) => {
