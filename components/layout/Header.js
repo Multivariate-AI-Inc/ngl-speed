@@ -22,8 +22,8 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
       >
         <div className="container">
           <div className="main-header">
-            <div className="header-left">
-              <div className="header-logo">
+            <div className="header-left ">
+              <div className="header-logo-mobile">
                 <Link className="d-flex" href="/">
                   <Image
                     alt="Ecom"
@@ -33,7 +33,18 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                   />
                 </Link>
               </div>
-              <div className="header-nav">
+              <div className="header-nav d-flex align-items-center">
+                <div className="header-logo d-flex header-logo-lg-xxl">
+                  <Link className="d-flex" href="/">
+                    <Image
+                      alt="Ecom"
+                      src="/assets/imgs/template/logo.svg"
+                      width={40}
+                      height={40}
+                      className="mlNav-110"
+                    />
+                  </Link>
+                </div>
                 <nav className="nav-main-menu d-none d-xl-block">
                   <ul className="main-menu">
                     <li>
@@ -83,11 +94,11 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                 </div>
               </div>
             </div>
-            <div className="header-right">
+            {/* <div className="header-right">
               <div className="d-none d-sm-inline-block">
                 <Button text={"Get Started"} href={"/register"} />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </header>

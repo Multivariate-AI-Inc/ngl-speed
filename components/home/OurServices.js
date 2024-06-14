@@ -17,13 +17,13 @@ const SERVICES_DATA = [
     image: "/assets/imgs/page/homepage4/offer3.png",
     heading: "Ads",
     desc: "No lag time, no lost effort when priorities change, no email black hole. As team collaboration improves",
-    route: "/",
+    route: "/contact",
   },
   {
     image: "/assets/imgs/page/homepage4/offer4.png",
     heading: "Engagement & Retention",
     desc: "Share updates instantly within our project management software, and get the entire team collaborating",
-    route: "/",
+    route: "/contact",
   },
 ];
 

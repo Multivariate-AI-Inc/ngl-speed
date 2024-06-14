@@ -10,9 +10,11 @@ const CareerSection2 = () => {
               Why You Should Consider Applying
             </h2>
             <p className="font-lg color-gray-500">
-              We&apos;re lively, not corporate. We have the energy and boldness
-              of a startup and <br className="d-none d-lg-block" />
-              the expertise and pragmatism of a scale-up. All in one place.
+              Join NextGrowth Labs - a place where data-driven excellence is
+              valued, hard work acknowledged,{" "}
+              <br className="d-none d-lg-block" />
+              skills are nurtured and contributions impact success. Make a
+              real-time difference with us.
             </p>
           </div>
         </div>
@@ -32,9 +34,8 @@ const CareerSection2 = () => {
                 </Link>
               </div>
               <div className="card-info">
-                <Link href="#">
-                  <h6 className="color-brand-1 mb-10">Connected</h6>
-                </Link>
+                <h6 className="color-brand-1 mb-10">Connected</h6>
+
                 <p className="font-xs color-grey-500">
                   We come together wherever we are – across time zones, regions,
                   offices and screens. You will receive support from your
@@ -46,22 +47,19 @@ const CareerSection2 = () => {
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="card-small card-small-2">
               <div className="card-image">
-                <Link href="#">
-                  <div className="box-image">
-                    <Image
-                      width={32}
-                      height={32}
-                      src="/assets/imgs/page/homepage1/cross.png"
-                      loading="lazy"
-                      alt="iori"
-                    />
-                  </div>
-                </Link>
+                <div className="box-image">
+                  <Image
+                    width={32}
+                    height={32}
+                    src="/assets/imgs/page/homepage1/cross.png"
+                    loading="lazy"
+                    alt="iori"
+                  />
+                </div>
               </div>
               <div className="card-info">
-                <Link href="#">
-                  <h6 className="color-brand-1 mb-10">Inclusive</h6>
-                </Link>
+                <h6 className="color-brand-1 mb-10">Inclusive</h6>
+
                 <p className="font-xs color-grey-500">
                   Our teams reflect the rich diversity of our world, with
                   equitable access to opportunity for everyone. No matter where
@@ -73,22 +71,19 @@ const CareerSection2 = () => {
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="card-small card-small-2">
               <div className="card-image">
-                <Link href="#">
-                  <div className="box-image">
-                    <Image
-                      width={32}
-                      height={32}
-                      src="/assets/imgs/page/homepage2/identity.png"
-                      loading="lazy"
-                      alt="iori"
-                    />
-                  </div>
-                </Link>
+                <div className="box-image">
+                  <Image
+                    width={32}
+                    height={32}
+                    src="/assets/imgs/page/homepage2/identity.png"
+                    loading="lazy"
+                    alt="iori"
+                  />
+                </div>
               </div>
               <div className="card-info">
-                <Link href="#">
-                  <h6 className="color-brand-1 mb-10">Flexible</h6>
-                </Link>
+                <h6 className="color-brand-1 mb-10">Flexible</h6>
+
                 <p className="font-xs color-grey-500">
                   We believe in your freedom to work when and how you work best,
                   to help us all thrive. Only freedom and independent work can
@@ -100,22 +95,19 @@ const CareerSection2 = () => {
           <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="card-small card-small-2">
               <div className="card-image">
-                <Link href="#">
-                  <div className="box-image">
-                    <Image
-                      width={32}
-                      height={32}
-                      src="/assets/imgs/page/career/persuasion.png"
-                      loading="lazy"
-                      alt="iori"
-                    />
-                  </div>
-                </Link>
+                <div className="box-image">
+                  <Image
+                    width={32}
+                    height={32}
+                    src="/assets/imgs/page/career/persuasion.png"
+                    loading="lazy"
+                    alt="iori"
+                  />
+                </div>
               </div>
               <div className="card-info">
-                <Link href="#">
-                  <h6 className="color-brand-1 mb-10">Persuasion</h6>
-                </Link>
+                <h6 className="color-brand-1 mb-10">Persuasion</h6>
+
                 <p className="font-xs color-grey-500">
                   Knowing that there is real value to be gained from helping
                   people to simplify whatever it is that they do and bring.

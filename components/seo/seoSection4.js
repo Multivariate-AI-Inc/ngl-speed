@@ -32,9 +32,6 @@ const SEOSection4 = () => {
                 data and analytics to determine the best approach for your
                 business.
               </p>
-              <div className="box-button text-start mt-40">
-                <Button text="Find Out How" href={"#"} />
-              </div>
             </div>
           </div>
         </div>

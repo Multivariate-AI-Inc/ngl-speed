@@ -100,28 +100,6 @@ const Service8 = ({ category }) => {
                           <p className="font-md color-grey-500 mb-5">
                             {subItem.desc}
                           </p>
-                          <div className="box-button-offer">
-                            <Link
-                              className="btn btn-default font-sm-bold pl-0 color-brand-1"
-                              href="#"
-                            >
-                              Read More
-                              <svg
-                                className="w-6 h-6 icon-16 ml-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                ></path>
-                              </svg>
-                            </Link>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -136,23 +114,6 @@ const Service8 = ({ category }) => {
                 }
                 target="blank"
               />
-              <Link className="btn btn-default font-sm-bold hover-up" href="#">
-                Learn More
-                <svg
-                  className="w-6 h-6 icon-16 ml-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </Link>
             </div>
           </div>
         </section>

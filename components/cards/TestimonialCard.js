@@ -37,7 +37,9 @@ const TestimonialCard = (props) => {
             alt="star"
           />
         </div>
-        <h5 className="color-grey-800 mb-20">{props.review}</h5>
+        <h5 className="color-grey-800 mb-20 testimonial-min-height">
+          {props.review}
+        </h5>
         <div className="box-author flex-nowrap justify-content-sm-between">
           <div className="author-info">
             <Link href="#">

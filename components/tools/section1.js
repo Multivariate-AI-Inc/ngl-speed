@@ -1,5 +1,5 @@
 import React from "react";
-import ToolsCard from "../cards/ToolsCard";
+import ToolsCard1 from "../cards/ToolsCard1";
 import Link from "next/link";
 const data = [
   {
@@ -357,29 +357,10 @@ const ToolsSection1 = () => {
             <h2 className="color-brand-1 mb-20">Keyword Tracking Tools</h2>
             <p className="font-lg color-gray-500">NEXT CONSOLE FEATURES</p>
           </div>
-          <div className="col-lg-4 col-md-4 text-md-end text-start">
-            <Link href='#' className="btn btn-default font-sm-bold pl-0">
-              Learn More
-              <svg
-                className="w-6 h-6 icon-16 ml-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </Link>
-          </div>
         </div>
         <div className="row mt-50">
           {data.map((item, index) => (
-            <ToolsCard
+            <ToolsCard1
               key={index + item.name}
               name={item.name}
               desc={item.desc}

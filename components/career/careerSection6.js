@@ -26,34 +26,15 @@ const CareerSection6 = () => {
                   Want to talk to a marketing expert?
                 </h2>
                 <p className="font-md color-grey-500">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit laborum — semper quis lectus
-                  nulla. Interactively transform magnetic growth strategies
-                  whereas prospective &quot;outside the box&quot; thinking.
+                  At NextGrowth Labs, we value data-driven individuals with a
+                  commitment to excellence. Elevate your business with our
+                  expert SEO and ASO skills. Experience dynamic growth through
+                  market-leading strategies. Choose us for guaranteed brand
+                  visibility and unmatched digital success.
                 </p>
                 <div className="box-button text-start mt-65">
                   {" "}
                   <Button text={"Contact Us"} href={"/contact"} />
-                  <Link
-                    href="#"
-                    className="btn btn-default font-sm-bold hover-up"
-                  >
-                    Support Center
-                    <svg
-                      className="w-6 h-6 icon-16 ml-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </div>

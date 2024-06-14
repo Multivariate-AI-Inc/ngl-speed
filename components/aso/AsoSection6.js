@@ -6,11 +6,11 @@ const AsoSection6 = () => {
     <section className="section mt-80">
       <div className="container">
         <div className="row mt-50">
-           <div className="col-xl-6 col-lg-7">
+          <div className="col-xl-6 col-lg-7">
             <div className="row">
               <AsoFunnel />
             </div>
-          </div> 
+          </div>
           <div className="col-xl-6 col-lg-5">
             <div className="box-images-project">
               <h2 className="color-brand-1 mb-25">
@@ -38,11 +38,6 @@ const AsoSection6 = () => {
                   market by delivering guaranteed results.
                 </li>
               </ul>
-              <div className="box-button text-start mt-40">
-                {" "}
-                
-                <Button text="Find Out How" href={"#"} />
-              </div>
             </div>
           </div>
         </div>

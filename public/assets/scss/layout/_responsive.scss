@@ -23,12 +23,21 @@
     height: 72px;
     line-height: 72px;
   }
-
+  .header-logo-mobile {
+    width: 0%;
+  }
   .box-banner-abs {
     position: relative;
     top: auto;
     left: auto;
     transform: none;
+  }
+  .testimonial-min-height {
+    min-height: 200px;
+    margin-top: 2.5rem;
+  }
+  header-logo-lg-xxl {
+    justify-content: left;
   }
 }
 
@@ -131,6 +140,13 @@
   .asset-5 {
     top: 550px;
     left: 230px;
+  }
+  .testimonial-min-height {
+    min-height: 310px;
+    margin-top: 2.5rem;
+  }
+  .header-logo-mobile {
+    width: 100%;
   }
 }
 
@@ -271,6 +287,13 @@
   }
   .header .header-right a {
     padding: 12px 13px;
+  }
+  .testimonial-min-height {
+    min-height: 85px;
+    margin-top: 2.5rem;
+  }
+  .header-logo-mobile {
+    width: 100%;
   }
 }
 
@@ -444,6 +467,13 @@
   .accordion .accordion-button {
     padding: 25px;
   }
+  .testimonial-min-height {
+    min-height: 140px;
+    margin-top: 2.5rem;
+  }
+  .header-logo-mobile {
+    width: 100%;
+  }
 }
 
 @include media-breakpoint-down(sm) {
@@ -522,8 +552,15 @@
   .asset-5 {
     display: none;
   }
+  .header-logo-mobile {
+    width: 100%;
+  }
 }
-
+@include media-breakpoint-down(smd) {
+  .header-logo-mobile {
+    width: 100%;
+  }
+}
 @include media-breakpoint-down(xsm) {
   //max-width: 500px
   .footer .width-20,
@@ -593,6 +630,9 @@
   .item-tick.font-xl-bold {
     line-height: 18px;
     font-size: 14px;
+  }
+  .header-logo-mobile {
+    width: 100%;
   }
 }
 
@@ -676,6 +716,9 @@
   .banner-9.mb-100 {
     margin-bottom: 130px !important;
   }
+  .header-logo-mobile {
+    width: 100%;
+  }
 }
 
 @include media-breakpoint-down(xxsm) {
@@ -739,12 +782,33 @@
     width: 300px !important;
     height: 300px !important;
   }
+  .header-logo-mobile {
+    width: 100%;
+  }
 }
 
 @include media-breakpoint-up(xxl) {
   //min-width: 1400px
   .container.wide {
     max-width: 1544px;
+  }
+  .testimonial-min-height {
+    min-height: 200px;
+    margin-top: 2.5rem;
+  }
+  .header-logo-mobile {
+    width: 0%;
+  }
+  .mlNav-110 {
+    margin-left: 110px;
+  }
+  .header {
+    .nav-main-menu {
+      padding: 0 160px;
+    }
+  }
+  header-logo-lg-xxl {
+    justify-content: end;
   }
 }
 

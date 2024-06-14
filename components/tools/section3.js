@@ -1,6 +1,5 @@
 import React from "react";
 import ToolsCard from "../cards/ToolsCard";
-import Link from "next/link";
 const data = [
   {
     name: "Content Assist",
@@ -79,6 +78,8 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink:
+      "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
   },
   {
     name: "Keyword Density Monitor",
@@ -193,6 +194,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/keyword-density-tool/",
   },
   {
     name: "Chrome Add-On",
@@ -243,6 +245,8 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink:
+      "https://chromewebstore.google.com/detail/aso-seo-search-ranking-ke/pjjlpohgclhhnmbjfhijoeikehadbohd",
   },
   {
     name: "Keyword Shuffle Tools",
@@ -317,6 +321,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/keyword-shuffle-tool/",
   },
   {
     name: "Title and Meta Description Checker",
@@ -443,6 +448,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/title-meta-description/",
   },
   {
     name: "Page Speed Assesment",
@@ -549,6 +555,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/page-speed-assessment/",
   },
   {
     name: "Rating Projection Calculator",
@@ -627,6 +634,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/rating-projection-calculator/",
   },
   {
     name: "HTML Editor",
@@ -721,6 +729,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/html-editor/",
   },
   {
     name: "Word to HTML convertor",
@@ -830,6 +839,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/word-to-html/",
   },
   {
     name: "EMI Calculator",
@@ -1104,6 +1114,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/emi-calculator/",
   },
   {
     name: "iOS Keyword Search",
@@ -1187,6 +1198,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/ios-keyword-ranks/",
   },
   {
     name: "Font Changer",
@@ -1289,6 +1301,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/font-changer/",
   },
   {
     name: "Search & App Rank Tracker",
@@ -1378,6 +1391,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/multi-tool/",
   },
   {
     name: "Keyword Suggestion Tool",
@@ -1456,6 +1470,7 @@ const data = [
         />
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/keyword-suggestion/",
   },
   {
     name: "Bulk iOS Keyword Tracker",
@@ -1509,6 +1524,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/bulk-ios-keywords-tracker/",
   },
   {
     name: "Free Bulk Website Rank Checker and Tracker",
@@ -1631,6 +1647,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/bulk-website-rank-checker/",
   },
   {
     name: "JSON to HTML Convertor",
@@ -1684,6 +1701,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: " https://tools.nextgrowthlabs.com/json-editor/",
   },
   {
     name: "Wordpress Post Title Changer Tool",
@@ -1714,6 +1732,8 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink:
+      "https://workspace.google.com/marketplace/app/ab_testing_tool_for_wordpress_nextlabsio/628149638428",
   },
   {
     name: "Keyword Generator Tool",
@@ -1771,6 +1791,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/keyword-generator-tool/",
   },
   {
     name: "Cloud Data Warehouse Setup Cost Calculator",
@@ -1884,6 +1905,8 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink:
+      "https://tools.nextgrowthlabs.com/cloud-data-warehouse-setup-cost-calculator/",
   },
   {
     name: "Website Technology Checker Tool",
@@ -1981,6 +2004,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/website-technology-checker/",
   },
   {
     name: "Web Page Crawler",
@@ -2115,6 +2139,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/web-page-crawler/",
   },
   {
     name: "Robots.txt on SEO",
@@ -2152,6 +2177,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/robots-txt-on-seo/",
   },
   {
     name: "Internal Links Checker",
@@ -2263,6 +2289,7 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink: "https://tools.nextgrowthlabs.com/internal-links-checker/",
   },
   {
     name: "Website Mobile Friendly Checker",
@@ -2312,6 +2339,8 @@ const data = [
         </defs>
       </svg>
     ),
+    toolLink:
+      "https://tools.nextgrowthlabs.com/website-mobile-friendly-checker/",
   },
 ];
 const ToolsSection3 = () => {
@@ -2326,8 +2355,8 @@ const ToolsSection3 = () => {
               in the mobile app promotion stack.
             </p>
           </div>
-          <div className="col-lg-4 col-md-4 text-md-end text-start">
-            {/* <Link href="#" className="btn btn-default font-sm-bold pl-0">
+          {/* <div className="col-lg-4 col-md-4 text-md-end text-start">
+ <Link href="#" className="btn btn-default font-sm-bold pl-0">
               Learn More
               <svg
                 className="w-6 h-6 icon-16 ml-5"
@@ -2343,8 +2372,8 @@ const ToolsSection3 = () => {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </Link> */}
-          </div>
+            </Link> 
+          </div> */}
         </div>
         <div className="row mt-50">
           {data.map((item, index) => (
@@ -2353,6 +2382,7 @@ const ToolsSection3 = () => {
               name={item.name}
               img={item.img}
               desc={item.desc}
+              toolLink={item.toolLink}
             />
           ))}
         </div>

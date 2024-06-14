@@ -9,9 +9,10 @@ const CareerSection7 = ({ post }) => {
           <div className="col-lg-8 col-md-8">
             <h2 className="color-brand-1 mb-20">From our blog </h2>
             <p className="font-lg color-gray-500">
-              Aenean velit nisl, aliquam eget diam eu, rhoncus tristique dolor.
+              Dive into a world of insightful articles, expert opinions, and the
+              latest trends.
               <br className="d-none d-lg-block" />
-              Aenean vulputate sodales urna ut vestibulum
+              Explore Our Stories
             </p>
           </div>
           <div className="col-lg-4 col-md-4 text-md-end text-start">

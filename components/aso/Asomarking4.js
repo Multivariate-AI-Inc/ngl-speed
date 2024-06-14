@@ -20,17 +20,13 @@ const Asomarketing4 = () => {
                 reduction is <b>x</b>, then you pay a fee that is much lower
                 than <b>x</b>.
               </p>
-              <div className="box-button text-start mt-40">
-                {" "}
-                <Button text="Find Out How" href={"#"} />
-              </div>
             </div>
           </div>
 
           <div className="col-xl-6 col-lg-7">
             <div className="row pt-0 row-image">
               <Image
-                src="/assets/imgs/template/Marketing-dashboard 1.svg"
+                src="/assets/imgs/template/Marketing-dashboard1.svg"
                 width={690}
                 height={420}
                 alt="Marketing-dashboard"
