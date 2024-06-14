@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Contact from "../components/home/Contact";
-import NewsLetter from "../components/elements/Newsletter";
+
 import Layout from "../components/layout/Layout";
 import PageHead from "../components/elements/PageHead";
 const Contactus = () => {
@@ -51,7 +51,6 @@ const Contactus = () => {
           </div>
         </section>
         <Contact />
-        <NewsLetter />
       </Layout>
     </>
   );

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/layout/Layout";
-import NewsLetter from "../components/elements/Newsletter";
+
 import Marketing from "../components/home/Marketing";
 
 import CareerSection7 from "../components/career/careerSection7";
@@ -636,7 +636,6 @@ const JobDetail = () => {
         </section>
         <Marketing />
         <CareerSection7 />
-        <NewsLetter />
       </Layout>
     </>
   );

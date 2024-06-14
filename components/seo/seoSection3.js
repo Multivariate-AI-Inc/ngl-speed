@@ -20,9 +20,6 @@ const SEOSection3 = () => {
                 engine results pages (SERPs) and drive more targeted traffic to
                 your site.
               </p>
-              <div className="box-button text-start mt-40">
-                <Button text="Find Out How" href={"#"} />
-              </div>
             </div>
           </div>
           <div className="col-xl-6 col-lg-7">

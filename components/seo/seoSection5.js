@@ -23,9 +23,6 @@ const SEOSection5 = () => {
                 that incorporates these groups of keywords and maximizes your
                 search engine visibility and performance.
               </p>
-              <div className="box-button text-start mt-40">
-                <Button text="Find Out How" href={"#"} />
-              </div>
             </div>
           </div>
           <div className="col-xl-6 col-lg-7">

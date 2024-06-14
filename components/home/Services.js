@@ -149,10 +149,6 @@ const Services = () => {
                 </li>
               </ul>
             </div>
-            <div className="mt-50 text-start">
-              {" "}
-              <Button text={"Find Out How"} href={"#"} />
-            </div>
           </div>
         </div>
         <div className="row mb-100 mt-50 project-revert">
@@ -275,9 +271,6 @@ const Services = () => {
                   Directly send or schedule posts
                 </li>
               </ul>
-            </div>
-            <div className="mt-50 text-start">
-              <Button text={"Find Out How"} href={"#"} />
             </div>
           </div>
           <div className="col-xl-7 col-lg-6">

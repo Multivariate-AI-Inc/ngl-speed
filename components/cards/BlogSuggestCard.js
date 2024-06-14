@@ -18,7 +18,9 @@ const BlogSuggestCard = ({ post }) => {
         </div>
         <div className="card-info">
           <Link href={`https://blogsngl.wpenginepowered.com/${post.slug}`}>
-            <h6 className="color-brand-1">{post.title}</h6>
+            <h6 className="color-brand-1" style={{ minHeight: "3rem" }}>
+              {post.title}
+            </h6>
           </Link>
           <div className="blog-card-excerpt mt-20">
             {post.excerpt.slice(3, 150)}...

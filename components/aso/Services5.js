@@ -16,25 +16,6 @@ const Services5 = () => {
               app stores.
             </p>
           </div>
-          <div className="col-lg-4 col-md-4 text-md-end text-start">
-            <Link href="#" className="btn btn-default font-sm-bold pl-0">
-              Learn More
-              <svg
-                className="w-6 h-6 icon-16 ml-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </Link>
-          </div>
         </div>
         <div className="row mt-50">
           <div className="col-lg-6">
@@ -48,40 +29,11 @@ const Services5 = () => {
                 />
               </div>
               <div className="card-info">
-                <h4 className="color-brand-1 mb-10">
-                  <Link
-                    className="color-brand-1"
-                    href="Seamless importing and round-tripping of Microsoft Project plans, Excel files & CSV files."
-                  >
-                    Listing Intelligence
-                  </Link>
-                </h4>
+                <h4 className="color-brand-1 mb-10">Listing Intelligence</h4>
                 <p className="font-md color-grey-500 mb-5">
                   Identify the keywords that your competitors are using. Keep a
                   close eye on the changes they make.
                 </p>
-                <div className="box-button-offer">
-                  <Link
-                    href="#"
-                    className="btn btn-default font-sm-bold pl-0 color-brand-1"
-                  >
-                    Learn More
-                    <svg
-                      className="w-6 h-6 icon-16 ml-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -96,40 +48,11 @@ const Services5 = () => {
                 />
               </div>
               <div className="card-info">
-                <h4 className="color-brand-1 mb-10">
-                  <Link
-                    className="color-brand-1"
-                    href="What makes us different from others? We give holistic solutions with strategy, design & technology."
-                  >
-                    Anomalies
-                  </Link>
-                </h4>
+                <h4 className="color-brand-1 mb-10">Anomalies</h4>
                 <p className="font-md color-grey-500 mb-5">
                   About 5% of the total 1-star reviews tend to be sementic
                   mismatches. And there&apos;s a way to fix it.
                 </p>
-                <div className="box-button-offer">
-                  <Link
-                    href="#"
-                    className="btn btn-default font-sm-bold pl-0 color-brand-1"
-                  >
-                    Learn More
-                    <svg
-                      className="w-6 h-6 icon-16 ml-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -144,40 +67,11 @@ const Services5 = () => {
                 />
               </div>
               <div className="card-info">
-                <h4 className="color-brand-1 mb-10">
-                  <Link
-                    className="color-brand-1"
-                    href="No lag time, no lost effort when priorities change, no email black hole. As team collaboration improves"
-                  >
-                    Ratings & MHR
-                  </Link>
-                </h4>
+                <h4 className="color-brand-1 mb-10">Ratings & MHR</h4>
                 <p className="font-md color-grey-500 mb-5">
                   Get historical ranking context - based on the rating and MHR
                   (Most Helpful Review Section) Score - developed by us.
                 </p>
-                <div className="box-button-offer">
-                  <Link
-                    href="#"
-                    className="btn btn-default font-sm-bold pl-0 color-brand-1"
-                  >
-                    Learn More
-                    <svg
-                      className="w-6 h-6 icon-16 ml-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -193,39 +87,12 @@ const Services5 = () => {
               </div>
               <div className="card-info">
                 <h4 className="color-brand-1 mb-10">
-                  <Link
-                    className="color-brand-1"
-                    href="Share updates instantly within our project management software, and get the entire team collaborating"
-                  >
-                    Engagement and Open Count
-                  </Link>
+                  Engagement and Open Count
                 </h4>
                 <p className="font-md color-grey-500 mb-5">
                   Our app intelligence, that tells you the engagement time of
                   your peers, and help you improve on it.
                 </p>
-                <div className="box-button-offer">
-                  <Link
-                    href="#"
-                    className="btn btn-default font-sm-bold pl-0 color-brand-1"
-                  >
-                    Learn More
-                    <svg
-                      className="w-6 h-6 icon-16 ml-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
