@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-const Services5 = () => {
+const AsoInnovation = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -102,4 +102,4 @@ const Services5 = () => {
   );
 };
 
-export default Services5;
+export default AsoInnovation;

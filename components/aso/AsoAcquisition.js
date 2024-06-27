@@ -1,7 +1,7 @@
 import Button from "../elements/Button";
 import AsoFunnel from "./AsoFunnel";
 
-const AsoSection6 = () => {
+const AsoAcquisition = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -46,4 +46,4 @@ const AsoSection6 = () => {
   );
 };
 
-export default AsoSection6;
+export default AsoAcquisition;

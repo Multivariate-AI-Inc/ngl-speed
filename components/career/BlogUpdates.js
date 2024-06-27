@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BlogSuggestCard from "../cards/BlogSuggestCard";
-const CareerSection7 = ({ post }) => {
+const BlogUpdates = ({ post }) => {
   return (
     <section className="section mt-50">
       <div className="container">
@@ -45,7 +45,7 @@ const CareerSection7 = ({ post }) => {
   );
 };
 
-export default CareerSection7;
+export default BlogUpdates;
 
 // <div className="col-xl-3 col-lg-6 col-md-6">
 //   <div className="card-blog-grid card-blog-grid-2 hover-up">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToolsSection4 = () => {
+const ConsoleFeatures = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -121,4 +121,4 @@ const ToolsSection4 = () => {
   );
 };
 
-export default ToolsSection4;
+export default ConsoleFeatures;

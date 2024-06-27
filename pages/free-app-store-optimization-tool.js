@@ -1,33 +1,28 @@
 import Layout from "../components/layout/Layout";
-// import ToolsSection1 from "../components/tools/section1";
-// import ToolsSection2 from "../components/tools/section2";
-// import ToolsSection3 from "../components/tools/section3";
-// import ToolsSection4 from "../components/tools/section4"; 
-// import ToolsSection5 from "../components/tools/section5";
 import Trustby from "../components/home/Trustby";
 import Contact from "../components/home/Contact";
-import ToolsHero from "../components/tools/toolsHero";
 import PageHead from "../components/elements/PageHead";
-import dynamic from "next/dynamic";
+import ToolsHeroSection from "../components/tools/NextTools";
 
-const DynamicToolSection1 = dynamic( ()=> import("../components/tools/section1"),{ssr:false})
-const DynamicToolSection2 = dynamic( ()=> import("../components/tools/section2"),{ssr:false})
-const DynamicToolSection3 = dynamic( ()=> import("../components/tools/section3"),{ssr:false})
-const DynamicToolSection4 = dynamic( ()=> import("../components/tools/section4"),{ssr:false})
-const DynamicToolSection5 = dynamic( ()=> import("../components/tools/section5"),{ssr:false})
+import dynamic from "next/dynamic";
+const TrackingTools = dynamic( ()=> import("../components/tools/TrackingTools"),{ssr:false})
+const SlackTool = dynamic( ()=> import("../components/tools/SlackTool"),{ssr:false})
+const OtherTools = dynamic( ()=> import("../components/tools/OtherTools"),{ssr:false})
+const ConsoleFeatures = dynamic( ()=> import("../components/tools/ConsoleFeatures"),{ssr:false})
+const NextASOTools = dynamic( ()=> import("../components/tools/NextASOTools"),{ssr:false})
 
 const Tools = () => {
   return (
     <>
       <PageHead title={"NEXT ASO Tools"} />
       <Layout>
-        <ToolsHero />
+        <ToolsHeroSection />
         <Trustby heading = {"Brands we’ve helped grow"}/>
-        <DynamicToolSection1 />
-        <DynamicToolSection2 />
-        <DynamicToolSection3 />
-        <DynamicToolSection4 />
-        <DynamicToolSection5 />
+        <TrackingTools />
+        <SlackTool />
+        <OtherTools />
+        <ConsoleFeatures />
+        <NextASOTools />
         <Contact />
       </Layout>
     </>

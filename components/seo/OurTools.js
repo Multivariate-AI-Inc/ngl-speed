@@ -2,7 +2,7 @@ import React from "react";
 import ToolsCard from "../cards/ToolsCard";
 
 import { data } from "../utils";
-const SEOSection6 = () => {
+const OurTools = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -34,4 +34,4 @@ const SEOSection6 = () => {
   );
 };
 
-export default SEOSection6;
+export default OurTools;

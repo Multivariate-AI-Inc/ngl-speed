@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ContactForm from "../elements/ContactForm";
-const Asocontact = () => {
+const AsoContact = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -47,4 +47,4 @@ const Asocontact = () => {
   );
 };
 
-export default Asocontact;
+export default AsoContact;

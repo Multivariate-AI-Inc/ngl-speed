@@ -1,8 +1,7 @@
-import { SiTruenas } from "react-icons/si";
-import Button from "../elements/Button";
 import Image from "next/image";
+import Button from "../elements/Button";
 
-const SEOHero = () => {
+const SeoHero = () => {
   return (
     <section
       className="section"
@@ -86,4 +85,4 @@ const SEOHero = () => {
   );
 };
 
-export default SEOHero;
+export default SeoHero;

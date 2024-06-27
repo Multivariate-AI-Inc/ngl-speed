@@ -6,32 +6,32 @@ const Layout = dynamic(() => import("../components/layout/Layout"));
 const Hero = dynamic(() => import("../components/aso/Hero"));
 const Testimonials = dynamic(() => import("../components/home/Testimonials"));
 const Tools = dynamic(() => import("../components/home/Tools"));
-const Service8 = dynamic(() => import("../components/home/Service8"));
-const Asocontact = dynamic(() => import("../components/aso/Asocontact"));
+const WebVisibility = dynamic(() => import("../components/home/WebVisibility"));
 const TrustBy = dynamic(() => import("../components/home/Trustby"));
-const Services5 = dynamic(() => import("../components/aso/Services5"));
-const Asomarketing = dynamic(() => import("../components/aso/Asomarketing"));
-const Asomarketing4 = dynamic(() => import("../components/aso/Asomarking4"));
-const AsoSection6 = dynamic(() => import("../components/aso/AsoSection6"));
+const AsoInnovation = dynamic(() => import("../components/aso/AsoInnovation"));
+const AsoCampaigns = dynamic(() => import("../components/aso/AsoCampaigns"));
+const AsoAcquisition = dynamic(() => import("../components/aso/AsoAcquisition"));
+const DynamicAsoMarketing = dynamic(() => import("../components/aso/AppMarketing"));
+const AsoContact = dynamic(() => import("../components/aso/BoostRankings"));
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 const queryClient = new QueryClient()
 
 const ASO = () => {
-  return (
+  return (  
     <>
     <QueryClientProvider client={queryClient}>
       <PageHead title={"Get Free ASO Analysis - NextGrowthLabs"} />
       <Layout>
         <Hero />
         <TrustBy />
-        <Service8 category={"App's"} />
+        <WebVisibility category={"App's"} />
         <Testimonials />
-        <Asomarketing4 />
-        <AsoSection6 />
+        <AsoCampaigns />
+        <AsoAcquisition />
         <Tools length={6} />
-        <Services5 />
-        <Asomarketing />
-        <Asocontact />
+        <AsoInnovation />
+        <DynamicAsoMarketing />
+        <AsoContact />
       </Layout>
       </QueryClientProvider>
     </>

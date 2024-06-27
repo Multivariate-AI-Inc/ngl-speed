@@ -178,7 +178,7 @@ const Brands = () => {
                       width={image.width}
                       height={120}
                       alt={image.alt}
-                      class="icon_brand"
+                      className="icon_brand"
                     />
                   </div>
                 ))}

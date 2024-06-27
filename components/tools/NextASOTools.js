@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToolsSection5 = () => {
+const NextASOTools = () => {
   return (
     <div className="container">
       <h4 className="font-md color-grey-400 mt-80">
@@ -349,4 +349,4 @@ const ToolsSection5 = () => {
   );
 };
 
-export default ToolsSection5;
+export default NextASOTools;

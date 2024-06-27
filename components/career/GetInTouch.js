@@ -2,7 +2,7 @@ import Image from "next/image"
 import Button from "../elements/Button"
 import Link from "next/link"
 
-const CareerSection6 = () => {
+const GetInTouch = () => {
   return (
     <section className="section mt-50 pt-50 pb-40">
       <div className="container">
@@ -48,4 +48,4 @@ const CareerSection6 = () => {
   )
 }
 
-export default CareerSection6
+export default GetInTouch

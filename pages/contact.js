@@ -4,7 +4,7 @@ import Contact from "../components/home/Contact";
 
 import Layout from "../components/layout/Layout";
 import PageHead from "../components/elements/PageHead";
-const Contactus = () => {
+const ContactUs = () => {
   return (
     <>
       <PageHead title={"Contact Us for better coordination and more info."} />
@@ -60,4 +60,4 @@ const Contactus = () => {
   );
 };
 
-export default Contactus;
+export default ContactUs;

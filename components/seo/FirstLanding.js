@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import gif from "../../public/assets/imgs/Google-Search-Animation.gif";
-const SEOSection5 = () => {
+const FirstLanding = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -40,4 +40,4 @@ const SEOSection5 = () => {
   );
 };
 
-export default SEOSection5;
+export default FirstLanding;

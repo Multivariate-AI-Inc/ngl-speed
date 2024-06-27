@@ -12,8 +12,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63890)">
-          <g clip-path="url(#clip1_2179_63890)">
+        <g clipPath="url(#clip0_2179_63890)">
+          <g clipPath="url(#clip1_2179_63890)">
             <path
               d="M49.5763 1.20972H14.9943C12.051 1.20972 9.67773 3.60603 9.67773 6.5363V68.4641C9.67773 71.4133 12.0693 73.7901 14.9943 73.7901H60.0074C62.9495 73.7901 65.3227 71.3938 65.3227 68.4641V15.623L49.5763 1.20972Z"
               fill="white"
@@ -92,8 +92,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63767)">
-          <g clip-path="url(#clip1_2179_63767)">
+        <g clipPath="url(#clip0_2179_63767)">
+          <g clipPath="url(#clip1_2179_63767)">
             <path
               d="M6 50.025V9C6 7.35 7.35 6 9 6H66C67.65 6 69 7.35 69 9V50.025C69 51.675 67.65 53.025 66 53.025H9C7.35 53.025 6 51.675 6 50.025Z"
               fill="#06D6A0"
@@ -259,8 +259,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63987)">
-          <g clip-path="url(#clip1_2179_63987)">
+        <g clipPath="url(#clip0_2179_63987)">
+          <g clipPath="url(#clip1_2179_63987)">
             <path
               d="M39.57 17.775H37.5V7.60498H27.345V9.67498C27.345 12.315 25.2 14.46 22.56 14.46C19.92 14.46 17.775 12.315 17.775 9.67498V7.60498H7.605V17.76H5.535C2.895 17.775 0.75 19.92 0.75 22.56C0.75 25.2 2.895 27.345 5.535 27.345H7.605V37.5H17.76V35.43C17.76 32.79 19.905 30.645 22.545 30.645C25.185 30.645 27.33 32.79 27.33 35.43V37.5H37.5V27.345H39.57C42.21 27.345 44.355 25.2 44.355 22.56C44.355 19.92 42.225 17.775 39.57 17.775Z"
               fill="#AFEAE4"
@@ -461,8 +461,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_64117)">
-          <g clip-path="url(#clip1_2179_64117)">
+        <g clipPath="url(#clip0_2179_64117)">
+          <g clipPath="url(#clip1_2179_64117)">
             <path
               d="M16.2002 24.51H7.66516C6.70516 24.51 5.91016 25.29 5.91016 26.265V32.1C5.91016 33.06 6.69016 33.855 7.66516 33.855H16.2002C17.1602 33.855 17.9552 33.075 17.9552 32.1V26.265C17.9402 25.29 17.1602 24.51 16.2002 24.51Z"
               fill="#AFEAE4"
@@ -568,8 +568,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63562)">
-          <g clip-path="url(#clip1_2179_63562)">
+        <g clipPath="url(#clip0_2179_63562)">
+          <g clipPath="url(#clip1_2179_63562)">
             <path
               d="M6 50.4V66C6 67.65 7.35 69 9 69H66C67.65 69 69 67.65 69 66V50.4H6Z"
               fill="#AFEAE4"
@@ -647,8 +647,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63647)">
-          <g clip-path="url(#clip1_2179_63647)">
+        <g clipPath="url(#clip0_2179_63647)">
+          <g clipPath="url(#clip1_2179_63647)">
             <path
               d="M6 50.025V9C6 7.35 7.35 6 9 6H66C67.65 6 69 7.35 69 9V50.025C69 51.675 67.65 53.025 66 53.025H9C7.35 53.025 6 51.675 6 50.025Z"
               fill="#06D6A0"
@@ -742,7 +742,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2181_64751)">
+        <g clipPath="url(#clip0_2181_64751)">
           <path
             d="M6.94971 17.638V12.1C6.94971 11.104 7.75371 10.3 8.74971 10.3H25.2557C26.2517 10.3 27.0557 11.104 27.0557 12.1V33.2561L20.5817 39.7H16.3997H10.9817H8.74971C7.75371 39.7 6.94971 38.896 6.94971 37.9V19.72"
             fill="#06D6A0"
@@ -852,8 +852,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2181_64404)">
-          <g clip-path="url(#clip1_2181_64404)">
+        <g clipPath="url(#clip0_2181_64404)">
+          <g clipPath="url(#clip1_2181_64404)">
             <path
               d="M69.75 74.25H5.25C2.76 74.25 0.75 72.24 0.75 69.75V14.04C0.75 11.55 2.76 9.53998 5.25 9.53998H69.75C72.24 9.53998 74.25 11.55 74.25 14.04V69.75C74.25 72.24 72.24 74.25 69.75 74.25Z"
               fill="#ECF4F7"
@@ -1127,8 +1127,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63480)">
-          <g clip-path="url(#clip1_2179_63480)">
+        <g clipPath="url(#clip0_2179_63480)">
+          <g clipPath="url(#clip1_2179_63480)">
             <path
               d="M29.0101 51.975C22.8751 51.975 17.1001 49.59 12.7501 45.24C8.41514 40.905 6.01514 35.13 6.01514 28.98C6.01514 22.845 8.40014 17.07 12.7501 12.72C17.1001 8.40002 22.8751 6.01501 29.0101 6.01501C35.1451 6.01501 40.9201 8.40001 45.2701 12.75C49.6051 17.085 52.0051 22.86 52.0051 29.01C52.0051 35.145 49.6201 40.92 45.2701 45.27C40.9201 49.59 35.1451 51.975 29.0101 51.975Z"
               fill="#83E1E5"
@@ -1149,7 +1149,7 @@ const data = [
               d="M64.1099 69.93C63.9149 69.93 63.7199 69.855 63.5849 69.705C63.2849 69.405 63.2849 68.94 63.5849 68.64L66.3749 65.85C66.6749 65.55 67.1399 65.55 67.4399 65.85C67.7399 66.15 67.7399 66.615 67.4399 66.915L64.6499 69.72C64.4999 69.855 64.3049 69.93 64.1099 69.93Z"
               fill="#1C1D21"
             />
-            <g clip-path="url(#clip2_2179_63480)">
+            <g clipPath="url(#clip2_2179_63480)">
               <path
                 d="M45 29C45 20.1634 37.8366 13 29 13C20.1634 13 13 20.1634 13 29C13 37.8366 20.1634 45 29 45C37.8366 45 45 37.8366 45 29Z"
                 fill="url(#paint0_linear_2179_63480)"
@@ -1178,8 +1178,8 @@ const data = [
             y2="13"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#2EB67D" />
-            <stop offset="1" stop-color="#FFE7BB" />
+            <stop stopColor="#2EB67D" />
+            <stop offset="1" stopColor="#FFE7BB" />
           </linearGradient>
           <clipPath id="clip0_2179_63480">
             <rect width="75" height="75" fill="white" />
@@ -1211,8 +1211,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2181_64947)">
-          <g clip-path="url(#clip1_2181_64947)">
+        <g clipPath="url(#clip0_2181_64947)">
+          <g clipPath="url(#clip1_2181_64947)">
             <path
               d="M6 50.4V66C6 67.65 7.35 69 9 69H66C67.65 69 69 67.65 69 66V50.4H6Z"
               fill="#83E1E5"
@@ -1483,8 +1483,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2179_63028)">
-          <g clip-path="url(#clip1_2179_63028)">
+        <g clipPath="url(#clip0_2179_63028)">
+          <g clipPath="url(#clip1_2179_63028)">
             <path
               d="M75 37.5C75 16.7893 58.2107 0 37.5 0C16.7893 0 0 16.7893 0 37.5C0 58.2107 16.7893 75 37.5 75C58.2107 75 75 58.2107 75 37.5Z"
               fill="url(#paint0_linear_2179_63028)"
@@ -1512,8 +1512,8 @@ const data = [
             y2="0"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#2EB67D" />
-            <stop offset="1" stop-color="#FFE7BB" />
+            <stop stopColor="#2EB67D" />
+            <stop offset="1" stopColor="#FFE7BB" />
           </linearGradient>
           <clipPath id="clip0_2179_63028">
             <rect width="75" height="75" fill="white" />
@@ -1537,8 +1537,8 @@ const data = [
   //       fill="none"
   //       xmlns="http://www.w3.org/2000/svg"
   //     >
-  //       <g clip-path="url(#clip0_2179_62949)">
-  //         <g clip-path="url(#clip1_2179_62949)">
+  //       <g clipPath="url(#clip0_2179_62949)">
+  //         <g clipPath="url(#clip1_2179_62949)">
   //           <path
   //             d="M6 50.025V9C6 7.35 7.35 6 9 6H66C67.65 6 69 7.35 69 9V50.025C69 51.675 67.65 53.025 66 53.025H9C7.35 53.025 6 51.675 6 50.025Z"
   //             fill="#AFEAE4"
@@ -1660,7 +1660,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2177_62895)">
+        <g clipPath="url(#clip0_2177_62895)">
           <path
             d="M12.375 19.095V5.25C12.375 2.76 14.385 0.75 16.875 0.75H58.14C60.63 0.75 62.64 2.76 62.64 5.25V58.14L46.455 74.25H36H22.455H16.875C14.385 74.25 12.375 72.24 12.375 69.75V24.3"
             fill="#06D6A0"
@@ -1701,7 +1701,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: " https://tools.nextgrowthlabs.com/json-editor/",
+    toolLink: "https://tools.nextgrowthlabs.com/json-editor",
   },
   {
     name: "Wordpress Post Title Changer Tool",
@@ -1714,8 +1714,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2177_62831)">
-          <g clip-path="url(#clip1_2177_62831)">
+        <g clipPath="url(#clip0_2177_62831)">
+          <g clipPath="url(#clip1_2177_62831)">
             <path
               d="M37.5016 75C16.7198 75 -0.155167 58.437 0.00157138 37.5C0.15831 16.563 15.9391 -4.76837e-07 37.5016 -4.76837e-07C59.0655 -4.76837e-07 75.0016 16.875 75.0016 37.5C75.0016 58.125 58.2833 75 37.5016 75ZM48.5948 69.2183L37.9703 40.6245L27.9698 69.8437C35.3146 71.5635 40.3141 72.0308 48.5948 69.2183ZM22.6583 67.6567L6.72081 24.063C4.53233 28.7505 4.06505 32.6572 3.75157 37.5C3.90831 50.3115 11.0948 62.0303 22.6583 67.6567ZM71.0963 37.5C71.2516 29.2192 67.503 22.6567 67.1896 21.7192C67.503 28.1265 66.5641 31.4062 65.4713 35.001L54.5333 66.4072C68.2838 58.125 70.9381 45.7808 71.2516 37.5H71.0963ZM36.4088 36.0937L31.0958 21.5625L27.1891 21.2505C25.6275 20.1562 26.5636 18.438 27.6578 18.438C34.6891 18.9067 38.5943 18.9067 45.6271 18.438C47.3468 18.438 47.8141 20.9385 45.7823 21.2505L42.0323 21.5625L54.2184 57.4995L59.9986 37.812C60.3121 29.2192 57.9669 28.2817 54.8424 22.0312C52.3419 17.187 54.9991 12.4995 59.8434 12.3442C55.9352 8.59424 47.9679 3.90674 37.4986 3.75C27.0294 3.59326 15.9361 8.90625 9.37364 18.9067L20.9371 18.5947C22.3434 19.2202 21.7179 21.2505 20.9371 21.4072L16.8751 21.7192L29.0626 58.2817L36.4088 36.0937Z"
               fill="#06D6A0"
@@ -1746,7 +1746,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2176_62682)">
+        <g clipPath="url(#clip0_2176_62682)">
           <path
             d="M12.375 19.095V5.25C12.375 2.76 14.385 0.75 16.875 0.75H58.14C60.63 0.75 62.64 2.76 62.64 5.25V58.14L46.455 74.25H36H22.455H16.875C14.385 74.25 12.375 72.24 12.375 69.75V24.3"
             fill="#AFEAE4"
@@ -1804,7 +1804,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2176_62411)">
+        <g clipPath="url(#clip0_2176_62411)">
           <path
             d="M9.945 12.075C9.945 9.54 12 7.485 14.535 7.485C14.535 3.765 17.55 0.75 21.27 0.75C24.99 0.75 28.005 3.765 28.005 7.485H32.01C36.825 7.485 40.725 11.385 40.725 16.2C43.53 16.2 45.795 18.48 45.795 21.27C45.795 22.455 44.835 23.415 43.65 23.415H2.895C1.71 23.415 0.75 22.455 0.75 21.27C0.75 18.735 2.805 16.68 5.34 16.68C5.34 14.13 7.41 12.075 9.945 12.075Z"
             fill="#AFEAE4"
@@ -1919,7 +1919,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2176_62512)">
+        <g clipPath="url(#clip0_2176_62512)">
           <path
             d="M71.4844 30.4688V10.5469C71.4844 9.25781 70.4297 8.20312 69.1406 8.20312H5.85938C4.57031 8.20312 3.51562 9.25781 3.51562 10.5469V64.4531C3.51562 65.7422 4.57031 66.7969 5.85938 66.7969H69.1406C70.4297 66.7969 71.4844 65.7422 71.4844 64.4531V60.9375V30.4688Z"
             fill="#AFEAE4"
@@ -1943,58 +1943,58 @@ const data = [
           <path
             d="M37.5 66.7969H5.85938C4.57031 66.7969 3.51562 65.7422 3.51562 64.4531V10.5469C3.51562 9.25781 4.57031 8.20312 5.85938 8.20312H69.1406C70.4297 8.20312 71.4844 9.25781 71.4844 10.5469V64.4531C71.4844 65.7469 70.4367 66.7969 69.1406 66.7969H62.1563"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M15.2344 29.2969H8.20312"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M19.9219 24.6094H8.20312"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M71.4844 17.5781H3.51562"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M17.8125 12.8906H17.5781"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M13.125 12.8906H12.8906"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M8.4375 12.8906H8.20312"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M56.2992 66.8016L53.4164 63.675C54.0164 62.3906 54.4734 61.0289 54.75 59.5969L59.7656 58.5937V53.9062L54.75 52.9031C54.4734 51.4711 54.0164 50.1094 53.4164 48.825L56.8898 45.0586L54.1336 41.2664L49.4766 43.4086C48.4313 42.4312 47.2734 41.5758 46.0125 40.875L46.6078 35.7961L42.15 34.3477L39.6445 38.8125C38.9391 38.7281 38.2289 38.6719 37.5 38.6719C36.7711 38.6719 36.0609 38.7281 35.3555 38.8172L32.85 34.35L28.3922 35.8008L28.9875 40.8773C27.7289 41.5758 26.5711 42.4336 25.5234 43.4109L20.8664 41.2687L18.1102 45.0633L21.5836 48.8297C20.9836 50.1141 20.5266 51.4758 20.25 52.9078L15.2344 53.9062V58.5937L20.25 59.5969C20.407 60.4148 20.6273 61.2117 20.8945 61.9828M28.7719 62.1727C27.6234 60.4852 26.9531 58.4461 26.9531 56.25C26.9531 50.4258 31.6758 45.7031 37.5 45.7031C43.3242 45.7031 48.0469 50.4258 48.0469 56.25C48.0469 62.0742 43.3242 66.7969 37.5 66.7969"
             stroke="#455A64"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <defs>
@@ -2017,8 +2017,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2173_62172)">
-          <g clip-path="url(#clip1_2173_62172)">
+        <g clipPath="url(#clip0_2173_62172)">
+          <g clipPath="url(#clip1_2173_62172)">
             <path
               d="M69 19.2V9.35999C69 7.70999 67.65 6.35999 66 6.35999H9C7.35 6.35999 6 7.70999 6 9.35999V19.2H69Z"
               fill="#AFEAE4"
@@ -2152,7 +2152,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2173_62247)">
+        <g clipPath="url(#clip0_2173_62247)">
           <path
             d="M63.9375 55.2656C62.8988 56.9979 61.4285 58.4311 59.6703 59.4252C57.9121 60.4194 55.9261 60.9404 53.9062 60.9375H21.0938C14.625 60.9375 9.375 55.6875 9.375 49.2188C9.375 39.4922 14.3203 30.9141 21.8437 25.875C22.7076 29.1975 24.1089 32.3563 25.9922 35.2266C26.4609 35.9766 27 36.7266 27.6094 37.5H26.9531C25.3991 37.5 23.9088 38.1173 22.8099 39.2162C21.7111 40.315 21.0938 41.8054 21.0938 43.3594C21.0938 44.9134 21.7111 46.4037 22.8099 47.5026C23.9088 48.6014 25.3991 49.2188 26.9531 49.2188H42.6797C44.4141 50.0625 46.2891 50.8359 48.3281 51.5391C52.125 52.8984 56.4609 54.0469 61.3828 54.8672C62.2031 55.0078 63.0703 55.1484 63.9375 55.2656Z"
             fill="#06D6A0"
@@ -2190,7 +2190,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2173_62314)">
+        <g clipPath="url(#clip0_2173_62314)">
           <path
             d="M47.19 53.025H69.75C72.24 53.025 74.25 51.015 74.25 48.525V7.56C74.25 5.07 72.24 3.06 69.75 3.06H5.25C2.76 3.06 0.75 5.07 0.75 7.56V48.525C0.75 51.015 2.76 53.025 5.25 53.025H27.81H47.19Z"
             fill="#ECF4F7"
@@ -2227,7 +2227,7 @@ const data = [
             d="M60.0752 48.525H58.9502C58.5302 48.525 58.2002 48.195 58.2002 47.775C58.2002 47.355 58.5302 47.025 58.9502 47.025H60.0752C60.4952 47.025 60.8252 47.355 60.8252 47.775C60.8252 48.195 60.4952 48.525 60.0752 48.525Z"
             fill="#1C1D21"
           />
-          <g clip-path="url(#clip1_2173_62314)">
+          <g clipPath="url(#clip1_2173_62314)">
             <path
               d="M17.598 41.3C13.98 41.3 11.04 44.24 11.04 47.858V55.37C11.04 58.988 13.98 61.928 17.598 61.928C21.216 61.928 24.156 58.988 24.156 55.37V47.858C24.156 44.24 21.216 41.3 17.598 41.3ZM21.672 55.37C21.672 57.62 19.848 59.444 17.598 59.444C15.348 59.444 13.524 57.62 13.524 55.37V47.858C13.524 45.608 15.348 43.784 17.598 43.784C19.848 43.784 21.672 45.608 21.672 47.858V55.37Z"
               fill="#FFE7BB"
@@ -2302,7 +2302,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2171_62093)">
+        <g clipPath="url(#clip0_2171_62093)">
           <path
             d="M30.855 1.5H28.875C28.455 1.5 28.125 1.17 28.125 0.75C28.125 0.33 28.455 0 28.875 0H30.84C31.26 0 31.59 0.33 31.59 0.75C31.605 1.155 31.26 1.5 30.855 1.5Z"
             fill="#1C1D21"
@@ -2353,8 +2353,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2795_12371)">
-          <g clip-path="url(#clip1_2795_12371)">
+        <g clipPath="url(#clip0_2795_12371)">
+          <g clipPath="url(#clip1_2795_12371)">
             <path
               d="M6 50.025V9C6 7.35 7.35 6 9 6H66C67.65 6 69 7.35 69 9V50.025C69 51.675 67.65 53.025 66 53.025H9C7.35 53.025 6 51.675 6 50.025Z"
               fill="#06D6A0"
@@ -2422,7 +2422,7 @@ const data = [
     toolLink: "https://tools.nextgrowthlabs.com/on-page-seo-checker/",
   },
 ];
-const ToolsSection3 = () => {
+const OtherTools = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -2470,4 +2470,4 @@ const ToolsSection3 = () => {
   );
 };
 
-export default ToolsSection3;
+export default OtherTools;

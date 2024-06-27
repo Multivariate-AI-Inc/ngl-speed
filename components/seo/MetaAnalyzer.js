@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "../elements/Button";
 import Image from "next/image";
 import testSEO from "../../public/assets/imgs/testing.webp";
-const SEOSection4 = () => {
+const MetaAnalyzer = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -40,4 +39,4 @@ const SEOSection4 = () => {
   );
 };
 
-export default SEOSection4;
+export default MetaAnalyzer;

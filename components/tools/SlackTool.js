@@ -99,7 +99,7 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2523_13203)">
+        <g clipPath="url(#clip0_2523_13203)">
           <path d="M0 60.085H73.9466V62.5043H0V60.085Z" fill="#024430" />
           <path
             d="M67.1459 67.7333L65.6362 65.8426L71.7584 60.9584L65.6912 56.7979L67.0591 54.8032L74.4742 59.8876C74.7914 60.1044 74.9857 60.4588 74.9993 60.8421C75.0141 61.2242 74.8446 61.5922 74.5457 61.8314L67.1459 67.7333Z"
@@ -153,8 +153,8 @@ const data = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_2164_61953)">
-          <g clip-path="url(#clip1_2164_61953)">
+        <g clipPath="url(#clip0_2164_61953)">
+          <g clipPath="url(#clip1_2164_61953)">
             <path
               d="M6 50.025V9C6 7.35 7.35 6 9 6H66C67.65 6 69 7.35 69 9V50.025C69 51.675 67.65 53.025 66 53.025H9C7.35 53.025 6 51.675 6 50.025Z"
               fill="#FFE7BB"
@@ -265,7 +265,7 @@ const data = [
     ),
   },
 ];
-const ToolsSection2 = () => {
+const SlackTool = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -290,4 +290,4 @@ const ToolsSection2 = () => {
   );
 };
 
-export default ToolsSection2;
+export default SlackTool;

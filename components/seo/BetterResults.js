@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../elements/Button";
 import gif from "../../public/assets/imgs/Google-Search-Animation.gif";
 import Image from "next/image";
-const SEOSection3 = () => {
+const BetterResults = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -38,4 +38,4 @@ const SEOSection3 = () => {
   );
 };
 
-export default SEOSection3;
+export default BetterResults;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CareerSection4 = () => {
+const CoreValues = () => {
   return (
     <section className="section pt-0 pb-50 bg-core-value bg-grey-60 mb-40">
       <div className="container">
@@ -104,4 +104,4 @@ const CareerSection4 = () => {
   );
 };
 
-export default CareerSection4;
+export default CoreValues;

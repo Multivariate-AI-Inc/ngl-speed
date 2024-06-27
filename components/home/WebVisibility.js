@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../elements/Button";
 import Image from "next/image";
-const Service8 = ({ category }) => {
+const WebVisibility = ({ category }) => {
   const data = {
     "Website's": [
       {
@@ -118,4 +118,4 @@ const Service8 = ({ category }) => {
     </>
   );
 };
-export default Service8;
+export default WebVisibility;

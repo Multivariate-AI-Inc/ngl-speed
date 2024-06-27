@@ -1,7 +1,7 @@
 import Button from "../elements/Button"
 import Link from "next/link"
 import Image from "next/image"
-const CareerSection3 = () => {
+const CareerOptions = () => {
   return (
     <section className="section mt-200">
       <div className="container">
@@ -188,4 +188,4 @@ const CareerSection3 = () => {
   )
 }
 
-export default CareerSection3
+export default CareerOptions

@@ -1,6 +1,6 @@
 import Chart from "./Chart";
 
-const Asomarketing = () => {
+const AsoMarketing = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -38,4 +38,4 @@ const Asomarketing = () => {
   );
 };
 
-export default Asomarketing;
+export default AsoMarketing;

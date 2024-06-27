@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-const CareerSection2 = () => {
+const JoinUsWhy = () => {
   return (
     <section className="section mt-200">
       <div className="container">
@@ -121,4 +121,4 @@ const CareerSection2 = () => {
   );
 };
 
-export default CareerSection2;
+export default JoinUsWhy;

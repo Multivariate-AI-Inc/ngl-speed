@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const CareerSection1 = () => {
+const CurrentOpenings = () => {
   return (
     <section className="section mt-90">
       <div className="container">
@@ -38,4 +38,4 @@ const CareerSection1 = () => {
   );
 };
 
-export default CareerSection1;
+export default CurrentOpenings;

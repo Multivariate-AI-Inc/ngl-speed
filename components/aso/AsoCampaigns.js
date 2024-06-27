@@ -1,6 +1,6 @@
 import Button from "../elements/Button";
 import Image from "next/image";
-const Asomarketing4 = () => {
+const AsoCampaigns = () => {
   return (
     <section className="section mt-80">
       <div className="container">
@@ -39,4 +39,4 @@ const Asomarketing4 = () => {
   );
 };
 
-export default Asomarketing4;
+export default AsoCampaigns;
