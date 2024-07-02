@@ -308,7 +308,6 @@ const KeywordDensityChecker = () => {
       setCopyWord("")
     }
   }
-// copy to clipboard
 async function copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
