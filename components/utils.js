@@ -2014,4 +2014,27 @@ export function jsonp(url, callbackName) {
     document.body.appendChild(script);
   });
 }
+  // format URL
+  export function formatURL(url) {
+    let userInput = url.trim();
+    if (userInput && !userInput.startsWith("https://www.") && !userInput.startsWith("https://") ){
+      if (userInput && userInput.startsWith("www.")){
+        userInput = "https://" + userInput;
+        return userInput
+      }
+      userInput = "https://" + userInput;
+      return userInput;
+    }
 
+    return userInput;
+  }
+
+  // check url is valid or not 
+  export const isValidUrl = (url) => {
+    const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
+    const valid = urlRegex.test(url);
+    return valid;
+  };
+
+
+  // In use for title and meta description checker
