@@ -187,7 +187,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
         <div className="section mt-40" ref={blogDetailRef}>
           <div className="container">
             <div className="row">
-              <div className="col-xl-9 col-lg-8">
+              <div className="col-xl-9 col-lg-8 overflow-hidden">
                 <div className="content-single" id="content">
                   <h2 className="color-brand-1 mb-50" id="section1">
                     {postData.title}

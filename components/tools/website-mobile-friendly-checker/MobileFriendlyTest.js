@@ -133,7 +133,6 @@ const MobileFriendlyTest = () => {
                   placeholder="Enter Website URL"
                   value={inputUrl}
                   onChange={e => setInputUrl(e.target.value)}
-                  // onBlur={handleBlur}
                 />
               </div>
             </div>
@@ -159,12 +158,12 @@ const MobileFriendlyTest = () => {
           )}
           {loading && <div className="mb-40 mt-20"> <Loader /> </div>}
           {result && (
-            <div id="result" className="">
+            <div id="result">
               <div
                 className="row"
                 id="mobile_friendliness_status"
               >
-                <div className="">
+                <div>
                   <div
                     className={`${"tick-cell"} ${
                       result.viewportMetaTag &&

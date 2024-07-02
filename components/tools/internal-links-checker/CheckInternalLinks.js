@@ -16,8 +16,12 @@ const CheckInternalLinks = () => {
   const [linkDetails, setLinkDetails] = useState([])
 
   const handleSubmit = async () => {
-    console.log("Handle URLs")
-    console.log("URLs", inputUrl)
+setLinkCount({
+  total: 0,
+  internal: 0,
+  external: 0,
+})
+setLinkDetails([])
     setError(false)
     setLoading(true)
     const mainUrl = await formatURL(inputUrl)
@@ -34,72 +38,68 @@ const CheckInternalLinks = () => {
         throw new Error("Network response was not ok")
       }
       const html = await response.json()
-      parseHtml(html.body)
+      parseHtml(html.body, mainUrl)
     } catch (error) {
       setError(true)
       setLoading(false)
     }
   }
-  const parseHtml = htmlString => {
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(htmlString, "text/html")
-    // const allLinks = doc.querySelectorAll("a")
-    const allLinks = doc.getElementsByTagName("a")
-    const linkData = []
-    let internalLinks = 0
-    let externalLinks = 0
-    const hostname = new URL(url).hostname
-    console.log("all links", typeof(allLinks))
-    console.log("all links", allLinks)
-    // console.log("all links data", hostname)
-    console.log("host name", )
+const parseHtml = (htmlString, url) => {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlString, "text/html");
+  const allLinks = doc.getElementsByTagName("a");
+  const linkData = [];
+  let internalLinks = 0;
+  let externalLinks = 0;
 
-    allLinks.forEach(link => {
-      let href = link.getAttribute("href")
-      console.log("href data", href)
-      console.log("link data", link)
-      if (
-        !href ||
-        href.startsWith("http://support.google.com/websearch/") ||
-        href.startsWith("http://webcache.googleusercontent.com/search")
-      ) {
-        return
+  const maxCharacterLimit = 30; 
+  const hostname = new URL(url).hostname;
+
+  for (let i = 0; i < allLinks.length; i++) {
+      const link = allLinks[i];
+      let href = link.getAttribute("href");
+      if (!href || href.startsWith("http://support.google.com/websearch/") || href.startsWith("http://webcache.googleusercontent.com/search")) {
+          continue;
       }
 
       if (href.startsWith("/")) {
-        href = `https://${hostname}${href}`
+          href = `https://${hostname}${href}`;
       } else if (href.startsWith("#")) {
-        href = `https://${hostname}${href}`
+          href = `https://${hostname}${href}`;
       }
 
-      const anchorText = link.textContent ? link.textContent.trim() : ""
-      const modifiedAnchorText = link.querySelector("img")
-        ? "Image"
-        : anchorText.length > maxCharacterLimit
-        ? anchorText.substring(0, maxCharacterLimit)
-        : anchorText
-      const isInternalLink = href.includes(hostname)
-      const type = isInternalLink ? "Internal" : "External"
-      const follow = link.getAttribute("rel") === "nofollow" ? "✘" : "✔"
+      const anchorText = link.textContent ? link.textContent.trim() : "";
+      const modifiedAnchorText = link.querySelector("img") 
+          ? "Image" 
+          : anchorText.length > maxCharacterLimit 
+              ? anchorText.substring(0, maxCharacterLimit) 
+              : anchorText;
+      const isInternalLink = href.includes(hostname);
+      const type = isInternalLink ? "Internal" : "External";
+      const follow = link.getAttribute("rel") === "nofollow" ? "✘" : "✔";
 
       if (type === "Internal") {
-        internalLinks++
+          internalLinks++;
       } else {
-        externalLinks++
+          externalLinks++;
       }
 
-      linkData.push({ href, anchorText: modifiedAnchorText, type, follow })
-    })
-console.log("link data", linkData)
-    setLinkCount({
+      linkData.push({ href, anchorText: modifiedAnchorText, type, follow });
+  }
+
+  console.log("link data", linkData);
+  setLinkCount({
       total: allLinks.length,
       internal: internalLinks,
       external: externalLinks,
-    })
-    setLinkDetails(linkData)
-    setLoading(false)
-    console.log("link", linkDetails)
-  }
+  });
+  setLinkDetails(linkData);
+  setLoading(false);
+  console.log("link", linkDetails);
+};
+
+
+
 
   return (
     <section
@@ -161,19 +161,19 @@ console.log("link data", linkData)
 
           {/* ************************** */}
           {linkCount.total > 0 && (
-            <div id="link_count">
-              {linkCount.total} <br />
+            <div id="link_count" className="result-section">
+             <span className="color-brand-1"> {linkCount.total} </span> <br />
               Total Links <br />
-              {linkCount.internal} <br />
+              <span className="color-brand-1"> {linkCount.internal} </span> <br />
               Internal Links
               <br />
-              {linkCount.external} <br />
+              <span className="color-brand-1"> {linkCount.external} </span> <br />
               External Links <br />
             </div>
           )}
           {linkDetails.length !== 0 && (
-            <div id="link_details">
-              <table border="1">
+            <div className="scroll_content">
+              <table border="1" className="result-table mobile_support_data">
                 <thead>
                   <tr style={{ position: "sticky", top: "-1px" }}>
                     <th>Link</th>
@@ -189,7 +189,7 @@ console.log("link data", linkData)
                       <td>{link.anchorText}</td>
                       <td style={{ textAlign: "center" }}>{link.type}</td>
                       <td
-                        className="follow-cell"
+                        className="success"
                         style={{ textAlign: "center" }}
                       >
                         {link.follow}
@@ -201,7 +201,7 @@ console.log("link data", linkData)
             </div>
           )}
           {/* ************************** */}
-          <div className="mb-20">
+          <div className="mb-20 mt-30">
             <h5>
               Powered by-{" "}
               <Link

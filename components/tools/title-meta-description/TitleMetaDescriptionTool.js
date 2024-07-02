@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { isValidUrl, formatURL } from "../../utils"
 import Loader from "../../elements/Loader"
-import Link from 'next/link'
+import Link from "next/link"
+import { toast } from "react-toastify"
 
 const TitleMetaDescriptionTool = () => {
   const [inputUrl, setInputUrl] = useState("")
@@ -9,35 +10,45 @@ const TitleMetaDescriptionTool = () => {
   const [loading, setLoading] = useState(false)
   const [isValidURL, setIsValidURL] = useState(false)
   const [metaData, setMetaData] = useState(null)
-
+  const [oldUrl, setOldUrl] = useState('')
   const handleSubmit = async () => {
     setError(false)
     setLoading(true)
-    setMetaData(null)
     const mainUrl = await formatURL(inputUrl)
+     if(oldUrl === mainUrl){
+      toast.error(`Please enter new URL`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setError(false)
+      setLoading(false)
+      return
+    }
+    setOldUrl(mainUrl)
+    setMetaData(null)
     if (!isValidUrl(mainUrl)) {
       setIsValidURL(true)
       setLoading(false)
       return
     }
     setInputUrl(mainUrl)
-    console.log("Urls", mainUrl)
     const urlData = { url: mainUrl }
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization":"Basic Z2V0X2h0bWxfdXNlcjpFY3lkdSRKJCNGeHNldCohY2Zzb3ApJA==",
-          "redirect": "follow"
-        },
-        body: JSON.stringify(urlData),
-      }
-    fetch("https://gethtml.maakeetoo.com/title-meta", requestOptions)
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(urlData),
+    }
+    fetch("/api/fetch-metadata", requestOptions)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         if (data.status == 200) {
-          console.log("data", data)
           setMetaData(data)
           setLoading(false)
         } else {
@@ -136,7 +147,7 @@ const TitleMetaDescriptionTool = () => {
                   </tr>
                   <tr>
                     <td className="font-md">Meta Description</td>
-                    <td>{metaData.description}</td>
+                    <td>{metaData.meta_description}</td>
                     <td>{metaData.descriptionStatus}</td>
                   </tr>
                 </tbody>

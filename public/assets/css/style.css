@@ -851,6 +851,10 @@ a:hover {
   color: #3d565f;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 a,
 button,
 img,
@@ -7357,6 +7361,165 @@ textarea.textarea-control {
 
 :root {
   --bgColor: #024430;
+  --goldenColor: #ffe7bb;
+  --lightGreen: #06d6a0;
+}
+
+.main-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.left-side-main {
+  flex: 50%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border: 1px solid rgb(185, 185, 201);
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  height: 525px;
+  border-radius: 5px;
+}
+
+.right-side {
+  flex: 50%;
+  padding: 10px;
+  margin-bottom: 0;
+  background-color: #f1f1f1;
+  border: 1px solid rgb(185, 185, 201);
+}
+
+table.showTable tr td {
+  padding: 1rem;
+  border: 0;
+  text-align: left;
+}
+
+div#keyword-count-list {
+  height: 480px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.right-sub-option {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+}
+
+.new-table {
+  padding: 10px;
+  background-color: var(--bgColor);
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--goldenColor);
+  border-radius: 5px;
+  text-align: left;
+}
+
+.right-sub-option {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+}
+
+#copy-button:active {
+  text-shadow: 2px 6px 4px black;
+  border-bottom: 2px solid green;
+}
+
+#copy-button:hover {
+  background-color: var(--bgColor);
+  color: var(--goldenColor);
+  font-weight: 500;
+}
+
+#copy-button {
+  color: var(--bgColor);
+  border: 1px solid var(--bgColor);
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+}
+
+tr.evenRow, tr.oddRow {
+  border: 1px solid white;
+}
+
+tr.evenRow, tr.oddRow {
+  border: 1px solid white;
+}
+
+th.first,
+th.another {
+  color: white !important;
+}
+
+.first {
+  width: 50%;
+  padding: 15px 10px;
+}
+
+.oddRow {
+  background-color: white;
+}
+
+.another {
+  width: 25%;
+  pading: 15px 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .main-flex {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 425px) {
+  .textarea,
+  .right-sub-option {
+    height: 360px;
+  }
+}
+#link_count {
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  max-height: 500px;
+  color: gray;
+}
+
+.external-link {
+  font-weight: bold;
+}
+
+.scroll_content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 1000px;
+}
+
+.scroll_content::-webkit-scrollbar {
+  width: 5px;
+  height: 30px;
+}
+
+.scroll_content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scroll_content::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+}
+
+.scroll_content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
 .mobile_support_data {
@@ -7463,17 +7626,17 @@ textarea.textarea-control {
 }
 
 .success {
-  color: green;
+  color: green !important;
   font-size: 20px;
 }
 
 .tools_tag {
   margin: auto;
   background-color: var(--bgColor);
-  color: #ffe7bb;
-  font-size: 16px;
+  color: var(--goldenColor);
+  font-size: 12px;
   border-radius: 50px;
-  line-height: 25px;
+  line-height: 12px;
   width: max-content;
   padding: 10px 20px;
   font-weight: bold;
@@ -7516,7 +7679,7 @@ div.output {
 }
 
 .heading-output > h5 {
-  color: #ffe7bb;
+  color: var(--goldenColor);
   font-weight: bold;
   font-size: 1rem;
   margin-block-start: 0;
@@ -7534,7 +7697,7 @@ div.output {
 }
 
 .copytoclipboard:hover {
-  color: #ffe7bb;
+  color: var(--goldenColor);
   background-color: var(--bgColor);
   box-shadow: -5px -5px 5px rgb(157, 187, 157);
 }
@@ -7787,7 +7950,7 @@ div.output {
   padding: 0 50px;
   font-size: 18px;
   font-weight: 600;
-  color: #ffe7bb;
+  color: var(--goldenColor);
   text-decoration: none;
   margin-left: 0px;
   border: 0px !important;
@@ -8202,6 +8365,9 @@ img.device-icon-logo {
     background: revert;
     color: revert;
     text-decoration: revert;
+  }
+  .scroll_content {
+    overflow-x: scroll;
   }
 }
 @media screen and (max-width: 687px) {
