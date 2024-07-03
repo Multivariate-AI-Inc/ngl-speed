@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Button from "../elements/Button";
-import Link from "next/link";
 
 const GetInTouch = () => {
   return (
