@@ -7365,6 +7365,55 @@ textarea.textarea-control {
   --lightGreen: #06d6a0;
 }
 
+.table-container {
+  background-color: #fcfcfc;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2em !important;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  overflow-x: auto;
+}
+
+.table-container thead {
+  text-align: center !important;
+}
+
+.table-container pre {
+  text-align: left;
+  color: #666;
+}
+
+.table-container h2 {
+  border: 0px;
+  color: #666;
+  margin: 12px 0;
+  vertical-align: baseline;
+  font-size: 28px;
+  text-align: left;
+}
+
+.table-container strong {
+  color: #555;
+}
+
+.table-container table {
+  border: none !important;
+}
+
+.table-container th {
+  color: #9bafb6;
+}
+
 .main-flex {
   display: flex;
   justify-content: center;
@@ -7396,6 +7445,12 @@ table.showTable tr td {
   padding: 1rem;
   border: 0;
   text-align: left;
+}
+
+.showTableCrawl tr td {
+  padding: 1rem;
+  border: 0;
+  text-align: center;
 }
 
 div#keyword-count-list {

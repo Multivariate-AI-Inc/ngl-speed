@@ -2037,4 +2037,33 @@ export function jsonp(url, callbackName) {
   };
 
 
-  // In use for title and meta description checker
+   // extract main domain
+   export function extractMainDomain(url) {
+    try {
+        // Check if the URL starts with "https://" or "http://"
+        if (!url.startsWith("https://") && !url.startsWith("http://")) {
+            // If not, prepend "https://"
+            url = "https://" + url;
+        }
+        
+        const parsedUrl = new URL(url);
+        const hostnameParts = parsedUrl.hostname.split('.');
+        
+        // If the hostname consists of more than two parts, consider the last three parts
+        let mainDomain = "";
+        if (hostnameParts.length > 2) {
+            mainDomain = hostnameParts.slice(-3).join('.');
+        } else {
+            mainDomain = hostnameParts.join('.');
+        }
+        
+        // Prepend "https://" if the mainDomain doesn't contain it
+        if (!mainDomain.startsWith("https://")) {
+            mainDomain = "https://" + mainDomain;
+        }
+        
+        return mainDomain;
+    } catch (error) {
+        return null;
+    }
+  }

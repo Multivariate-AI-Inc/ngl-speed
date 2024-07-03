@@ -1,14 +1,130 @@
 import Link from "next/link"
 import React, { useState } from "react"
 import Loader from "../../elements/Loader"
+import { extractMainDomain, formatURL, isValidUrl } from "../../utils"
+import { toast } from "react-toastify"
+// Check robot.txt is available or not
+function isRobotsTxt(content) {
+  // Convert the content to lowercase for case-insensitive matching
+  var lowerContent = content.toLowerCase()
+
+  // Check if the content contains common robots.txt directives
+  var containsUserAgent = lowerContent.includes("user-agent:")
+  var containsDisallow = lowerContent.includes("disallow:")
+  var containsAllow = lowerContent.includes("allow:")
+  var containsSitemap = lowerContent.includes("sitemap:")
+
+  // A robots.txt file usually contains at least one User-agent directive
+  // and either Disallow, Allow, or Sitemap directives
+  return (
+    containsUserAgent && (containsDisallow || containsAllow || containsSitemap)
+  )
+}
+
+function analyseRobotsTxt(robotsTxtData, url) {
+  const lines = robotsTxtData.split("\n")
+  let isCrawlable = true
+  let isIndexable = true
+
+  const parsedUrl = new URL(url)
+  url = parsedUrl.pathname
+
+  // Loop through each line of the robots.txt data
+  for (const line of lines) {
+    const parts = line.trim().split(": ")
+    const directive = parts[0].trim().toLowerCase()
+    const value = parts[1] ? parts[1].trim() : ""
+
+    // Check for Disallow directives
+    if (directive === "disallow") {
+      // Check if the URL matches the disallowed path
+      if (url.includes(value)) {
+        isCrawlable = false
+        isIndexable = false // If disallowed, it's not indexable
+        break // No need to continue checking other directives
+      }
+    }
+  }
+
+  return { url: url, crawlable: isCrawlable, indexable: isIndexable }
+}
+
 const CrawlTest = () => {
   const [inputUrl, setInputUrl] = useState("")
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
   const [isValidURL, setIsValidURL] = useState(false)
-  const handleSubmit = () => {
-    console.log("handle submit")
+  const [robotTxt, setRobotTxt] = useState(false)
+  const [data, setData] = useState("")
+  const [oldUrl, setOldUrl] = useState('')
+  const [result, setResult] = useState({
+    url: "",
+    crawlable: true,
+    indexable: true,
+  })
+
+  const handleSubmit = async () => {
+    setError(false)
+    setLoading(true)
+    let url = await formatURL(inputUrl)
+    if(oldUrl === url){
+      toast.error(`Please enter new URL`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setError(false)
+      setLoading(false)
+      return
+    }
+    let mainUrl = extractMainDomain(url)
+    if (!isValidUrl(mainUrl)) {
+      setIsValidURL(true)
+      setLoading(false)
+      return
+    }
+
+    setInputUrl(url)
+    setOldUrl(url)
+    try {
+      const response = await fetch(
+        "https://js-apis.maakeetoo.com/page-seo/get-page?url=" +
+          mainUrl +
+          "/robots.txt",
+      )
+      if (!response.ok) {
+        throw new Error("Network response was not ok")
+      }
+      const data = await response.json()
+      const htmlContent = data.body
+      console.log("HTML data", htmlContent)
+      const robotTxt = await isRobotsTxt(htmlContent)
+      console.log("robotText dataaaaaa", robotTxt)
+      if (robotTxt) {
+        setData(htmlContent)
+        const robotTxtData = analyseRobotsTxt(htmlContent, url)
+        setRobotTxt(false)
+        console.log("Robot data ", robotTxtData)
+        setResult({
+          url: robotTxtData.url,
+          crawlable: robotTxtData.crawlable,
+          indexable: robotTxtData.indexable,
+        })
+        setLoading(false)
+      } else {
+        setRobotTxt(true)
+        setLoading(false)
+      }
+    } catch (error) {
+      setError(true)
+      setLoading(false)
+    }
   }
+
   return (
     <section
       className="section"
@@ -66,11 +182,74 @@ const CrawlTest = () => {
           )}
 
           {/* ************************** */}
-         
+
+          {result.url !== "" && (
+            <div>
+          <div className="table-container">
+              <h2>Crawlability</h2>
+              <table className="showTableCrawl">
+                <thead>
+                  <tr>
+                    <th style={{ minWidth: "100px" }}>URL</th>
+                    <th style={{ minWidth: "200px" }}>Info</th>
+                    <th className="text-center">Crawlable</th>
+                    <th className="text-center">Indexable</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{result.url ? result.url : "/"}</td>
+                    <td>
+                      <ul>
+                        <li>
+                          <strong>Google crawl rule</strong>:{" "}
+                          {result.indexable ? "Allow" : "Disallow"} (
+                          {result.crawlable ? "Crawlable" : "Not Crawlable"})
+                        </li>
+                        <li>
+                          <strong>Bing crawl rule</strong>:{" "}
+                          {result.indexable ? "Allow" : "Disallow"} (
+                          {result.crawlable ? "Crawlable" : "Not Crawlable"})
+                        </li>
+                        <li style={{ paddingTop: "8px" }}>
+                          <strong>Google index rule</strong>:{" "}
+                          {result.indexable ? "Index" : "Noindex"}
+                        </li>
+                        <li>
+                          <strong>Bing index rule</strong>:{" "}
+                          {result.indexable ? "Index" : "Noindex"}
+                        </li>
+                      </ul>
+                    </td>
+                    <td className="center">
+                      {result.crawlable ? "✅ Google" : "✖️ Google"}
+                      <br />
+                      {result.crawlable ? "✅ Bing" : "✖️ Bing"}
+                    </td>
+                    <td className="center">
+                      {result.indexable ? "✅ Google" : "✖️ Google"}
+                      <br />
+                      {result.indexable ? "✅ Bing" : "✖️ Bing"}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+             </div>
+            <div className="table-container">
+            <h2>Robots.txt</h2>
+            <pre>{data}</pre>
+          </div>
+          </div>
+          )}
+          {robotTxt && (
+            <div className="table-container">
+              <h3># 404 Robots.txt not exist!!</h3>
+            </div>
+          )}
           {/* ************************** */}
           <div className="mb-20 mt-30">
             <h5>
-              Powered by-{" "}
+              Powered by-
               <Link
                 href="https://nextgrowthlabs.com/contact/?utm_source=web-page-crawler"
                 target="_blank"
