@@ -10,9 +10,11 @@
     "sass": "sass --watch public/assets/scss/style.scss:public/assets/css/style.css"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.5.0",
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@tanstack/react-query": "^5.45.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
     "jotai": "^2.8.3",
     "lodash.debounce": "^4.0.8",
     "next": "^14.2.3",

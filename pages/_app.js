@@ -1,5 +1,7 @@
 import "../public/assets/css/style.css";
 import { useState, useEffect } from "react";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+
 function loadGTM(gtmId) {
   const script = document.createElement("script");
   script.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -57,7 +59,9 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <Component {...pageProps} />
+      <UserProvider>
+        <Component {...pageProps} />
+      </UserProvider>
     </>
   );
 }

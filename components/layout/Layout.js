@@ -4,7 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Preloader from "../elements/Preloader";
 import Footer from "./Footer";
-
+import Link from "next/link";
 import { useRouter } from "next/router";
 const Layout = ({ children }) => {
   const [openClass, setOpenClass] = useState("");
@@ -48,6 +48,9 @@ const Layout = ({ children }) => {
       />
       <Sidebar openClass={openClass} />
       {loading ? <Preloader /> : <main className="main">{children}</main>}
+      <div className="container mt-100">
+        <Link href="/api/auth/logout">LogOut</Link>
+      </div>
       <Footer />
       <BackToTop />
     </>
