@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Loader from "../../elements/Loader"
 import { extractMainDomain, formatURL, isValidUrl } from "../../utils"
 import { toast } from "react-toastify"
+
 // Check robot.txt is available or not
 function isRobotsTxt(content) {
   // Convert the content to lowercase for case-insensitive matching
