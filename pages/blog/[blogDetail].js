@@ -192,7 +192,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                   <h2 className="color-brand-1 mb-50" id="section1">
                     {postData.title}
                   </h2>
-                  <div className="mb-40">
+                  <div className="mb-40 reusable-div">
                     <FeaturedImage
                       post={postData}
                       styleClasses="bd-rd8"
