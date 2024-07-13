@@ -123,7 +123,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     // const doc = parse(htmlString);
-    const headings = doc.querySelectorAll("h2");
+    const headings = doc.querySelectorAll("h2, h3");
     // const headingElementsArray = Array.from(headings);
     // setSections((prev) => headingElementsArray);
     const headingArray = [];
@@ -142,7 +142,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   async function extractNodeList(htmlString) {
     const { parse } = await import("node-html-parser");
     const doc = parse(htmlString);
-    const headings = doc.querySelectorAll("h2");
+    const headings = doc.querySelectorAll("h2,h3");
     setSections(headings);
     return headings;
   }
