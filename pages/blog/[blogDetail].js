@@ -202,6 +202,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                     />
                   </div>
                   <div
+                    id="blog-detail-custom"
                     dangerouslySetInnerHTML={{ __html: postData.content }}
                   ></div>
                   {/* <p className="color-grey-900 font-lg-bold mb-25">

@@ -775,3 +775,14 @@ table > :not(:last-child) > :last-child > * {
   border-bottom-color: #cde2e7;
   border: 1px solid #cde2e7;
 }
+
+// blogDetails overflow
+
+#blog-detail-custom > figure.wp-block-table {
+  overflow-x: scroll;
+}
+
+#blog-detail-custom > figure.wp-block-table > table {
+  display: block;
+  width: 100%;
+}

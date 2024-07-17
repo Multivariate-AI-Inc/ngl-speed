@@ -911,6 +911,15 @@ table > :not(:last-child) > :last-child > * {
   border: 1px solid #cde2e7;
 }
 
+#blog-detail-custom > figure.wp-block-table {
+  overflow-x: scroll;
+}
+
+#blog-detail-custom > figure.wp-block-table > table {
+  display: block;
+  width: 100%;
+}
+
 a,
 button,
 img,
