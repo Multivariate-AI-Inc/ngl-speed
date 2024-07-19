@@ -1,13 +1,38 @@
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.status(405).json({ error: "Method not allowed" })
-    return
+export const runtime = 'edge';
+export default async function handler(req) {
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Only POST requests are allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
-  const { url } = req.body
+
+  const { url } = await req.json();
+
   if (!url) {
-    res.status(400).json({ error: "URL is required" })
-    return
+    return new Response(JSON.stringify({ error: 'Missing parameters' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
+
+  try {
+    const data = await fetchMetaData(url);
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    console.error("Error fetching Rating trends:", error);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}
+
+
+const fetchMetaData = async(url)=>{
   try {
     const requestOptions = {
       method: "POST",
@@ -44,19 +69,10 @@ if(meta_description == ''){
         meta_description = "We couldn't find the description.";
     }
 
-      // Return the modified response
-      res.status(200).json({
-        status: 200,
-        title,
-        titleStatus,
-        meta_description,
-        descriptionStatus,
-      })
-    } else {
-      res.status(response.status).json({ error: data })
-    }
+      return {title, titleStatus, meta_description, descriptionStatus}
+    } 
   } catch (error) {
     console.error(error)
-    res.status(500).json({ error: "Internal Server Error" })
+    throw new Error(`Error fetching rating trends for android: ${error}`)
   }
 }

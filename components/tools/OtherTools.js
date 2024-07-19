@@ -79,7 +79,8 @@ const data = [
       </svg>
     ),
     toolLink:
-      "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
+      // "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
+      "/seo-and-aso-keyword-content-writing-assistant/",
   },
   {
     name: "Keyword Density Monitor",
@@ -2434,6 +2435,7 @@ const OtherTools = () => {
               years ahead in the mobile app promotion stack.
             </p>
           </div>
+          
           {/* <div className="col-lg-4 col-md-4 text-md-end text-start">
  <Link href="#" className="btn btn-default font-sm-bold pl-0">
               Learn More

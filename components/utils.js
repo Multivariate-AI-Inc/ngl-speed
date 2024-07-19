@@ -796,7 +796,8 @@ export const data = [
       </svg>
     ),
     toolLink:
-      "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
+      // "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
+      "/seo-and-aso-keyword-content-writing-assistant/",
   },
   {
     name: "Bulk Keyword Rank Checker",
@@ -2067,3 +2068,250 @@ export function jsonp(url, callbackName) {
         return null;
     }
   }
+
+// ************************* Content Assist tool :- helper functions ********************************
+
+// syllable count
+export function syllablesTotal(inString) {
+  let syllablesTotal = 0;
+  let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
+  if (wordList) {
+    wordList.forEach((word) => {
+      if (word === "'" || word === "’") {
+        return;
+      } //bandaid solution.
+      if (word.length <= 2) {
+        syllablesTotal += 1;
+        return;
+      } //quick return on short words
+      let syllables = 0;
+      if (word.endsWith("s'") || word.endsWith("s’")) {
+        word.slice(-1);
+      } //ending with s'
+      if (word.endsWith("s's") || word.endsWith("s’s")) {
+        word.slice(-1, -3);
+      } //ending with s's
+      const cEndings = word.match(
+        /(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|anne)s?$/im
+      );
+      if (cEndings) {
+        word = word.replace(cEndings[0], "\n" + cEndings[0]);
+      } //Splits into two words and evaluates them as such
+      const cBeginnings = word.match(
+        /^(ware|side(?![sd]$)|p?re(?!ach|agan|al|au)|[rf]ace(?!([sd]|tte)$)|place[^nsd])/im
+      );
+      if (cBeginnings) {
+        word = word.replace(cBeginnings[0], "");
+        syllables++;
+      }
+      const esylp = word.match(
+        /ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gim
+      );
+      if (esylp) {
+        syllables += esylp.length;
+      } //E clustered positive
+      const esylm = word.match(
+        /every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gim
+      );
+      if (esylm) {
+        syllables -= esylm.length;
+      } //E clustered negative
+      const isylp = word.match(
+        /rie[^sndfvtl]|(?<=^|[^tcs]|st)ia|siai|[^ct]ious|quie|[lk]ier|settli|[^cn]ien[^d]|[aeio]ing$|dei[tf]|isms?$/gim
+      );
+      if (isylp) {
+        syllables += isylp.length;
+      } //I clustered positive
+      const osylp = word.match(
+        /nyo|osm(s$|$)|oinc|ored(?!$)|(^|[^ts])io|oale|[aeiou]yoe|^m[ia]cro([aiouy]|e)|roe(v|$)|ouel|^proa|oolog/gim
+      );
+      if (osylp) {
+        syllables += osylp.length;
+      } //O clustered positive
+      const osylm = word.match(
+        /[^f]ore(?!$|[vcaot]|d$|tte)|fore|llio/gim
+      );
+      if (osylm) {
+        syllables -= osylm.length;
+      } //O clustered negative
+      const asylp = word.match(
+        /asm(s$|$)|ausea|oa$|anti[aeiou]|raor|intra[ou]|iae|ahe$|dais|(?<!p)ea(l(?!m)|$)|(?<!j)ean|(?<!il)eage/gim
+      );
+      if (asylp) {
+        syllables += asylp.length;
+      } //A clustered positive
+      const asylm = word.match(/aste(?!$|ful|s$|r)|[^r]ared$/gim);
+      if (asylm) {
+        syllables -= asylm.length;
+      } //A clustered negative
+      const usylp = word.match(
+        /uo[^y]|[^gq]ua(?!r)|uen|[^g]iu|uis(?![aeiou]|se)|ou(et|ille)|eu(ing|er)|uye[dh]|nuine|ucle[aeiuy]/gim
+      );
+      if (usylp) {
+        syllables += usylp.length;
+      } //U clustered positive
+      const usylm = word.match(/geous|busi|logu(?!e|i)/gim);
+      if (usylm) {
+        syllables -= usylm.length;
+      } //U clustered negative
+      const ysylp = word.match(
+        /[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|pye|dy[ae]|oye[exu]|lye[nlrs]|olye|aye(k|r|$|u[xr]|da)|saye\w|iye|wy[ae]|[^aiou]ying/gim
+      );
+      if (ysylp) {
+        syllables += ysylp.length;
+      } //Y clustered positive
+      const ysylm = word.match(/arley|key|ney$/gim);
+      if (ysylm) {
+        syllables -= ysylm.length;
+      }
+      const essuffix = word.match(
+        /((?<!c[hrl]|sh|[iszxgej]|[niauery]c|do)es$)/gim
+      );
+      if (essuffix) {
+        syllables--;
+      } //es suffix
+      const edsuffix = word.match(
+        /([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtbm]|ll|bb|ield|[ou]rb)ed$|[^cbda]red$/gim
+      );
+      if (edsuffix) {
+        syllables--;
+      }
+      const csylp = word.match(/chn[^eai]|mc|thm/gim);
+      if (csylp) {
+        syllables += csylp.length;
+      } //Consonant clustered negative
+      const eVowels = word.match(
+        /[aiouy](?![aeiouy])|ee|e(?!$|-|[iua])/gim
+      );
+      if (eVowels) {
+        syllables += eVowels.length;
+      } //Applicable vowel count (all but e at end of word)
+      if (syllables <= 0) {
+        syllables = 1;
+      } //catch-all
+      if (word.match(/[^aeiou]n['’]t$/i)) {
+        syllables++;
+      } //ending in n't, but not en't
+      if (word.match(/en['’]t$/i)) {
+        syllables--;
+      } //ending in en't
+      syllablesTotal += syllables;
+    });
+  }
+  return syllablesTotal;
+}
+// keywords changes
+export function keywordChanges(values) {
+  let keyword = []
+  values = values.toLowerCase().trim()
+  try {
+    let pattern = /\[.*?\]/g
+    let elements = values.match(pattern)
+    values = values.replace(pattern, "")
+    elements.map(word => {
+      keyword.push(word.trim())
+    })
+  } catch {}
+  let myArray = values.split(",")
+  myArray.map(word => {
+    word == " " || word == "" ? null : keyword.push(word.trim())
+  })
+  let jkeywords = JSON.stringify(keyword)
+  // console.log("JSON Stringify : " + jkeywords)
+  return jkeywords
+}
+
+// generate max score
+export function generateMaxScore(keyword) {
+  const arrayKeyword = JSON.parse(keyword)
+  let maxPowerScore = 0
+  const keywordScore = {}
+  for (let p = 0; p < arrayKeyword.length; p++) {
+    const innerArray = arrayKeyword[p].split(",")
+    const score = innerArray.length * (arrayKeyword.length - p)
+    maxPowerScore += score
+    keywordScore[arrayKeyword[p]] = score
+  }
+  return { keywordScore, maxPowerScore }
+}
+// find matched value
+export function findMatchedValues(words, content) {
+  let included = []
+  let notIncluded = []
+  let keywords = JSON.parse(words)
+  content = content.toLowerCase()
+  let multipleWord = content.replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+  let singleWord = content
+    .replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .split(/\s+/)
+  let matchedValues = keywords.map(keyword => {
+    keyword = keyword.replace(/(\r\n|\n|\r)/gm, "").trim()
+    let count = 0
+    if (keyword.match(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g) == null) {
+      if (keyword.indexOf(" ") >= 0) {
+        let term = false
+        if (keyword.includes("[")) {
+          keyword = keyword.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+          term = true
+        }
+        const regex = new RegExp(keyword, "g")
+        count = (multipleWord.match(regex) || []).length
+        if (term == true) {
+          keyword = keyword.replace(/\\/g, "").replace(/\\/g, "")
+        }
+      } else {
+        singleWord.map(word => {
+          if (word.includes(keyword) && word.length == keyword.length) count++
+        })
+      }
+    }
+    if (keyword.match(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g) != null) {
+      if (keyword.indexOf(",") >= 0) {
+        let word = keyword.replace(/[\[\]]/g, "")
+        word = word.split(",")
+        word.map(item => {
+          item = item.trim()
+          if (item.indexOf(" ") >= 0) {
+            const regex = new RegExp(item, "g")
+            count += (multipleWord.match(regex) || []).length
+          } else {
+            singleWord.map(single => {
+              if (single.includes(item) && single.length == item.length)
+                count++
+            })
+          }
+        })
+      } else {
+        singleWord.map(word => {
+          if (word.includes(keyword[0]) && word.length == keyword[0].length)
+            count++
+        })
+      }
+    }
+
+    if (count == 0 && keyword) notIncluded.push(keyword)
+    else if (keyword) included.push(" " + keyword + " (" + count + ")")
+  })
+
+  // console.log(included + " ... " + notIncluded);
+  matchedValues = { included, notIncluded }
+  return matchedValues
+}
+
+//included string
+export function includedToString(findValues) {
+  let content = ""
+  for (let i = 0; i < findValues.included.length; i++) {
+    content = content + findValues.included[i] + "\n"
+  }
+  return content
+}
+
+// not included to string
+export function notIncludedToString(findValues) {
+  let content = ""
+  for (let i = 0; i < findValues.notIncluded.length; i++) {
+    content = content + findValues.notIncluded[i] + ", "
+  }
+  return content
+}

@@ -10,12 +10,12 @@ const TitleMetaDescriptionTool = () => {
   const [loading, setLoading] = useState(false)
   const [isValidURL, setIsValidURL] = useState(false)
   const [metaData, setMetaData] = useState(null)
-  const [oldUrl, setOldUrl] = useState('')
+  const [oldUrl, setOldUrl] = useState("")
   const handleSubmit = async () => {
     setError(false)
     setLoading(true)
     const mainUrl = await formatURL(inputUrl)
-     if(oldUrl === mainUrl){
+    if (oldUrl === mainUrl) {
       toast.error(`Please enter new URL`, {
         position: "top-right",
         autoClose: 2000,
@@ -24,7 +24,7 @@ const TitleMetaDescriptionTool = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      });
+      })
       setError(false)
       setLoading(false)
       return
@@ -45,22 +45,15 @@ const TitleMetaDescriptionTool = () => {
       },
       body: JSON.stringify(urlData),
     }
-    fetch("/api/fetch-metadata", requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        if (data.status == 200) {
-          setMetaData(data)
-          setLoading(false)
-        } else {
-          setError(true)
-          setLoading(false)
-        }
-      })
-      .catch(error => {
-        console.error(error)
-        setError(true)
-        setLoading(false)
-      })
+    try {
+      const response = await fetch("/api/fetch-metadata", requestOptions)
+      const data = await response.json();
+      setMetaData(data)
+      setLoading(false)
+    } catch (error) {
+      setError(true)
+      setLoading(false)
+    }
   }
 
   return (
