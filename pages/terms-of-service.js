@@ -1,12 +1,11 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
-// import PageHead from "../components/elements/PageHead";
-// import Layout from "../components/layout/Layout";
-// import Image from "next/image";
+import Image from "next/image";
 const PageHead = dynamic(() => import('../components/elements/PageHead'));
 const Layout = dynamic(() => import('../components/layout/Layout'));
-const Image = dynamic(() => import('next/image'));
+// import PageHead from "../components/elements/PageHead";
+// import Layout from "../components/layout/Layout";
 
 
 const Terms = () => {

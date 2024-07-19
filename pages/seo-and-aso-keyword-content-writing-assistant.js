@@ -1,8 +1,9 @@
+import dynamic from "next/dynamic"
 import PageHead from "../components/elements/PageHead"
 import Layout from "../components/layout/Layout"
-import ContentAssistArticle from "../components/tools/content-assist/ContentAssistArticle"
 import ContentAssistTool from "../components/tools/content-assist/ContentAssistTool"
-import ContentAssistVideo from "../components/tools/content-assist/ContentAssistVideo"
+const ContentAssistArticle = dynamic(() => import("../components/tools/content-assist/ContentAssistArticle"))
+const ContentAssistVideo = dynamic(() =>import("../components/tools/content-assist/ContentAssistVideo"))
 const ContentAssist = () => {
   return (
     <Layout>
@@ -15,7 +16,7 @@ const ContentAssist = () => {
       <ContentAssistVideo />
       <ContentAssistArticle />
     </Layout>
-  ) 
+  )
 }
 
 export default ContentAssist
