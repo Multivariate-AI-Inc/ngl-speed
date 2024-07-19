@@ -43,11 +43,13 @@ const Footer = () => {
                     className="icon-socials icon-facebook"
                     href="https://www.facebook.com/thenextlabs/"
                     target="_blank"
+                    aria-label="Facebook"
                   ></Link>
                   <Link
                     className="icon-socials icon-linkedin"
                     href="https://www.linkedin.com/company/13337675/"
                     target="_blank"
+                    aria-label="LinkedIn"
                   ></Link>
                 </div>
               </div>

@@ -41,10 +41,11 @@ const PageHead = ({ title, ogDescription, ogType }) => {
         name="facebook-domain-verification"
         content="bpk7feigxufcq70bhicrhui3fgkf8m"
       />
-      <meta
+      {/* <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-      />
+      /> */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta
         name="google-site-verification"
         content="LaXlaGxPYORNhZiERBF3T3hp4ulscGwquOArKpQ38n8"
