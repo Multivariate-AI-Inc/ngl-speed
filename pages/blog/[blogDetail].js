@@ -123,7 +123,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     // const doc = parse(htmlString);
-    const headings = doc.querySelectorAll("h2");
+    const headings = doc.querySelectorAll("h2, h3");
     // const headingElementsArray = Array.from(headings);
     // setSections((prev) => headingElementsArray);
     const headingArray = [];
@@ -142,7 +142,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   async function extractNodeList(htmlString) {
     const { parse } = await import("node-html-parser");
     const doc = parse(htmlString);
-    const headings = doc.querySelectorAll("h2");
+    const headings = doc.querySelectorAll("h2,h3");
     setSections(headings);
     return headings;
   }
@@ -192,7 +192,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                   <h2 className="color-brand-1 mb-50" id="section1">
                     {postData.title}
                   </h2>
-                  <div className="mb-40">
+                  <div className="mb-40 reusable-div">
                     <FeaturedImage
                       post={postData}
                       styleClasses="bd-rd8"
@@ -202,6 +202,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                     />
                   </div>
                   <div
+                    id="blog-detail-custom"
                     dangerouslySetInnerHTML={{ __html: postData.content }}
                   ></div>
                   {/* <p className="color-grey-900 font-lg-bold mb-25">

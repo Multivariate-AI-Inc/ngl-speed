@@ -29,7 +29,7 @@ const FeaturedImage = ({ post, styleClasses, priority, height, width }) => {
     <>
       <Image
         src={img.src}
-        // layout="responsive"
+        layout="responsive"
         // height={img.height}
         height={height}
         width={img.width}
