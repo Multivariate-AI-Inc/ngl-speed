@@ -24,6 +24,7 @@ module.exports = {
           safelist: [
             "html",
             "body",
+            /^Toastify/,
           ],
         },
       ],
