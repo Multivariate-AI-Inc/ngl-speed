@@ -55,7 +55,9 @@ const Footer = () => {
                 <h5 className="mb-10 color-brand-1">Consulting</h5>
                 <ul className="menu-footer">
                   <li>
-                    <Link href="/get-free-aso-analysis">App Store Optimization</Link>
+                    <Link href="/get-free-aso-analysis">
+                      App Store Optimization
+                    </Link>
                   </li>
                   <li>
                     <Link href="#contact">Mobile App Promotion</Link>
@@ -66,7 +68,9 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/search-engine-optimization">Search Engine Optimization</Link>
+                    <Link href="/search-engine-optimization">
+                      Search Engine Optimization
+                    </Link>
                   </li>
                   <li>
                     {/* add link to nextlabs site */}
@@ -104,7 +108,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/">
+                    {/* <Link href="https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/"> */}
+                    <Link href="/seo-and-aso-keyword-content-writing-assistant/">
                       SEO Content Assistant
                     </Link>
                   </li>
@@ -139,9 +144,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/html-editor/">
-                      Html Editor
-                    </Link>
+                    {/* <Link href="https://tools.nextgrowthlabs.com/html-editor/"> */}
+                    <Link href="/html-editor">Html Editor</Link>
                   </li>
                   {/* <li>
                     <Link href="https://tools.nextgrowthlabs.com/bulk-website-rank-checker/">

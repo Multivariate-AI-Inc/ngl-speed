@@ -21,9 +21,9 @@ const ContentAssistTool = () => {
   const [included, setIncluded] = useState("")
   const timeoutID = useRef(null)
   const userInputRef = useRef(null)
-  const [tableData, setTableData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [tableData, setTableData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleTextAreaChange = e => {
     // setUserContent(e.target.value)
@@ -325,7 +325,6 @@ const ContentAssistTool = () => {
               id="text-box"
               rows="15"
               style={{ height: "70%" }}
-              // value={userContent}
               onChange={e => {
                 handleTextAreaChange(e)
               }}
@@ -421,9 +420,20 @@ const ContentAssistTool = () => {
           </button>
         </div>
       </div>
-      {loading && <div className="mt-40 mb-40"><Loader /> </div>}
-      <div id="table-container" className={tableData || error ? '' : 'hidden'}>
-        {error && <div className="high-demand"><p className="high-demand">{error}</p></div>}
+      {loading && (
+        <div className="mt-40 mb-40">
+          <Loader />{" "}
+        </div>
+      )}
+      <div
+        id="table-container"
+        className={tableData || error ? "" : "hidden"}
+      >
+        {error && (
+          <div className="high-demand">
+            <p className="high-demand">{error}</p>
+          </div>
+        )}
         {tableData && <TableComponent tableData={tableData} />}
       </div>
     </>

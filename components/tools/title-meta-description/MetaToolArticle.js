@@ -3,9 +3,7 @@ import React from "react"
 const MetaToolArticle = () => {
   return (
     <div className="container mt-40">
-      <h2
-        className="color-brand-1 mb-20"
-      >
+      <h2 className="color-brand-1 mb-20">
         Title and Meta Description Checker
       </h2>
       <p className="font-md color-grey-400 mb-20">

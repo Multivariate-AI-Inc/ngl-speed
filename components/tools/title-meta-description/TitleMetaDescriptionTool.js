@@ -47,7 +47,7 @@ const TitleMetaDescriptionTool = () => {
     }
     try {
       const response = await fetch("/api/fetch-metadata", requestOptions)
-      const data = await response.json();
+      const data = await response.json()
       setMetaData(data)
       setLoading(false)
     } catch (error) {

@@ -1038,7 +1038,8 @@ export const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-density-tool/",
+    // toolLink: "https://tools.nextgrowthlabs.com/keyword-density-tool/",
+    toolLink: "/keyword-density-tool",
   },
   {
     name: "Title and Meta Checker",
@@ -1173,7 +1174,8 @@ export const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/title-meta-description/",
+    // toolLink: "https://tools.nextgrowthlabs.com/title-meta-description/",
+    toolLink: "/title-meta-description",
   },
   {
     name: "Page Speed Assessment",
@@ -1992,213 +1994,212 @@ async function fetchAppleAppData(appPackageURL, t) {
   }
 }
 
-// ********************* 
+// *********************
 // utils/jsonp.js
 export function jsonp(url, callbackName) {
   return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    const callbackFunction = `${callbackName}_${Date.now()}`;
-    
-    window[callbackFunction] = (data) => {
-      resolve(data);
-      delete window[callbackFunction];
-      script.remove();
-    };
+    const script = document.createElement("script")
+    const callbackFunction = `${callbackName}_${Date.now()}`
 
-    script.src = `${url}?callback=${callbackFunction}`;
-    script.onerror = (error) => {
-      reject(error);
-      delete window[callbackFunction];
-      script.remove();
-    };
+    window[callbackFunction] = data => {
+      resolve(data)
+      delete window[callbackFunction]
+      script.remove()
+    }
 
-    document.body.appendChild(script);
-  });
+    script.src = `${url}?callback=${callbackFunction}`
+    script.onerror = error => {
+      reject(error)
+      delete window[callbackFunction]
+      script.remove()
+    }
+
+    document.body.appendChild(script)
+  })
 }
-  // format URL
-  export function formatURL(url) {
-    let userInput = url.trim();
-    if (userInput && !userInput.startsWith("https://www.") && !userInput.startsWith("https://") ){
-      if (userInput && userInput.startsWith("www.")){
-        userInput = "https://" + userInput;
-        return userInput
-      }
-      userInput = "https://" + userInput;
-      return userInput;
+// format URL
+export function formatURL(url) {
+  let userInput = url.trim()
+  if (
+    userInput &&
+    !userInput.startsWith("https://www.") &&
+    !userInput.startsWith("https://")
+  ) {
+    if (userInput && userInput.startsWith("www.")) {
+      userInput = "https://" + userInput
+      return userInput
     }
-
-    return userInput;
+    userInput = "https://" + userInput
+    return userInput
   }
 
-  // check url is valid or not 
-  export const isValidUrl = (url) => {
-    const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
-    const valid = urlRegex.test(url);
-    return valid;
-  };
+  return userInput
+}
 
+// check url is valid or not
+export const isValidUrl = url => {
+  const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
+  const valid = urlRegex.test(url)
+  return valid
+}
 
-   // extract main domain
-   export function extractMainDomain(url) {
-    try {
-        // Check if the URL starts with "https://" or "http://"
-        if (!url.startsWith("https://") && !url.startsWith("http://")) {
-            // If not, prepend "https://"
-            url = "https://" + url;
-        }
-        
-        const parsedUrl = new URL(url);
-        const hostnameParts = parsedUrl.hostname.split('.');
-        
-        // If the hostname consists of more than two parts, consider the last three parts
-        let mainDomain = "";
-        if (hostnameParts.length > 2) {
-            mainDomain = hostnameParts.slice(-3).join('.');
-        } else {
-            mainDomain = hostnameParts.join('.');
-        }
-        
-        // Prepend "https://" if the mainDomain doesn't contain it
-        if (!mainDomain.startsWith("https://")) {
-            mainDomain = "https://" + mainDomain;
-        }
-        
-        return mainDomain;
-    } catch (error) {
-        return null;
+// extract main domain
+export function extractMainDomain(url) {
+  try {
+    // Check if the URL starts with "https://" or "http://"
+    if (!url.startsWith("https://") && !url.startsWith("http://")) {
+      // If not, prepend "https://"
+      url = "https://" + url
     }
+
+    const parsedUrl = new URL(url)
+    const hostnameParts = parsedUrl.hostname.split(".")
+
+    // If the hostname consists of more than two parts, consider the last three parts
+    let mainDomain = ""
+    if (hostnameParts.length > 2) {
+      mainDomain = hostnameParts.slice(-3).join(".")
+    } else {
+      mainDomain = hostnameParts.join(".")
+    }
+
+    // Prepend "https://" if the mainDomain doesn't contain it
+    if (!mainDomain.startsWith("https://")) {
+      mainDomain = "https://" + mainDomain
+    }
+
+    return mainDomain
+  } catch (error) {
+    return null
   }
+}
 
 // ************************* Content Assist tool :- helper functions ********************************
 
 // syllable count
 export function syllablesTotal(inString) {
-  let syllablesTotal = 0;
-  let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
+  let syllablesTotal = 0
+  let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g)
   if (wordList) {
-    wordList.forEach((word) => {
+    wordList.forEach(word => {
       if (word === "'" || word === "’") {
-        return;
+        return
       } //bandaid solution.
       if (word.length <= 2) {
-        syllablesTotal += 1;
-        return;
+        syllablesTotal += 1
+        return
       } //quick return on short words
-      let syllables = 0;
+      let syllables = 0
       if (word.endsWith("s'") || word.endsWith("s’")) {
-        word.slice(-1);
+        word.slice(-1)
       } //ending with s'
       if (word.endsWith("s's") || word.endsWith("s’s")) {
-        word.slice(-1, -3);
+        word.slice(-1, -3)
       } //ending with s's
       const cEndings = word.match(
-        /(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|anne)s?$/im
-      );
+        /(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|anne)s?$/im,
+      )
       if (cEndings) {
-        word = word.replace(cEndings[0], "\n" + cEndings[0]);
+        word = word.replace(cEndings[0], "\n" + cEndings[0])
       } //Splits into two words and evaluates them as such
       const cBeginnings = word.match(
-        /^(ware|side(?![sd]$)|p?re(?!ach|agan|al|au)|[rf]ace(?!([sd]|tte)$)|place[^nsd])/im
-      );
+        /^(ware|side(?![sd]$)|p?re(?!ach|agan|al|au)|[rf]ace(?!([sd]|tte)$)|place[^nsd])/im,
+      )
       if (cBeginnings) {
-        word = word.replace(cBeginnings[0], "");
-        syllables++;
+        word = word.replace(cBeginnings[0], "")
+        syllables++
       }
       const esylp = word.match(
-        /ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gim
-      );
+        /ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gim,
+      )
       if (esylp) {
-        syllables += esylp.length;
+        syllables += esylp.length
       } //E clustered positive
       const esylm = word.match(
-        /every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gim
-      );
+        /every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gim,
+      )
       if (esylm) {
-        syllables -= esylm.length;
+        syllables -= esylm.length
       } //E clustered negative
       const isylp = word.match(
-        /rie[^sndfvtl]|(?<=^|[^tcs]|st)ia|siai|[^ct]ious|quie|[lk]ier|settli|[^cn]ien[^d]|[aeio]ing$|dei[tf]|isms?$/gim
-      );
+        /rie[^sndfvtl]|(?<=^|[^tcs]|st)ia|siai|[^ct]ious|quie|[lk]ier|settli|[^cn]ien[^d]|[aeio]ing$|dei[tf]|isms?$/gim,
+      )
       if (isylp) {
-        syllables += isylp.length;
+        syllables += isylp.length
       } //I clustered positive
       const osylp = word.match(
-        /nyo|osm(s$|$)|oinc|ored(?!$)|(^|[^ts])io|oale|[aeiou]yoe|^m[ia]cro([aiouy]|e)|roe(v|$)|ouel|^proa|oolog/gim
-      );
+        /nyo|osm(s$|$)|oinc|ored(?!$)|(^|[^ts])io|oale|[aeiou]yoe|^m[ia]cro([aiouy]|e)|roe(v|$)|ouel|^proa|oolog/gim,
+      )
       if (osylp) {
-        syllables += osylp.length;
+        syllables += osylp.length
       } //O clustered positive
-      const osylm = word.match(
-        /[^f]ore(?!$|[vcaot]|d$|tte)|fore|llio/gim
-      );
+      const osylm = word.match(/[^f]ore(?!$|[vcaot]|d$|tte)|fore|llio/gim)
       if (osylm) {
-        syllables -= osylm.length;
+        syllables -= osylm.length
       } //O clustered negative
       const asylp = word.match(
-        /asm(s$|$)|ausea|oa$|anti[aeiou]|raor|intra[ou]|iae|ahe$|dais|(?<!p)ea(l(?!m)|$)|(?<!j)ean|(?<!il)eage/gim
-      );
+        /asm(s$|$)|ausea|oa$|anti[aeiou]|raor|intra[ou]|iae|ahe$|dais|(?<!p)ea(l(?!m)|$)|(?<!j)ean|(?<!il)eage/gim,
+      )
       if (asylp) {
-        syllables += asylp.length;
+        syllables += asylp.length
       } //A clustered positive
-      const asylm = word.match(/aste(?!$|ful|s$|r)|[^r]ared$/gim);
+      const asylm = word.match(/aste(?!$|ful|s$|r)|[^r]ared$/gim)
       if (asylm) {
-        syllables -= asylm.length;
+        syllables -= asylm.length
       } //A clustered negative
       const usylp = word.match(
-        /uo[^y]|[^gq]ua(?!r)|uen|[^g]iu|uis(?![aeiou]|se)|ou(et|ille)|eu(ing|er)|uye[dh]|nuine|ucle[aeiuy]/gim
-      );
+        /uo[^y]|[^gq]ua(?!r)|uen|[^g]iu|uis(?![aeiou]|se)|ou(et|ille)|eu(ing|er)|uye[dh]|nuine|ucle[aeiuy]/gim,
+      )
       if (usylp) {
-        syllables += usylp.length;
+        syllables += usylp.length
       } //U clustered positive
-      const usylm = word.match(/geous|busi|logu(?!e|i)/gim);
+      const usylm = word.match(/geous|busi|logu(?!e|i)/gim)
       if (usylm) {
-        syllables -= usylm.length;
+        syllables -= usylm.length
       } //U clustered negative
       const ysylp = word.match(
-        /[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|pye|dy[ae]|oye[exu]|lye[nlrs]|olye|aye(k|r|$|u[xr]|da)|saye\w|iye|wy[ae]|[^aiou]ying/gim
-      );
+        /[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|pye|dy[ae]|oye[exu]|lye[nlrs]|olye|aye(k|r|$|u[xr]|da)|saye\w|iye|wy[ae]|[^aiou]ying/gim,
+      )
       if (ysylp) {
-        syllables += ysylp.length;
+        syllables += ysylp.length
       } //Y clustered positive
-      const ysylm = word.match(/arley|key|ney$/gim);
+      const ysylm = word.match(/arley|key|ney$/gim)
       if (ysylm) {
-        syllables -= ysylm.length;
+        syllables -= ysylm.length
       }
       const essuffix = word.match(
-        /((?<!c[hrl]|sh|[iszxgej]|[niauery]c|do)es$)/gim
-      );
+        /((?<!c[hrl]|sh|[iszxgej]|[niauery]c|do)es$)/gim,
+      )
       if (essuffix) {
-        syllables--;
+        syllables--
       } //es suffix
       const edsuffix = word.match(
-        /([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtbm]|ll|bb|ield|[ou]rb)ed$|[^cbda]red$/gim
-      );
+        /([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtbm]|ll|bb|ield|[ou]rb)ed$|[^cbda]red$/gim,
+      )
       if (edsuffix) {
-        syllables--;
+        syllables--
       }
-      const csylp = word.match(/chn[^eai]|mc|thm/gim);
+      const csylp = word.match(/chn[^eai]|mc|thm/gim)
       if (csylp) {
-        syllables += csylp.length;
+        syllables += csylp.length
       } //Consonant clustered negative
-      const eVowels = word.match(
-        /[aiouy](?![aeiouy])|ee|e(?!$|-|[iua])/gim
-      );
+      const eVowels = word.match(/[aiouy](?![aeiouy])|ee|e(?!$|-|[iua])/gim)
       if (eVowels) {
-        syllables += eVowels.length;
+        syllables += eVowels.length
       } //Applicable vowel count (all but e at end of word)
       if (syllables <= 0) {
-        syllables = 1;
+        syllables = 1
       } //catch-all
       if (word.match(/[^aeiou]n['’]t$/i)) {
-        syllables++;
+        syllables++
       } //ending in n't, but not en't
       if (word.match(/en['’]t$/i)) {
-        syllables--;
+        syllables--
       } //ending in en't
-      syllablesTotal += syllables;
-    });
+      syllablesTotal += syllables
+    })
   }
-  return syllablesTotal;
+  return syllablesTotal
 }
 // keywords changes
 export function keywordChanges(values) {
@@ -2276,8 +2277,7 @@ export function findMatchedValues(words, content) {
             count += (multipleWord.match(regex) || []).length
           } else {
             singleWord.map(single => {
-              if (single.includes(item) && single.length == item.length)
-                count++
+              if (single.includes(item) && single.length == item.length) count++
             })
           }
         })

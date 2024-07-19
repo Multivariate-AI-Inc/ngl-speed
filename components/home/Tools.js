@@ -1,9 +1,9 @@
-import React from "react";
-import ToolsCard from "../cards/ToolsCard";
-import Button from "../elements/Button";
-import { data } from "../utils";
+import React from "react"
+import ToolsCard from "../cards/ToolsCard"
+import Button from "../elements/Button"
+import { data } from "../utils"
 const Tools = ({ length }) => {
-  const numItems = length && !isNaN(length) ? parseInt(length) : data.length;
+  const numItems = length && !isNaN(length) ? parseInt(length) : data.length
   return (
     <section className="section mt-80">
       <div className="container">
@@ -15,7 +15,10 @@ const Tools = ({ length }) => {
               years ahead in the mobile app promotion stack.
             </p>
 
-            <Button text={"Learn More"} href="/free-app-store-optimization-tool" />
+            <Button
+              text={"Learn More"}
+              href="/free-app-store-optimization-tool"
+            />
           </div>
         </div>
         <div className="row mt-50">
@@ -32,7 +35,7 @@ const Tools = ({ length }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Tools;
+export default Tools
