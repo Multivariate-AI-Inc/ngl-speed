@@ -329,7 +329,8 @@ const ContentAssistTool = () => {
                 handleTextAreaChange(e)
               }}
               ref={userInputRef}
-            ></textarea>
+              aria-label="Write your content here...">
+            </textarea>
             <div className="main-sub-options">
               <p className="read">
                 Characters: <span id="char_count">{charCount}</span>
@@ -354,6 +355,7 @@ const ContentAssistTool = () => {
                 value={keywords}
                 onChange={e => setKeywords(e.target.value)}
                 spellCheck={false}
+                aria-label="Enter keywords..."
               ></textarea>
               <input
                 type="button"
@@ -375,6 +377,7 @@ const ContentAssistTool = () => {
                 id="not-included"
                 rows="4"
                 value={notIncluded}
+                aria-label="Not included keywords"
               ></textarea>
             </div>
             <div>
@@ -390,6 +393,7 @@ const ContentAssistTool = () => {
                 id="included"
                 rows="4"
                 value={included}
+                aria-label="Included Keywords"
               ></textarea>
               <input
                 type="button"
@@ -439,5 +443,4 @@ const ContentAssistTool = () => {
     </>
   )
 }
-
 export default ContentAssistTool
