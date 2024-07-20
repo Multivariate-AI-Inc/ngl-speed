@@ -5,7 +5,7 @@ const VideoIframe = ({ videoId, autoPlay, title }) => {
   const iframeRef = useRef(null);
   const defaultHeight = 495;
   const [videoHeight, setVideoHeight] = useState(defaultHeight);
-  const [showIframe, setShowIframe] = useState(false);
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
   const handleChangeVideoWidth = useCallback(() => {
     const ratio = window.innerWidth > 990 ? 1.0 : window.innerWidth > 522 ? 1.2 : window.innerWidth > 400 ? 1.45 : 1.85;
@@ -21,25 +21,45 @@ const VideoIframe = ({ videoId, autoPlay, title }) => {
     };
   }, [handleChangeVideoWidth]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsIntersecting(true);
+            observer.disconnect(); // Stop observing once intersected
+          }
+        });
+      },
+      {
+        rootMargin: '0px 0px 200px 0px', // Adjust the margin as needed
+        threshold: 0.5 // Trigger when 50% of the element is visible
+      }
+    );
+
+    if (iframeRef.current) {
+      observer.observe(iframeRef.current);
+    }
+
+    return () => {
+      if (iframeRef.current) {
+        observer.unobserve(iframeRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div onClick={() => setShowIframe(true)} style={{ cursor: "pointer", position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
-      {showIframe ? (
+    <div ref={iframeRef} style={{ width: '100%', position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+      {isIntersecting && (
         <iframe
-          ref={iframeRef}
           title={title}
           width="100%"
-          height="100%"
+          height={`${videoHeight}px`}
           src={videoURL}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          style={{ position: "absolute", top: 0, left: 0 }}
-        />
-      ) : (
-        <img
-          src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-          alt={title}
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+          style={{ position: 'absolute', top: 0, left: 0 }}
         />
       )}
     </div>
