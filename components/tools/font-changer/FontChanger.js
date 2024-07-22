@@ -3,7 +3,7 @@ import FontTable from "./FontTable"
 
 const FontChanger = () => {
   const [fonts, setFonts] = useState([])
-  const [input, setInput] = useState("nextgrowthlabs")
+  const [input, setInput] = useState("NextGrowthLabs")
   useEffect(() => {
     const fetchFonts = async () => {
       try {
@@ -49,7 +49,7 @@ const FontChanger = () => {
             onChange={e => setInput(e.target.value)}
           />
         </div>
-        {fonts.length !== 0 && <FontTable fonts={fonts} />}
+        <div>{fonts.length !== 0 && <FontTable fonts={fonts} />}</div>
         <div className="tool-introduction-text mb-10">
           <h5 className="color-brand-1 mb-25">
             What is a unicode letter generator?

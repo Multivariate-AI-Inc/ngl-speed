@@ -1,9 +1,6 @@
-// components/FontTable.js
-import React, { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
 const FontTable = ({fonts}) => {
-//   const [fonts, setFonts] = useState()
 
   const copyToClipboard = async (text) => {
     try {
@@ -26,9 +23,16 @@ const FontTable = ({fonts}) => {
     copyToClipboard(text)
   }
 
+  const hasError = fonts.some(font => font.name === "error" && font.text === "Missing parameters");
+
+  // If there is an error, do not render the table
+  if (hasError) {
+    return <></>;
+  }
   return (
     <section className="container">
       <div className="font_table_outer_box">
+
         <table className="show-result-table">
           <thead className="table_header_row">
             <tr>
@@ -37,8 +41,8 @@ const FontTable = ({fonts}) => {
             </tr>
           </thead>
           <tbody>
-            {fonts.map((font, index) => (
-              <tr key={index}>
+              {fonts.map((font, index) => (
+                <tr key={index}>
                 <th className="">{font.name}</th>
                 <td className="content-cell">{font.text}</td>
                 <td style={{textAlign:"center"}}>
@@ -47,7 +51,7 @@ const FontTable = ({fonts}) => {
                     onClick={() => handleCopy(font.text)}
                   >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg"
                       width="32px"
                       height="32px"
                       viewBox="0 0 32 32"
@@ -72,7 +76,7 @@ const FontTable = ({fonts}) => {
                         d="M 20 1 C 20 0.449219 19.550781 0 19 0 L 13 0 C 12.449219 0 12 0.449219 12 1 C 12 1.550781 11.550781 2 11 2 C 10.449219 2 10 2.449219 10 3 L 10 4 C 10 4.550781 10.449219 5 11 5 L 21 5 C 21.550781 5 22 4.550781 22 4 L 22 3 C 22 2.449219 21.550781 2 21 2 C 20.449219 2 20 1.550781 20 1 Z M 20 1"
                       />
                     </svg>
-                  </button>
+                    </button>
                 </td>
               </tr>
             ))}
