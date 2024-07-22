@@ -51,9 +51,8 @@ async function getPlagiarismDetectorData(input) {
     }
 
     const responseData = await response.text();
-    console.log("Response", responseData)
     return responseData;
   } catch (error) {
-    return `Error: ${error.message}`;
+    throw new Error(`Error: ${error}`)
   }
 }

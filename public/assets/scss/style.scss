@@ -65,6 +65,54 @@ TABLE CONTENT
 
 // Custom css
 // ****************************
+// ****************************
+.font_table_outer_box{
+  overflow-x: auto;
+}
+button.copy-clipboard{
+  border:none;
+  padding:0;
+  background-color:inherit;
+  cursor:pointer;
+ }
+ 
+  button.copy-clipboard>svg:hover{
+  box-shadow:0px 1px 9px 0px #5c4242;
+ }
+ 
+.font-table-head{
+  background-color: var(--lightGreen);
+}
+#user_data{
+  width:100%;
+  margin:20px 0px 12px !important;
+  border-radius:50px;
+  font-size:1rem;
+  padding:15px;
+  border:1px solid #555;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:10px center;
+  background-size:16px 16px;
+  padding-left:40px;
+ }
+.input-buttons{
+  width:100%;
+  flex-direction:column;
+  padding:10px;
+  margin: auto;
+ }
+  .input-buttons input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .tool-introduction-text {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+  }
+// ****************************
 .high-demand{
   text-align:center;
   color:black;
