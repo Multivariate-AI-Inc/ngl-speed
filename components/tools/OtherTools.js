@@ -1400,7 +1400,8 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/font-changer/",
+    // toolLink: "https://tools.nextgrowthlabs.com/font-changer/",
+    toolLink: "/font-changer",
   },
   {
     name: "Search & App Rank Tracker",

@@ -166,7 +166,8 @@ const Footer = () => {
                   </li>
                   <li>
                     {" "}
-                    <Link href="https://tools.nextgrowthlabs.com/font-changer/">
+                    {/* <Link href="https://tools.nextgrowthlabs.com/font-changer/"> */}
+                    <Link href="/font-changer">
                       Font Changer
                     </Link>
                   </li>
