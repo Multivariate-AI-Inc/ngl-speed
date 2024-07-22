@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import "@wordpress/block-library/build-style/style.css";
+import "@wordpress/block-library/build-style/common.css";
+import "@wordpress/block-library/build-style/theme.css";
+
 import Layout from "../../components/layout/Layout";
 import PageHead from "../../components/elements/PageHead";
 import BlogCard from "../../components/cards/BlogCard";
@@ -7,6 +11,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { getAllPosts, getPostData, getPostSlug } from "../../lib/posts";
 import FeaturedImage from "../../components/elements/FeaturedImage";
 import Date from "../../components/elements/Date";
+
 // import { parse } from "node-html-parser";
 
 export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
@@ -142,6 +147,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   async function extractNodeList(htmlString) {
     const { parse } = await import("node-html-parser");
     const doc = parse(htmlString);
+
     const headings = doc.querySelectorAll("h2,h3");
     setSections(headings);
     return headings;
@@ -201,10 +207,11 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                       width={1000}
                     />
                   </div>
-                  <div
+                  <div dangerouslySetInnerHTML={{ __html: postData.content }} />
+                  {/* <div
                     id="blog-detail-custom"
                     dangerouslySetInnerHTML={{ __html: postData.content }}
-                  ></div>
+                  ></div> */}
                   {/* <p className="color-grey-900 font-lg-bold mb-25">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Quisque ornare pellentesque sollicitudin. Suspendisse

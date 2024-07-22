@@ -9,12 +9,14 @@ const BlogSubSection1 = ({ latestPost }) => {
           <div className="box-cover-border">
             <div className="row align-items-center">
               <div className="col-lg-6">
-                <FeaturedImage
-                  post={latestPost}
-                  styleClasses="d-block"
-                  priority={true}
-                  height={400}
-                />
+                <div className="mb-40 reusable-div">
+                  <FeaturedImage
+                    post={latestPost}
+                    styleClasses="d-block"
+                    priority={true}
+                    height={400}
+                  />
+                </div>
               </div>
               <div className="col-lg-6">
                 <div className="box-info-video">

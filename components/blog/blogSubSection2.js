@@ -13,12 +13,14 @@ const BlogSubSection2 = ({ posts }) => {
           <div className="card-blog-grid card-blog-grid-3 hover-up">
             <div className="card-image">
               <Link href={`/blog/${post.slug}`}>
-                <FeaturedImage
-                  post={post}
-                  styleClasses=""
-                  priority={false}
-                  height={370}
-                />
+                <div className="mb-40 reusable-div">
+                  <FeaturedImage
+                    post={post}
+                    styleClasses=""
+                    priority={false}
+                    height={370}
+                  />
+                </div>
               </Link>
             </div>
             <div className="card-info">

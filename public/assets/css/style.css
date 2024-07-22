@@ -859,7 +859,7 @@ a:hover {
   position: relative;
   width: 100%;
   height: auto; /* Adjust as needed */
-  background: rgba(101, 101, 101, 0.5); /* Semi-transparent background */
+  background: rgba(234, 233, 238, 0.2745098039); /* Semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -869,6 +869,10 @@ a:hover {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain; /* Keeps aspect ratio */
+}
+
+.wp-block-table {
+  overflow-x: auto;
 }
 
 table {
@@ -7573,7 +7577,7 @@ table#response-table {
 }
 
 #response-table .header-row {
-  background-color: #17A2B8;
+  background-color: #17a2b8;
   font-size: 1.2rem;
   line-height: 2rem;
 }
@@ -7701,7 +7705,8 @@ table#response-table {
   border: 1px solid #2a7dc1;
 }
 
-.content-left-side-main, .content-right-side {
+.content-left-side-main,
+.content-right-side {
   flex: 1 1 100%;
 }
 
@@ -7743,7 +7748,8 @@ table#response-table {
   border-radius: 8px 8px 0 0;
 }
 
-#techstackHeading, #techstackColumn {
+#techstackHeading,
+#techstackColumn {
   margin-bottom: 1.5rem;
   border-radius: 8px 8px 0 0;
 }
@@ -7934,11 +7940,13 @@ div#keyword-count-list {
   padding: 0.5rem;
 }
 
-tr.evenRow, tr.oddRow {
+tr.evenRow,
+tr.oddRow {
   border: 1px solid white;
 }
 
-tr.evenRow, tr.oddRow {
+tr.evenRow,
+tr.oddRow {
   border: 1px solid white;
 }
 
@@ -7958,7 +7966,7 @@ th.another {
 
 .another {
   width: 25%;
-  pading: 15px 10px;
+  padding: 15px 10px;
 }
 
 @media screen and (max-width: 700px) {
@@ -8954,7 +8962,7 @@ img.device-icon-logo {
 
 .tableDiv table tr:nth-child(even),
 .seo-info-table tr:nth-child(even) {
-  background-color: #E0F1F4;
+  background-color: #e0f1f4;
 }
 
 .tableDiv table caption {
@@ -9077,7 +9085,7 @@ img.device-icon-logo {
 .app-description-div.Expanded {
   height: fit-content !important;
   text-align: left;
-  background-color: #E0F1F4;
+  background-color: #e0f1f4;
   padding: 0px 15px 10px;
   margin-top: 20px;
 }
@@ -9161,5 +9169,11 @@ img.device-icon-logo {
     text-align: center;
   }
 }
+/* purgecss start ignore */
+.wp-block-table {
+  overflow-x: auto;
+}
+
+/* purgecss end ignore */
 
 /*# sourceMappingURL=style.css.map */

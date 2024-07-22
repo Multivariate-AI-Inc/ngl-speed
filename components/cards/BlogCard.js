@@ -2,19 +2,21 @@ import Link from "next/link";
 import FeaturedImage from "../elements/FeaturedImage";
 import Date from "../elements/Date";
 
-const BlogCard = ({ title, date, readTimeTag, excerpt, tag, slug, post }) => {
+const BlogCard = ({ title, date, tag, slug, post }) => {
   return (
     <>
       <div className={`col-lg-4 col-md-6 mb-30 item-article ${tag}`}>
         <div className="card-blog-grid card-blog-grid-3 hover-up">
           <div className="card-image">
             <Link href={`/blog/${post.slug}`}>
-              <FeaturedImage
-                post={post}
-                styleClasses=""
-                priority={false}
-                height={250}
-              />
+              <div className="mb-40 reusable-div">
+                <FeaturedImage
+                  post={post}
+                  styleClasses="bd-rd8"
+                  priority={false}
+                  height={250}
+                />
+              </div>
             </Link>
             {/* <Link href="blog">
                     <label className="lbl-border">Writing</label>
