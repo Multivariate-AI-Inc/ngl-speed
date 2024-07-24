@@ -13,6 +13,7 @@ const career = () => {
     <>
       <PageHead
         title={"We are Always Searching For Amazing People to Join Our Team."}
+        canonical={"https://nextgrowthlabs.com/career/"}
       />
       <Layout>
         <CurrentOpenings />

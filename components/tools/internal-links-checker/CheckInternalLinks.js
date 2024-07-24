@@ -1,111 +1,109 @@
-import React, { useState } from "react"
-import Loader from "../../elements/Loader"
-import { formatURL, isValidUrl } from "../../utils"
-import Link from "next/link"
+import React, { useState } from "react";
+import Loader from "../../elements/Loader";
+import { formatURL, isValidUrl } from "../../utils";
+import Link from "next/link";
 
 const CheckInternalLinks = () => {
-  const [inputUrl, setInputUrl] = useState("")
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [isValidURL, setIsValidURL] = useState(false)
+  const [inputUrl, setInputUrl] = useState("");
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isValidURL, setIsValidURL] = useState(false);
   const [linkCount, setLinkCount] = useState({
     total: 0,
     internal: 0,
     external: 0,
-  })
-  const [linkDetails, setLinkDetails] = useState([])
+  });
+  const [linkDetails, setLinkDetails] = useState([]);
 
   const handleSubmit = async () => {
-setLinkCount({
-  total: 0,
-  internal: 0,
-  external: 0,
-})
-setLinkDetails([])
-    setError(false)
-    setLoading(true)
-    const mainUrl = await formatURL(inputUrl)
+    setLinkCount({
+      total: 0,
+      internal: 0,
+      external: 0,
+    });
+    setLinkDetails([]);
+    setError(false);
+    setLoading(true);
+    const mainUrl = await formatURL(inputUrl);
     if (!isValidUrl(mainUrl)) {
-      setIsValidURL(true)
-      setLoading(false)
-      return
+      setIsValidURL(true);
+      setLoading(false);
+      return;
     }
-    setInputUrl(mainUrl)
-    const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`
+    setInputUrl(mainUrl);
+    const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`;
     try {
-      const response = await fetch(apiUrl)
+      const response = await fetch(apiUrl);
       if (!response.ok) {
-        throw new Error("Network response was not ok")
+        throw new Error("Network response was not ok");
       }
-      const html = await response.json()
-      parseHtml(html.body, mainUrl)
+      const html = await response.json();
+      parseHtml(html.body, mainUrl);
     } catch (error) {
-      setError(true)
-      setLoading(false)
+      setError(true);
+      setLoading(false);
     }
-  }
-const parseHtml = (htmlString, url) => {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, "text/html");
-  const allLinks = doc.getElementsByTagName("a");
-  const linkData = [];
-  let internalLinks = 0;
-  let externalLinks = 0;
+  };
+  const parseHtml = (htmlString, url) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    const allLinks = doc.getElementsByTagName("a");
+    const linkData = [];
+    let internalLinks = 0;
+    let externalLinks = 0;
 
-  const maxCharacterLimit = 30; 
-  const hostname = new URL(url).hostname;
+    const maxCharacterLimit = 30;
+    const hostname = new URL(url).hostname;
 
-  for (let i = 0; i < allLinks.length; i++) {
+    for (let i = 0; i < allLinks.length; i++) {
       const link = allLinks[i];
       let href = link.getAttribute("href");
-      if (!href || href.startsWith("http://support.google.com/websearch/") || href.startsWith("http://webcache.googleusercontent.com/search")) {
-          continue;
+      if (
+        !href ||
+        href.startsWith("http://support.google.com/websearch/") ||
+        href.startsWith("http://webcache.googleusercontent.com/search")
+      ) {
+        continue;
       }
 
       if (href.startsWith("/")) {
-          href = `https://${hostname}${href}`;
+        href = `https://${hostname}${href}`;
       } else if (href.startsWith("#")) {
-          href = `https://${hostname}${href}`;
+        href = `https://${hostname}${href}`;
       }
 
       const anchorText = link.textContent ? link.textContent.trim() : "";
-      const modifiedAnchorText = link.querySelector("img") 
-          ? "Image" 
-          : anchorText.length > maxCharacterLimit 
-              ? anchorText.substring(0, maxCharacterLimit) 
-              : anchorText;
+      const modifiedAnchorText = link.querySelector("img")
+        ? "Image"
+        : anchorText.length > maxCharacterLimit
+        ? anchorText.substring(0, maxCharacterLimit)
+        : anchorText;
       const isInternalLink = href.includes(hostname);
       const type = isInternalLink ? "Internal" : "External";
       const follow = link.getAttribute("rel") === "nofollow" ? "✘" : "✔";
 
       if (type === "Internal") {
-          internalLinks++;
+        internalLinks++;
       } else {
-          externalLinks++;
+        externalLinks++;
       }
 
       linkData.push({ href, anchorText: modifiedAnchorText, type, follow });
-  }
+    }
 
-  console.log("link data", linkData);
-  setLinkCount({
+    console.log("link data", linkData);
+    setLinkCount({
       total: allLinks.length,
       internal: internalLinks,
       external: externalLinks,
-  });
-  setLinkDetails(linkData);
-  setLoading(false);
-  console.log("link", linkDetails);
-};
-
-
-
+    });
+    setLinkDetails(linkData);
+    setLoading(false);
+    console.log("link", linkDetails);
+  };
 
   return (
-    <section
-      className="section"
-      style={{ backgroundColor: "#E0F1F4" }}
-    >
+    <section className="section" style={{ backgroundColor: "#E0F1F4" }}>
       <div className="container text-center">
         <div className="row mt-50 mb-5">
           <p className="tools_tag">Free SEO Tool</p>
@@ -115,7 +113,7 @@ const parseHtml = (htmlString, url) => {
           <p className="font-md color-grey-500 mb-25">
             Streamline your website maintenance with our free Internal Link
             Checker Tool. Easily identify and fix broken links, ensuring
-            seamless navigation and boosting your site's SEO. Enhance user
+            seamless navigation and boosting your site&apos;s SEO. Enhance user
             experience and elevate search engine rankings effortlessly.
           </p>
           <div className="aso-input-form mb-25 main-box-holder">
@@ -127,7 +125,7 @@ const parseHtml = (htmlString, url) => {
                   className="search-input"
                   placeholder="Enter your website"
                   value={inputUrl}
-                  onChange={e => setInputUrl(e.target.value)}
+                  onChange={(e) => setInputUrl(e.target.value)}
                 />
               </div>
             </div>
@@ -162,12 +160,14 @@ const parseHtml = (htmlString, url) => {
           {/* ************************** */}
           {linkCount.total > 0 && (
             <div id="link_count" className="result-section">
-             <span className="color-brand-1"> {linkCount.total} </span> <br />
+              <span className="color-brand-1"> {linkCount.total} </span> <br />
               Total Links <br />
-              <span className="color-brand-1"> {linkCount.internal} </span> <br />
+              <span className="color-brand-1"> {linkCount.internal} </span>{" "}
+              <br />
               Internal Links
               <br />
-              <span className="color-brand-1"> {linkCount.external} </span> <br />
+              <span className="color-brand-1"> {linkCount.external} </span>{" "}
+              <br />
               External Links <br />
             </div>
           )}
@@ -188,10 +188,7 @@ const parseHtml = (htmlString, url) => {
                       <td>{link.href}</td>
                       <td>{link.anchorText}</td>
                       <td style={{ textAlign: "center" }}>{link.type}</td>
-                      <td
-                        className="success"
-                        style={{ textAlign: "center" }}
-                      >
+                      <td className="success" style={{ textAlign: "center" }}>
                         {link.follow}
                       </td>
                     </tr>
@@ -217,7 +214,7 @@ const parseHtml = (htmlString, url) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CheckInternalLinks
+export default CheckInternalLinks;

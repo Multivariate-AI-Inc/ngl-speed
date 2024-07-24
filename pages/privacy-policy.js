@@ -4,9 +4,9 @@ import React, { useEffect, useRef } from "react";
 // import PageHead from "../components/elements/PageHead";
 // import Layout from "../components/layout/Layout";
 // import Image from "next/image";
-const PageHead = dynamic(() => import('../components/elements/PageHead'));
-const Layout = dynamic(() => import('../components/layout/Layout'));
-const Image = dynamic(() => import('next/image'));
+const PageHead = dynamic(() => import("../components/elements/PageHead"));
+const Layout = dynamic(() => import("../components/layout/Layout"));
+const Image = dynamic(() => import("next/image"));
 
 const Privacy = () => {
   const tocRef = useRef(null);
@@ -41,7 +41,10 @@ const Privacy = () => {
   }, []);
   return (
     <>
-      <PageHead title={"Privacy Policy"} />
+      <PageHead
+        title={"Privacy Policy"}
+        canonical={"https://nextgrowthlabs.com/privacy-policy/"}
+      />
 
       <Layout>
         <div className="section pt-40 content-term">

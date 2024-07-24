@@ -1,20 +1,20 @@
-import React, { useState } from "react"
-import { isValidUrl, formatURL } from "../../utils"
-import Loader from "../../elements/Loader"
-import Link from "next/link"
-import { toast } from "react-toastify"
+import React, { useState } from "react";
+import { isValidUrl, formatURL } from "../../utils";
+import Loader from "../../elements/Loader";
+import Link from "next/link";
+import { toast } from "react-toastify";
 
 const TitleMetaDescriptionTool = () => {
-  const [inputUrl, setInputUrl] = useState("")
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [isValidURL, setIsValidURL] = useState(false)
-  const [metaData, setMetaData] = useState(null)
-  const [oldUrl, setOldUrl] = useState("")
+  const [inputUrl, setInputUrl] = useState("");
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isValidURL, setIsValidURL] = useState(false);
+  const [metaData, setMetaData] = useState(null);
+  const [oldUrl, setOldUrl] = useState("");
   const handleSubmit = async () => {
-    setError(false)
-    setLoading(true)
-    const mainUrl = await formatURL(inputUrl)
+    setError(false);
+    setLoading(true);
+    const mainUrl = await formatURL(inputUrl);
     if (oldUrl === mainUrl) {
       toast.error(`Please enter new URL`, {
         position: "top-right",
@@ -24,43 +24,40 @@ const TitleMetaDescriptionTool = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
-      setError(false)
-      setLoading(false)
-      return
+      });
+      setError(false);
+      setLoading(false);
+      return;
     }
-    setOldUrl(mainUrl)
-    setMetaData(null)
+    setOldUrl(mainUrl);
+    setMetaData(null);
     if (!isValidUrl(mainUrl)) {
-      setIsValidURL(true)
-      setLoading(false)
-      return
+      setIsValidURL(true);
+      setLoading(false);
+      return;
     }
-    setInputUrl(mainUrl)
-    const urlData = { url: mainUrl }
+    setInputUrl(mainUrl);
+    const urlData = { url: mainUrl };
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(urlData),
-    }
+    };
     try {
-      const response = await fetch("/api/fetch-metadata", requestOptions)
-      const data = await response.json()
-      setMetaData(data)
-      setLoading(false)
+      const response = await fetch("/api/fetch-metadata", requestOptions);
+      const data = await response.json();
+      setMetaData(data);
+      setLoading(false);
     } catch (error) {
-      setError(true)
-      setLoading(false)
+      setError(true);
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <section
-      className="section"
-      style={{ backgroundColor: "#E0F1F4" }}
-    >
+    <section className="section" style={{ backgroundColor: "#E0F1F4" }}>
       <div className="container text-center">
         <div className="row mt-50 mb-5">
           <p className="tools_tag">Free SEO Tool</p>
@@ -70,12 +67,12 @@ const TitleMetaDescriptionTool = () => {
           <p className="font-md color-grey-500 mb-25">
             This tool displays the title and meta description of a webpage. It
             is an essential tool for on-page SEO optimization as the title and
-            meta description provide a brief summary of the webpage's content to
-            search engines. With this tool, you can check the title and meta
-            description of your webpage and ensure that they are well-crafted
-            and optimized for search engines. By using this tool, you can
-            improve your website's visibility in search engine results pages and
-            increase organic traffic to your website.
+            meta description provide a brief summary of the webpage&apos;s
+            content to search engines. With this tool, you can check the title
+            and meta description of your webpage and ensure that they are
+            well-crafted and optimized for search engines. By using this tool,
+            you can improve your website&apos;s visibility in search engine
+            results pages and increase organic traffic to your website.
           </p>
           <div className="aso-input-form mb-25 main-box-holder">
             <div className="search-box-suggestion">
@@ -86,7 +83,7 @@ const TitleMetaDescriptionTool = () => {
                   className="search-input"
                   placeholder="Enter URL Ex:https://nextgrowthlabs.com"
                   value={inputUrl}
-                  onChange={e => setInputUrl(e.target.value)}
+                  onChange={(e) => setInputUrl(e.target.value)}
                 />
               </div>
             </div>
@@ -164,7 +161,7 @@ const TitleMetaDescriptionTool = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TitleMetaDescriptionTool
+export default TitleMetaDescriptionTool;

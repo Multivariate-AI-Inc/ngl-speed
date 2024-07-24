@@ -7,7 +7,10 @@ import Layout from "../../components/layout/Layout";
 const CustomError404 = () => {
   return (
     <>
-      <PageHead title={"Error 404 - Page not found"} />
+      <PageHead
+        title={"Error 404 - Page not found"}
+        canonical={"https://nextgrowthlabs.com/404/"}
+      />
       <Layout>
         <section className="section box-404">
           <div className="container">

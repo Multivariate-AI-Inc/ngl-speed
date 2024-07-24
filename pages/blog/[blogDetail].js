@@ -11,6 +11,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { getAllPosts, getPostData, getPostSlug } from "../../lib/posts";
 import FeaturedImage from "../../components/elements/FeaturedImage";
 import Date from "../../components/elements/Date";
+import { getLargestResolutionImage } from "../../components/utils";
 
 // import { parse } from "node-html-parser";
 
@@ -154,7 +155,12 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   }
   return (
     <>
-      <PageHead title={postData.title} />
+      <PageHead
+        title={postData.title}
+        canonical={`https://nextgrowthlabs.com/blog/${postData.slug}/`}
+        ogDescription={`${postData.excerpt.slice(3, 160)}...`}
+        image={getLargestResolutionImage(postData).sourceUrl}
+      />
       <Layout>
         <div className="section mt-35">
           <div className="container">
@@ -195,9 +201,9 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
             <div className="row">
               <div className="col-xl-9 col-lg-8 overflow-hidden">
                 <div className="content-single" id="content">
-                  <h2 className="color-brand-1 mb-50" id="section1">
+                  <h1 className="color-brand-1 mb-50" id="section1">
                     {postData.title}
-                  </h2>
+                  </h1>
                   <div className="mb-40 reusable-div">
                     <FeaturedImage
                       post={postData}

@@ -10,29 +10,36 @@ const WebVisibility = dynamic(() => import("../components/home/WebVisibility"));
 const TrustBy = dynamic(() => import("../components/home/Trustby"));
 const AsoInnovation = dynamic(() => import("../components/aso/AsoInnovation"));
 const AsoCampaigns = dynamic(() => import("../components/aso/AsoCampaigns"));
-const AsoAcquisition = dynamic(() => import("../components/aso/AsoAcquisition"));
-const DynamicAsoMarketing = dynamic(() => import("../components/aso/AppMarketing"));
+const AsoAcquisition = dynamic(() =>
+  import("../components/aso/AsoAcquisition")
+);
+const DynamicAsoMarketing = dynamic(() =>
+  import("../components/aso/AppMarketing")
+);
 const AsoContact = dynamic(() => import("../components/aso/BoostRankings"));
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-const queryClient = new QueryClient()
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 
 const ASO = () => {
-  return (  
+  return (
     <>
-    <QueryClientProvider client={queryClient}>
-      <PageHead title={"Get Free ASO Analysis - NextGrowthLabs"} />
-      <Layout>
-        <Hero />
-        <TrustBy />
-        <WebVisibility category={"App's"} />
-        <Testimonials />
-        <AsoCampaigns />
-        <AsoAcquisition />
-        <Tools length={6} />
-        <AsoInnovation />
-        <DynamicAsoMarketing />
-        <AsoContact />
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <PageHead
+          title={"Get Free ASO Analysis - NextGrowthLabs"}
+          canonical={"https://nextgrowthlabs.com/get-free-aso-analysis/"}
+        />
+        <Layout>
+          <Hero />
+          <TrustBy />
+          <WebVisibility category={"App's"} />
+          <Testimonials />
+          <AsoCampaigns />
+          <AsoAcquisition />
+          <Tools length={6} />
+          <AsoInnovation />
+          <DynamicAsoMarketing />
+          <AsoContact />
+        </Layout>
       </QueryClientProvider>
     </>
   );

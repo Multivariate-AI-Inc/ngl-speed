@@ -29,6 +29,7 @@ const Blog = ({ allPosts }) => {
         title={
           "All the important insights, guidance and news you need to know."
         }
+        canonical={"https://nextgrowthlabs.com/blog/"}
       />
       <Layout>
         <BlogSection1 />

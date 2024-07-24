@@ -2,11 +2,10 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-const PageHead = dynamic(() => import('../components/elements/PageHead'));
-const Layout = dynamic(() => import('../components/layout/Layout'));
+const PageHead = dynamic(() => import("../components/elements/PageHead"));
+const Layout = dynamic(() => import("../components/layout/Layout"));
 // import PageHead from "../components/elements/PageHead";
 // import Layout from "../components/layout/Layout";
-
 
 const Terms = () => {
   const tocRef = useRef(null);
@@ -41,7 +40,10 @@ const Terms = () => {
   }, []);
   return (
     <>
-      <PageHead title={"Terms & Conditions"} />
+      <PageHead
+        title={"Terms & Conditions"}
+        canonical={"https://nextgrowthlabs.com/terms-of-service/"}
+      />
 
       <Layout>
         <div className="section pt-40 content-term">
