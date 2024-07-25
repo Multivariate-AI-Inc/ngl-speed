@@ -34,7 +34,7 @@ const PageHead = ({ title, ogDescription, ogType, canonical, image }) => {
         property="og:url"
         content={canonical ? canonical : "https://nextgrowthlabs.com/"}
       />
-      <meta property="og:site_name" content="Next Labs" />
+      <meta property="og:site_name" content="Next Growth Labs" />
       <meta
         property="article:modified_time"
         content="2023-09-18T14:13:16+00:00"

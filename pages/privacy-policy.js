@@ -78,7 +78,7 @@ const Privacy = () => {
             </div>
             <div className="content-main mt-50">
               <div className="text-center">
-                <h2 className="color-brand-1 mb-10">Privacy Policy</h2>
+                <h1 className="color-brand-1 mb-10">Privacy Policy</h1>
                 <p className="font-lg color-grey-500">
                   Please review our privacy policy to understand how we handle
                   information.

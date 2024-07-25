@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const Marquee = () => {
   return (
@@ -9,56 +9,56 @@ const Marquee = () => {
             src="/images/HDFC.svg"
             width={120}
             height={120}
-            alt=""
+            alt="hdfc logo"
             className="marquee-image"
           />
           <Image
             src="/images/Groww.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Groww logo"
             className="marquee-image"
           />
           <Image
             src="/images/Bajaj-Finserve.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Bajaj Finserve Logo"
             className="marquee-image"
           />
           <Image
             src="/images/B612.svg"
             width={120}
             height={120}
-            alt=""
+            alt="B612 Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Alibabagroup.svg"
             width={120}
             height={120}
-            alt=""
+            alt="AlibabaGroup Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Cred.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Cred Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Tata-1mg.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Tata-1mg Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Urban-company.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Urban Company Logo"
             className="marquee-image"
           />
         </div>
@@ -67,56 +67,56 @@ const Marquee = () => {
             src="/images/Kotak.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Kotak Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Dunzo.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Dunzo Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Dream11.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Drean11 Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Airtel.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Airtel Logo"
             className="marquee-image"
           />
           <Image
             src="/images/ZEE.svg"
             width={120}
             height={120}
-            alt=""
+            alt="ZEE Logo"
             className="marquee-image"
           />
           <Image
             src="/images/OYO.svg"
             width={120}
             height={120}
-            alt=""
+            alt="OYO Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Josh.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Josh Logo"
             className="marquee-image"
           />
           <Image
             src="/images/Share-Chat.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Share-Chat Logo"
             className="marquee-image"
           />
         </div>
@@ -127,7 +127,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Make My Trip Logo"
             className="marquee-image"
           />
           <Image
@@ -135,7 +135,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Goibibo Logo"
             className="marquee-image"
           />
           <Image
@@ -143,7 +143,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="ixigo Logo"
             className="marquee-image"
           />
           <Image
@@ -151,7 +151,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Yatra Logo"
             className="marquee-image"
           />
           <Image
@@ -159,7 +159,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Nykaa Logo"
             className="marquee-image"
           />
           <Image
@@ -167,7 +167,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Myntra Logo"
             className="marquee-image"
           />
           <Image
@@ -175,7 +175,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Snapdeal Logo"
             className="marquee-image"
           />
         </div>
@@ -185,7 +185,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="IDFC Logo"
             className="marquee-image"
           />
           <Image
@@ -193,7 +193,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Yes Bank Logo"
             className="marquee-image"
           />
           <Image
@@ -201,7 +201,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Edelweiss Logo"
             className="marquee-image"
           />
           <Image
@@ -209,7 +209,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="ELSA Logo"
             className="marquee-image"
           />
           <Image
@@ -217,7 +217,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Coin Marketcap Logo"
             className="marquee-image"
           />
           <Image
@@ -225,7 +225,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Simple Learn Logo"
             className="marquee-image"
           />
           <Image
@@ -233,7 +233,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="BYJU's Exam Prep Logo"
             className="marquee-image"
           />
           <Image
@@ -241,7 +241,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Mint Logo"
             className="marquee-image"
           />
         </div>
@@ -251,7 +251,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Magicbricks Logo"
             className="marquee-image"
           />
           <Image
@@ -259,7 +259,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Housing Logo"
             className="marquee-image"
           />
           <Image
@@ -267,7 +267,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="No Broker Logo"
             className="marquee-image"
           />
           <Image
@@ -275,7 +275,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Ultra Human Logo"
             className="marquee-image"
           />
           <Image
@@ -283,7 +283,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Fynd Logo"
             className="marquee-image"
           />
           <Image
@@ -291,7 +291,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="FanCode Logo"
             className="marquee-image"
           />
           <Image
@@ -299,7 +299,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Fectar Logo"
             className="marquee-image"
           />
           <Image
@@ -307,7 +307,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="ZET Logo"
             className="marquee-image"
           />
         </div>
@@ -317,7 +317,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="HDFC Logo"
             className="marquee-image"
           />
           <Image
@@ -325,7 +325,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Groww Logo"
             className="marquee-image"
           />
           <Image
@@ -333,7 +333,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Bajaj Finserve Logo"
             className="marquee-image"
           />
           <Image
@@ -341,7 +341,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="B612 Logo"
             className="marquee-image"
           />
           <Image
@@ -349,7 +349,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="AliBabaGroup Logo"
             className="marquee-image"
           />
           <Image
@@ -357,7 +357,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Cred Logo"
             className="marquee-image"
           />
           <Image
@@ -365,7 +365,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Tata 1mg Logo"
             className="marquee-image"
           />
           <Image
@@ -373,13 +373,13 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Urban Company Logo"
             className="marquee-image"
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Marquee
+export default Marquee;
