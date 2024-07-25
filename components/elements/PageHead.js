@@ -9,14 +9,7 @@ const PageHead = ({ title, ogDescription, ogType, canonical, image }) => {
         name="robots"
         content="noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
       />
-      <meta
-        name="description"
-        content={
-          ogDescription
-            ? ogDescription
-            : "Our App Store Optimization and App Advertising tools will help you grow your app. Reach out to us, and we'll super-power your app growth."
-        }
-      />
+      {ogDescription && <meta name="description" content={ogDescription} />}
       <meta property="og:locale" content="en_GB" />
       <meta property="og:locale:alternate" content="es_ES" />
       <meta property="og:locale:alternate" content="fr_FR" />
@@ -46,14 +39,9 @@ const PageHead = ({ title, ogDescription, ogType, canonical, image }) => {
       <meta name="twitter:site" content="https://nextgrowthlabs.com/" />
 
       <meta name="twitter:title" content={title} />
-      <meta
-        name="twitter:description"
-        content={
-          ogDescription
-            ? ogDescription
-            : "Our App Store Optimization and App Advertising tools will help you grow your app. Reach out to us, and we'll super-power your app growth."
-        }
-      />
+      {ogDescription && (
+        <meta name="twitter:description" content={ogDescription} />
+      )}
       <meta
         name="twitter:image"
         content={image ? image : "/assets/imgs/template/logo.svg"}
