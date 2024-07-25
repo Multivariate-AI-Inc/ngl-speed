@@ -10,10 +10,10 @@ const BlogSection1 = () => {
             <div className="row align-items-center">
               <div className="col-xxl-6 col-xl-7 col-lg-12">
                 <div className="box-banner-service">
-                  <h2 className="color-brand-1 mb-20">
+                  <h1 className="color-brand-1 mb-20">
                     All the important insights, guidance and news you need to
                     know.
-                  </h2>
+                  </h1>
                   <div className="row">
                     <div className="col-lg-9">
                       <p className="font-lg color-grey-500">

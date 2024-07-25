@@ -30,6 +30,9 @@ const Blog = ({ allPosts }) => {
           "All the important insights, guidance and news you need to know."
         }
         canonical={"https://nextgrowthlabs.com/blog/"}
+        ogDescription={
+          "With the help of these in-depth blogs and articles, you can learn about customer analytics, growth strategies, campaign optimization, mobile marketing, and insights-led engagement."
+        }
       />
       <Layout>
         <BlogSection1 />
