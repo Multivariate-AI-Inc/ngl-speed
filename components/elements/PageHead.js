@@ -22,14 +22,9 @@ const PageHead = ({ title, ogDescription, ogType, canonical, image }) => {
       <meta property="og:locale:alternate" content="fr_FR" />
       <meta property="og:type" content={ogType ? ogType : "website"} />
       <meta property="og:title" content={title} />
-      <meta
-        property="og:description"
-        content={
-          ogDescription
-            ? ogDescription
-            : "Our App Store Optimization and App Advertising tools will help you grow your app. Reach out to us, and we'll super-power your app growth."
-        }
-      />
+      {ogDescription && (
+        <meta property="og:description" content={ogDescription} />
+      )}
       <meta
         property="og:url"
         content={canonical ? canonical : "https://nextgrowthlabs.com/"}

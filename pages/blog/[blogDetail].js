@@ -153,12 +153,14 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
     setSections(headings);
     return headings;
   }
+  // console.log(postData.seo);
   return (
     <>
       <PageHead
         title={postData.title}
         canonical={`https://nextgrowthlabs.com/blog/${postData.slug}/`}
-        ogDescription={`${postData.excerpt.slice(3, 160)}...`}
+        // ogDescription={`${postData.excerpt.slice(3, 160)}...`}
+        ogDescription={postData.seo.metaDesc}
         image={getLargestResolutionImage(postData).sourceUrl}
       />
       <Layout>

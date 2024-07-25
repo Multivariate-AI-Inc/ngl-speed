@@ -18,6 +18,9 @@ export default function Home() {
       <PageHead
         title={"NextGrowthLabs - Best App Store Optimization Platform"}
         canonical={"https://nextgrowthlabs.com/"}
+        ogDescription={
+          "Our App Store Optimization and App Advertising tools will help you grow your app. Reach out to us, and we'll super-power your app growth."
+        }
       />
       <Layout>
         <Hero />
