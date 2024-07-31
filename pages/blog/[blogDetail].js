@@ -12,6 +12,11 @@ import { getAllPosts, getPostData, getPostSlug } from "../../lib/posts";
 import FeaturedImage from "../../components/elements/FeaturedImage";
 import Date from "../../components/elements/Date";
 import { getLargestResolutionImage } from "../../components/utils";
+import {
+  FacebookShareButton,
+  InstapaperShareButton,
+  TwitterShareButton,
+} from "react-share";
 
 // import { parse } from "node-html-parser";
 
@@ -483,18 +488,33 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                         })}
                     </ul>
                   </div>
-                  <div className="mt-50 d-flex align-item-center">
-                    {" "}
-                    <strong className="font-xs-bold color-brand-1 mr-20">
-                      Share
-                    </strong>
-                    <div className="list-socials mt-0 d-inline-block">
-                      {" "}
-                      <Link className="icon-socials icon-facebook" href="#" />
-                      <Link className="icon-socials icon-instagram" href="#" />
-                      <Link className="icon-socials icon-twitter" href="#" />
+                  {postData && (
+                    <div className="mt-50 d-flex align-item-center">
+                      <strong className="font-xs-bold color-brand-1 mr-20">
+                        Share
+                      </strong>
+                      <div className="list-socials mt-0 d-inline-block">
+                        <FacebookShareButton
+                          url={`https://nextgrowthlabs.com/blog/${postData.slug}/`}
+                          title={postData.title}
+                        >
+                          <i className="icon-socials icon-facebook" />
+                        </FacebookShareButton>
+                        <InstapaperShareButton
+                          url={`https://nextgrowthlabs.com/blog/${postData.slug}/`}
+                          title={postData.title}
+                        >
+                          <i className="icon-socials icon-instagram" />
+                        </InstapaperShareButton>
+                        <TwitterShareButton
+                          url={`https://nextgrowthlabs.com/blog/${postData.slug}/`}
+                          title={postData.title}
+                        >
+                          <i className="icon-socials icon-twitter" />
+                        </TwitterShareButton>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
