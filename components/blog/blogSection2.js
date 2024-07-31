@@ -83,9 +83,14 @@ export default function BlogSection2({ allPosts }) {
         <div className="box-list-blogs">
           <div className="row mt-55">
             <BlogSubSection1 latestPost={allPosts.nodes[0]} />
-            <BlogSubSection2 posts={allPosts.nodes.slice(1, 3)} />
-            <BlogSubSection3 posts={allPosts.nodes.slice(3, 6)} />
-            <BlogSubSection4 />
+            {allPosts.nodes.length >= 3 && (
+              <BlogSubSection2 posts={allPosts.nodes.slice(1, 3)} />
+            )}
+            {allPosts.nodes.length >= 4 && (
+              <BlogSubSection3 posts={allPosts.nodes.slice(3, 6)} />
+            )}
+
+            {/* <BlogSubSection4 /> */}
             {post.nodes.slice(6).map((item, index) => {
               return (
                 <BlogCard

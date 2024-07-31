@@ -499,28 +499,31 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
               </div>
             </div>
           </div>
-          <div
-            className="border-bottom bd-grey-80 mt-30"
-            id="blogDetailBorderBottom"
-          />
+          {suggestedPosts.length > 0 && (
+            <div
+              className="border-bottom bd-grey-80 mt-30"
+              id="blogDetailBorderBottom"
+            />
+          )}
         </div>
-        <div className="section mt-50">
-          <div className="container">
-            <h3 className="color-brand-1">Recommended articles</h3>
-            <div className="row mt-50">
-              {suggestedPosts.nodes.slice(6, 9).map((item, index) => (
-                <BlogCard
-                  key={index}
-                  title={item.title}
-                  date={item.date}
-                  readTimeTag={item.readTime}
-                  excerpt={item.excerpt}
-                  tag={item.tag}
-                  post={item}
-                  slug={item.slug}
-                />
-              ))}
-              {/* <div className="col-lg-4 col-md-6 mb-30 item-article featured">
+        {suggestedPosts.length > 0 && (
+          <div className="section mt-50">
+            <div className="container">
+              <h3 className="color-brand-1">Recommended articles</h3>
+              <div className="row mt-50">
+                {suggestedPosts.nodes.slice(6, 9).map((item, index) => (
+                  <BlogCard
+                    key={index}
+                    title={item.title}
+                    date={item.date}
+                    readTimeTag={item.readTime}
+                    excerpt={item.excerpt}
+                    tag={item.tag}
+                    post={item}
+                    slug={item.slug}
+                  />
+                ))}
+                {/* <div className="col-lg-4 col-md-6 mb-30 item-article featured">
                 <div className="card-blog-grid card-blog-grid-3 hover-up">
                   <div className="card-image">
                     <Link href="/blog-detail">
@@ -634,9 +637,10 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
                   </div>
                 </div>
               </div> */}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </Layout>
     </>
   );
