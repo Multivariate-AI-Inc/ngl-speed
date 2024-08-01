@@ -106,8 +106,8 @@ export default function BlogSection2({ allPosts }) {
               );
             })}
           </div>
+
           <div className="mt-20 mb-30 text-center">
-            {" "}
             <LoadMoreButton
               posts={post}
               setPosts={setPost}
