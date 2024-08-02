@@ -1,8 +1,13 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import PageHead from "../components/elements/PageHead";
 import React, { useEffect, useRef } from "react";
-import Layout from "../components/layout/Layout";
-import Image from "next/image";
+// import PageHead from "../components/elements/PageHead";
+// import Layout from "../components/layout/Layout";
+// import Image from "next/image";
+const PageHead = dynamic(() => import('../components/elements/PageHead'));
+const Layout = dynamic(() => import('../components/layout/Layout'));
+const Image = dynamic(() => import('next/image'));
+
 const Privacy = () => {
   const tocRef = useRef(null);
 

@@ -8,7 +8,7 @@ const BlogCard = ({ title, date, readTimeTag, excerpt, tag, slug, post }) => {
       <div className={`col-lg-4 col-md-6 mb-30 item-article ${tag}`}>
         <div className="card-blog-grid card-blog-grid-3 hover-up">
           <div className="card-image">
-            <Link href={`https://blogsngl.wpenginepowered.com/${post.slug}`}>
+            <Link href={`/blog/${post.slug}`}>
               <FeaturedImage
                 post={post}
                 styleClasses=""
@@ -21,7 +21,7 @@ const BlogCard = ({ title, date, readTimeTag, excerpt, tag, slug, post }) => {
                   </Link> */}
           </div>
           <div className="card-info">
-            <Link href={`https://blogsngl.wpenginepowered.com/${slug}`}>
+            <Link href={`/blog/${slug}`}>
               <h4 className="color-brand-1">{title}</h4>
             </Link>
             <div className="mb-25 mt-10">

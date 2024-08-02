@@ -1,5 +1,5 @@
-import React from "react";
-import ToolsCard from "../cards/ToolsCard";
+import React from "react"
+import ToolsCard from "../cards/ToolsCard"
 const data = [
   {
     name: "Content Assist",
@@ -70,16 +70,25 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2179_63890">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63890">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
     toolLink:
-      "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
+      // "https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/",
+      "/seo-and-aso-keyword-content-writing-assistant/",
   },
   {
     name: "Keyword Density Monitor",
@@ -186,15 +195,24 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2179_63767">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63767">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-density-tool/",
+    // toolLink: "https://tools.nextgrowthlabs.com/keyword-density-tool/",
+    toolLink: "/keyword-density-tool",
   },
   {
     name: "Chrome Add-On",
@@ -237,10 +255,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2155_55163">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2155_55163">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -313,10 +339,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2179_63987">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63987">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -440,15 +474,24 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2158_55236">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2158_55236">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/title-meta-description/",
+    // toolLink: "https://tools.nextgrowthlabs.com/title-meta-description/",
+    toolLink: "/title-meta-description",
   },
   {
     name: "Page Speed Assesment",
@@ -547,10 +590,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2179_64117">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_64117">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -626,10 +677,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2179_63562">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63562">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -721,15 +780,24 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2179_63647">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63647">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/html-editor/",
+    // toolLink: "https://tools.nextgrowthlabs.com/html-editor/",
+    toolLink: "/html-editor",
   },
   {
     name: "Word to HTML convertor",
@@ -834,7 +902,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2181_64751">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1106,10 +1178,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2181_64404">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2181_64404">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1179,13 +1259,24 @@ const data = [
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#2EB67D" />
-            <stop offset="1" stopColor="#FFE7BB" />
+            <stop
+              offset="1"
+              stopColor="#FFE7BB"
+            />
           </linearGradient>
           <clipPath id="clip0_2179_63480">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63480">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip2_2179_63480">
             <rect
@@ -1293,15 +1384,24 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2181_64947">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2181_64947">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/font-changer/",
+    // toolLink: "https://tools.nextgrowthlabs.com/font-changer/",
+    toolLink: "/font-changer",
   },
   {
     name: "Search & App Rank Tracker",
@@ -1386,7 +1486,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2155_54158">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1513,13 +1617,24 @@ const data = [
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#2EB67D" />
-            <stop offset="1" stopColor="#FFE7BB" />
+            <stop
+              offset="1"
+              stopColor="#FFE7BB"
+            />
           </linearGradient>
           <clipPath id="clip0_2179_63028">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2179_63028">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1696,7 +1811,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2177_62895">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1724,10 +1843,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2177_62831">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2177_62831">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1786,7 +1913,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2176_62682">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1900,7 +2031,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2176_62411">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -1999,12 +2134,17 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2176_62512">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/website-technology-checker/",
+    // toolLink: "https://tools.nextgrowthlabs.com/website-technology-checker/",
+    toolLink: "/website-technology-checker",
   },
   {
     name: "Web Page Crawler",
@@ -2131,15 +2271,24 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2173_62172">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2173_62172">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/web-page-crawler/",
+    // toolLink: "https://tools.nextgrowthlabs.com/web-page-crawler/",
+    toolLink: "/web-page-crawler",
   },
   {
     name: "Robots.txt on SEO",
@@ -2172,7 +2321,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2173_62247">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
@@ -2276,7 +2429,11 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2173_62314">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2173_62314">
             <rect
@@ -2289,7 +2446,8 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/internal-links-checker/",
+    // toolLink: "https://tools.nextgrowthlabs.com/internal-links-checker/",
+    toolLink: "/internal-links-checker",
   },
   {
     name: "Website Mobile Friendly Checker",
@@ -2334,13 +2492,18 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2171_62093">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
     toolLink:
-      "https://tools.nextgrowthlabs.com/website-mobile-friendly-checker/",
+      // "https://tools.nextgrowthlabs.com/website-mobile-friendly-checker/",
+      "/website-mobile-friendly-checker",
   },
   {
     name: "On-Page SEO Checker",
@@ -2411,17 +2574,25 @@ const data = [
         </g>
         <defs>
           <clipPath id="clip0_2795_12371">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
           <clipPath id="clip1_2795_12371">
-            <rect width="75" height="75" fill="white" />
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+            />
           </clipPath>
         </defs>
       </svg>
     ),
     toolLink: "https://tools.nextgrowthlabs.com/on-page-seo-checker/",
   },
-];
+]
 const OtherTools = () => {
   return (
     <section className="section mt-80">
@@ -2434,6 +2605,7 @@ const OtherTools = () => {
               years ahead in the mobile app promotion stack.
             </p>
           </div>
+
           {/* <div className="col-lg-4 col-md-4 text-md-end text-start">
  <Link href="#" className="btn btn-default font-sm-bold pl-0">
               Learn More
@@ -2467,7 +2639,7 @@ const OtherTools = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default OtherTools;
+export default OtherTools

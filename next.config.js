@@ -12,6 +12,12 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "blogs.nextgrowthlabs.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "imagedelivery.net",
       },
       {

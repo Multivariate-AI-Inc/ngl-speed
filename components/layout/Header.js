@@ -57,6 +57,7 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                       <Link href="/search-engine-optimization">SEO</Link>
                     </li>
                     <li>
+
                       <Link href="/free-app-store-optimization-tool">Tools</Link>
                     </li>
                     <li>
@@ -65,6 +66,7 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                     {/*<li>
                       <Link href="http://blogs.nextgrowthlabs.com/">Blog</Link>
                     </li>*/}                       
+
                     <li>
                       <Link href="/career">Career</Link>
                     </li>
