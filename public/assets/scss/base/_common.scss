@@ -728,7 +728,7 @@ a {
   width: 100%;
   // max-width: 400px; /* Adjust as needed */
   height: auto; /* Adjust as needed */
-  background: rgba(101, 101, 101, 0.5); /* Semi-transparent background */
+  background: #eae9ee46; /* Semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -739,7 +739,9 @@ a {
   max-height: 100%;
   object-fit: contain; /* Keeps aspect ratio */
 }
-
+.wp-block-table {
+  overflow-x: auto;
+}
 table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;

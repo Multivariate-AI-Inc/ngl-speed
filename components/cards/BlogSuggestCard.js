@@ -8,12 +8,14 @@ const BlogSuggestCard = ({ post }) => {
       <div className="card-blog-grid card-blog-grid-2 hover-up min-height-360">
         <div className="card-image">
           <Link href={`/blog/${post.slug}`}>
-            <FeaturedImage
-              post={post}
-              styleClasses=""
-              priority={false}
-              height={240}
-            />
+            <div className="mb-40 reusable-div">
+              <FeaturedImage
+                post={post}
+                styleClasses=""
+                priority={false}
+                height={240}
+              />
+            </div>
           </Link>
         </div>
         <div className="card-info">
