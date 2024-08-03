@@ -1820,7 +1820,8 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/json-editor",
+    // toolLink: "https://tools.nextgrowthlabs.com/json-editor",
+    toolLink: "/json-editor",
   },
   {
     name: "Wordpress Post Title Changer Tool",
