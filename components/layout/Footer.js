@@ -146,7 +146,6 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    {/* <Link href="https://tools.nextgrowthlabs.com/html-editor/"> */}
                     <Link href="/html-editor">Html Editor</Link>
                   </li>
                   {/* <li>

@@ -7,7 +7,7 @@ const PageHead = ({ title, ogDescription, ogType }) => {
       <link rel="icon" href="/logo.svg" />
       <meta
         name="robots"
-        content="noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
       />
       <meta
         name="description"

@@ -7484,10 +7484,6 @@ button {
   border-radius: 8px;
 }
 
-#right-float-button {
-  float: right;
-}
-
 .main-div {
   padding: 20px;
   border-left: 1px solid rgb(185, 185, 201);
@@ -8138,10 +8134,6 @@ th.another {
 
 .jodit-workplace {
   height: 370px;
-}
-
-#editor {
-  height: 400px;
 }
 
 .editHtml {

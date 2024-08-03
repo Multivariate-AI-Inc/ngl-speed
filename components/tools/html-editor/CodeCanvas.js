@@ -64,7 +64,6 @@ const CodeCanvas = () => {
       <div
         id="editor"
         ref={editorRef}
-        className="mb-100"
       >
         <JoditEditor
           ref={textEditor}
