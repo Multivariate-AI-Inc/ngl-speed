@@ -38,11 +38,11 @@ const Sidebar = ({ openClass }) => {
                             Tools
                           </Link>
                         </li>
-                        {/* <li>
-                          <Link href="http://blogs.nextgrowthlabs.com/">
+                        <li>
+                          <Link href="http://blog.nextgrowthlabs.com/">
                             Blog
                           </Link>
-                        </li>*/}
+                        </li>
                         <li>
                           <Link href="/career">Career</Link>
                         </li>
