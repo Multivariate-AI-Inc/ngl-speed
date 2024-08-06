@@ -911,7 +911,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/word-to-html/",
+    toolLink: "/word-to-html",
   },
   {
     name: "EMI Calculator",
@@ -1820,7 +1820,6 @@ const data = [
         </defs>
       </svg>
     ),
-    // toolLink: "https://tools.nextgrowthlabs.com/json-editor",
     toolLink: "/json-editor",
   },
   {
@@ -1923,7 +1922,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-generator-tool/",
+    toolLink: "/keyword-generator-tool",
   },
   {
     name: "Cloud Data Warehouse Setup Cost Calculator",

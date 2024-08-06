@@ -159,19 +159,16 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/word-to-html/">
+                    <Link href="/word-to-html">
                       Word To Html
                     </Link>
                   </li>
                   <li>
-                    {" "}
-                    {/* <Link href="https://tools.nextgrowthlabs.com/font-changer/"> */}
                     <Link href="/font-changer">
                       Font Changer
                     </Link>
                   </li>
                   <li>
-                    {" "}
                     <Link href="https://tools.nextgrowthlabs.com/multi-tool/">
                       Multi Tool
                     </Link>

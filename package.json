@@ -14,7 +14,6 @@
     "@tanstack/react-query": "^5.45.0",
     "@wordpress/block-library": "^9.3.0",
     "date-fns": "^3.6.0",
-    "jodit": "^4.2.27",
     "jodit-react": "^4.1.2",
     "jotai": "^2.8.3",
     "lodash.debounce": "^4.0.8",
@@ -34,7 +33,6 @@
     "sharp": "^0.33.4",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.4.5",
-    "typescript": "^5.4.5",
     "typewriter-effect": "^2.19.0",
     "wowjs": "^1.1.3"
   },

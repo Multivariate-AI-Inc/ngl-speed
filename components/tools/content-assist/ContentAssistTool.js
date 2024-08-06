@@ -122,91 +122,7 @@ const ContentAssistTool = () => {
     const finalScore = ((score / scores.maxPowerScore) * 100).toFixed(2)
     setRecommendationsScore(finalScore + "%")
   }
-  // plagiarismDetector
-  // const handlePlagiarismCheck = async () => {
-  //   let confirmation = confirm(
-  //     "Are you sure you want to check whether similar text appears elsewhere on the web?",
-  //   )
-  //   if (confirmation) {
-  //     try {
-  //       // tableContainerRef.current.classList.add('hidden');
-  //     } catch (error) {}
-  //     let userContent = ""
-  //     if (userInputRef.current) {
-  //       userContent = userInputRef.current.value
-  //     }
-  //     let words = userContent.split(" ")
-  //     let firstPart = words.slice(0, 100).join(" ")
-  //     let input = firstPart
-  //     let data = { input: input }
-  //     const requestOptions = {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(data),
-  //     }
-  //     try {
-  //       const response = await fetch("/api/plagiarism-detector", requestOptions)
-  //       const result = await response.json()
-
-  //       let parser = new DOMParser()
-  //       let doc = parser.parseFromString(result, "text/html")
-  //       let table = doc.querySelector("table")
-  //       let rows = table.querySelectorAll("tr")
-  //       if (rows.length > 1) {
-  //         // Loop through the rows and extract the data
-  //         let tableData = []
-  //         rows.forEach((row, rowCount) => {
-  //           if (rowCount !== 0) {
-  //             let cells = row.querySelectorAll("td")
-  //             let Array = []
-  //             // Loop through the cells and extract the cell data
-  //             cells.forEach(cell => {
-  //               if (cell.textContent !== "Scraping")
-  //                 Array.push(cell.textContent)
-  //             })
-  //             tableData.push(Array)
-  //             console.log("Table data", tableData)
-  //           } else {
-  //             let thCells = row.querySelectorAll("th")
-  //             let HArray = []
-  //             thCells.forEach(cell => {
-  //               if (cell.textContent !== "Method") HArray.push(cell.textContent)
-  //             })
-  //             tableData.push(HArray)
-  //           }
-  //         })
-  //         generateResponseTable(tableData)
-  //       } else {
-  //         document.getElementById("Loading").classList.add("hidden")
-  //         if (input.trim() !== "") {
-  //           if (rows.length == 1) {
-  //             const paragraph =
-  //               "Currently, we are in high demand. Please try again later."
-  //             const div = document.createElement("div")
-  //             div.id = "response-table"
-  //             const p = document.createElement("p")
-  //             p.textContent = paragraph
-  //             p.classList.add("high-demand")
-  //             div.appendChild(p)
-  //             let container = document.getElementById("table-container")
-  //             container.appendChild(div)
-  //             container.classList.remove("hidden")
-  //           } else {
-  //             throw new Error("Something went Wrong!")
-  //           }
-  //         } else {
-  //           throw new Error("Something went Wrong!")
-  //         }
-  //       }
-  //     } catch (error) {
-  //       // document.getElementById("Loading").classList.add("hidden")
-  //       console.error(error)
-  //       alert("Something went Wrong!")
-  //     }
-  //   }
-  // }
+  
   const handlePlagiarismCheck = async () => {
     let confirmation = confirm(
       "Are you sure you want to check whether similar text appears elsewhere on the web?",
@@ -293,9 +209,9 @@ const ContentAssistTool = () => {
         style={{ padding: "54px 20px" }}
       >
         <div className="mt-20 content-header">
-          <h4 className="color-brand-1 text-center">
+          <h1 className="font-2xl-bold  color-brand-1 text-center">
             SEO and ASO Keyword Content Writing Assistant
-          </h4>
+          </h1>
         </div>
         <div className="tool-row">
           <div className="content-left-side-main">
@@ -411,6 +327,7 @@ const ContentAssistTool = () => {
               href="https://nextgrowthlabs.com/?utm_source=content_assist_web#form"
               target="_blank"
               rel="noopener noreferrer"
+              className="utm-link"
             >
               NextGrowth Labs
             </a>

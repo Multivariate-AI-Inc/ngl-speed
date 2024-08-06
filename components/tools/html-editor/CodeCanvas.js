@@ -59,7 +59,7 @@ const CodeCanvas = () => {
   return (
     <div className="container" style={{position:"relative", top:"3rem"}}>
       <div className="main-head">
-        <h4 className="color-brand-1 text-center">HTML Editor</h4>
+        <h1 className="font-4xl-bold color-brand-1 text-center">HTML Editor</h1>
       </div>
       <div
         id="editor"

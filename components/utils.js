@@ -2315,3 +2315,62 @@ export function notIncludedToString(findValues) {
   }
   return content
 }
+
+
+// *************** used in keyword generator tool ******************
+// custom sort suggestion
+export function customSortSuggestion(array, name) {
+  const result = {};
+  const mixed = [];
+
+  array.forEach((value) => {
+      const namePosition = value.indexOf(name);
+
+      if (namePosition !== -1 && namePosition < value.length - name.length && value[namePosition + name.length] === ' ') {
+          const spacePosition = namePosition + name.length + 1;
+          const keyword = value.substring(spacePosition);
+
+          if (keyword) {
+              const groupKey = keyword[0].toLowerCase();
+
+              if (/[a-zA-Z]/.test(groupKey)) {
+                  if (!result[groupKey]) {
+                      result[groupKey] = [];
+                  }
+                  result[groupKey].push(value);
+              } else {
+                  if (value.includes(name)) {
+                      mixed.push(value);
+                  }
+              }
+          } else {
+              if (value.includes(name)) {
+                  mixed.push(value);
+              }
+          }
+      } else {
+          if (value.includes(name)) {
+              mixed.push(value);
+          }
+      }
+  });
+
+  // Sort each group
+  Object.keys(result).forEach((key) => {
+      result[key].sort();
+  });
+
+  // Sort the groups by their keys
+  const sortedResult = Object.keys(result).sort().reduce((acc, key) => {
+      acc[key] = result[key];
+      return acc;
+  }, {});
+
+  if (mixed.length > 0) {
+      mixed.sort();
+      sortedResult['Mixed'] = mixed;
+  }
+
+  return sortedResult;
+}
+
