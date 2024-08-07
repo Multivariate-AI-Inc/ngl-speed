@@ -1,12 +1,55 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { toast } from "react-toastify"
-
+import ReactEcharts from "echarts-for-react"
+import { RxCross2 } from "react-icons/rx"
 const DisplayGeneratedKeyword = ({ data, keyword }) => {
+  const [chartData, setChartData] = useState(null)
+
+  // useEffect(() => {
+  //   const copyButtonCode = () => {
+  //     let copyButtons = document.querySelectorAll(
+  //       ".obj-heading button.copy-table-btn",
+  //     )
+  //     copyButtons.forEach(button => {
+  //       const handleClick = () => {
+  //         const clipboardText = button.getAttribute("data-clipboard")
+  //         if (!clipboardText) {
+  //           toast.success("No data to copy!", { autoClose: 2000 })
+  //           return
+  //         }
+  //         let listData = JSON.parse(clipboardText)
+  //         listData = listData.join("\n")
+  //         navigator.clipboard
+  //           .writeText(listData)
+  //           .then(() => {
+  //             toast.success("Table copied to clipboard!", { autoClose: 2000 })
+  //           })
+  //           .catch(err => {
+  //             toast.error("Failed to copy to clipboard!", { autoClose: 2000 })
+  //           })
+  //       }
+
+  //       button.addEventListener("click", handleClick)
+  //       button.handleClick = handleClick
+  //     })
+  //   }
+
+  //   copyButtonCode()
+  //   return () => {
+  //     let copyButtons = document.querySelectorAll(
+  //       ".obj-heading button.copy-table-btn",
+  //     )
+  //     copyButtons.forEach(button => {
+  //       if (button.handleClick) {
+  //         button.removeEventListener("click", button.handleClick)
+  //       }
+  //     })
+  //   }
+  // }, [data])
+
   useEffect(() => {
     const copyButtonCode = () => {
-      let copyButtons = document.querySelectorAll(
-        ".obj-heading button.copy-table-btn",
-      )
+      let copyButtons = document.querySelectorAll(".copy-table-btn")
       copyButtons.forEach(button => {
         const handleClick = () => {
           const clipboardText = button.getAttribute("data-clipboard")
@@ -29,14 +72,30 @@ const DisplayGeneratedKeyword = ({ data, keyword }) => {
         button.addEventListener("click", handleClick)
         button.handleClick = handleClick
       })
+
+      let graphButtons = document.querySelectorAll("#copy-button")
+      graphButtons.forEach(button => {
+        const handleClick = () => {
+          const chartJsonData = button.getAttribute("data-clipboard")
+          handleShowChart(chartJsonData)
+        }
+
+        button.addEventListener("click", handleClick)
+        button.handleClick = handleClick
+      })
     }
 
     copyButtonCode()
     return () => {
-      let copyButtons = document.querySelectorAll(
-        ".obj-heading button.copy-table-btn",
-      )
+      let copyButtons = document.querySelectorAll(".copy-table-btn")
       copyButtons.forEach(button => {
+        if (button.handleClick) {
+          button.removeEventListener("click", button.handleClick)
+        }
+      })
+
+      let graphButtons = document.querySelectorAll("#copy-button")
+      graphButtons.forEach(button => {
         if (button.handleClick) {
           button.removeEventListener("click", button.handleClick)
         }
@@ -79,13 +138,8 @@ const DisplayGeneratedKeyword = ({ data, keyword }) => {
   }
 
   // ***************************
-  const handleShowChart = () => {
-    createButtonForMainChart(data, keyword)
-  }
-
-  const createButtonForMainChart = (data, keyword) => {
-    const clipboardText = JSON.stringify(data)
-    let initialData = JSON.parse(clipboardText)
+  const handleShowChart = renderData => {
+    let initialData = JSON.parse(renderData)
     let jsonData = {
       name: keyword,
       children: [],
@@ -102,73 +156,36 @@ const DisplayGeneratedKeyword = ({ data, keyword }) => {
         children: childrenArray,
       })
     }
-    showDynamicChart(jsonData, "radial")
+    setChartData(jsonData)
   }
 
-  const showDynamicChart = (jsonData, layout = "", label = { show: true }) => {
-    // Create the chart container and set its dimensions
-    const chartContainer = document.createElement("div")
-    chartContainer.classList.add("chart-container")
-    chartContainer.style.width = "80vw"
-    chartContainer.style.height = "80vh"
-
-    const closeButton = document.createElement("button")
-    closeButton.innerHTML =
-      '<img src="https://tools.nextgrowthlabs.com/wp-includes/images/x-cross-16.svg" alt="close">'
-    closeButton.classList.add("close-button")
-
-    closeButton.addEventListener("click", () => {
-      document.body.removeChild(chartContainer)
-      document.body.removeChild(blackBackground)
-      if (myChart) {
-        myChart.dispose()
-      }
-      document.body.removeChild(closeButton)
-    })
-
-    document.body.appendChild(closeButton)
-    document.body.appendChild(chartContainer)
-
-    const blackBackground = document.createElement("div")
-    blackBackground.classList.add("black-background")
-    blackBackground.style.display = "block"
-    document.body.appendChild(blackBackground)
-
-    // Ensure the chart is initialized only after the container is added to the DOM
-    setTimeout(() => {
-      const myChart = echarts.init(chartContainer, null, {
-        renderer: "svg",
-      })
-      myChart.showLoading()
-
-      myChart.hideLoading()
-      myChart.setOption({
-        tooltip: {
-          trigger: "item",
-          triggerOn: "mousemove",
+  const getChartOption = data => ({
+    tooltip: {
+      trigger: "item",
+      triggerOn: "mousemove",
+    },
+    series: [
+      {
+        type: "tree",
+        data: [data],
+        top: "15%",
+        bottom: "15%",
+        right: "15%",
+        left: "15%",
+        layout: "radial",
+        symbol: "emptyCircle",
+        symbolSize: 7,
+        initialTreeDepth: 3,
+        animationDurationUpdate: 750,
+        emphasis: {
+          focus: "descendant",
         },
-        series: [
-          {
-            type: "tree",
-            data: [jsonData],
-            top: "15%",
-            bottom: "15%",
-            right: "15%",
-            left: "15%",
-            layout: layout,
-            symbol: "emptyCircle",
-            symbolSize: 7,
-            initialTreeDepth: 3,
-            animationDurationUpdate: 750,
-            emphasis: {
-              focus: "descendant",
-            },
-            label: label,
-          },
-        ],
-      })
-    }, 0) // Timeout to ensure DOM is ready
-  }
+        label: {
+          show: true,
+        },
+      },
+    ],
+  })
   // ***************************
 
   return (
@@ -177,7 +194,7 @@ const DisplayGeneratedKeyword = ({ data, keyword }) => {
         <button
           data-clipboard={JSON.stringify(data)}
           className="audit-button ptb-10 pl-10 pr-10"
-          onClick={handleShowChart}
+          onClick={() => handleShowChart(JSON.stringify(data))}
         >
           Display All Keywords Chart
         </button>
@@ -186,6 +203,25 @@ const DisplayGeneratedKeyword = ({ data, keyword }) => {
         className="d-flex justify-content-between gap-50 flex-wrap"
         dangerouslySetInnerHTML={generateContent()}
       ></div>
+      {chartData && (
+        <div className="black-background">
+          <div className="chart-container">
+            <ReactEcharts
+              option={getChartOption(chartData)}
+              style={{ height: "80vh", width: "80vw", margin: "auto" }}
+            />
+            <button
+              className="close-button"
+              onClick={() => setChartData(null)}
+            >
+              <RxCross2
+                style={{ color: "black" }}
+                className="font-4xl-bold"
+              />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

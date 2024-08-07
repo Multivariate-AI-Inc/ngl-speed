@@ -56,7 +56,7 @@ function KeywordGenerator() {
     })
       .then(response => {
         if (!response.ok) {
-          toast.warning("Network response was not ok!", { autoClose: 2000 })
+          toast.error("We are currently experiencing high traffic, Please try again later!", { autoClose: 2000 })
           setLoading(false)
           throw new Error("Network response was not ok")
         }

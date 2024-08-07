@@ -1,3 +1,4 @@
+import { error } from "console"
 import { customSortSuggestion } from "../../components/utils"
 export const runtime = "edge"
 export default async function handler(req, res) {
@@ -15,7 +16,6 @@ export default async function handler(req, res) {
     const term = keyword.replace(/ /g, "+")
     const baseUrl = "https://js-apis.maakeetoo.com/"
     let keywords = []
-
     const googleData1 = await googleSuggestionFull(baseUrl, term, "in", "en")
     keywords = googleData1
     const palyData2 = await playSuggestionFull(baseUrl, term, "in", "en")
