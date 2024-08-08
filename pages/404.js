@@ -1,12 +1,15 @@
-import Link from "next/link"
-import PageHead from "../components/elements/PageHead"
-import Image from "next/image"
-import Layout from "../components/layout/Layout"
+import Link from "next/link";
+import PageHead from "../components/elements/PageHead";
+import Image from "next/image";
+import Layout from "../components/layout/Layout";
 
 const CustomError404 = () => {
   return (
     <>
-      <PageHead title={"Error 404 - Page not found"} />
+      <PageHead
+        title={"Error 404 - Page not found"}
+        canonical={"https://nextgrowthlabs.com/404"}
+      />
       <Layout>
         <section className="section box-404">
           <div className="container">
@@ -63,10 +66,7 @@ const CustomError404 = () => {
         </section>
         <section className="section mt-100">
           <div className="container">
-            <div
-              className="d-flex"
-              style={{ justifyContent: "space-around" }}
-            >
+            <div className="d-flex" style={{ justifyContent: "space-around" }}>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card-small card-small-2">
                   <div className="card-image">
@@ -113,8 +113,8 @@ const CustomError404 = () => {
                   <div className="card-info">
                     <h6 className="color-brand-1 mb-10">Corporate Address</h6>
                     <p className="font-xs color-grey-500">
-                      #27, Santosh Tower, Second Floor,JP Nagar <br /> 4th Phase, 4th
-                      Main 100ft Ring Road <br /> Bangalore - 560078
+                      #27, Santosh Tower, Second Floor,JP Nagar <br /> 4th
+                      Phase, 4th Main 100ft Ring Road <br /> Bangalore - 560078
                     </p>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const CustomError404 = () => {
         <div className="d-inline-block mb-30" />
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default CustomError404
+export default CustomError404;
