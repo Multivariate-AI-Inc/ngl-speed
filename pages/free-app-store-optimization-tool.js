@@ -5,19 +5,39 @@ import PageHead from "../components/elements/PageHead";
 import ToolsHeroSection from "../components/tools/NextTools";
 
 import dynamic from "next/dynamic";
-const TrackingTools = dynamic( ()=> import("../components/tools/TrackingTools"),{ssr:false})
-const SlackTool = dynamic( ()=> import("../components/tools/SlackTool"),{ssr:false})
-const OtherTools = dynamic( ()=> import("../components/tools/OtherTools"),{ssr:false})
-const ConsoleFeatures = dynamic( ()=> import("../components/tools/ConsoleFeatures"),{ssr:false})
-const NextASOTools = dynamic( ()=> import("../components/tools/NextASOTools"),{ssr:false})
+const TrackingTools = dynamic(
+  () => import("../components/tools/TrackingTools"),
+  { ssr: false }
+);
+const SlackTool = dynamic(() => import("../components/tools/SlackTool"), {
+  ssr: false,
+});
+const OtherTools = dynamic(() => import("../components/tools/OtherTools"), {
+  ssr: false,
+});
+const ConsoleFeatures = dynamic(
+  () => import("../components/tools/ConsoleFeatures"),
+  { ssr: false }
+);
+const NextASOTools = dynamic(() => import("../components/tools/NextASOTools"), {
+  ssr: false,
+});
 
 const Tools = () => {
   return (
     <>
-      <PageHead title={"NEXT ASO Tools"} />
+      <PageHead
+        title={"NEXT ASO Tools"}
+        canonical={
+          "https://nextgrowthlabs.com/free-app-store-optimization-tool"
+        }
+        ogDescription={
+          "Free ASO, App Store Optimisation Tool. 20+ Features including - Keyword tracking, competitor and sentiment analysis. historical data."
+        }
+      />
       <Layout>
         <ToolsHeroSection />
-        <Trustby heading = {"Brands we’ve helped grow"}/>
+        <Trustby heading={"Brands we’ve helped grow"} />
         <TrackingTools />
         <SlackTool />
         <OtherTools />

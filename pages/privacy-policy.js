@@ -41,7 +41,10 @@ const Privacy = () => {
   }, []);
   return (
     <>
-      <PageHead title={"Privacy Policy"} />
+      <PageHead
+        title={"Privacy Policy"}
+        canonical={"https://nextgrowthlabs.com/privacy-policy"}
+      />
 
       <Layout>
         <div className="section pt-40 content-term">

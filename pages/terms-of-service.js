@@ -40,7 +40,10 @@ const Terms = () => {
   }, []);
   return (
     <>
-      <PageHead title={"Terms & Conditions"} />
+      <PageHead
+        title={"Terms & Conditions"}
+        canonical={"https://nextgrowthlabs.com/terms-of-service"}
+      />
 
       <Layout>
         <div className="section pt-40 content-term">
