@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Country from "../../aso/elements/Country"
-import ReCaptcha from "../elements/Recaptcha"
+// import ReCaptcha from "../elements/Recaptcha"
 import PlateFormTabs from "../elements/PlateFormTabs"
 import DefaultMessage from "../elements/DefaultMessage"
 import { useQuery } from "@tanstack/react-query"
@@ -17,8 +17,8 @@ const KeywordSuggestion = () => {
   const [selectedSource, setSelectedSource] = useState("play")
   const [isProcessing, setIsProcessing] = useState(false)
   const [isVerified, setIsVerified] = useState(false)
-  // const [captchaToken, setCaptchaToken] = useState('');
-
+  
+// google recatcha 
   async function handleCaptchaSubmission(token) {
     try {
       if (token) {
@@ -43,6 +43,7 @@ const KeywordSuggestion = () => {
     setIsVerified(false)
   }
 
+  // query for the keywords data
   const { data, isFetching, isFetched, refetch, isError } = useQuery({
     queryKey: [
       "get keyword suggestion",
@@ -77,14 +78,13 @@ const KeywordSuggestion = () => {
 
   const getSuggestion = async () => {
     // Check if the reCAPTCHA token is available
-    if (!isVerified) {
-      toast.warning("Please complete the reCAPTCHA", { autoClose: 2000 })
-      return
-    }
+    // if (!isVerified) {
+    //   toast.warning("Please complete the reCAPTCHA", { autoClose: 2000 })
+    //   return
+    // }
 
     try {
       setIsProcessing(true)
-
       // Check if searchKeyword is valid
       if (searchKeyword.length <= 1) {
         toast.warning("Please enter a keyword", { autoClose: 2000 })
@@ -145,19 +145,19 @@ const KeywordSuggestion = () => {
               <PlateFormTabs setSelectedSource={setSelectedSource} />
               {/* *********************************** */}
               {/* ReCaptcha */}
-              <div className="d-flex justify-content-center mt-20">
+              {/* <div className="d-flex justify-content-center mt-20">
                 <ReCaptcha
                   onChange={handleChange}
-                  // onExpired={handleExpired}
+                  onExpired={handleExpired}
                 />
-              </div>
+              </div> */}
 
               {/* **************************** */}
               <button
                 type="submit"
                 className="audit-button ptb-15 pl-15 pr-15 mt-20"
                 onClick={getSuggestion}
-                disabled={isProcessing || !isVerified}
+                disabled={isProcessing}
               >
                 Get Suggestions
               </button>
