@@ -1574,7 +1574,7 @@ const data = [
         />
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-suggestion/",
+    toolLink: "/keyword-suggestion",
   },
   {
     name: "Bulk iOS Keyword Tracker",

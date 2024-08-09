@@ -100,7 +100,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/keyword-suggestion/">
+                    <Link href="/keyword-suggestion">
                       Keyword Auto Suggest
                     </Link>
                   </li>
@@ -175,7 +175,7 @@ const Footer = () => {
                   </li>
                   <li>
                     {" "}
-                    <Link href="https://tools.nextgrowthlabs.com/keyword-suggestion/">
+                    <Link href="/keyword-suggestion">
                       Keyword Suggestion
                     </Link>
                   </li>

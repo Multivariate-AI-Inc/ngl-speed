@@ -1,4 +1,3 @@
-import { error } from "console"
 import { customSortSuggestion } from "../../components/utils"
 export const runtime = "edge"
 export default async function handler(req, res) {

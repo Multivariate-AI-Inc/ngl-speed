@@ -1,4 +1,10 @@
 const nextConfig = {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.cache = false;
+    }
+    return config;
+  },
   experimental: {
     largePageDataBytes: 128 * 100000,
   },
@@ -35,6 +41,18 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "is1-ssl.mzstatic.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "uploads-ssl.webflow.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "tools.nextgrowthlabs.com",
         port: "",
         pathname: "/**",
       },

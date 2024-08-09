@@ -672,7 +672,7 @@ export const data = [
         />
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-suggestion/",
+    toolLink: "/keyword-suggestion",
   },
   {
     name: "Chrome Add-Ons",
@@ -2374,3 +2374,76 @@ export function customSortSuggestion(array, name) {
   return sortedResult;
 }
 
+// *************** keyword suggestion tool *******************
+export const suggestionTabData = [
+  {
+    id: "play",
+    target: "Play-Store-Suggestion",
+    text: "Play Store",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ec690574bae9211828_google-play-store.svg",
+    imageAlt: "Android",
+    imageWidth: 25,
+    imageHeight: 25,
+  },
+  {
+    id: "apple",
+    target: "Apple-Store-Suggestion",
+    text: "Apple Store",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecae89fa82409d929d_app-store.svg",
+    imageAlt: "Apple",
+    imageWidth: 25,
+    imageHeight: 25,
+  },
+  {
+    id: "google",
+    target: "Google-Suggestion",
+    text: "Google",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecd5f12de7a5c1d202_google-50.svg",
+    imageAlt: "Google",
+    imageWidth: 30,
+    imageHeight: 30,
+  },
+  {
+    id: "bing",
+    target: "Bing-Suggestion",
+    text: "Bing",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecbbc06f110ccafe57_bing-50.svg",
+    imageAlt: "Bing",
+    imageWidth: 30,
+    imageHeight: 30,
+  },
+  {
+    id: "amazon",
+    target: "Amazon-Suggestion",
+    text: "Amazon",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656ae05094bb4d7d8642c21f_amazon-50.png",
+    imageAlt: "Amazon",
+    imageWidth: 25,
+    imageHeight: 25,
+  },
+  {
+    id: "yandex",
+    target: "Yandex-Suggestion",
+    text: "Yandex",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656ae05001014d3768ca14aa_yandex-50.png",
+    imageAlt: "Yandex",
+    imageWidth: 28,
+    imageHeight: 28,
+  },
+  {
+    id: "youtube",
+    target: "Youtube-Suggestion",
+    text: "Youtube",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecea80c277d0d249b5_youtube.svg",
+    imageAlt: "Youtube",
+    imageWidth: 30,
+    imageHeight: 30,
+  },
+]

@@ -4,49 +4,6 @@ import ReactEcharts from "echarts-for-react"
 import { RxCross2 } from "react-icons/rx"
 const DisplayGeneratedKeyword = ({ data, keyword }) => {
   const [chartData, setChartData] = useState(null)
-
-  // useEffect(() => {
-  //   const copyButtonCode = () => {
-  //     let copyButtons = document.querySelectorAll(
-  //       ".obj-heading button.copy-table-btn",
-  //     )
-  //     copyButtons.forEach(button => {
-  //       const handleClick = () => {
-  //         const clipboardText = button.getAttribute("data-clipboard")
-  //         if (!clipboardText) {
-  //           toast.success("No data to copy!", { autoClose: 2000 })
-  //           return
-  //         }
-  //         let listData = JSON.parse(clipboardText)
-  //         listData = listData.join("\n")
-  //         navigator.clipboard
-  //           .writeText(listData)
-  //           .then(() => {
-  //             toast.success("Table copied to clipboard!", { autoClose: 2000 })
-  //           })
-  //           .catch(err => {
-  //             toast.error("Failed to copy to clipboard!", { autoClose: 2000 })
-  //           })
-  //       }
-
-  //       button.addEventListener("click", handleClick)
-  //       button.handleClick = handleClick
-  //     })
-  //   }
-
-  //   copyButtonCode()
-  //   return () => {
-  //     let copyButtons = document.querySelectorAll(
-  //       ".obj-heading button.copy-table-btn",
-  //     )
-  //     copyButtons.forEach(button => {
-  //       if (button.handleClick) {
-  //         button.removeEventListener("click", button.handleClick)
-  //       }
-  //     })
-  //   }
-  // }, [data])
-
   useEffect(() => {
     const copyButtonCode = () => {
       let copyButtons = document.querySelectorAll(".copy-table-btn")
