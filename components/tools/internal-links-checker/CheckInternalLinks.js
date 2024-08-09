@@ -109,7 +109,7 @@ const parseHtml = (htmlString, url) => {
       <div className="container text-center">
         <div className="row mt-50 mb-5">
           <p className="tools_tag">Free SEO Tool</p>
-          <h1 className="color-brand-1 mb-25 mt-10">
+          <h1 className="font-4xl-bold color-brand-1 mb-25 mt-10">
             Free Internal Link Checker Tool
           </h1>
           <p className="font-md color-grey-500 mb-25">
@@ -201,7 +201,7 @@ const parseHtml = (htmlString, url) => {
             </div>
           )}
           {/* ************************** */}
-          <div className="mb-20 mt-30">
+          <div className="mb-40 mt-30">
             <h5>
               Powered by-{" "}
               <Link

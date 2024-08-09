@@ -100,7 +100,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/keyword-suggestion/">
+                    <Link href="/keyword-suggestion">
                       Keyword Auto Suggest
                     </Link>
                   </li>
@@ -159,26 +159,23 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/word-to-html/">
+                    <Link href="/word-to-html">
                       Word To Html
                     </Link>
                   </li>
                   <li>
-                    {" "}
-                    {/* <Link href="https://tools.nextgrowthlabs.com/font-changer/"> */}
                     <Link href="/font-changer">
                       Font Changer
                     </Link>
                   </li>
                   <li>
-                    {" "}
                     <Link href="https://tools.nextgrowthlabs.com/multi-tool/">
                       Multi Tool
                     </Link>
                   </li>
                   <li>
                     {" "}
-                    <Link href="https://tools.nextgrowthlabs.com/keyword-suggestion/">
+                    <Link href="/keyword-suggestion">
                       Keyword Suggestion
                     </Link>
                   </li>

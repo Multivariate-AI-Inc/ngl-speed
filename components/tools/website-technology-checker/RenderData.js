@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 const RenderData = ({ techstackData, aboutData }) => {
   return (
     <div className="grid">
@@ -39,10 +37,4 @@ const RenderData = ({ techstackData, aboutData }) => {
     </div>
   );
 };
-
-RenderData.propTypes = {
-  techstackData: PropTypes.object.isRequired,
-  aboutData: PropTypes.object.isRequired,
-};
-
 export default RenderData;

@@ -115,7 +115,7 @@ const JsonToHtmlTableEditor = () => {
   return (
     <div className="container" style={{ position: "relative", top: "4rem" }}>
       <div className="main-head">
-        <h1 className="font-2xl color-brand-1 text-center mt-20" style={{fontWeight:'700'}}>
+        <h1 className="font-2xl-bold color-brand-1 text-center mt-20">
           JSON to HTML Table Editor
         </h1>
       </div>
