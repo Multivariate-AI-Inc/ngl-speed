@@ -10,6 +10,7 @@ const KeywordGeneratorTool = () => {
           title="Keyword generator tool - Next Labs"
           ogDescription="keyword generator to find millions of up-to-date keyword suggestions, and enhance your SEO. Enter a topic and get your filtered list of the best keywords for you"
           ogType="article"
+          canonical={"https://nextgrowthlabs.com/keyword-generator-tool"}
         />
         <KeywordGenerator />
         <KeywordGeneratorArticle />
