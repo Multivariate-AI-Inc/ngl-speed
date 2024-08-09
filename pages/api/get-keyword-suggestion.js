@@ -1,5 +1,3 @@
-import axios from "axios"
-import { throwDeprecation } from "process"
 export const runtime = "edge"
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -40,8 +38,14 @@ export default async function handler(req, res) {
 
 const getSuggestion = async (url, requestBody, selectedSource) => {
   try {
-    const response = await axios.post(url, requestBody)
-    const data = await response.data
+    const response = await fetch(url,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+    const data = await response.json()
     if (selectedSource === "yandex") {
       return data.map(item => item[1])
     }
