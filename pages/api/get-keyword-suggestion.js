@@ -15,7 +15,6 @@ export default async function handler(req, res) {
     const num = 15
     const baseUrl = "https://js-apis.maakeetoo.com"
     const url = `${baseUrl}/suggestion/${selectedSource}`
-
     const requestBody = {
       term,
       country,
@@ -28,10 +27,13 @@ export default async function handler(req, res) {
       headers: { "Content-Type": "application/json" },
     })
   } catch (error) {
-    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    })
+    return new Response(
+      JSON.stringify({ error: `Internal Server Error ${error}` }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    )
   }
 }
 
@@ -44,7 +46,7 @@ const getSuggestion = async (url, requestBody, selectedSource) => {
     }
     return data
   } catch (error) {
-    console.error("Error fetching suggestion", error)
-    throw error
+    console.error("Error fetching suggestion", error.message)
+    return []
   }
 }

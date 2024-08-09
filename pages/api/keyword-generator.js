@@ -1,6 +1,6 @@
 import { customSortSuggestion } from "../../components/utils"
 export const runtime = "edge"
-export default async function handler(req, res) {
+export default async function handler(req) {
   if (req.method !== "POST") {
     return new Response(
       JSON.stringify({ error: "Only POST requests are allowed" }),
