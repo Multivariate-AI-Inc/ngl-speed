@@ -1,4 +1,5 @@
 import axios from "axios"
+import { throwDeprecation } from "process"
 export const runtime = "edge"
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -47,6 +48,6 @@ const getSuggestion = async (url, requestBody, selectedSource) => {
     return data
   } catch (error) {
     console.error("Error fetching suggestion", error.message)
-    return []
+    throw new Error(`Error: ${error}`)
   }
 }
