@@ -2,11 +2,10 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-const PageHead = dynamic(() => import('../components/elements/PageHead'));
-const Layout = dynamic(() => import('../components/layout/Layout'));
+const PageHead = dynamic(() => import("../components/elements/PageHead"));
+const Layout = dynamic(() => import("../components/layout/Layout"));
 // import PageHead from "../components/elements/PageHead";
 // import Layout from "../components/layout/Layout";
-
 
 const Terms = () => {
   const tocRef = useRef(null);
@@ -41,7 +40,10 @@ const Terms = () => {
   }, []);
   return (
     <>
-      <PageHead title={"Terms & Conditions"} />
+      <PageHead
+        title={"Terms & Conditions"}
+        canonical={"https://nextgrowthlabs.com/terms-of-service"}
+      />
 
       <Layout>
         <div className="section pt-40 content-term">
@@ -105,51 +107,65 @@ const Terms = () => {
                       </li>
                       <li>
                         <Link href="#section2">
-                          SECTION 2 – LICENSING POLICY
+                          SECTION 2 – GENERAL CONDITIONS
                         </Link>
                       </li>
                       <li>
                         <Link href="#section3">
-                          SECTION 3 – PRODUCT COMPATIBILITY
+                          SECTION 3 – ACCURACY, COMPLETENESS AND TIMELINESS OF
+                          INFORMATION
                         </Link>
                       </li>
                       <li>
-                        <Link href="#section4">SECTION 4 – DELIVERY</Link>
+                        <Link href="#section4">
+                          SECTION 4 – MODIFICATIONS TO THE SERVICE AND PRICES
+                        </Link>
                       </li>
                       <li>
-                        <Link href="#section5">SECTION 5 – OWNERSHIP</Link>
+                        <Link href="#section5">
+                          SECTION 5 – PRODUCTS OR SERVICES (if applicable)
+                        </Link>
                       </li>
                       <li>
                         <Link href="#section6">
-                          SECTION 6 – BROWSER COMPATIBILITY
+                          SECTION 6 – ACCURACY OF BILLING AND ACCOUNT
+                          INFORMATION
                         </Link>
                       </li>
                       <li>
-                        <Link href="#section7">SECTION 7 – UPDATES</Link>
+                        <Link href="#section7">SECTION 7 – OPTIONAL TOOLS</Link>
                       </li>
                       <li>
-                        <Link href="#section8">SECTION 8 – THEME SUPPORT</Link>
+                        <Link href="#section8">
+                          SECTION 8 – THIRD-PARTY LINKS
+                        </Link>
                       </li>
                       <li>
-                        <Link href="#section9">SECTION 9 – PRICE CHANGES</Link>
+                        <Link href="#section9">
+                          SECTION 9 – USER COMMENTS, FEEDBACK AND OTHER
+                          SUBMISSIONS
+                        </Link>
                       </li>
                       <li>
                         <Link href="#section10">
-                          SECTION 10 – REFUND POLICY
+                          SECTION 10 – PERSONAL INFORMATION
                         </Link>
                       </li>
                       <li>
                         <Link href="#section11">
-                          SECTION 11 – EMAIL &amp; NEWSLETTER
+                          SECTION 11 – ERRORS, INACCURACIES AND OMISSIONS
                         </Link>
                       </li>
                       <li>
                         <Link href="#section12">
-                          SECTION 12 – LICENSE AGREEMENT
+                          SECTION 12 – PROHIBITED USES
                         </Link>
                       </li>
                       <li>
-                        <Link href="#section13">SECTION 13 – SEVERABILITY</Link>
+                        <Link href="#section13">
+                          SECTION 13 – DISCLAIMER OF WARRANTIES; LIMITATION OF
+                          LIABILITY
+                        </Link>
                       </li>
                       <li>
                         <Link href="#section14">

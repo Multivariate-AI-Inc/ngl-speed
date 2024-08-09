@@ -7,7 +7,13 @@ import PageHead from "../components/elements/PageHead";
 const ContactUs = () => {
   return (
     <>
-      <PageHead title={"Contact Us for better coordination and more info."} />
+      <PageHead
+        title={"Contact Us for better coordination and more info."}
+        canonical={"https://nextgrowthlabs.com/contact"}
+        ogDescription={
+          "Have a question or want to contact us directly? Please contact us and we will respond as soon as possible."
+        }
+      />
       <Layout>
         <section className="section banner-contact">
           <div className="container">

@@ -13,6 +13,10 @@ const career = () => {
     <>
       <PageHead
         title={"We are Always Searching For Amazing People to Join Our Team."}
+        canonical={"https://nextgrowthlabs.com/career"}
+        ogDescription={
+          "Learn about NextGrowthLabs careers in tech and engineering product, design, sales, brand & marketing, and more, and apply today!"
+        }
       />
       <Layout>
         <CurrentOpenings />
