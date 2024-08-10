@@ -1910,8 +1910,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink:
-      "https://nextgrowthlabs.com/cloud-data-warehouse-setup-cost-calculator/",
+    toolLink: "/cloud-data-warehouse-setup-cost-calculator/",
   },
   {
     name: "Website Technology Checker Tool",
