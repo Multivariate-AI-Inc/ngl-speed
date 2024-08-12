@@ -1495,7 +1495,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/multi-tool/",
+    toolLink: "/multi-tool",
   },
   {
     name: "Keyword Suggestion Tool",

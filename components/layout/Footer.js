@@ -169,7 +169,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/multi-tool/">
+                    <Link href="/multi-tool">
                       Multi Tool
                     </Link>
                   </li>
