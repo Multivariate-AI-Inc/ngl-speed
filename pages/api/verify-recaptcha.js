@@ -1,6 +1,4 @@
-import axios from "axios"
 export const runtime = "edge"
-
 export default async function handler(req) {
   if (req.method !== "POST") {
     return new Response(
@@ -11,7 +9,7 @@ export default async function handler(req) {
 
   const data = await req.json()
   const { token } = data
-  const secretKey = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
+  const secretKey = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY
 
   if (!token) {
     return new Response(JSON.stringify({ message: "Token not found" }), {
@@ -20,9 +18,13 @@ export default async function handler(req) {
   }
 
   try {
-    const response = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`,
-    )
+    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
     if (response.data.success) {
       return new Response(JSON.stringify({ message: "Success" }), {
         status: 200,
@@ -34,7 +36,7 @@ export default async function handler(req) {
     }
   } catch (error) {
     console.log("Error", error)
-    return new Response(JSON.stringify({ message: "Internal Server Error"}), {
+    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
       status: 500,
     })
   }

@@ -29,9 +29,6 @@
 .gap-5{
   gap:5px !important;
 }
-.flex-column {
-  flex-direction: column !important;
-}
 
 button:disabled{
   background-color: #eee;
@@ -40,4 +37,7 @@ button:disabled{
 }
 button:disabled:hover{
   color: #000;
+}
+.position-relative {
+  position: relative !important;
 }
