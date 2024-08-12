@@ -1425,7 +1425,6 @@ export const data = [
     tag: "Enterprise",
   },
 ]
-
 // Countries list
 export const countries = [
   { name: "Afghanistan", code: "af", flag: "af.png" },
@@ -2447,3 +2446,110 @@ export const suggestionTabData = [
     imageHeight: 30,
   },
 ]
+
+// get random 3 digits number
+export const getRandomNumber = () => {
+  return Math.floor(Math.random() * 900) + 100
+}
+
+// Download CSV file
+export function DownloadCSVTable(button) {
+  // let email = localStorage.getItem("userMailId")
+  // let name = localStorage.getItem("userFullName")
+  // if (name && email) {
+    // dataLayer.push({ "event": "seo-download-csv", "gtm.uniqueAnalyticsReports": "SEO_Download_CSVLiveWeb", "keyword": button.getAttribute('text'), "gtm.email": email, "gtm.username": name })
+    const text = button.getAttribute("text")
+    console.log("Text", text)
+    if (text == "search") {
+      copyButtonFunction(button)
+    } else {
+      downloadAsCSVforSuggestion(button)
+    }
+  // } else {
+    // document.querySelector('.sign-in-button.rank-sign-in').classList.remove('hidden');
+    // window.alert("Please log in before Downloading CSV.")
+  // }
+}
+// play and app store data handler
+function copyButtonFunction(button) {
+  let btnText = button.getAttribute("btn-hint")
+  let parentElement = button.parentNode
+  let listArray = parentElement.querySelectorAll("li")
+  if (btnText.includes("play") || btnText.includes("apple")) {
+    downloadAsCSVStore(listArray)
+  } else {
+    downloadAsCSVEngine(listArray, btnText)
+  }
+}
+// downloading app data (play and app store)
+function downloadAsCSVStore(Array) {
+  let csvContent = ",Package Name,Developer Name,Package URL,Image URL\n"
+  Array.forEach(function (liElement, item) {
+    let packageURL = liElement.getAttribute("data-url")
+    let appName = liElement.querySelector("strong").textContent
+    let developer = liElement
+      .querySelector("span")
+      .textContent.replace("By ", "")
+    let image = liElement.querySelector("img").getAttribute("src")
+    csvContent += `"${
+      item + 1
+    }","${appName}","${developer}","${packageURL}","${image}"\n`
+  })
+  let blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
+  let link = document.createElement("a")
+  link.href = URL.createObjectURL(blob)
+  link.setAttribute("download", "app_data.csv")
+  link.click()
+}
+// downloading serp data
+ function downloadAsCSVEngine(Array, text) {
+  const csvData = []
+  Array.forEach(li => {
+    const mainLink = li.querySelector("h5 > a").innerText
+    const secondaryLink = li.querySelector("#multi-tool-search-link").innerText
+    const description = li.querySelector("div").innerText
+    csvData.push([
+      mainLink.replace(/\n/g, ""),
+      secondaryLink.replace(/\n/g, ""),
+      description.replace(/\n/g, ""),
+    ])
+  })
+  const csvContent =  convertToCSV(csvData)
+  const blob = new Blob([csvContent], { type: "text/csv" })
+  const a = document.createElement("a")
+  a.href = URL.createObjectURL(blob)
+  a.download = `${text}-data.csv`
+  a.style.display = "none"
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  URL.revokeObjectURL(a.href)
+}
+// convert data to csv
+function convertToCSV(data) {
+  // Define the CSV header
+  const headers = ["S.No", "Title", "Link", "Description"];
+  // Initialize the CSV content with the headers
+  let csvContent = headers.join(",") + "\n";
+
+  // Function to properly escape CSV fields
+  function escapeCSVField(field) {
+      // Escape double quotes by doubling them and wrap the field in quotes
+      if (field.includes(",") || field.includes('"') || field.includes("\n")) {
+          field = '"' + field.replace(/"/g, '""') + '"';
+      }
+      return field;
+  }
+
+  // Iterate over the data array and append each row to the CSV content
+  data.forEach((row, index) => {
+      // Create a new array with the serial number and the escaped row data
+      const rowData = [index + 1, ...row.map(escapeCSVField)];
+      // Convert the array to a CSV string and add it to the CSV content
+      csvContent += rowData.join(",") + "\n";
+  });
+
+  return csvContent;
+}
+
+

@@ -63,6 +63,34 @@ TABLE CONTENT
 }
 
 // Custom css
+// *************** multi tool ******************
+.multi-tool-suggestions {
+  position: relative;
+  border-radius: 12px;
+  margin: 0;
+  padding: 0 0 23px 1em;
+  line-height: 26px;
+  counter-reset: item-counter;
+}
+
+.multi-tool-suggestions li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.multi-tool-suggestions-items{
+  margin: 10px 0;
+  padding: 15px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform .3s ease-in-out;
+}
+.multi-tool-suggestions-items:hover{
+  background-color: #e0f1f4;
+}
 // *************** keyword suggestion tool ******************
 .suggestion-tab{
   // background-color: #fff;
@@ -80,8 +108,8 @@ TABLE CONTENT
   height: 30px;
 }
 .active-tab {
-  // background-color: #e0f1f4;
-  background-color: #eee;
+  background-color: #dadada;
+  // background-color: #eee;
   color: #000;
   box-shadow: inset 0 -2px 2px #20c997;
 }
