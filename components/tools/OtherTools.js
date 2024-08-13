@@ -2183,7 +2183,8 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/robots-txt-on-seo/",
+    // "https://tools.nextgrowthlabs.com/robots-txt-on-seo/"
+    toolLink: "/robots-txt-on-seo",
   },
   {
     name: "Internal Links Checker",

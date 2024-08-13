@@ -6635,7 +6635,7 @@ textarea.textarea-control {
 }
 .list-core-value li {
   margin-bottom: 20px;
-  padding-left: 40px;
+  margin-left: 40px;
   position: relative;
 }
 .list-core-value li .ticked {
@@ -6648,6 +6648,29 @@ textarea.textarea-control {
   background: #e0f1f4 url(../imgs/page/about/tick.svg) no-repeat center;
 }
 .list-core-value li:last-child .box-border-dashed {
+  border-bottom: 0px;
+}
+
+.list-core-value-left {
+  list-style: circle;
+  padding: 0px;
+  margin: 0px;
+}
+.list-core-value-left li {
+  margin-bottom: 20px;
+  margin-left: 80px;
+  position: relative;
+}
+.list-core-value-left li .ticked {
+  position: absolute;
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+  height: 27px;
+  width: 27px;
+  background: #e0f1f4 url(../imgs/page/about/tick.svg) no-repeat center;
+}
+.list-core-value-left li:last-child .box-border-dashed {
   border-bottom: 0px;
 }
 
@@ -8215,7 +8238,7 @@ div.output {
   font-weight: bold;
   font-size: 1rem;
   margin: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .utm-link {
@@ -9343,6 +9366,145 @@ img.device-icon-logo {
   .output-grid {
     grid-template-columns: repeat(2, 1fr); /* Display two columns on desktop */
   }
+}
+.input_tag {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 3rem;
+}
+.input_tag button {
+  margin: 0;
+}
+
+.robots-input-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.robots-input-section input {
+  height: 3.125rem;
+  width: 60%;
+  margin-right: 2rem;
+  padding-left: 2rem;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 20px;
+  color: black;
+  white-space: pre-wrap;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.result-section {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  width: 80%;
+  border-radius: 10px;
+  margin: auto;
+  /* overflow-y: auto; */
+}
+
+@media screen and (max-width: 600px) {
+  #result {
+    width: 100%;
+    padding: 0;
+  }
+  .result-section {
+    max-width: 100%;
+    padding: 8px;
+    width: 90%;
+  }
+  .robots-input-section {
+    flex-direction: column;
+  }
+  .robots-input-section input {
+    width: 100%;
+    margin: auto;
+  }
+  .tool_description {
+    font-size: 12px;
+    padding: 5px;
+    line-height: 25px;
+  }
+  .heading-container > h3 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #result {
+    width: 100%;
+  }
+  #sitemapContent table {
+    line-break: anywhere;
+  }
+}
+pre {
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+td.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+}
+
+p.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+}
+
+.scroll_content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 500px;
+}
+
+.scroll_content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scroll_content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scroll_content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+.scroll_content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+#robotsContent table {
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+#sitemapContent td {
+  padding: 5px;
+}
+
+.description {
+  /* border: 1px solid #ccc; */
+  padding: 20px;
+  margin: 20px;
+  transition: background-color 0.3s ease;
 }
 
 /*# sourceMappingURL=style.css.map */
