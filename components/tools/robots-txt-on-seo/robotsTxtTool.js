@@ -248,20 +248,21 @@ const RobotsTxtTool = () => {
             <p className="font-md color-grey-400 mb-20">
               Robots.txt is a text file on websites guiding web robots, such as
               search engine crawlers, on which pages to crawl or avoid. Placed
-              at the site's root, it employs directives like "User-agent" to
-              specify agents affected and "Disallow" to restrict access to
-              certain sections. For instance, "Disallow: /private/" instructs
-              robots to avoid crawling the "/private/" directory.
+              at the site&apos;s root, it employs directives like
+              &quot;User-agent&quot; to specify agents affected and
+              &quot;Disallow&quot; to restrict access to certain sections. For
+              instance, &quot;Disallow: /private/&quot; instructs robots to
+              avoid crawling the &quot;/private/&quot; directory.
             </p>
 
             <p className="font-md color-grey-400 mb-20">
               <b> Q2. How to find Robots.txt?</b>
             </p>
             <p className="font-md color-grey-400 mb-20">
-              To find the robots.txt file, simply append "/robots.txt" to a
-              website's domain in the browser's address bar, like
-              "www.example.com/robots.txt". This text file, located at the root
-              of the site, provides instructions for web crawlers.
+              To find the robots.txt file, simply append &quot;/robots.txt&quot;
+              to a website&apos;s domain in the browser&apos;s address bar, like
+              &quot;www.example.com/robots.txt&quot;. This text file, located at
+              the root of the site, provides instructions for web crawlers.
               Alternatively, search engines and online tools can help users to
               search for specific files, such as the robots.txt file, using
               specific search queries.

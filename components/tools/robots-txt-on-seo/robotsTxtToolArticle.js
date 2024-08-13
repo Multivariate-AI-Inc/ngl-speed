@@ -7,9 +7,9 @@ const RobotsTxtToolArticle = () => {
         <p className="font-md color-grey-400 mb-20">
           A robots.txt file is a crucial element of technical search engine
           optimization (SEO). Every website needs a robots.txt file as it gives
-          you more control over the search engine's movement on your website.
-          So, let’s understand the significance of this file and its best
-          practices. 
+          you more control over the search engine&apos;s movement on your
+          website. So, let&apos;s understand the significance of this file and
+          its best practices.
         </p>
         <h2 className="color-brand-1 mb-25 mt-10">
           <b> Explain Robots.txt File </b>
