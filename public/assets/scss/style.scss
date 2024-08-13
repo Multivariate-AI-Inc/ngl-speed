@@ -63,6 +63,46 @@ TABLE CONTENT
 }
 
 // Custom css
+// *************** ios keyword ******************
+.ranks {
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  color: black;
+  font-size: 1rem;
+}
+.app-store-link {
+  font-size: 0.8rem;
+  border: 1px solid #666;
+  color: #1c7df8;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+  margin-right: 20px;
+  position: relative;
+  // box-shadow: 0 0 10px #20c997;
+}
+a.app-store-link>span:nth-child(3) {
+  background-color: black;
+  color: white;
+  padding: 2px 3px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+}
+.a-glow-audit-btn {
+  border: 1px solid #2EA3F2;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background-color: #2EA3F2;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+
 // *************** multi tool ******************
 .multi-tool-suggestions {
   position: relative;
@@ -956,11 +996,11 @@ div.output {
   text-align: left;
 }
 .utm-link {
-  color: var(--bgColor) !important;
+  color: #06d6a0 !important;
 }
 
 .utm-link:hover {
-  color: #06d6a0 !important;
+  color: var(--bgColor) !important;
 }
 
 // ********** html ***************
@@ -1888,6 +1928,17 @@ img.device-icon-logo {
   .app-name {
     text-align: center;
   }
+
+  .multi-tool-suggestions-items{
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center !important;
+  }
+.multi-tool-suggestions-items img{
+  width: 80px;
+  margin: 12px 0;
+}
+
 }
 /* purgecss start ignore */
 .wp-block-table {

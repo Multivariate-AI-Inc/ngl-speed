@@ -116,7 +116,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/ios-keyword-ranks/">
+                    <Link href="/ios-keyword-ranks">
                       iOS Keyword Search
                     </Link>
                   </li>

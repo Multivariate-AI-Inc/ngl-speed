@@ -1289,7 +1289,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/ios-keyword-ranks/",
+    toolLink: "/ios-keyword-ranks",
   },
   {
     name: "Font Changer",

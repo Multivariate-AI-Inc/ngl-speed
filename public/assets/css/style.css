@@ -678,6 +678,10 @@ a:hover {
   font-weight: 800;
 }
 
+.font-bold-500 {
+  font-weight: 500;
+}
+
 .box-pagination {
   display: inline-block;
 }
@@ -3001,24 +3005,12 @@ body {
   animation: hero-thumb-sm-2-animation 4s linear infinite alternate;
 }
 
-.justify-content-center {
-  justify-content: center !important;
-}
-
-.justify-content-between {
-  justify-content: space-between !important;
-}
-
 .justify-content-around {
   justify-content: space-around !important;
 }
 
 .justify-content-evenly {
   justify-content: space-evenly !important;
-}
-
-.align-items-center {
-  align-items: center !important;
 }
 
 .gap-sm-5 {
@@ -7495,6 +7487,46 @@ textarea.textarea-control {
   --lightGreen: #06d6a0;
 }
 
+.ranks {
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  color: black;
+  font-size: 1rem;
+}
+
+.app-store-link {
+  font-size: 0.8rem;
+  border: 1px solid #666;
+  color: #1c7df8;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+  margin-right: 20px;
+  position: relative;
+}
+
+a.app-store-link > span:nth-child(3) {
+  background-color: black;
+  color: white;
+  padding: 2px 3px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+}
+
+.a-glow-audit-btn {
+  border: 1px solid #2EA3F2;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background-color: #2EA3F2;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
 .multi-tool-suggestions {
   position: relative;
   border-radius: 12px;
@@ -8428,11 +8460,11 @@ div.output {
 }
 
 .utm-link {
-  color: var(--bgColor) !important;
+  color: #06d6a0 !important;
 }
 
 .utm-link:hover {
-  color: #06d6a0 !important;
+  color: var(--bgColor) !important;
 }
 
 .brands-container {
@@ -9381,6 +9413,15 @@ img.device-icon-logo {
   }
   .app-name {
     text-align: center;
+  }
+  .multi-tool-suggestions-items {
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center !important;
+  }
+  .multi-tool-suggestions-items img {
+    width: 80px;
+    margin: 12px 0;
   }
 }
 /* purgecss start ignore */
