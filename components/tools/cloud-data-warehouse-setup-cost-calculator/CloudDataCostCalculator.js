@@ -34,9 +34,9 @@ const CloudDataCostCalculator = () => {
     <>
       <div className="container mt-100">
         <div className="main-head">
-          <h4 className="color-brand-1 text-center">
+          <h1 className="color-brand-1 text-center font-4xl-bold">
             Cloud Data Warehouse Setup Cost Calculator
-          </h4>
+          </h1>
         </div>
         <div className="container-form">
           <div className="input-grid">
@@ -173,9 +173,9 @@ const CloudDataCostCalculator = () => {
         </div>
         <div className="canvas-footer-website">
           <h6>
-            Powered by{" "}
+            Powered by&nbsp;
             <Link
-              href="https://nextgrowthlabs.com/?utm_source=html_editor_web#form"
+              href="https://nextgrowthlabs.com/?utm_source=cloud_data_warehouse_setup_cost_calculator#footer"
               target="_blank"
               rel="noopener noreferrer"
               className="utm-link"

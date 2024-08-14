@@ -4,9 +4,9 @@ const CloudDataToolArticle = () => {
   return (
     <>
       <div className="container mt-90">
-        <h2 class="color-brand-1 mb-25 mt-10">
+        <h3 class="color-brand-1 mb-25 mt-10">
           <b>Overview</b>
-        </h2>
+        </h3>
         <p className="font-md color-grey-400 mb-20">
           A Cloud Data Warehouse Setup Cost Calculator is a valuable tool for
           organizations aiming to estimate the expenses associated with

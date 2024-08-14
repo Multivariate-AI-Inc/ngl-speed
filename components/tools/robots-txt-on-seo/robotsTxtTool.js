@@ -157,7 +157,7 @@ const RobotsTxtTool = () => {
     <>
       <div className="container mt-100">
         <div className="main-head">
-          <h1 className="color-brand-1 text-center">
+          <h1 className="color-brand-1 text-center font-4xl-bold">
             <b>Robots.txt Tester</b>
           </h1>
         </div>
@@ -284,9 +284,9 @@ const RobotsTxtTool = () => {
         </div>{" "}
         <div className="canvas-footer-website">
           <h6>
-            Powered by
+            Powered by&nbsp;
             <Link
-              href="https://nextgrowthlabs.com/?utm_source=html_editor_web#form"
+              href="https://nextgrowthlabs.com/?utm_source=robots_txt_on_seo#footer"
               target="_blank"
               rel="noopener noreferrer"
               className="utm-link"
