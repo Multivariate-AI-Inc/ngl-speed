@@ -1725,54 +1725,189 @@ function uniqueArray(arr, key) {
   })
 }
 
-// data fetching
-function encodingName(e) {
-  return encodeURIComponent(e)
-}
+// ******************** old app search functionality *************************
+// // data fetching
+// function encodingName(e) {
+//   return encodeURIComponent(e)
+// }
+// export async function prepareDataForRequests(
+//   searchKeyword,
+//   selectedCountryCode,
+// ) {
+//   let currentNameIOS = searchKeyword
+//   let currentNamePlay = encodingName(searchKeyword)
+//   let country = selectedCountryCode
+//   if (currentNameIOS.trim().length < 2 && currentNameIOS.trim() === "") {
+//     return false
+//   }
+//   const newKeyword = currentNameIOS.split(" ").join("+")
+//   const requestIOS = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`
+//   if (
+//     requestIOS.trim() ===
+//     `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=&country=&limit=30`
+//   ) {
+//     return false
+//   }
+//   let requestPlay = `https://store.maakeetoo.com/apps/search/?q=${currentNamePlay}&gl=${country}`
+//   if (
+//     requestPlay.trim() ===
+//     `https://store.maakeetoo.com/apps/search/?q=&gl=${country}`
+//   ) {
+//     return false
+//   }
+//   let listData = await handleRequestsAndProcessData(requestPlay, requestIOS)
+//   return listData
+// }
+
+// async function handleRequestsAndProcessData(requestPlay, requestIOS) {
+//   try {
+//     const response1 = await fetch(requestIOS)
+//     const response2 = await fetch(requestPlay)
+//     const iOSResponse = await response1.json()
+//     const playResponse = await response2.json()
+
+//     const mergedData = {
+//       iOSResponse: iOSResponse,
+//       playResponse: playResponse,
+//     }
+
+//     const fullAppData = mergedExtractedData(mergedData)
+//     const suggestionList = createListWithDevice(fullAppData)
+
+//     return suggestionList
+//   } catch (error) {
+//     console.error("Error:", error)
+//     return false
+//   }
+// }
+
+// // merging fetched data
+// function mergedExtractedData(rowData) {
+//   let appDataMain = []
+//   let appDataA = []
+//   let appDataP = []
+//   rowData.iOSResponse.results.map(item => {
+//     if (item.trackViewUrl) {
+//       let iosData = {
+//         dataPackageUrl: item.trackViewUrl,
+//         appPackageId: item.trackViewUrl.split("/")[5],
+//         app_icon: item.artworkUrl100,
+//         appName: item.trackName,
+//         developer: "By " + item.artistName,
+//         device: "apple",
+//         deviceIcon: "apple_icon.svg",
+//       }
+//       appDataA.push(iosData)
+//     }
+//   })
+//   rowData.playResponse.map(item => {
+//     let playData = {
+//       dataPackageUrl:
+//         "https://play.google.com/store/apps/details?id=" + item.package_id,
+//       appPackageId: item.package_id,
+//       app_icon: item.app_icon,
+//       appName: item.title,
+//       developer: "By " + item.developer_name,
+//       device: "android",
+//       deviceIcon: "android_icon.svg",
+//     }
+//     appDataP.push(playData)
+//   })
+//   appDataA.map((app, index) => {
+//     appDataMain.push(appDataA[index])
+//     if (appDataP[index]) {
+//       appDataMain.push(appDataP[index])
+//     }
+//   })
+//   if (appDataA.length === 0) appDataMain = appDataP
+//   return appDataMain
+// }
+
+// //app list with device icon and type
+// function createListWithDevice(data) {
+//   const formattedData = data.map(item => {
+//     if (item.appName !== undefined) {
+//       let deviceIcon
+//       if (item.device == "apple")
+//         deviceIcon =
+//           "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f645042f50918e6e390f_app-store.svg"
+//       else
+//         deviceIcon =
+//           "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f644817f822625b18bb6_google-play-store.svg"
+//       item.deviceIcon = deviceIcon
+//       return item
+//     }
+//   })
+//   return formattedData
+// }
+
+// ******************** new app search functionality with store *************************
+
 export async function prepareDataForRequests(
   searchKeyword,
   selectedCountryCode,
+  storeType = "both",
 ) {
-  let currentNameIOS = searchKeyword
-  let currentNamePlay = encodingName(searchKeyword)
   let country = selectedCountryCode
-  if (currentNameIOS.trim().length < 2 && currentNameIOS.trim() === "") {
-    return false
-  }
-  const newKeyword = currentNameIOS.split(" ").join("+")
-  const requestIOS = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`
+  //   preparing query for play store
+  let currentPlayKeyword = encodeURIComponent(searchKeyword)
+  let playQuery = `https://store.maakeetoo.com/apps/search/?q=${currentPlayKeyword}&gl=${country}`
   if (
-    requestIOS.trim() ===
-    `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=&country=&limit=30`
-  ) {
-    return false
-  }
-  let requestPlay = `https://store.maakeetoo.com/apps/search/?q=${currentNamePlay}&gl=${country}`
-  if (
-    requestPlay.trim() ===
+    playQuery.trim() ===
     `https://store.maakeetoo.com/apps/search/?q=&gl=${country}`
   ) {
     return false
   }
-  let listData = await handleRequestsAndProcessData(requestPlay, requestIOS)
-  return listData
+  //   preparing query for app store
+  const newKeyword = searchKeyword.split(" ").join("+")
+  const iosQuery = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`
+  if (
+    iosQuery.trim() ===
+    `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=&country=&limit=30`
+  ) {
+    return false
+  }
+
+  // *****************************
+  // Condition 1: When storeType is 'play'
+  if (storeType === "play") {
+    const playStoreResults = await searchPlayStore(playQuery)
+    let listData = await handleRequestsAndProcessData(playStoreResults)
+    return listData
+  }
+
+  // Condition 2: When storeType is 'app'
+  else if (storeType === "app") {
+    const appStoreResults = await searchAppStore(iosQuery)
+    let listData = await handleRequestsAndProcessData("", appStoreResults)
+    return listData
+  }
+  // Condition 3: When storeType is 'both'
+  else if (storeType === "both") {
+    const playStoreResults = await searchPlayStore(playQuery)
+    const appStoreResults = await searchAppStore(iosQuery)
+    let listData = await handleRequestsAndProcessData(
+      playStoreResults,
+      appStoreResults,
+    )
+    return listData
+  }
 }
 
-async function handleRequestsAndProcessData(requestPlay, requestIOS) {
+async function handleRequestsAndProcessData(playData = [], iosData = {}) {
   try {
-    const response1 = await fetch(requestIOS)
-    const response2 = await fetch(requestPlay)
-    const iOSResponse = await response1.json()
-    const playResponse = await response2.json()
-
-    const mergedData = {
-      iOSResponse: iOSResponse,
-      playResponse: playResponse,
+    const hasPlayData = playData.length > 0
+    const hasIOSData = iosData && Array.isArray(iosData.results) && iosData.results.length > 0;
+    const dataToProcess = {
+      playResponse: hasPlayData ? playData : [],
+      iOSResponse:  hasIOSData ? iosData : [],
     }
 
-    const fullAppData = mergedExtractedData(mergedData)
-    const suggestionList = createListWithDevice(fullAppData)
+    // Extract and merge data based on available inputs
+    const fullAppData = mergedExtractedData(dataToProcess)
 
+    // Create suggestion list with device info
+    const suggestionList = createListWithDevice(fullAppData)
     return suggestionList
   } catch (error) {
     console.error("Error:", error)
@@ -1780,25 +1915,49 @@ async function handleRequestsAndProcessData(requestPlay, requestIOS) {
   }
 }
 
+// getting data for play store
+const searchPlayStore = async query => {
+  try {
+    const response = await fetch(query)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    return error
+  }
+}
+// getting data for app store
+const searchAppStore = async query => {
+  try {
+    const response = await fetch(query)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    return error
+  }
+}
 // merging fetched data
 function mergedExtractedData(rowData) {
   let appDataMain = []
   let appDataA = []
   let appDataP = []
-  rowData.iOSResponse.results.map(item => {
-    if (item.trackViewUrl) {
-      let iosData = {
-        dataPackageUrl: item.trackViewUrl,
-        appPackageId: item.trackViewUrl.split("/")[5],
-        app_icon: item.artworkUrl100,
-        appName: item.trackName,
-        developer: "By " + item.artistName,
-        device: "apple",
-        deviceIcon: "apple_icon.svg",
+
+  if (rowData.iOSResponse && Array.isArray(rowData.iOSResponse.results)) {
+    rowData.iOSResponse.results.forEach(item => {
+      if (item.trackViewUrl) {
+        let iosData = {
+          dataPackageUrl: item.trackViewUrl,
+          // appPackageId: item.trackViewUrl.split("/")[5],
+          appPackageId: item.trackId,
+          app_icon: item.artworkUrl100,
+          appName: item.trackName,
+          developer: "By " + item.artistName,
+          device: "apple",
+          deviceIcon: "apple_icon.svg",
+        }
+        appDataA.push(iosData)
       }
-      appDataA.push(iosData)
-    }
-  })
+    })
+  }
   rowData.playResponse.map(item => {
     let playData = {
       dataPackageUrl:
@@ -1821,7 +1980,6 @@ function mergedExtractedData(rowData) {
   if (appDataA.length === 0) appDataMain = appDataP
   return appDataMain
 }
-
 //app list with device icon and type
 function createListWithDevice(data) {
   const formattedData = data.map(item => {
@@ -1839,6 +1997,8 @@ function createListWithDevice(data) {
   })
   return formattedData
 }
+
+// *********************************************
 
 // generating seo data
 const removeStopwords = str => {

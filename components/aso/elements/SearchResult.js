@@ -16,24 +16,24 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef } from "react";
 import useDebounce from "../elements/useDebounce";
 const searchShimmerArray = [0, 1, 2, 3, 4, 5];
-const SearchResults = () => {
-  const [countryCode, _1] = useAtom(selectedAppCountry);
+const SearchResults = ({storeType}) => {
+  const [countryCode] = useAtom(selectedAppCountry);
   const [searchResults, setSearchResult] = useAtom(searchedApps);
-  const [searchAppKeyword, _2] = useAtom(searchKeyword);
+  const [searchAppKeyword] = useAtom(searchKeyword);
   const [searchAppVisible, setSearchAppVisible] = useAtom(showSearchApps);
-  const [_4, setAppSelect] = useAtom(showAppSelected);
-  const [_5, setUserSelectedApp] = useAtom(userSelectedApp);
+  const [_1, setAppSelect] = useAtom(showAppSelected);
+  const [_2, setUserSelectedApp] = useAtom(userSelectedApp);
   const [country] = useAtom(selectedAppCountry);
   const [isHidden, setIsHidden] = useAtom(pricingWrapper);
   const [formInput, setFormInput] = useAtom(formInputData);
-  const [_8, setInputFocused] = useAtom(focusAtom);
+  const [_3, setInputFocused] = useAtom(focusAtom);
   const [isClickStart, setClickStart] = useAtom(startButton)
   const debouncedKeyword = useDebounce(searchAppKeyword, 500);
 
-  // ******************debouncing*******************
+  // ****************** debouncing *******************
   const { data, isFetched, isPending, isError } = useQuery({
     queryKey: ["searchResults", debouncedKeyword, countryCode],
-    queryFn: () => prepareDataForRequests(debouncedKeyword, countryCode),
+    queryFn: () => prepareDataForRequests(debouncedKeyword, countryCode, storeType),
     enabled: debouncedKeyword.length > 0,
     staleTime: Infinity,
   });
@@ -135,7 +135,7 @@ const SearchResults = () => {
             <li
               className="li-suggestion-item"
               application-url={item.dataPackageUrl}
-              application-id={item.appPackageId}
+              application-id={item.appPackageId}  
               application-img-logo={item.app_icon}
               device={item.device}
               key={item.app_icon}
@@ -174,6 +174,9 @@ const SearchResults = () => {
                     applicationId: item.appPackageId,
                     device: "apple",
                     country,
+                    packageName: item.appName,
+                    developer: item.developer,
+                    icon_urls: item.app_icon,
                   });
                   //   if (typeof dataLayer !== "undefined" && Array.isArray(dataLayer)) {
                   //     dataLayer.push({
@@ -215,10 +218,6 @@ const SearchResults = () => {
           <p className="info-search">
             Couldn&apos;t find your app try with <strong>App ID</strong> or{" "}
             <strong>App URL</strong>
-            {/* <button className="audit-button"> */}
-            {/* </button> or{" "} */}
-            {/* <button className="audit-button"> */}
-            {/* </button> */}
           </p>
         </ul>
       )}

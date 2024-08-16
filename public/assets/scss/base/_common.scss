@@ -373,13 +373,13 @@ h6 {
   font-weight: 700;
   font-family: $font-manrope;
   line-height: 36px;
-  font-size: 30px;
+  font-size: 30px !important;
 }
 .font-2xl-bold {
   font-weight: 700;
   font-family: $font-manrope;
   line-height: 32px;
-  font-size: 24px;
+  font-size: 24px !important;
 }
 .font-4xl-bold {
   font-weight: 700;

@@ -13,7 +13,6 @@ export default handler = async req => {
   }
   try {
     const { keyword, country } = await req.json()
-    console.log("Keyword & country", keyword, country)
     const data = await getKeywordRanks(keyword, country)
     return new Response(
       JSON.stringify(data, { status: 200, headers: "application/json" }),

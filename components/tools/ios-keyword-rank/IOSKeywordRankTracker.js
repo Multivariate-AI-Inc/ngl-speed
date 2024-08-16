@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import Country from "../../aso/elements/Country"
+// import PlateFormTabs from "../elements/PlateFormTabs"
 import Link from "next/link"
 import { selectedCountryAtom } from "../../../state/atoms"
 import { useAtom } from "jotai"
@@ -13,7 +14,7 @@ const IOSKeywordRankTracker = () => {
   const [searchKeyword, setSearchKeyword] = useState("")
   const [isProcessing, setIsProcessing] = useState(false)
   const prevSerpSearchRef = useRef("")
-  const serpInputRef = useRef()
+  
   const { data, isFetching, isError, isFetched, refetch } = useQuery({
     queryKey: ["get iOS keyword rank", searchKeyword, selectedCountry],
     queryFn: () => 
@@ -48,7 +49,7 @@ const IOSKeywordRankTracker = () => {
       setIsProcessing(true)
       if (searchKeyword.length <= 1) {
         setIsProcessing(false)
-        serpInputRef.current.focus()
+        // serpInputRef.current.focus()
         return
       }
 
@@ -110,8 +111,6 @@ const IOSKeywordRankTracker = () => {
                       placeholder="Enter the keyword here"
                       value={searchKeyword}
                       onChange={e => setSearchKeyword(e.target.value)}
-                      ref={serpInputRef}
-                      
                     />
                   </div>
                 </div>

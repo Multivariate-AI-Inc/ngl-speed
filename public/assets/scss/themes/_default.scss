@@ -5,6 +5,9 @@
   .justify-content-evenly {
     justify-content: space-evenly !important;
   }
+  .justify-content-end {
+    justify-content: end !important;
+  }
 
   .gap-sm-5 {
     gap: 3rem !important;
@@ -27,6 +30,6 @@ button:disabled{
 button:disabled:hover{
   color: #000;
 }
-.position-relative {
-  position: relative !important;
+.top-3{
+  top: 3rem !important;
 }

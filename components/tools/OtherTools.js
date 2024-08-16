@@ -1639,7 +1639,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/bulk-ios-keywords-tracker/",
+    toolLink: "/bulk-ios-keywords-tracker",
   },
   // {
   //   name: "Free Bulk Website Rank Checker and Tracker",

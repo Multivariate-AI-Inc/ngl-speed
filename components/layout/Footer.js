@@ -131,7 +131,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/bulk-ios-keywords-tracker/">
+                    <Link href="/bulk-ios-keywords-tracker">
                       Bulk iOS Keyword Rank Tracker
                     </Link>
                   </li>
