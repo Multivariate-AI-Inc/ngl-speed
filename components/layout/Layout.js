@@ -4,6 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Preloader from "../elements/Preloader";
 import Footer from "./Footer";
+import { ToastContainer } from "react-toastify"
 
 import { useRouter } from "next/router";
 const Layout = ({ children }) => {
@@ -50,6 +51,7 @@ const Layout = ({ children }) => {
       {loading ? <Preloader /> : <main className="main">{children}</main>}
       <Footer />
       <BackToTop />
+      <ToastContainer style={{ zIndex: "99999999999999999" }}/>
     </>
   );
 };

@@ -98,6 +98,7 @@ const AsoFunnel = () => {
               height: 500px;
               width: 500px;
               overflow: hidden;
+              margin: auto;
             }
           `}
         </style>

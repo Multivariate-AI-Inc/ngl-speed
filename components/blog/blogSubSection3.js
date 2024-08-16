@@ -12,17 +12,19 @@ const BlogSubSection3 = ({ posts }) => {
         >
           <div className="card-blog-grid card-blog-grid-3 hover-up">
             <div className="card-image">
-              <Link href={`https://blogsngl.wpenginepowered.com/${post.slug}`}>
-                <FeaturedImage
-                  post={post}
-                  styleClasses=""
-                  priority={false}
-                  height={300}
-                />
+              <Link href={`/blog/${post.slug}`}>
+                <div className="mb-40 reusable-div">
+                  <FeaturedImage
+                    post={post}
+                    styleClasses=""
+                    priority={false}
+                    height={300}
+                  />
+                </div>
               </Link>
             </div>
             <div className="card-info">
-              <Link href={`https://blogsngl.wpenginepowered.com/${post.slug}`}>
+              <Link href={`/blog/${post.slug}`}>
                 <h4 className="color-brand-1">{post.title}</h4>
               </Link>
               <div className="mb-25 mt-10">

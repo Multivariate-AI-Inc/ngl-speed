@@ -96,7 +96,7 @@ const data = [
   },
   {
     review:
-      "The team not only delivered on time but also met our expectations. Onboarding them helped us improve conversions. I appreciate their professionalism and delivery excellence and highly recommend them.",
+      "The team not only delivered on time but also met our expectations. Onboarding them helped us improve conversions. I appreciate their professionalism and delivery excellence, and highly recommend them.",
     author: "Abhinav Mathur",
     department: "Insanely Good by Swiggy",
     img: (
@@ -116,7 +116,7 @@ const data = [
   },
   {
     review:
-      "NextGrowth Labs has been able to deliver exceptional results. Their tools, insights, are top notch, and they have great deal of attention to detail and technical expertise.",
+      "NextGrowth Labs has been able to deliver exceptional results. Their tools and insights are top-notch, and they have a great deal of attention to detail and technical expertise.",
     author: "Ashish Kumar Bhalla",
     department: "Urban Company",
     img: (
@@ -156,7 +156,7 @@ const Testimonials = () => {
       <div className="container">
         <div className="pt-120 pb-120">
           <h2 className="color-brand-1 text-center">
-            Read what our amazing clients say
+          Hear from real customers about their experiences
           </h2>
           <div className="mt-50">
             <div className="box-swiper">

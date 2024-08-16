@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Marquee from "../elements/Marquee";
 const data = [
   { src: "/assets/imgs/clientlogo/HDFC.png", alt: "hdfc", width: 304 },
   { src: "/assets/imgs/clientlogo/Groww.png", alt: "groww", width: 182 },
@@ -85,18 +86,19 @@ const data = [
   { src: "/assets/imgs/clientlogo/fectar.png", alt: "fectar", width: 177 },
   { src: "/assets/imgs/clientlogo/ZET.png", alt: "ZET", width: 92 },
 ];
-const Trustby = ({ padding }) => {
+const Trustby = ({ heading }) => {
   return (
     <section className="section bg-marquee" style={{ position: "relative" }}>
       <div className="row mb-50 mt-50 container m-auto">
-        <h2 className="color-brand-1 mb-15 font-bold text-center">
-          Apps we’ve helped grow
+        <h2 className="color-brand-1 font-bold text-center">
+          {heading ? heading : "Apps we’ve helped grow"}
         </h2>
-        <p className="text-sm color-brand-1 mb-1 text-center">
-          And 100’s of other top companies – ranging upto 0.5 Billion downloads
-        </p>
+        {/* <p className="text-sm color-brand-1 mb-1 text-center">
+        We’ve helped grow 100’s of top brands with upto 500 million downloads on their apps.
+        </p> */}
       </div>
-      <div className="marqueeContainer">
+      <Marquee />
+      {/* <div className="marqueeContainer">
         <div className="marqueeSlide">
           {data.map((item, index) => (
             <Image
@@ -121,7 +123,7 @@ const Trustby = ({ padding }) => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

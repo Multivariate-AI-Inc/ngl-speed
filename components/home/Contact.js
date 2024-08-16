@@ -23,9 +23,9 @@ const Contact = () => {
                   />
                 </div>
                 <div className="card-info">
-                  <h6 className="color-brand-1 mb-10">
+                  <h5 className="color-brand-1 mb-10">
                     Get in touch with Our Experts
-                  </h6>
+                  </h5>
                   <p className="font-md color-grey-500 mb-5">
                     Email us at : contact@nextgrowthlabs.com
                   </p>
@@ -41,9 +41,12 @@ const Contact = () => {
                   />
                 </div>
                 <div className="card-info">
-                  <h6 className="color-brand-1 mb-10">Reach Us </h6>
+                  <h5 className="color-brand-1 mb-10">Reach Us </h5>
                   <p className="font-md color-grey-500 mb-5">
-                    Bangalore: 1216, 14th Main, HSR Layout
+                      {" "}
+                      #27, Santosh Tower, Second Floor, JP Nagar, 4th Phase,{" "}
+                      <br />
+                      4th Main 100ft Ring Road, Bangalore - 560078
                   </p>
                 </div>
               </div>

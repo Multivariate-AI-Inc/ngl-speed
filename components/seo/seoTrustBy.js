@@ -87,7 +87,7 @@ const data = [
   { src: "/assets/imgs/clientlogo/ZET.png", alt: "ZET", width: 92 },
 ];
 
-const SEOTrustBy = () => {
+const SeoTrustBy = () => {
   return (
     <div className="section mt-50">
       <div className="container">
@@ -117,4 +117,4 @@ const SEOTrustBy = () => {
   );
 };
 
-export default SEOTrustBy;
+export default SeoTrustBy;

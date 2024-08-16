@@ -87,7 +87,6 @@ const ContactForm = () => {
       body: raw,
       redirect: "follow",
     }
-
     fetch(
       "https://api.hsforms.com/submissions/v3/integration/submit/3885214/efaf7e24-de65-496d-9983-ffb476f65524",
       requestOptions,

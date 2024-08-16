@@ -24,9 +24,9 @@ function BackToTop() {
           id="scrollUp"
           href="#top"
           style={{ position: "fixed", zIndex: 2147483647 }}
+          aria-label="backtotop"
         >
-          <FaArrowUp style={{fontSize:"20px", position:"relative", top:"30%"}} />
-          {/* <i className="fi-rr-arrow-small-up text-brand" /> */}
+          <FaArrowUp style={{fontSize:"20px", position:"relative", top:"30%", color:"#ffe7bb"}} />
 
         </Link>
       )}

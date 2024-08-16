@@ -1,12 +1,15 @@
-import Link from "next/link";
-import PageHead from "../components/elements/PageHead";
-import Image from "next/image";
-import Layout from "../components/layout/Layout";
+import Link from "next/link"
+import PageHead from "../components/elements/PageHead"
+import Image from "next/legacy/image"
+import Layout from "../components/layout/Layout"
 
 const CustomError404 = () => {
   return (
     <>
-      <PageHead title={"Error 404 - Page not found"} />
+      <PageHead
+        title={"Error 404 - Page not found"}
+        canonical={"https://nextgrowthlabs.com/404"}
+      />
       <Layout>
         <section className="section box-404">
           <div className="container">
@@ -20,7 +23,7 @@ const CustomError404 = () => {
                       width={100}
                       height={100}
                       src="/assets/imgs/page/404/404.png"
-                      alt="iori"
+                      alt="404"
                     />
                   </div>
                   <div className="col-md-7 col-sm-12 text-center text-md-start">
@@ -69,11 +72,10 @@ const CustomError404 = () => {
                   <div className="card-image">
                     <div className="box-image">
                       <Image
-                        layout="responsive"
-                        width={100}
-                        height={100}
+                        width={30}
+                        height={30}
                         src="/assets/imgs/page/contact/headphone.png"
-                        alt="iori"
+                        alt="headphone"
                       />
                     </div>
                   </div>
@@ -99,19 +101,18 @@ const CustomError404 = () => {
                   <div className="card-image">
                     <div className="box-image">
                       <Image
-                        layout="responsive"
-                        width={100}
-                        height={100}
+                        width={30}
+                        height={30}
                         src="/assets/imgs/page/contact/earth.png"
-                        alt="iori"
+                        alt="earth"
                       />
                     </div>
                   </div>
                   <div className="card-info">
                     <h6 className="color-brand-1 mb-10">Corporate Address</h6>
                     <p className="font-xs color-grey-500">
-                      1216, 14th main, HSR Layout,
-                      <br /> Bengaluru-KA-560102
+                      #27, Santosh Tower, Second Floor,JP Nagar <br /> 4th
+                      Phase, 4th Main 100ft Ring Road <br /> Bangalore - 560078
                     </p>
                   </div>
                 </div>

@@ -1,59 +1,64 @@
-.banner-12 img{
+.banner-12 img {
   // background-image: url("../imgs/page/homepage12/hero-bg.png");
   background-size: cover;
   min-height: 700px;
   position: absolute;
 }
-  .asset-1 {
-    position: absolute;
-    top: 30%;
-    left: 100px;
-    width: 81px;
-    background: url(../imgs/page/homepage12/asset1.png) no-repeat center;
-    background-size: contain;
-    height: 69px;
-    left: 15%;
-  }
-  .asset-3 {
-    position: absolute;
-    top: 30%;
-    right: 350px;
-    height: 115px;
-    width: 38px;
-    background: url(../imgs/page/homepage12/asset3.png) no-repeat center;
-    background-size: contain;
-  }
-  .asset-2 {
-    position: absolute;
-    bottom: 10%;
-    left: 30%;
-    height: 49px;
-    width: 65px;
-    background: url(../imgs/page/homepage12/asset2.png) no-repeat center;
-    background-size: auto;
-    background-size: contain;
-    top: unset;
-  }
-  .asset-4 {
-    position: absolute;
-    top: 340px;
-    right: 100px;
-    height: 75px;
-    width: 91px;
-    background: url(../imgs/page/homepage12/asset4.png) no-repeat center;
-    background-size: contain;
-  }
-  .asset-5 {
-    position: absolute;
-    top: unset;
-    bottom: 25%;
-    left: unset;
-    right: 30%;
-    height: 44px;
-    width: 44px;
-    background: url(../imgs/page/homepage12/asset5.png) no-repeat center;
-    background-size: contain;
-  }
+.asset-1 {
+  position: absolute;
+  top: 30%;
+  left: 100px;
+  width: 81px;
+  background: url(../imgs/page/homepage12/asset1.png) no-repeat center;
+  background-size: contain;
+  height: 69px;
+  left: 15%;
+  z-index: -1;
+}
+.asset-3 {
+  position: absolute;
+  top: 30%;
+  right: 350px;
+  height: 115px;
+  width: 38px;
+  background: url(../imgs/page/homepage12/asset3.png) no-repeat center;
+  z-index: -1;
+  background-size: contain;
+}
+.asset-2 {
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
+  height: 49px;
+  width: 65px;
+  background: url(../imgs/page/homepage12/asset2.png) no-repeat center;
+  background-size: auto;
+  background-size: contain;
+  top: unset;
+  z-index: -1;
+}
+.asset-4 {
+  position: absolute;
+  top: 340px;
+  right: 100px;
+  height: 75px;
+  width: 91px;
+  background: url(../imgs/page/homepage12/asset4.png) no-repeat center;
+  background-size: contain;
+  z-index: -1;
+}
+.asset-5 {
+  position: absolute;
+  top: unset;
+  bottom: 25%;
+  left: unset;
+  right: 30%;
+  height: 44px;
+  width: 44px;
+  background: url(../imgs/page/homepage12/asset5.png) no-repeat center;
+  background-size: contain;
+  z-index: -1;
+}
 
 /*Section 2*/
 

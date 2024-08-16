@@ -4,10 +4,16 @@ import Contact from "../components/home/Contact";
 
 import Layout from "../components/layout/Layout";
 import PageHead from "../components/elements/PageHead";
-const Contactus = () => {
+const ContactUs = () => {
   return (
     <>
-      <PageHead title={"Contact Us for better coordination and more info."} />
+      <PageHead
+        title={"Contact Us for better coordination and more info."}
+        canonical={"https://nextgrowthlabs.com/contact"}
+        ogDescription={
+          "Have a question or want to contact us directly? Please contact us and we will respond as soon as possible."
+        }
+      />
       <Layout>
         <section className="section banner-contact">
           <div className="container">
@@ -23,9 +29,13 @@ const Contactus = () => {
                   <div className="row">
                     <div className="col-lg-9">
                       <p className="font-md color-grey-500">
-                        Request a demo, ask a question, or get in touch here. If
-                        you’re interested in working at Iori Coporation, check
-                        out our
+                        Whether you are starting off or have billions of users,
+                        our team is willing and able to help you.
+                        <br /> Please reach out to us to request a demo or if
+                        you have any more questions.
+                        <br />
+                        If you’re interested in working at NextGrowth Labs,
+                        check out our
                         <Link className="ml-3" href="/career">
                           {" "}
                           careers page.
@@ -56,4 +66,4 @@ const Contactus = () => {
   );
 };
 
-export default Contactus;
+export default ContactUs;

@@ -1,41 +1,28 @@
 import React from "react";
-import CareerSection1 from "../components/career/careerSection1";
-import CareerSection2 from "../components/career/careerSection2";
-import CareerSection3 from "../components/career/careerSection3";
-// import CareerSection4 from "../components/career/careerSection4";
-import CareerSection5 from "../components/career/careerSection5";
-import CareerSection6 from "../components/career/careerSection6";
-import CareerSection7 from "../components/career/careerSection7";
-
+import CurrentOpenings from "../components/career/CurrentOpenings";
+import CareerOptions from "../components/career/CareerOptions";
+import GetInTouch from "../components/career/GetInTouch";
 import Layout from "../components/layout/Layout";
 import PageHead from "../components/elements/PageHead";
-import { getAllPosts, getPostSlug } from "../lib/posts";
-
-export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
-export async function getServerSideProps({ params }) {
-  //getting all posts for suggested posts
-  const suggestedPosts = await getAllPosts();
-  // returning props to access in the component
-  return {
-    props: {
-      suggestedPosts,
-    },
-  };
-}
-const career = ({ suggestedPosts }) => {
+import Brands from "../components/career/Brands";
+// import JoinUsWhy from "../components/career/JoinUsWhy";
+// import CoreValues from "../components/career/CoreValues";
+// import BlogUpdates from "../components/career/BlogUpdates";
+const career = () => {
   return (
     <>
       <PageHead
         title={"We are Always Searching For Amazing People to Join Our Team."}
+        canonical={"https://nextgrowthlabs.com/career"}
+        ogDescription={
+          "Learn about NextGrowthLabs careers in tech and engineering product, design, sales, brand & marketing, and more, and apply today!"
+        }
       />
       <Layout>
-        <CareerSection1 />
-        <CareerSection2 />
-        <CareerSection3 />
-        {/* <CareerSection4 /> */}
-        <CareerSection5 />
-        <CareerSection6 />
-        <CareerSection7 post={suggestedPosts} />
+        <CurrentOpenings />
+        <CareerOptions />
+        <Brands />
+        <GetInTouch />
       </Layout>
     </>
   );

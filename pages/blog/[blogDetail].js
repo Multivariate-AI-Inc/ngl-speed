@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import "@wordpress/block-library/build-style/style.css";
+import "@wordpress/block-library/build-style/common.css";
+import "@wordpress/block-library/build-style/theme.css";
+
 import Layout from "../../components/layout/Layout";
 import PageHead from "../../components/elements/PageHead";
 import BlogCard from "../../components/cards/BlogCard";
@@ -7,6 +11,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { getAllPosts, getPostData, getPostSlug } from "../../lib/posts";
 import FeaturedImage from "../../components/elements/FeaturedImage";
 import Date from "../../components/elements/Date";
+
 // import { parse } from "node-html-parser";
 
 export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
@@ -123,7 +128,7 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
     // const doc = parse(htmlString);
-    const headings = doc.querySelectorAll("h2");
+    const headings = doc.querySelectorAll("h2, h3");
     // const headingElementsArray = Array.from(headings);
     // setSections((prev) => headingElementsArray);
     const headingArray = [];
@@ -142,7 +147,8 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
   async function extractNodeList(htmlString) {
     const { parse } = await import("node-html-parser");
     const doc = parse(htmlString);
-    const headings = doc.querySelectorAll("h2");
+
+    const headings = doc.querySelectorAll("h2,h3");
     setSections(headings);
     return headings;
   }
@@ -187,22 +193,25 @@ const BlogDetails = ({ postData, suggestedPosts, postDataContent }) => {
         <div className="section mt-40" ref={blogDetailRef}>
           <div className="container">
             <div className="row">
-              <div className="col-xl-9 col-lg-8">
+              <div className="col-xl-9 col-lg-8 overflow-hidden">
                 <div className="content-single" id="content">
                   <h2 className="color-brand-1 mb-50" id="section1">
                     {postData.title}
                   </h2>
-                  <div className="mb-40">
+                  <div className="mb-40 reusable-div">
                     <FeaturedImage
                       post={postData}
                       styleClasses="bd-rd8"
                       priority={true}
                       height={500}
+                      width={1000}
                     />
                   </div>
-                  <div
+                  <div dangerouslySetInnerHTML={{ __html: postData.content }} />
+                  {/* <div
+                    id="blog-detail-custom"
                     dangerouslySetInnerHTML={{ __html: postData.content }}
-                  ></div>
+                  ></div> */}
                   {/* <p className="color-grey-900 font-lg-bold mb-25">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Quisque ornare pellentesque sollicitudin. Suspendisse

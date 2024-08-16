@@ -21,7 +21,17 @@ module.exports = {
           "./components/**/*.{js,jsx,ts,tsx}",
         ],
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-        safelist: ["html", "body"],
+        safelist: {
+          standard: [
+            "html",
+            "body",
+            /^Toastify/, // Ensures any class starting with Toastify is not purged
+          ],
+          deep: [
+            /^wp-block-/, // Ensures any class starting with wp-block- is not purged
+          ],
+          greedy: [], // You can add more complex patterns if needed
+        },
       },
     ],
   ],

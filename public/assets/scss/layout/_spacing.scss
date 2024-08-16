@@ -5,8 +5,9 @@
 .section-padding {padding: 25px 0;}
 .ml-3 {margin-left: 3px;}
 .ptb-0{padding:0;}
-.ptb-10{padding:10px 0;}
-.ptb-20{padding:20px 0;}
+.ptb-10{padding:10px 0 !important;}
+.ptb-20{padding:20px 0 !important;}
+.ptb-15{padding:15px 0 !important;}
 .ptb-30{padding:30px 0;}
 .ptb-35{padding:35px 0;}
 .ptb-32{padding:32px 0;}
@@ -122,7 +123,7 @@
 .pb-200{padding-bottom:200px!important}
 .pl-0{padding-left:0px!important}
 .pl-5{padding-left:5px!important}
-.pl-10{padding-left:10px!important}
+.pl-10{padding-left:10px !important;}
 .pl-15{padding-left:15px!important}
 .pl-20{padding-left:20px!important}
 .pl-25{padding-left:25px!important}
@@ -163,8 +164,8 @@
 .pl-200{padding-left:200px!important}
 .pr-0{padding-right:0px!important}
 .pr-5{padding-right:5px!important}
-.pr-10{padding-right:10px!important}
-.pr-15{padding-right:15px!important}
+.pr-10{padding-right:10px !important}
+.pr-15{padding-right:15px !important;}
 .pr-20{padding-right:20px!important}
 .pr-25{padding-right:25px!important}
 .pr-30{padding-right:30px!important}
@@ -207,12 +208,12 @@
 /***************************
     Page section margin
 ****************************/
-.mtb-0{margin:0;}
+.mtb-0{margin:0 !important;}
 .mtb-10{margin:10px 0;}
-.mtb-15{margin:15px 0;}
-.mtb-20{margin:20px 0;}
+.mtb-15{margin:15px 0 !important;}
+.mtb-20{margin:20px 0 !important;}
 .mtb-30{margin:30px 0;}
-.mtb-40{margin:40px 0;}
+.mtb-40{margin:40px 0 !important;}
 .mtb-50{margin:50px 0;}
 .mtb-60{margin:60px 0;}
 .mtb-70{margin:70px 0;}

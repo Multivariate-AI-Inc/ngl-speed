@@ -12,18 +12,22 @@ const Marketing = () => {
                 We are Data-driven &amp; Expert Assisted
               </h2>
               <p className="color-grey-500 mb-15">
-                Necessary to deliver white glove, fully managed campaigns that
-                surpass industry benchmarks.Take your career to next level.
-                Apply to our team and see what we can do together. You’re good
-                enough.
+                At our core, we are a data-driven and expert-assisted service.
+                Each day, we crawl over 1M Android and 3M iOS apps, with top
+                30K+ websites all indexed. We process 300M results weekly from
+                SERP, and 60M results from both PlayStore and AppStore. Our vast
+                resources include 150k+ usage data of both mobile apps and
+                websites, ensuring high-quality, accurate results for all of our
+                clients.
               </p>
               <p className="color-grey-500">
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature Id
-                pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri
-                graeco tritani partiendo. Omittantur No tale choro fastidii his,
-                pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent
-                lucilius quaestio mea ex. Ex illum officiis id.
+                We are led by a data-driven approach, bolstered by the expertise
+                of our seasoned professionals. Our reach extends to over 30,000
+                top websites as part of our SEO index to ensure a comprehensive
+                digital overview. We process 300 million SERP results and
+                analyze thousands of usage data weekly. We can help you take
+                business decisions that will lead to higher performance of your
+                platform that will deliver superior results.
               </p>
               <div className="box-button text-start mt-40">
                 <Button text={"Contact Us"} href={"/contact"} />
@@ -34,22 +38,28 @@ const Marketing = () => {
             <div className="row pt-40">
               <div className="col-lg-6 col-md-6">
                 <div className="cardNumber hasBorder mt-50">
-                  <div className="card-head">465k</div>
-                  <div className="card-description">Social followers</div>
+                  <div className="card-head">20B+</div>
+                  <div className="card-description">
+                    Rows of Data Analyzed/Day
+                  </div>
                 </div>
                 <div className="cardNumber bg-brand-2">
-                  <div className="card-head">756+</div>
-                  <div className="card-description">Project Done</div>
+                  <div className="card-head">3M+</div>
+                  <div className="card-description">Apps in Our Index</div>
                 </div>
               </div>
               <div className="col-lg-6 col-md-6">
                 <div className="cardNumber bg-2">
-                  <div className="card-head">5000+</div>
-                  <div className="card-description">Happy Clients</div>
+                  <div className="card-head">300M+</div>
+                  <div className="card-description">
+                    Results Processed/Week in SERP
+                  </div>
                 </div>
                 <div className="cardNumber bg-4">
-                  <div className="card-head">100%</div>
-                  <div className="card-description">Client Satisfaction</div>
+                  <div className="card-head">30K+</div>
+                  <div className="card-description">
+                    Top Websites in Our Index
+                  </div>
                 </div>
               </div>
             </div>

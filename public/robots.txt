@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextgrowthlabs.com
+
+# Sitemaps
+Sitemap: https://nextgrowthlabs.com/sitemap.xml

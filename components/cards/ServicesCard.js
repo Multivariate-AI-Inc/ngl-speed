@@ -12,7 +12,7 @@ const ServicesCard = (props) => {
           <h4 className="color-brand-1 mb-10">
             <Link
               className="color-brand-1"
-              href="Seamless importing and round-tripping of Microsoft Project plans, Excel files & CSV files."
+              href={props.route}
             >
               {props.heading}
             </Link>

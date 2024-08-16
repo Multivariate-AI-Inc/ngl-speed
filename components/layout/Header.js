@@ -54,17 +54,22 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                     </li>
 
                     <li>
-                      <Link href="/seo">SEO</Link>
+                      <Link href="/search-engine-optimization">SEO</Link>
                     </li>
                     <li>
-                      <Link href="/tools">Tools</Link>
+                      <Link href="/free-app-store-optimization-tool">
+                        Tools
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/aso">Get Free ASO Analysis</Link>
+                      <Link href="/get-free-aso-analysis">
+                        Get Free ASO Analysis
+                      </Link>
                     </li>
                     <li>
-                      <Link href="http://blogs.nextgrowthlabs.com/">Blog</Link>
+                      <Link href="http://blog.nextgrowthlabs.com/">Blog</Link>
                     </li>
+
                     <li>
                       <Link href="/career">Career</Link>
                     </li>
@@ -72,10 +77,10 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                       <Link href="/contact">Contact Us</Link>
                     </li>
                     <li>
-                      <Link href="/term-conditions">Terms</Link>
+                      <Link href="/terms-of-service">Terms</Link>
                     </li>
                     <li>
-                      <Link href="/privacy">Privacy</Link>
+                      <Link href="/privacy-policy">Privacy</Link>
                     </li>
                   </ul>
                 </nav>

@@ -122,6 +122,7 @@ const Chart = () => {
               position: relative;
               height: 500px;
               width: 500px;
+              margin: auto;
               overflow: hidden;
             }
           `}

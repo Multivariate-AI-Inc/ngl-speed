@@ -1,13 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 const Footer = () => {
   return (
     <>
       <footer className="footer mt-80">
+        <div className="border-bottom"></div>
+
         <div className="footer-1">
-          <div className="container">
+          <div className="container footer-container">
             <div className="row">
-              <div className="col-lg-3 width-20">
+              <div className="col-lg-3 width-20 custom-width-30">
                 <div className="mb-10">
                   <Image
                     width={40}
@@ -16,24 +18,38 @@ const Footer = () => {
                     alt="iori"
                   />
                 </div>
-                <p className="font-md mb-20 color-grey-400">
-                  Bangalore: 1216, 14th Main,
-                  <br className="d-none d-lg-block" />
-                  HSR Layout
+                <p className="font-md-bold mb-20 color-brand-1">
+                  NextGrowth Labs Private Limited
                 </p>
-                <div className="font-md mb-20 color-grey-400">
-                  <strong className="font-md-bold">Email:</strong>{" "}
-                  contact@nextgrowthlabs.com
+                <p className="font-md mb-20 color-grey-400">
+                  #27, Santosh Tower,
+                  <br className="d-none d-lg-block" />
+                  Second Floor,JP Nagar,
+                  <br className="d-none d-lg-block" />
+                  4th Phase, 4th Main 100ft Ring Road
+                  <br className="d-none d-lg-block" />
+                  Bangalore - 560078
+                </p>
+                <div className="email-container font-md mb-20 color-grey-400 ">
+                  <strong className="font-md-bold email-label">Email:</strong>
+                  <span className="email-address">
+                    contact@nextgrowthlabs.com
+                  </span>
                 </div>
+
                 <h6 className="color-brand-1">Follow Us</h6>
                 <div className="mt-15">
                   <Link
                     className="icon-socials icon-facebook"
                     href="https://www.facebook.com/thenextlabs/"
+                    target="_blank"
+                    aria-label="Facebook"
                   ></Link>
                   <Link
                     className="icon-socials icon-linkedin"
                     href="https://www.linkedin.com/company/13337675/"
+                    target="_blank"
+                    aria-label="LinkedIn"
                   ></Link>
                 </div>
               </div>
@@ -41,27 +57,29 @@ const Footer = () => {
                 <h5 className="mb-10 color-brand-1">Consulting</h5>
                 <ul className="menu-footer">
                   <li>
-                    <Link href="/aso">App Store Optimization</Link>
+                    <Link href="/get-free-aso-analysis">
+                      App Store Optimization
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/">Mobile App Promotion</Link>
+                    <Link href="#contact">Mobile App Promotion</Link>
                   </li>
                   <li>
-                    <Link href="https://nextgrowthlabs.com/how-we-lower-google-uac-ad-costs/">
+                    <Link href="https://tools.nextgrowthlabs.com/how-we-lower-google-uac-ad-costs/">
                       Ad Cost Reduction
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/search-engine-optimization/">
+                    <Link href="/search-engine-optimization">
                       Search Engine Optimization
                     </Link>
                   </li>
                   <li>
                     {/* add link to nextlabs site */}
-                    <Link href="#">Free App Analysis</Link>
+                    <Link href="/get-free-aso-analysis">Free App Analysis</Link>
                   </li>
                   <li>
-                    <Link href="/">Improve Pagespeed</Link>
+                    <Link href="#contact">Improve Pagespeed</Link>
                   </li>
                   <li>
                     <Link href="#contact">Mobile & Web Analytics</Link>
@@ -82,17 +100,18 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/google-serp-rank-tracker/">
+                    <Link href="/keyword-suggestion">
                       Keyword Auto Suggest
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/keyword-autosuggest-a-multi-platform-keyword-tool/">
+                    <Link href="https://tools.nextgrowthlabs.com/google-serp-rank-tracker/">
                       Google SERP Checker
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/">
+                    {/* <Link href="https://tools.nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/"> */}
+                    <Link href="/seo-and-aso-keyword-content-writing-assistant/">
                       SEO Content Assistant
                     </Link>
                   </li>
@@ -113,7 +132,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link href="https://tools.nextgrowthlabs.com/bulk-ios-keywords-tracker/">
-                      iOS Keyword Tracker
+                      Bulk iOS Keyword Rank Tracker
                     </Link>
                   </li>
                 </ul>
@@ -127,40 +146,36 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/html-editor/">
-                      Html Editor
-                    </Link>
+                    <Link href="/html-editor">Html Editor</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="https://tools.nextgrowthlabs.com/bulk-website-rank-checker/">
                       Website Rank Checker
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link href="https://tools.nextgrowthlabs.com/emi-calculator/">
                       Emi Calculator
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/word-to-html/">
+                    <Link href="/word-to-html">
                       Word To Html
                     </Link>
                   </li>
                   <li>
-                    {" "}
-                    <Link href="https://tools.nextgrowthlabs.com/font-changer/">
+                    <Link href="/font-changer">
                       Font Changer
                     </Link>
                   </li>
                   <li>
-                    {" "}
-                    <Link href="https://tools.nextgrowthlabs.com/multi-tool/">
+                    <Link href="/multi-tool">
                       Multi Tool
                     </Link>
                   </li>
                   <li>
                     {" "}
-                    <Link href="https://tools.nextgrowthlabs.com/keyword-suggestion/">
+                    <Link href="/keyword-suggestion">
                       Keyword Suggestion
                     </Link>
                   </li>
@@ -196,7 +211,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="https://tools.nextgrowthlabs.com/free-app-store-optimization-tool/"
+                        href="/free-app-store-optimization-tool"
                         className="font-sm color-grey-400 "
                       >
                         Request Access to Free Tools Suite
@@ -223,22 +238,17 @@ const Footer = () => {
                 <div className="col-lg-6 col-md-12 text-center text-lg-start">
                   <ul className="menu-bottom">
                     <li>
-                      <Link className="font-sm color-grey-300" href="/privacy">
+                      <Link
+                        className="font-sm color-grey-300"
+                        href="/privacy-policy"
+                      >
                         Privacy policy
                       </Link>
                     </li>
                     <li>
                       <Link
                         className="font-sm color-grey-300"
-                        href="term-conditions.html"
-                      >
-                        Cookies
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="font-sm color-grey-300"
-                        href="/term-conditions"
+                        href="/terms-of-service"
                       >
                         Terms of service
                       </Link>
@@ -247,7 +257,7 @@ const Footer = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 text-center text-lg-end">
                   <span className="color-grey-300 font-md">
-                    ©NextGrowthLabs 2024. All right reserved.
+                    ©NextGrowthLabs 2024. All rights reserved.
                   </span>
                 </div>
               </div>
@@ -256,7 +266,7 @@ const Footer = () => {
         </div>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,6 +1,6 @@
-import Button from "../elements/Button";
-import Image from "next/image";
-import heroBG from "/public/assets/imgs/page/homepage12/hero-bg.png";
+import Button from "../elements/Button"
+import Image from "next/image"
+import heroBG from "/public/assets/imgs/page/homepage12/hero-bg.png"
 
 const Hero = () => {
   return (
@@ -27,21 +27,30 @@ const Hero = () => {
             <h1 className="color-brand-1 mb-25 mt-10">
               App Store Optimization
             </h1>
-            <p className="font-md color-grey-500 mb-25 max-width-685">
+            {/* <p className="font-md color-grey-500 mb-25 max-width-685">
               Since 2016, we are at the forefront of Digital Marketing. We just
               don&apos;t service our clients - we <br />
               reverse engineer search algorithms. We process billions of data
               point every day to drive actionable insights.
+            </p> */}
+            <p className="font-md color-grey-500 mb-25 max-width-685">
+              Since 2016, we have been at the forefront of Digital Marketing. We
+              go beyond servicing our clients - we reverse engineer search
+              algorithms and process billions of data points every day to drive
+              actionable insights.
             </p>
-
             <div className="d-sm-inline-block">
-              <Button text={"Contact Us"} href={"/contact"} showIcon={false} />
+              <Button
+                text={"Contact Us"}
+                href={"/contact"}
+                showIcon={false}
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

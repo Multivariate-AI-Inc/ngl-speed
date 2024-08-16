@@ -3,7 +3,7 @@ import Image from "next/image";
 import project1 from "/public/assets/imgs/page/homepage1/project1.png";
 import finger from "/public/assets/imgs/page/homepage1/finger.png";
 import circle from "/public/assets/imgs/page/homepage1/circle.png";
-import project2 from "/public/assets/imgs/page/homepage1/project2.png";
+import project2 from "/public/assets/imgs/page/homepage1/business.png";
 import Union from "/public/assets/imgs/page/homepage1/Union.png";
 import eye from "/public/assets/imgs/page/homepage1/eye.png";
 const Services = () => {
@@ -38,10 +38,9 @@ const Services = () => {
               We process billions of data points per day
             </h3>
             <p className="font-md color-grey-400">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit laborum — semper quis lectus nulla.
-              Interactively transform magnetic growth strategies whereas
-              prospective &quot;outside the box&quot; thinking.
+              At NextGrowth Labs, we proficiently handle and process over
+              billions of data points daily, harnessing the power of advanced
+              analytics to drive informed business decisions and strategies.
             </p>
             <div className="mt-20">
               <ul className="list-ticks">
@@ -60,7 +59,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Task tracking
+                  1M+ apps/day crawled on Android
                 </li>
                 <li>
                   <svg
@@ -77,7 +76,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Create task dependencies
+                  3M+ apps/day crawled on iOS
                 </li>
                 <li>
                   <svg
@@ -94,7 +93,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Task visualization
+                  30K+ top websites in our index
                 </li>
                 <li>
                   <svg
@@ -111,7 +110,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  hare files, discuss
+                  300M results/week processed in SERP
                 </li>
                 <li>
                   <svg
@@ -128,7 +127,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Meet deadlines faster
+                  60M/week app results processed
                 </li>
                 <li>
                   <svg
@@ -145,7 +144,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Track time spent on each project
+                  150K+ mobile & web usage data
                 </li>
               </ul>
             </div>
@@ -155,16 +154,16 @@ const Services = () => {
           <div className="col-xl-5 col-lg-6">
             <span className="btn btn-tag">Branding</span>
             <h3 className="color-brand-1 mt-10 mb-15">
-              We build numerous tools for the community - link that to the tool
-              page of NGL.{" "}
+              We build numerous tools for the community.
             </h3>
             <p className="font-md color-grey-400">
-              Sharing content online allows you to craft an online persona that
-              reflects your personal values and professional skills. Even if you
-              only use social media occasionally, what you create, share or
-              react to feeds into this public narrative. How you conduct
-              yourself online is now just as important as your behavior offline
-              especially when it comes to your digital marketing career.
+              At NGL, we prioritize our community by building a range of
+              effective tools designed to support their needs. Our tools are
+              developed with precision and an understanding of our users’
+              objectives. Offering features that streamline processes, boost
+              productivity and foster innovation, we encourage you to explore
+              these resources on our tool page for optimized navigation and
+              usage.
             </p>
             <div className="mt-20">
               <ul className="list-ticks">
@@ -183,7 +182,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Send &amp; Schedule Posts
+                  Productivity Tools
                 </li>
                 <li>
                   <svg
@@ -200,7 +199,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Live Chat Request
+                  SEO Tools
                 </li>
                 <li>
                   <svg
@@ -217,7 +216,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Push Notification
+                  Automation Tools
                 </li>
                 <li>
                   <svg
@@ -234,7 +233,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Create fully integrated campaigns
+                  Chrome Add-ons
                 </li>
                 <li>
                   <svg
@@ -251,7 +250,7 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Online Visitors
+                  Slack Tools
                 </li>
                 <li>
                   <svg
@@ -268,7 +267,24 @@ const Services = () => {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Directly send or schedule posts
+                  Calculators
+                </li>
+                <li>
+                  <svg
+                    className="w-6 h-6 icon-16"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Marketplace Add-ons
                 </li>
               </ul>
             </div>

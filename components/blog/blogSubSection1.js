@@ -9,19 +9,19 @@ const BlogSubSection1 = ({ latestPost }) => {
           <div className="box-cover-border">
             <div className="row align-items-center">
               <div className="col-lg-6">
-                <FeaturedImage
-                  post={latestPost}
-                  styleClasses="d-block"
-                  priority={true}
-                  height={400}
-                />
+                <div className="mb-40 reusable-div">
+                  <FeaturedImage
+                    post={latestPost}
+                    styleClasses="d-block"
+                    priority={true}
+                    height={400}
+                  />
+                </div>
               </div>
               <div className="col-lg-6">
                 <div className="box-info-video">
                   {/* <span className="btn btn-tag">Featured</span> */}
-                  <Link
-                    href={`https://blogsngl.wpenginepowered.com/${latestPost.slug}`}
-                  >
+                  <Link href={`/blog/${latestPost.slug}`}>
                     <h3 className="color-brand-1 mt-15 mb-20">
                       {latestPost.title}
                     </h3>
@@ -37,7 +37,7 @@ const BlogSubSection1 = ({ latestPost }) => {
                   <div className="box-button text-start mt-45">
                     <Link
                       className="btn btn-default font-sm-bold pl-0 hover-up"
-                      href={`https://blogsngl.wpenginepowered.com/${latestPost.slug}`}
+                      href={`/blog/${latestPost.slug}`}
                     >
                       Read more
                       <svg
