@@ -787,10 +787,10 @@ div.output {
 }
 .main-head {
   font-size: 1.8rem;
-  border-radius: 5px 5px 0 0;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-top: 1px solid #ccc;
+  // border-radius: 5px 5px 0 0;
+  // border-left: 1px solid #ccc;
+  // border-right: 1px solid #ccc;
+  // border-top: 1px solid #ccc;
   padding: 10px 0;
 }
 .canvas-footer-website {
@@ -1819,19 +1819,14 @@ img.device-icon-logo {
   width: 100%;
   margin: 0px auto;
   padding: 20px;
-  background-color: #fff;
-  /* border-radius: 10px; */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  border-left: 1px solid rgb(185, 185, 201);
-  border-right: 1px solid rgb(185, 185, 201);
 }
+
 .output-container {
   margin-bottom: 10px;
   padding: 20px 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #e8f5f7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1888,7 +1883,7 @@ img.device-icon-logo {
 }
 
 .grand-total span {
-  background-color: #f9f9f9;
+  background-color: #e8f5f7;
   font-size: 1.875rem;
   line-height: 30px;
 }
@@ -2037,6 +2032,9 @@ p.error {
   background-color: #555;
 }
 
+.robots-card-bg-color {
+  background-color: #e8f5f7;
+}
 #robotsContent table {
   width: 100%;
   padding: 10px;

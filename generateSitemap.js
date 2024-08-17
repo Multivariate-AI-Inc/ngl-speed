@@ -43,10 +43,6 @@ const createSitemapIndex = () => {
       loc: "https://www.nextgrowthlabs.com/static-sitemap.xml",
       lastmod: getDate(),
     },
-    {
-      loc: "https://www.nextgrowthlabs.com/blog-sitemap.xml",
-      lastmod: getDate(),
-    },
   ];
 
   sitemaps.forEach((sitemap) => {
@@ -126,12 +122,6 @@ const generateSitemaps = async () => {
   createSitemap(staticPages, "static-sitemap.xml");
 
   // Fetch blog posts and generate blog pages sitemap
-  try {
-    const blogPosts = await fetchBlogPosts();
-    createSitemap(blogPosts, "blog-sitemap.xml");
-  } catch (error) {
-    console.error("Error generating blog sitemap:", error);
-  }
 };
 
 generateSitemaps();

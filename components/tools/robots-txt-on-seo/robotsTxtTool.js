@@ -155,147 +155,119 @@ const RobotsTxtTool = () => {
 
   return (
     <>
-      <div className="container mt-100">
-        <div className="main-head">
-          <h1 className="color-brand-1 text-center font-4xl-bold">
-            <b>Robots.txt Tester</b>
-          </h1>
-        </div>
-        <div className="container-form">
-          <div className="tool_description">
-            <h6 className="font-md color-grey-400 mb-20">
-              A robots.txt reader tool interprets the robots.txt file on a
-              website, providing insights into directives that guide web
-              crawlers. It displays rules controlling crawler access, helping
-              users understand and optimize search engine interactions. This
-              tool facilitates SEO analysis and website indexing strategies by
-              revealing how search engines navigate and index content based on
-              specified guidelines. It ensures effective communication between
-              website owners and search engines, influencing online visibility
-              and accessibility.
-            </h6>
+      <section className="section" style={{ backgroundColor: "#E0F1F4" }}>
+        <div className="container mt-80">
+          <div className="main-head">
+            <p className="tools_tag">Free SEO Tool</p>
+            <h1 className="color-brand-1 mb-25 mt-10 text-center">
+              Robots.txt Tester
+            </h1>
           </div>
+          <div className="container-form">
+            <div className="tool_description">
+              <h6 className="font-md color-grey-400 mb-20">
+                A robots.txt reader tool interprets the robots.txt file on a
+                website, providing insights into directives that guide web
+                crawlers. It displays rules controlling crawler access, helping
+                users understand and optimize search engine interactions. This
+                tool facilitates SEO analysis and website indexing strategies by
+                revealing how search engines navigate and index content based on
+                specified guidelines. It ensures effective communication between
+                website owners and search engines, influencing online visibility
+                and accessibility.
+              </h6>
+            </div>
 
-          <div className="robots-input-section mb-40">
-            <input
-              type="text"
-              id="url"
-              placeholder="Enter Your Website"
-              className="robots-input"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-            />
-            <button onClick={submitURL} className="hover-up btn btn-brand-1">
-              Submit
-            </button>
-          </div>
+            <div className="aso-input-form mb-25 main-box-holder">
+              <div className="search-box-suggestion">
+                <div className="main-search-bar">
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    className="search-input"
+                    placeholder="Enter your website"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                  />
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="audit-button"
+                onClick={submitURL}
+              >
+                Submit
+              </button>
+            </div>
 
-          {loading && <Loader />}
+            {loading && <Loader />}
 
-          {error && <div className="error-message">{error}</div>}
+            {error && <div className="error-message">{error}</div>}
 
-          <div
-            id="result"
-            style={{
-              display:
-                robotsData.length || sitemapData || rawText ? "block" : "none",
-            }}
-          >
-            <div className="card-offer mb-30" id="robotsSection">
-              <h2 className="color-brand-1 text-center">Robot.txt Rules</h2>
-              <div id="robotsContent" className="scroll_content">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Crawler</th>
-                      <th>Rules</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {robotsData.map((entry, index) => (
-                      <tr key={index}>
-                        <td>{entry.directive}</td>
-                        <td>{entry.value}</td>
+            <div
+              id="result"
+              style={{
+                display:
+                  robotsData.length || sitemapData || rawText
+                    ? "block"
+                    : "none",
+              }}
+            >
+              <div
+                className="card-offer mb-30 robots-card-bg-color"
+                id="robotsSection"
+              >
+                <h2 className="color-brand-1 text-center">Robot.txt Rules</h2>
+                <div id="robotsContent" className="scroll_content">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Crawler</th>
+                        <th>Rules</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {robotsData.map((entry, index) => (
+                        <tr key={index}>
+                          <td>{entry.directive}</td>
+                          <td>{entry.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="card-offer mb-30" id="sitemapSection">
+                <h2 className="color-brand-1 text-center">Sitemaps</h2>
+                <div
+                  id="sitemapContent"
+                  className="scroll_content"
+                  dangerouslySetInnerHTML={{ __html: sitemapData }}
+                />
+              </div>
+              <div className="card-offer mb-30" id="rawTextSection">
+                <h2 className="color-brand-1 text-center">Raw Text</h2>
+                <pre id="rawTextContent" className="scroll_content">
+                  {rawText}
+                </pre>
               </div>
             </div>
-            <div className="card-offer mb-30" id="sitemapSection">
-              <h2 className="color-brand-1 text-center">Sitemaps</h2>
-              <div
-                id="sitemapContent"
-                className="scroll_content"
-                dangerouslySetInnerHTML={{ __html: sitemapData }}
-              />
-            </div>
-            <div className="card-offer mb-30" id="rawTextSection">
-              <h2 className="color-brand-1 text-center">Raw Text</h2>
-              <pre id="rawTextContent" className="scroll_content">
-                {rawText}
-              </pre>
+            <div className="canvas-footer-website" style={{ border: "none" }}>
+              <h6>
+                Powered by&nbsp;
+                <Link
+                  href="https://nextgrowthlabs.com/?utm_source=robots_txt_on_seo#footer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="utm-link"
+                >
+                  NextGrowth Labs
+                </Link>
+              </h6>
             </div>
           </div>
-
-          <div>
-            <h5 className="font-md color-grey-400 mb-20">
-              <b>FAQ</b>
-            </h5>
-            <p className="font-md color-grey-400 mb-20">
-              <b>Q1. What is Robots.txt ?</b>
-            </p>
-            <p className="font-md color-grey-400 mb-20">
-              Robots.txt is a text file on websites guiding web robots, such as
-              search engine crawlers, on which pages to crawl or avoid. Placed
-              at the site&apos;s root, it employs directives like
-              &quot;User-agent&quot; to specify agents affected and
-              &quot;Disallow&quot; to restrict access to certain sections. For
-              instance, &quot;Disallow: /private/&quot; instructs robots to
-              avoid crawling the &quot;/private/&quot; directory.
-            </p>
-
-            <p className="font-md color-grey-400 mb-20">
-              <b> Q2. How to find Robots.txt?</b>
-            </p>
-            <p className="font-md color-grey-400 mb-20">
-              To find the robots.txt file, simply append &quot;/robots.txt&quot;
-              to a website&apos;s domain in the browser&apos;s address bar, like
-              &quot;www.example.com/robots.txt&quot;. This text file, located at
-              the root of the site, provides instructions for web crawlers.
-              Alternatively, search engines and online tools can help users to
-              search for specific files, such as the robots.txt file, using
-              specific search queries.
-            </p>
-
-            <p className="font-md color-grey-400 mb-20">
-              <b>Q3. What are Sitemap and its benefits ?</b>
-            </p>
-            <p className="font-md color-grey-400 mb-20">
-              A sitemap is a structured file on websites, aiding search engines
-              in efficient content discovery and indexing. It encompasses
-              essential page information, updating engines on new or altered
-              pages. This facilitates accurate indexing, optimizing search
-              results. Through sitemaps, websites ensure optimal visibility,
-              enhancing search engine rankings and user experience by guiding
-              engines to relevant content.
-            </p>
-          </div>
-        </div>{" "}
-        <div className="canvas-footer-website">
-          <h6>
-            Powered by&nbsp;
-            <Link
-              href="https://nextgrowthlabs.com/?utm_source=robots_txt_on_seo#footer"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="utm-link"
-            >
-              NextGrowth Labs
-            </Link>
-          </h6>
         </div>
-      </div>
+      </section>
     </>
   );
 };

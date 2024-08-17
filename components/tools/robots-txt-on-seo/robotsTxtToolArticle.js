@@ -4,6 +4,49 @@ const RobotsTxtToolArticle = () => {
   return (
     <>
       <div className="container mt-90">
+        <div>
+          <h5 className="font-md color-grey-400 mb-20">
+            <b>FAQ</b>
+          </h5>
+          <p className="font-md color-grey-400 mb-20">
+            <b>Q1. What is Robots.txt ?</b>
+          </p>
+          <p className="font-md color-grey-400 mb-20">
+            Robots.txt is a text file on websites guiding web robots, such as
+            search engine crawlers, on which pages to crawl or avoid. Placed at
+            the site&apos;s root, it employs directives like
+            &quot;User-agent&quot; to specify agents affected and
+            &quot;Disallow&quot; to restrict access to certain sections. For
+            instance, &quot;Disallow: /private/&quot; instructs robots to avoid
+            crawling the &quot;/private/&quot; directory.
+          </p>
+
+          <p className="font-md color-grey-400 mb-20">
+            <b> Q2. How to find Robots.txt?</b>
+          </p>
+          <p className="font-md color-grey-400 mb-20">
+            To find the robots.txt file, simply append &quot;/robots.txt&quot;
+            to a website&apos;s domain in the browser&apos;s address bar, like
+            &quot;www.example.com/robots.txt&quot;. This text file, located at
+            the root of the site, provides instructions for web crawlers.
+            Alternatively, search engines and online tools can help users to
+            search for specific files, such as the robots.txt file, using
+            specific search queries.
+          </p>
+
+          <p className="font-md color-grey-400 mb-20">
+            <b>Q3. What are Sitemap and its benefits ?</b>
+          </p>
+          <p className="font-md color-grey-400 mb-20">
+            A sitemap is a structured file on websites, aiding search engines in
+            efficient content discovery and indexing. It encompasses essential
+            page information, updating engines on new or altered pages. This
+            facilitates accurate indexing, optimizing search results. Through
+            sitemaps, websites ensure optimal visibility, enhancing search
+            engine rankings and user experience by guiding engines to relevant
+            content.
+          </p>
+        </div>
         <p className="font-md color-grey-400 mb-20">
           A robots.txt file is a crucial element of technical search engine
           optimization (SEO). Every website needs a robots.txt file as it gives
