@@ -237,7 +237,10 @@ const RobotsTxtTool = () => {
                   </table>
                 </div>
               </div>
-              <div className="card-offer mb-30" id="sitemapSection">
+              <div
+                className="card-offer mb-30 robots-card-bg-color"
+                id="sitemapSection"
+              >
                 <h2 className="color-brand-1 text-center">Sitemaps</h2>
                 <div
                   id="sitemapContent"
@@ -245,7 +248,10 @@ const RobotsTxtTool = () => {
                   dangerouslySetInnerHTML={{ __html: sitemapData }}
                 />
               </div>
-              <div className="card-offer mb-30" id="rawTextSection">
+              <div
+                className="card-offer mb-30 robots-card-bg-color"
+                id="rawTextSection"
+              >
                 <h2 className="color-brand-1 text-center">Raw Text</h2>
                 <pre id="rawTextContent" className="scroll_content">
                   {rawText}
