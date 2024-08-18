@@ -369,11 +369,11 @@ h6 {
 }
 
 .color-grey-80 {
-  color: #cde2e7;
+  color: #cde2e7 !important;
 }
 
 .color-grey-100 {
-  color: #b9cad0;
+  color: #b9cad0 !important;
 }
 
 .color-grey-200 {
@@ -3045,6 +3045,18 @@ button:disabled:hover {
 
 .top-3 {
   top: 3rem !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+input[type=text]::placeholder {
+  color: #8ea4ac;
 }
 
 .box-container-sw {
@@ -6242,6 +6254,10 @@ footer a {
   left: -80px;
 }
 
+.card-min-height {
+  min-height: 90%;
+}
+
 .box-image-detail {
   position: relative;
 }
@@ -7485,6 +7501,25 @@ textarea.textarea-control {
   --bgColor: #024430;
   --goldenColor: #ffe7bb;
   --lightGreen: #06d6a0;
+}
+
+.loginPopupContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+
+.loginPopupContainer .popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #search-box-ios {
@@ -8772,7 +8807,7 @@ div.output {
 }
 
 .search-input::placeholder {
-  color: grey;
+  color: #8ea4ac !important;
 }
 
 .app-output-box {

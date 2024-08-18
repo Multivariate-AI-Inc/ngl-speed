@@ -25,8 +25,9 @@ export default async function handler(req) {
         "Content-Type": "application/json",
       },
     })
-    if (response.data.success) {
-      return new Response(JSON.stringify({ message: "Success" }), {
+    const data = await response.json()
+    if (data.success) {
+      return new Response(JSON.stringify({ success: true }), {
         status: 200,
       })
     } else {

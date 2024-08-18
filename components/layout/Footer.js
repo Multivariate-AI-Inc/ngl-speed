@@ -149,7 +149,7 @@ const Footer = () => {
                     <Link href="/html-editor">Html Editor</Link>
                   </li>
                   {/* <li>
-                    <Link href="https://tools.nextgrowthlabs.com/bulk-website-rank-checker/">
+                    <Link href="/bulk-website-rank-checker">
                       Website Rank Checker
                     </Link>
                   </li> */}

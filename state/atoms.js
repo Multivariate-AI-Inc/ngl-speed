@@ -13,6 +13,7 @@ export const formSuccess = atom(false)
 export const selectedAppCountry = atom("us")
 export const pricingWrapper = atom(false)
 export const startButton = atom(false)
+export const googleSignInAtom = atom(false)
 export const formInputData = atom({
     name: "",
     email: "",

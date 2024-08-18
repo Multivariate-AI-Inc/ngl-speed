@@ -63,6 +63,26 @@ TABLE CONTENT
 }
 
 // Custom css
+// *************** login popup ***********************
+.loginPopupContainer {
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+
+.loginPopupContainer .popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
 // *************** bulk ios keyword ******************
 #search-box-ios{
   background-color: inherit;
@@ -1308,7 +1328,7 @@ div.output {
 }
 
 .search-input::placeholder{
-  color: grey;
+  color: #8ea4ac !important;
 }
 .app-output-box {
   width: inherit;

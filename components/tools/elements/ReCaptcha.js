@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const ReCaptcha = ({ onChange }) => {
+const ReCaptcha = ({ onChange, onExpired }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ const ReCaptcha = ({ onChange }) => {
         <ReCAPTCHA
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
           onChange={onChange}
+          onExpired={onExpired}
         />
       )}
     </div>

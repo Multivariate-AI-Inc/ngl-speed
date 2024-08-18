@@ -19,22 +19,30 @@ const KeywordSuggestion = () => {
   const [isVerified, setIsVerified] = useState(false)
   
 // google recatcha 
-  async function handleCaptchaSubmission(token) {
-    try {
-      if (token) {
-        await fetch("/api/verify-recaptcha", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token }),
-        })
+async function handleCaptchaSubmission(token) {
+  try {
+    if (token) {
+      const response = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      })
+
+      const result = await response.json()
+      if (result.success) {
         setIsVerified(true)
+      } else {
+        setIsVerified(false)
       }
-    } catch (e) {
-      setIsVerified(false)
     }
+  } catch (error) {
+    console.error("Captcha verification failed:", error)
+    setIsVerified(false)
   }
+}
+
 
   const handleChange = token => {
     handleCaptchaSubmission(token)

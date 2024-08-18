@@ -3,9 +3,7 @@ import React, { useState, useRef, useEffect } from "react"
 import Country from "../../aso/elements/Country"
 import {
   selectedCountryAtom,
-  showRecentApps,
   showSearchApps,
-  startButton,
   searchKeyword,
   userSelectedApp,
   showAppSelected,
@@ -21,14 +19,19 @@ import KeywordsTable from "./KeywordsTable"
 const BulkIOSKeywordRankTracker = () => {
   const [selectedCountry] = useAtom(selectedCountryAtom)
   const [appSelected, setAppSelected] = useAtom(showAppSelected)
-  const [userSelectedAppObject, setUserSelectedAppObject] = useAtom(userSelectedApp)
+  const [userSelectedAppObject, setUserSelectedAppObject] =
+    useAtom(userSelectedApp)
   const [searchAppVisible, setSearchAppVisible] = useAtom(showSearchApps)
   const [searchAppKeyword, setSearchAppKeyword] = useAtom(searchKeyword)
   const [inputFocused, setInputFocused] = useState("")
   const [inputKeywords, setInputKeywords] = useState([])
   const [isProcessing, setIsProcessing] = useState(false)
-  const prevSerpSearchRef = useRef("")
-  const serpInputRef = useRef()
+  const prevKeywordsRef = useRef("")
+  const textAriaRef = useRef("")
+
+  // useEffect(() => {
+  //   prevKeywordsRef.current = inputKeywords
+  // }, [inputKeywords])
 
   const clearInput = () => {
     setSearchAppKeyword("")
@@ -36,11 +39,10 @@ const BulkIOSKeywordRankTracker = () => {
 
   const handleKeywordsChange = event => {
     let keywords = event.target.value.split(",")
-    // Filter out empty values, trim spaces, and remove duplicates
     keywords = keywords
-      .filter(element => element.trim() !== "") // Remove empty values
+      .filter(element => element.trim() !== "")
       .map(element => element.trim()) // Trim spaces
-      .filter((element, index, arr) => arr.indexOf(element) === index) // Remove duplicates
+      .filter((element, index, arr) => arr.indexOf(element) === index)
 
     setInputKeywords(keywords)
   }
@@ -75,20 +77,21 @@ const BulkIOSKeywordRankTracker = () => {
     enabled: false,
     retry: 0,
   })
+
   const handleSubmit = async () => {
     try {
-      // const prevKeyword = prevSerpSearchRef.current
-      // if (searchKeyword === prevKeyword) {
-      //   toast.warning("Please enter a new keyword", { autoClose: 2000 })
-      //   return
-      // }
-      // prevSerpSearchRef.current = searchKeyword
-      // setIsProcessing(true)
-      // if (inputKeywords.length <= 0) {
-      //   setIsProcessing(false)
-      //   serpInputRef.current.focus()
-      //   return
-      // }
+      let prevKeywords = prevKeywordsRef.current
+      if (inputKeywords.length === prevKeywords.length) {
+        toast.warning("Please enter new keywords", { autoClose: 2000 })
+        return
+      }
+      prevKeywordsRef.current = inputKeywords
+      setIsProcessing(true)
+      if (inputKeywords.length <= 0) {
+        setIsProcessing(false)
+        textAriaRef.current.focus()
+        return
+      }
 
       await refetch()
     } catch (error) {
@@ -162,7 +165,6 @@ const BulkIOSKeywordRankTracker = () => {
                       ? userSelectedAppObject.applicationId
                       : searchAppKeyword
                   }
-                  ref={serpInputRef}
                   onFocus={() => {
                     setInputFocused(prev => {
                       return {
@@ -242,6 +244,7 @@ const BulkIOSKeywordRankTracker = () => {
               rows="6"
               placeholder="Enter keywords here"
               onChange={handleKeywordsChange}
+              ref={textAriaRef}
             ></textarea>
 
             <div className="text-center">
@@ -253,14 +256,13 @@ const BulkIOSKeywordRankTracker = () => {
                 className="audit-button ptb-15 pl-15 pr-15 mt-20"
                 onClick={handleSubmit}
                 disabled={isProcessing}
-                // style={{ float: "right" }}
               >
                 Get Ranks
               </button>
             </div>
           </div>
           {isFetching ? (
-            <div className="mb-40 mt-40">
+            <div className="mb-50 mt-10">
               <Loader />
             </div>
           ) : isFetched && data ? (
@@ -272,11 +274,6 @@ const BulkIOSKeywordRankTracker = () => {
               }
             />
           ) : null}
-
-
-
-
-          
         </div>
         {/* ************************** */}
         <div className="canvas-footer-website ptb-10">

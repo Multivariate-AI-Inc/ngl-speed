@@ -915,7 +915,7 @@ export const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/bulk-website-rank-checker/",
+    toolLink: "/bulk-website-rank-checker",
   },
   {
     name: "Keyword Density Monitor",
@@ -2197,10 +2197,15 @@ export function formatURL(url) {
 
 // check url is valid or not
 export const isValidUrl = url => {
-  const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
+  // old regex
+  // const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
+  // new regex
+  const urlRegex = /^(https?|ftp):\/\/[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(:\d+)?(\/[^\s]*)?$/
   const valid = urlRegex.test(url)
   return valid
 }
+
+
 
 // extract main domain
 export function extractMainDomain(url) {

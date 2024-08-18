@@ -1762,7 +1762,7 @@ const data = [
   //       </defs>
   //     </svg>
   //   ),
-  //   toolLink: "https://tools.nextgrowthlabs.com/bulk-website-rank-checker/",
+  //   toolLink: "/bulk-website-rank-checker",
   // },
   {
     name: "JSON to HTML Convertor",
