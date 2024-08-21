@@ -3005,10 +3005,6 @@ body {
   animation: hero-thumb-sm-2-animation 4s linear infinite alternate;
 }
 
-.justify-content-around {
-  justify-content: space-around !important;
-}
-
 .justify-content-evenly {
   justify-content: space-evenly !important;
 }
@@ -7503,6 +7499,87 @@ textarea.textarea-control {
   --lightGreen: #06d6a0;
 }
 
+.input-box {
+  width: 25%;
+  border: 0;
+  margin: 5px !important;
+  border-radius: 5px;
+  padding: 0.5rem !important;
+}
+
+.content {
+  background-color: rgb(250, 247, 247);
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin: 0.75rem;
+}
+
+.keyword-display-box {
+  line-height: 1.2rem;
+  min-height: 300px;
+  max-height: 1000px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 1rem !important;
+}
+
+.text_boxes_input {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+}
+
+.helpful-button {
+  position: fixed;
+  z-index: 1;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  max-width: calc(100% - 3.2rem);
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--red);
+  box-shadow: 5px 5px 10px #06d6a0;
+}
+
+button.help-button {
+  padding: 10px;
+  margin: 3px 0px;
+  font-weight: 600;
+  background-color: #024430;
+  border-radius: 5px;
+  color: white;
+}
+
+.bottom-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-toggle:empty::after {
+  margin-left: 0;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.helpful-button .bottom-row.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 850px) {
+  .text_boxes_input {
+    flex-wrap: wrap;
+  }
+}
 .loginPopupContainer {
   position: fixed;
   top: 0;

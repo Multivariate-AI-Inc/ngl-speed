@@ -355,7 +355,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-shuffle-tool/",
+    toolLink: "/keyword-shuffle-tool",
   },
   {
     name: "Title and Meta Description Checker",
