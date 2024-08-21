@@ -63,6 +63,174 @@ TABLE CONTENT
 }
 
 // Custom css
+// ***************  emi calculator ***********************
+  .input-panel,
+  .result-panel {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .input-panel {
+    padding: 15px 0;
+    align-items: center;
+  }
+
+  .input-panel > label {
+    flex: 0 0 13%;
+    text-align: right;
+    margin: 0 10px;
+    color: #1c7df8;
+    font-weight: bold;
+  }
+
+  .emi-input-group input {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+  }
+
+  .main-side {
+    padding: 10px;
+    background-color: #fafbfd;
+    font-size: 1rem;
+  }
+
+  .input-group-text {
+    padding: 10px;
+    background-color: #f0f1f2;
+    margin-left: 1px;
+    border-left: 1px solid #ced4da;
+    border-radius: 2px;
+  }
+
+  .emi-input-group {
+    flex: 0 0 40%;
+    min-width: 435px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .input-group-append {
+    display: inline;
+  }
+
+  @media screen and (max-width: 1050px) {
+    .emi-input-group{
+      min-width: 0px;
+      flex: 0 0 55%;
+    }
+
+    .input-panel > label {
+      flex: 0 0 32%;
+    }
+    .total_years {
+      width: 100%;
+      padding: 10px;
+      text-align: right;
+    }
+  }
+
+  @media screen and (max-width: 716px) {
+    .input-panel {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .input-panel > label {
+      flex: 100%;
+      text-align: left;
+      margin: 0;
+      padding-bottom: 15px;
+    }
+
+    .emi-input-group {
+      margin: 0;
+      width: 100%;
+    }
+
+    .result-chart,
+    .result-calculation {
+      flex: 100% !important;
+    }
+
+    .result-chart {
+      border-top: 1px solid #ced4da;
+      border-left: 0 !important;
+    }
+  }
+
+  .result-chart,
+  .result-calculation {
+    flex: 0 0 50%;
+  }
+
+  .result-chart {
+    border-left: 1px solid #ced4da;
+  }
+
+  .range-slider {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    filter: hue-rotate(265deg);
+    appearance: auto;
+  }
+
+  .slider {
+    margin: 0;
+    text-align: center;
+    line-height: 0;
+  }
+
+  .steps {
+    border-color: transparent;
+    border-style: none solid;
+    border-width: 0 1px;
+    margin: 0 5px 35px !important;
+    position: relative;
+  }
+
+  .tick {
+    text-align: center;
+    font-size: 11px;
+    height: 11px;
+    left: 0;
+    line-height: 11px;
+    margin-left: -24px;
+    position: absolute;
+    width: 48px;
+  }
+
+  .result-panel {
+    border: 1px solid #ced4da;
+    align-items: flex-start;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .select.hidden,
+  .anychart-credits {
+    display: none;
+  }
+
+  .select.hidden #years,
+  #months {
+    cursor: pointer;
+  }
+
+  .display-border {
+    border-bottom: 1px dashed #ced4da;
+    height: calc(100% / 3);
+    padding: 10px;
+  }
+
+  .borderbottom0 {
+    border-bottom: 0px !important;
+  }
 // *************** keyword shuffle tool ***********************
 .input-box {
   width: 25%;
