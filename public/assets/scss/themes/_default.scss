@@ -38,3 +38,9 @@ button:disabled:hover{
 input[type ="text"]::placeholder{
   color: #8ea4ac;
 }
+.cursor-pointer{
+  cursor: pointer !important;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse!important;
+}

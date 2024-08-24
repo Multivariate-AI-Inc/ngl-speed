@@ -693,7 +693,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/rating-projection-calculator/",
+    toolLink: "/rating-projection-calculator",
   },
   {
     name: "HTML Editor",

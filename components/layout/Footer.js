@@ -141,7 +141,7 @@ const Footer = () => {
                 <h5 className="mb-10 color-brand-1"></h5>
                 <ul className="menu-footer">
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/rating-projection-calculator/">
+                    <Link href="/rating-projection-calculator">
                       Android Rating Projection Tool
                     </Link>
                   </li>

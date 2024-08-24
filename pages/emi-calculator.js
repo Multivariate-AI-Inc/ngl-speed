@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout"
 import EmiArticle from "../components/tools/emi-calculator/EmiArticle"
 import EmiCalculator from "../components/tools/emi-calculator/EmiCalculator"
 
-const IOSKeyword = () => {
+const LoanCalculator = () => {
   return (
         <Layout>
           <PageHead
@@ -18,4 +18,4 @@ const IOSKeyword = () => {
   )
 }
 
-export default IOSKeyword
+export default LoanCalculator
