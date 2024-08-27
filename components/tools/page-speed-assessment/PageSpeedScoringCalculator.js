@@ -30,6 +30,8 @@ const PageSpeedScoringCalculator = ({ response }) => {
       // Extract data for the selected URL and device
       const data = response.filter(item => item.url === selectedURL && item.strategy === device)[0]
       if (data) {
+        console.log('Data', data);
+        
         setFcp(data.FCP || fcp)
         setLcp(data.LCP || lcp)
         setCls(data.CLS !== "N/A" ? data.CLS : cls)
@@ -42,7 +44,6 @@ const PageSpeedScoringCalculator = ({ response }) => {
 
   // Gather all the metrics in an object to pass as props
   const metrics = { fcp, si, lcp, tbt, cls }
-
   return (
     <div className="container mt-80">
       <div>

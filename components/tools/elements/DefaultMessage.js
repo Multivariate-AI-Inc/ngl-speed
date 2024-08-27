@@ -1,9 +1,9 @@
 import React from "react"
 
-const DefaultMessage = ({ message }) => {
+const DefaultMessage = ({ message, customClass }) => {
   return (
     <div
-      className="format-suggestions"
+    className="format-suggestions"
       style={{
         textAlign: "center",
         padding: "2rem",
@@ -12,7 +12,7 @@ const DefaultMessage = ({ message }) => {
         color: "#778ba5",
       }}
     >
-      <p>{message}</p>
+      <p className={`${customClass ? customClass : ""}`}>{message}</p>
     </div>
   )
 }
