@@ -12,7 +12,7 @@ const WebsiteResponsiveTest = () => {
           ogDescription="A mobile-friendly checker evaluates websites for mobile device compatibility, assessing design, layout, and performance. Get insights to optimize for mobile browsing"
           ogType="article"
           canonical={
-            "https://nextgrowthlabs.com/website-mobile-friendly-checker/"
+            "https://nextgrowthlabs.com/website-mobile-friendly-checker"
           }
         />
         <MobileFriendlyTest />

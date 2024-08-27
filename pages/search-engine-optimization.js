@@ -32,7 +32,7 @@ const SEO = () => {
     <>
       <PageHead
         title={"Increase Visibility & Traffic with Our SEO Solutions"}
-        canonical={"https://nextgrowthlabs.com/search-engine-optimization/"}
+        canonical={"https://nextgrowthlabs.com/search-engine-optimization"}
         ogDescription={
           "SEO is the practice of improving a website's ranking in search engine results pages to increase its visibility and attract more visitors."
         }

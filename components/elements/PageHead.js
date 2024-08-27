@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 const PageHead = ({ title, ogDescription, ogType, canonical, image }) => {
+const PageHead = ({ title, ogDescription, ogType, canonical, image }) => {
   return (
     <Head>
       <title>{title}</title>

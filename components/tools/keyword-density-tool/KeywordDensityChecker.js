@@ -331,11 +331,10 @@ async function copyToClipboard(text) {
         style={{ backgroundColor: "#E0F1F4" }}
       >
         <div className="container text-center">
-          <div className="row mt-20">
+          <div className="row mt-40">
             <p className="tools_tag">Free SEO Tool</p>
             <h1
-              className="color-brand-1 mb-25"
-              style={{ fontSize: "1.8rem" }}
+              className="font-4xl-bold color-brand-1 mb-25 mt-20"
             >
               Keyword Density Tool
             </h1>
@@ -411,7 +410,7 @@ async function copyToClipboard(text) {
               </div>
             </div>
             {/* *************************** */}
-            <div className="mb-20 mt-30">
+            <div className="mb-40 mt-30">
               <h5>
                 Powered by-
                 <Link

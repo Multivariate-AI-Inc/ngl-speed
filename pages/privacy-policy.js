@@ -43,7 +43,7 @@ const Privacy = () => {
     <>
       <PageHead
         title={"Privacy Policy"}
-        canonical={"https://nextgrowthlabs.com/privacy-policy/"}
+        canonical={"https://nextgrowthlabs.com/privacy-policy"}
       />
 
       <Layout>
@@ -171,22 +171,6 @@ const Privacy = () => {
                     to your information, and how you can contact us if you have
                     any questions or concerns. Your use of the Services is
                     subject to this Privacy Policy and to our Terms of Service.
-                  </p>
-                  <h4 className="color-brand-1 mb-20" id="section1">
-                    1. How NextLabs Collects Information
-                  </h4>
-                  <p className="font-md color-grey-500 mb-30">
-                    For the purpose of this Privacy Policy, “Personal
-                    Information” means any information relating to an identified
-                    or identifiable individual. We obtain Personal Information
-                    relating to you, our business partner, from various sources
-                    described below. Where applicable, we indicate whether and
-                    why you must provide us with Personal Information, as well
-                    as the consequences of failing to do so. If you do not
-                    provide Personal Information when requested, you may not be
-                    able to benefit from our Services if that information is
-                    necessary to provide you with the service or if we are
-                    legally required to collect it.
                   </p>
                   <h4 className="color-brand-1 mb-20" id="section1">
                     1. How NextLabs Collects Information

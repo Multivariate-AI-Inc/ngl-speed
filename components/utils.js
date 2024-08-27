@@ -652,7 +652,7 @@ export const data = [
         />
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-suggestion/",
+    toolLink: "/keyword-suggestion",
   },
   {
     name: "Chrome Add-Ons",
@@ -2251,6 +2251,248 @@ export function notIncludedToString(findValues) {
     content = content + findValues.notIncluded[i] + ", ";
   }
   return content;
+}
+
+// *************** used in keyword generator tool ******************
+// custom sort suggestion
+export function customSortSuggestion(array, name) {
+  const result = {};
+  const mixed = [];
+
+  array.forEach((value) => {
+    const namePosition = value.indexOf(name);
+
+    if (
+      namePosition !== -1 &&
+      namePosition < value.length - name.length &&
+      value[namePosition + name.length] === " "
+    ) {
+      const spacePosition = namePosition + name.length + 1;
+      const keyword = value.substring(spacePosition);
+
+      if (keyword) {
+        const groupKey = keyword[0].toLowerCase();
+
+        if (/[a-zA-Z]/.test(groupKey)) {
+          if (!result[groupKey]) {
+            result[groupKey] = [];
+          }
+          result[groupKey].push(value);
+        } else {
+          if (value.includes(name)) {
+            mixed.push(value);
+          }
+        }
+      } else {
+        if (value.includes(name)) {
+          mixed.push(value);
+        }
+      }
+    } else {
+      if (value.includes(name)) {
+        mixed.push(value);
+      }
+    }
+  });
+
+  // Sort each group
+  Object.keys(result).forEach((key) => {
+    result[key].sort();
+  });
+
+  // Sort the groups by their keys
+  const sortedResult = Object.keys(result)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = result[key];
+      return acc;
+    }, {});
+
+  if (mixed.length > 0) {
+    mixed.sort();
+    sortedResult["Mixed"] = mixed;
+  }
+
+  return sortedResult;
+}
+
+// *************** keyword suggestion tool *******************
+export const suggestionTabData = [
+  {
+    id: "play",
+    target: "Play-Store-Suggestion",
+    text: "Play Store",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ec690574bae9211828_google-play-store.svg",
+    imageAlt: "Android",
+    imageWidth: 25,
+    imageHeight: 25,
+  },
+  {
+    id: "apple",
+    target: "Apple-Store-Suggestion",
+    text: "Apple Store",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecae89fa82409d929d_app-store.svg",
+    imageAlt: "Apple",
+    imageWidth: 25,
+    imageHeight: 25,
+  },
+  {
+    id: "google",
+    target: "Google-Suggestion",
+    text: "Google",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecd5f12de7a5c1d202_google-50.svg",
+    imageAlt: "Google",
+    imageWidth: 30,
+    imageHeight: 30,
+  },
+  {
+    id: "bing",
+    target: "Bing-Suggestion",
+    text: "Bing",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecbbc06f110ccafe57_bing-50.svg",
+    imageAlt: "Bing",
+    imageWidth: 30,
+    imageHeight: 30,
+  },
+  {
+    id: "amazon",
+    target: "Amazon-Suggestion",
+    text: "Amazon",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656ae05094bb4d7d8642c21f_amazon-50.png",
+    imageAlt: "Amazon",
+    imageWidth: 25,
+    imageHeight: 25,
+  },
+  {
+    id: "yandex",
+    target: "Yandex-Suggestion",
+    text: "Yandex",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656ae05001014d3768ca14aa_yandex-50.png",
+    imageAlt: "Yandex",
+    imageWidth: 28,
+    imageHeight: 28,
+  },
+  {
+    id: "youtube",
+    target: "Youtube-Suggestion",
+    text: "Youtube",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/654ceca3fe55024cffdc8b9d/656491ecea80c277d0d249b5_youtube.svg",
+    imageAlt: "Youtube",
+    imageWidth: 30,
+    imageHeight: 30,
+  },
+];
+
+// get random 3 digits number
+export const getRandomNumber = () => {
+  return Math.floor(Math.random() * 900) + 100;
+};
+
+// Download CSV file
+export function DownloadCSVTable(button) {
+  // let email = localStorage.getItem("userMailId")
+  // let name = localStorage.getItem("userFullName")
+  // if (name && email) {
+  // dataLayer.push({ "event": "seo-download-csv", "gtm.uniqueAnalyticsReports": "SEO_Download_CSVLiveWeb", "keyword": button.getAttribute('text'), "gtm.email": email, "gtm.username": name })
+  const text = button.getAttribute("text");
+  console.log("Text", text);
+  if (text == "search") {
+    copyButtonFunction(button);
+  } else {
+    downloadAsCSVforSuggestion(button);
+  }
+  // } else {
+  // document.querySelector('.sign-in-button.rank-sign-in').classList.remove('hidden');
+  // window.alert("Please log in before Downloading CSV.")
+  // }
+}
+// play and app store data handler
+function copyButtonFunction(button) {
+  let btnText = button.getAttribute("btn-hint");
+  let parentElement = button.parentNode;
+  let listArray = parentElement.querySelectorAll("li");
+  if (btnText.includes("play") || btnText.includes("apple")) {
+    downloadAsCSVStore(listArray);
+  } else {
+    downloadAsCSVEngine(listArray, btnText);
+  }
+}
+// downloading app data (play and app store)
+function downloadAsCSVStore(Array) {
+  let csvContent = ",Package Name,Developer Name,Package URL,Image URL\n";
+  Array.forEach(function (liElement, item) {
+    let packageURL = liElement.getAttribute("data-url");
+    let appName = liElement.querySelector("strong").textContent;
+    let developer = liElement
+      .querySelector("span")
+      .textContent.replace("By ", "");
+    let image = liElement.querySelector("img").getAttribute("src");
+    csvContent += `"${
+      item + 1
+    }","${appName}","${developer}","${packageURL}","${image}"\n`;
+  });
+  let blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  let link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.setAttribute("download", "app_data.csv");
+  link.click();
+}
+// downloading serp data
+function downloadAsCSVEngine(Array, text) {
+  const csvData = [];
+  Array.forEach((li) => {
+    const mainLink = li.querySelector("h5 > a").innerText;
+    const secondaryLink = li.querySelector("#multi-tool-search-link").innerText;
+    const description = li.querySelector("div").innerText;
+    csvData.push([
+      mainLink.replace(/\n/g, ""),
+      secondaryLink.replace(/\n/g, ""),
+      description.replace(/\n/g, ""),
+    ]);
+  });
+  const csvContent = convertToCSV(csvData);
+  const blob = new Blob([csvContent], { type: "text/csv" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${text}-data.csv`;
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
+// convert data to csv
+function convertToCSV(data) {
+  // Define the CSV header
+  const headers = ["S.No", "Title", "Link", "Description"];
+  // Initialize the CSV content with the headers
+  let csvContent = headers.join(",") + "\n";
+
+  // Function to properly escape CSV fields
+  function escapeCSVField(field) {
+    // Escape double quotes by doubling them and wrap the field in quotes
+    if (field.includes(",") || field.includes('"') || field.includes("\n")) {
+      field = '"' + field.replace(/"/g, '""') + '"';
+    }
+    return field;
+  }
+
+  // Iterate over the data array and append each row to the CSV content
+  data.forEach((row, index) => {
+    // Create a new array with the serial number and the escaped row data
+    const rowData = [index + 1, ...row.map(escapeCSVField)];
+    // Convert the array to a CSV string and add it to the CSV content
+    csvContent += rowData.join(",") + "\n";
+  });
+
+  return csvContent;
 }
 
 // select highest resolution image

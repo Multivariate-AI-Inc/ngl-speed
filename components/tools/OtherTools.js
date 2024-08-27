@@ -843,7 +843,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/word-to-html/",
+    toolLink: "/word-to-html",
   },
   {
     name: "EMI Calculator",
@@ -1396,7 +1396,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/multi-tool/",
+    toolLink: "/multi-tool",
   },
   {
     name: "Keyword Suggestion Tool",
@@ -1475,7 +1475,7 @@ const data = [
         />
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-suggestion/",
+    toolLink: "/keyword-suggestion",
   },
   {
     name: "Bulk iOS Keyword Tracker",
@@ -1706,7 +1706,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/json-editor",
+    toolLink: "/json-editor",
   },
   {
     name: "Wordpress Post Title Changer Tool",
@@ -1796,7 +1796,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/keyword-generator-tool/",
+    toolLink: "/keyword-generator-tool",
   },
   {
     name: "Cloud Data Warehouse Setup Cost Calculator",

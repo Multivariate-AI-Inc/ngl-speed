@@ -9,7 +9,7 @@ const ContactUs = () => {
     <>
       <PageHead
         title={"Contact Us for better coordination and more info."}
-        canonical={"https://nextgrowthlabs.com/contact/"}
+        canonical={"https://nextgrowthlabs.com/contact"}
         ogDescription={
           "Have a question or want to contact us directly? Please contact us and we will respond as soon as possible."
         }

@@ -16,7 +16,7 @@ const ContentAssist = () => {
         ogDescription="SEO and ASO Keyword Content Writing Assistant is a great SEO keyword extractor tool. You can create, edit and optimize your work directly with the tool."
         ogType="article"
         canonical={
-          "https://nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant/"
+          "https://nextgrowthlabs.com/seo-and-aso-keyword-content-writing-assistant"
         }
       />
       <ContentAssistTool />

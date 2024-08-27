@@ -10,7 +10,7 @@ const WebCrawlTest = () => {
         title={"Utilize Web Page Crawler to Elevate Technical SEO - Next Labs"}
         ogDescription="A web crawler online plays a significant role in indexing web pages. This positively boosts your SEO ranking visibility as well as conversions. Let’s understand how this crawler works and its benefits"
         ogType="article"
-        canonical={"https://nextgrowthlabs.com/web-page-crawler/"}
+        canonical={"https://nextgrowthlabs.com/web-page-crawler"}
       />
       <CrawlTest />
       <CrawlToolArticle />

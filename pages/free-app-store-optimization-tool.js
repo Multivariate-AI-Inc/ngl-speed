@@ -29,7 +29,7 @@ const Tools = () => {
       <PageHead
         title={"NEXT ASO Tools"}
         canonical={
-          "https://nextgrowthlabs.com/free-app-store-optimization-tool/"
+          "https://nextgrowthlabs.com/free-app-store-optimization-tool"
         }
         ogDescription={
           "Free ASO, App Store Optimisation Tool. 20+ Features including - Keyword tracking, competitor and sentiment analysis. historical data."

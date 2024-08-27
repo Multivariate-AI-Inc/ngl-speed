@@ -13,7 +13,7 @@ const HtmlEditor = () => {
           }
           ogDescription="Generate Unicode letters effortlessly with this online tool. Create stylish and unique text styles for your projects. Instantly convert text to Unicode."
           ogType="article"
-          canonical={"https://nextgrowthlabs.com/font-changer/"}
+          canonical={"https://nextgrowthlabs.com/font-changer"}
         />
         <FontChanger />
         <ToolArticle />

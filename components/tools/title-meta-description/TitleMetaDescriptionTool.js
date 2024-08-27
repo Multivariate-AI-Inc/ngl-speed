@@ -61,7 +61,7 @@ const TitleMetaDescriptionTool = () => {
       <div className="container text-center">
         <div className="row mt-50 mb-5">
           <p className="tools_tag">Free SEO Tool</p>
-          <h1 className="color-brand-1 mb-25 mt-10">
+          <h1 className="font-4xl-bold color-brand-1 mb-25 mt-10">
             Title and Meta Description
           </h1>
           <p className="font-md color-grey-500 mb-25">
@@ -145,7 +145,7 @@ const TitleMetaDescriptionTool = () => {
             )}
           </div>
           {/* ************************** */}
-          <div className="mb-20">
+          <div className="mb-40">
             <h5>
               Powered by-{" "}
               <Link

@@ -37,7 +37,7 @@ const FontChanger = () => {
         style={{ border: "1px solid #ccc", borderRadius: "10px" }}
       >
         <div className="mt-20">
-          <h4 className="color-brand-1 text-center">Font Changer</h4>
+          <h1 className="font-4xl-bold color-brand-1 text-center">Font Changer</h1>
         </div>
         <div className="input-buttons">
           <input

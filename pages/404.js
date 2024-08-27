@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHead from "../components/elements/PageHead";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Layout from "../components/layout/Layout";
 
 const CustomError404 = () => {
@@ -8,7 +8,7 @@ const CustomError404 = () => {
     <>
       <PageHead
         title={"Error 404 - Page not found"}
-        canonical={"https://nextgrowthlabs.com/404/"}
+        canonical={"https://nextgrowthlabs.com/404"}
       />
       <Layout>
         <section className="section box-404">
@@ -23,7 +23,7 @@ const CustomError404 = () => {
                       width={100}
                       height={100}
                       src="/assets/imgs/page/404/404.png"
-                      alt="iori"
+                      alt="404"
                     />
                   </div>
                   <div className="col-md-7 col-sm-12 text-center text-md-start">
@@ -72,11 +72,10 @@ const CustomError404 = () => {
                   <div className="card-image">
                     <div className="box-image">
                       <Image
-                        layout="responsive"
-                        width={100}
-                        height={100}
+                        width={30}
+                        height={30}
                         src="/assets/imgs/page/contact/headphone.png"
-                        alt="iori"
+                        alt="headphone"
                       />
                     </div>
                   </div>
@@ -102,11 +101,10 @@ const CustomError404 = () => {
                   <div className="card-image">
                     <div className="box-image">
                       <Image
-                        layout="responsive"
-                        width={100}
-                        height={100}
+                        width={30}
+                        height={30}
                         src="/assets/imgs/page/contact/earth.png"
-                        alt="iori"
+                        alt="earth"
                       />
                     </div>
                   </div>

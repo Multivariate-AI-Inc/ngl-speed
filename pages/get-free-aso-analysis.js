@@ -26,7 +26,7 @@ const ASO = () => {
       <QueryClientProvider client={queryClient}>
         <PageHead
           title={"Get Free ASO Analysis - NextGrowthLabs"}
-          canonical={"https://nextgrowthlabs.com/get-free-aso-analysis/"}
+          canonical={"https://nextgrowthlabs.com/get-free-aso-analysis"}
           ogDescription={
             "Boost your app's visibility! Get a FREE ASO analysis from Next Growth Labs. Optimize keywords, improve rankings, and increase downloads."
           }

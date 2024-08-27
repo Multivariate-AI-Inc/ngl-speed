@@ -67,8 +67,9 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/blog">Blog</Link>
+                      <Link href="http://blog.nextgrowthlabs.com/">Blog</Link>
                     </li>
+
                     <li>
                       <Link href="/career">Career</Link>
                     </li>

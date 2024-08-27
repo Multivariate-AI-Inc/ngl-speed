@@ -10,7 +10,7 @@ const TechnologyChecker = () => {
         title={"How to Check the Technology of Websites? - Next Labs"}
         ogDescription="Unlock insights into any website's technology stack with our Website Technology Checker Tool! Analyze CMS, web servers, JavaScript libraries, and more with just a click."
         ogType="article"
-        canonical={"https://nextgrowthlabs.com/website-technology-checker/"}
+        canonical={"https://nextgrowthlabs.com/website-technology-checker"}
       />
       <TechChecker />
       <TechCheckerArticle />

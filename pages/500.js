@@ -8,7 +8,7 @@ const CustomError500 = () => {
     <>
       <PageHead
         title={"Error 500 - Internal Server Error"}
-        canonical={"https://nextgrowthlabs.com/500/"}
+        canonical={"https://nextgrowthlabs.com/500"}
       />
       <Layout>
         <section className="section box-404">
