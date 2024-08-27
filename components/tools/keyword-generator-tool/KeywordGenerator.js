@@ -1,52 +1,52 @@
-import Link from "next/link"
-import React, { useState } from "react"
-import { toast } from "react-toastify"
-import DisplayGeneratedKeyword from "./DisplayGeneratedKeyword"
-import Loader from "../../elements/Loader"
+import Link from "next/link";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import DisplayGeneratedKeyword from "./DisplayGeneratedKeyword";
+import Loader from "../../elements/Loader";
 
 function KeywordGenerator() {
-  const [inputKeyword, setInputKeyword] = useState("")
-  const [generatedKeywords, setGeneratedKeywords] = useState({})
-  const [keyValue, setKeyValue] = useState("")
-  const [isLoading, setLoading] = useState()
+  const [inputKeyword, setInputKeyword] = useState("");
+  const [generatedKeywords, setGeneratedKeywords] = useState({});
+  const [keyValue, setKeyValue] = useState("");
+  const [isLoading, setLoading] = useState();
 
   async function generateKeywords() {
     if (inputKeyword === "") {
-      toast.warning("Please enter keyword first !", { autoClose: 2000 })
-      return
+      toast.warning("Please enter keyword first !", { autoClose: 2000 });
+      return;
     }
-    if(inputKeyword === keyValue){
-      toast.warning("Please enter new keyword", {autoClose:2000})
-      return
+    if (inputKeyword === keyValue) {
+      toast.warning("Please enter new keyword", { autoClose: 2000 });
+      return;
     }
 
-    setGeneratedKeywords([])
-    setKeyValue("")
-    setLoading(true)
+    setGeneratedKeywords([]);
+    setKeyValue("");
+    setLoading(true);
 
-    let resultsKeywordObj
+    let resultsKeywordObj;
     // Create an async function to use await inside the loop
     async function fetchSuggestions() {
       try {
-        const response = await getKeywordResults({ keyword: inputKeyword })
-        console.log("response data", response)
-        resultsKeywordObj = response
+        const response = await getKeywordResults({ keyword: inputKeyword });
+        console.log("response data", response);
+        resultsKeywordObj = response;
       } catch (err) {
-        setLoading(false)
+        setLoading(false);
       }
     }
 
     await fetchSuggestions().then(() => {
-      setKeyValue(inputKeyword)
-      setGeneratedKeywords(resultsKeywordObj)
-      setLoading(false)
-    })
+      setKeyValue(inputKeyword);
+      setGeneratedKeywords(resultsKeywordObj);
+      setLoading(false);
+    });
   }
 
   async function getKeywordResults(data) {
-    const apiURL = "/api/keyword-generator"
-    console.log(data)
-    let keywords
+    const apiURL = "/api/keyword-generator";
+    console.log(data);
+    let keywords;
     await fetch(apiURL, {
       method: "POST",
       headers: {
@@ -54,30 +54,30 @@ function KeywordGenerator() {
       },
       body: JSON.stringify(data),
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
-          toast.error("We are currently experiencing high traffic, Please try again later!", { autoClose: 2000 })
-          setLoading(false)
-          throw new Error("Network response was not ok")
+          toast.error(
+            "We are currently experiencing high traffic, Please try again later!",
+            { autoClose: 2000 }
+          );
+          setLoading(false);
+          throw new Error("Network response was not ok");
         }
-        return response
+        return response;
       })
-      .then(async data => {
-        let k = await data.json()
-        keywords = k
+      .then(async (data) => {
+        let k = await data.json();
+        keywords = k;
       })
-      .catch(error => {
-        console.error("Error:", error.message)
-      })
-    return keywords
+      .catch((error) => {
+        console.error("Error:", error.message);
+      });
+    return keywords;
   }
 
   // *******************************
   return (
-    <section
-      className="section"
-      style={{ backgroundColor: "#E0F1F4" }}
-    >
+    <section className="section" style={{ backgroundColor: "#E0F1F4" }}>
       <div className="container text-center">
         <div className="row mt-50 mb-5">
           <p className="tools_tag">Free SEO Tool</p>
@@ -91,8 +91,8 @@ function KeywordGenerator() {
             comprehensive list of relevant keywords or key phrases related to a
             particular topic, niche, or industry. The primary purpose of a
             keyword generator tool is to help users discover and identify
-            high-potential keywords that can improve their content's visibility
-            and search engine rankings.
+            high-potential keywords that can improve their content&apos;s
+            visibility and search engine rankings.
           </p>
           <div className="aso-input-form mb-25 main-box-holder">
             <div className="search-box-suggestion">
@@ -103,7 +103,7 @@ function KeywordGenerator() {
                   className="search-input"
                   placeholder="Enter Any Keyword"
                   value={inputKeyword}
-                  onChange={e => setInputKeyword(e.target.value)}
+                  onChange={(e) => setInputKeyword(e.target.value)}
                 />
               </div>
             </div>
@@ -140,7 +140,7 @@ function KeywordGenerator() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default KeywordGenerator
+export default KeywordGenerator;
