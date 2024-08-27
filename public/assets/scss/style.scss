@@ -63,6 +63,92 @@ TABLE CONTENT
 }
 
 // Custom css
+// ***************  page speed assessment ***********************
+.metric__score-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+.metric--pass .metric__score-icon {
+  border-radius: 100%;
+  background: #0CCE6B;
+}
+.metric--fail .metric__score-icon,
+.metric--error .metric__score-icon {
+    border-left: calc(12px / 2) solid transparent;
+    border-right: calc(12px / 2) solid transparent;
+    border-bottom: 12px solid #FF4E42;
+}
+
+.metric--average .metric__score-icon {
+    background: #FFA400;
+    width: calc(12px * 0.88);
+    height: calc(12px * 0.88);
+}
+
+
+
+.range-picker-table {
+  table-layout: fixed;
+  border: 0px !important;
+  width: auto !important;
+}
+
+.range-picker-table th,
+.controls {
+  font-weight: normal;
+  color: #757575;
+  word-break: normal;
+  // border-bottom: 1px solid #E0E0E0;
+}
+
+.range-picker-table tr:first-child td {
+  border-top: 8px solid transparent;
+  border-bottom: none;
+}
+
+.range-picker-table td {
+  vertical-align: top;
+  padding: 0 5px !important;
+  border: none;
+}
+.range-picker-table tbody {
+  border: none;
+}
+
+.range-picker-table tbody td:nth-child(1) {
+  width: 16px;
+}
+
+.range-picker-table tbody td:nth-child(3) {
+  text-align: right;
+}
+
+.range-picker-table tbody td:nth-child(2) {
+  text-align: left;
+}
+
+.range-picker-table input.metric-value {
+  max-width: 210px;
+  width: 18vw;
+}
+
+.range-picker-table output {
+  display: block;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+
+tr.mobile_row:nth-child(even),
+ tr.desktop_row:nth-child(even){
+ background-color:aliceblue;
+}
+
+ tr.mobile_row:nth-child(odd),
+ tr.desktop_row:nth-child(odd){
+ background:#fafbfd;
+}
 // ***************  rating projection calculator ***********************
 .tabs_menu-service {
   grid-column-gap: 0;

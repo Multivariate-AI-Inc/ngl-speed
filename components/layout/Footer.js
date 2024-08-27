@@ -126,7 +126,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/page-speed-assessment/">
+                    <Link href="/page-speed-assessment">
                       Bulk Page Speed Assessment
                     </Link>
                   </li>

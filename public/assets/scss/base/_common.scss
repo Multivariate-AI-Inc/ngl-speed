@@ -393,7 +393,7 @@ h6 {
   line-height: 28px;
   font-size: 20px;
 }
-.font-lg-bold {
+.font-lg-bold{
   font-weight: 700;
   font-family: $font-manrope;
   line-height: 23px;
@@ -423,11 +423,11 @@ h6 {
 .color-success {
   color: $color-success;
 }
-.color-warning {
+.color-warning{
   color: $color-warning;
 }
 .color-danger {
-  color: $color-danger;
+  color: $color-danger !important;
 }
 .color-mutted {
   color: $color-mutted;

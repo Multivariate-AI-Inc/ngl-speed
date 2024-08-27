@@ -606,7 +606,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/page-speed-assessment/",
+    toolLink: "/page-speed-assessment",
   },
   {
     name: "Rating Projection Calculator",

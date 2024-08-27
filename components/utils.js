@@ -1290,7 +1290,7 @@ export const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/page-speed-assessment/",
+    toolLink: "/page-speed-assessment",
   },
   {
     name: "Search Console Connector",
@@ -1897,10 +1897,11 @@ export async function prepareDataForRequests(
 async function handleRequestsAndProcessData(playData = [], iosData = {}) {
   try {
     const hasPlayData = playData.length > 0
-    const hasIOSData = iosData && Array.isArray(iosData.results) && iosData.results.length > 0;
+    const hasIOSData =
+      iosData && Array.isArray(iosData.results) && iosData.results.length > 0
     const dataToProcess = {
       playResponse: hasPlayData ? playData : [],
-      iOSResponse:  hasIOSData ? iosData : [],
+      iOSResponse: hasIOSData ? iosData : [],
     }
 
     // Extract and merge data based on available inputs
@@ -2200,12 +2201,11 @@ export const isValidUrl = url => {
   // old regex
   // const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
   // new regex
-  const urlRegex = /^(https?|ftp):\/\/[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(:\d+)?(\/[^\s]*)?$/
+  const urlRegex =
+    /^(https?|ftp):\/\/[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(:\d+)?(\/[^\s]*)?$/
   const valid = urlRegex.test(url)
   return valid
 }
-
-
 
 // extract main domain
 export function extractMainDomain(url) {
@@ -2480,62 +2480,67 @@ export function notIncludedToString(findValues) {
   return content
 }
 
-
 // *************** used in keyword generator tool ******************
 // custom sort suggestion
 export function customSortSuggestion(array, name) {
-  const result = {};
-  const mixed = [];
+  const result = {}
+  const mixed = []
 
-  array.forEach((value) => {
-      const namePosition = value.indexOf(name);
+  array.forEach(value => {
+    const namePosition = value.indexOf(name)
 
-      if (namePosition !== -1 && namePosition < value.length - name.length && value[namePosition + name.length] === ' ') {
-          const spacePosition = namePosition + name.length + 1;
-          const keyword = value.substring(spacePosition);
+    if (
+      namePosition !== -1 &&
+      namePosition < value.length - name.length &&
+      value[namePosition + name.length] === " "
+    ) {
+      const spacePosition = namePosition + name.length + 1
+      const keyword = value.substring(spacePosition)
 
-          if (keyword) {
-              const groupKey = keyword[0].toLowerCase();
+      if (keyword) {
+        const groupKey = keyword[0].toLowerCase()
 
-              if (/[a-zA-Z]/.test(groupKey)) {
-                  if (!result[groupKey]) {
-                      result[groupKey] = [];
-                  }
-                  result[groupKey].push(value);
-              } else {
-                  if (value.includes(name)) {
-                      mixed.push(value);
-                  }
-              }
-          } else {
-              if (value.includes(name)) {
-                  mixed.push(value);
-              }
+        if (/[a-zA-Z]/.test(groupKey)) {
+          if (!result[groupKey]) {
+            result[groupKey] = []
           }
-      } else {
+          result[groupKey].push(value)
+        } else {
           if (value.includes(name)) {
-              mixed.push(value);
+            mixed.push(value)
           }
+        }
+      } else {
+        if (value.includes(name)) {
+          mixed.push(value)
+        }
       }
-  });
+    } else {
+      if (value.includes(name)) {
+        mixed.push(value)
+      }
+    }
+  })
 
   // Sort each group
-  Object.keys(result).forEach((key) => {
-      result[key].sort();
-  });
+  Object.keys(result).forEach(key => {
+    result[key].sort()
+  })
 
   // Sort the groups by their keys
-  const sortedResult = Object.keys(result).sort().reduce((acc, key) => {
-      acc[key] = result[key];
-      return acc;
-  }, {});
+  const sortedResult = Object.keys(result)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = result[key]
+      return acc
+    }, {})
 
   if (mixed.length > 0) {
-      mixed.sort();
-      sortedResult['Mixed'] = mixed;
+    mixed.sort()
+    sortedResult["Mixed"] = mixed
   }
 
-  return sortedResult;
+  return sortedResult
 }
 
 // *************** keyword suggestion tool *******************
@@ -2622,17 +2627,17 @@ export function DownloadCSVTable(button) {
   // let email = localStorage.getItem("userMailId")
   // let name = localStorage.getItem("userFullName")
   // if (name && email) {
-    // dataLayer.push({ "event": "seo-download-csv", "gtm.uniqueAnalyticsReports": "SEO_Download_CSVLiveWeb", "keyword": button.getAttribute('text'), "gtm.email": email, "gtm.username": name })
-    const text = button.getAttribute("text")
-    console.log("Text", text)
-    if (text == "search") {
-      copyButtonFunction(button)
-    } else {
-      downloadAsCSVforSuggestion(button)
-    }
+  // dataLayer.push({ "event": "seo-download-csv", "gtm.uniqueAnalyticsReports": "SEO_Download_CSVLiveWeb", "keyword": button.getAttribute('text'), "gtm.email": email, "gtm.username": name })
+  const text = button.getAttribute("text")
+  // console.log("Text", text)
+  if (text == "search") {
+    copyButtonFunction(button)
+  } else {
+    downloadAsCSVforSuggestion(button)
+  }
   // } else {
-    // document.querySelector('.sign-in-button.rank-sign-in').classList.remove('hidden');
-    // window.alert("Please log in before Downloading CSV.")
+  // document.querySelector('.sign-in-button.rank-sign-in').classList.remove('hidden');
+  // window.alert("Please log in before Downloading CSV.")
   // }
 }
 // play and app store data handler
@@ -2667,7 +2672,7 @@ function downloadAsCSVStore(Array) {
   link.click()
 }
 // downloading serp data
- function downloadAsCSVEngine(Array, text) {
+function downloadAsCSVEngine(Array, text) {
   const csvData = []
   Array.forEach(li => {
     const mainLink = li.querySelector("h5 > a").innerText
@@ -2679,7 +2684,7 @@ function downloadAsCSVStore(Array) {
       description.replace(/\n/g, ""),
     ])
   })
-  const csvContent =  convertToCSV(csvData)
+  const csvContent = convertToCSV(csvData)
   const blob = new Blob([csvContent], { type: "text/csv" })
   const a = document.createElement("a")
   a.href = URL.createObjectURL(blob)
@@ -2693,28 +2698,199 @@ function downloadAsCSVStore(Array) {
 // convert data to csv
 function convertToCSV(data) {
   // Define the CSV header
-  const headers = ["S.No", "Title", "Link", "Description"];
+  const headers = ["S.No", "Title", "Link", "Description"]
   // Initialize the CSV content with the headers
-  let csvContent = headers.join(",") + "\n";
+  let csvContent = headers.join(",") + "\n"
 
   // Function to properly escape CSV fields
   function escapeCSVField(field) {
-      // Escape double quotes by doubling them and wrap the field in quotes
-      if (field.includes(",") || field.includes('"') || field.includes("\n")) {
-          field = '"' + field.replace(/"/g, '""') + '"';
-      }
-      return field;
+    // Escape double quotes by doubling them and wrap the field in quotes
+    if (field.includes(",") || field.includes('"') || field.includes("\n")) {
+      field = '"' + field.replace(/"/g, '""') + '"'
+    }
+    return field
   }
 
   // Iterate over the data array and append each row to the CSV content
   data.forEach((row, index) => {
-      // Create a new array with the serial number and the escaped row data
-      const rowData = [index + 1, ...row.map(escapeCSVField)];
-      // Convert the array to a CSV string and add it to the CSV content
-      csvContent += rowData.join(",") + "\n";
-  });
+    // Create a new array with the serial number and the escaped row data
+    const rowData = [index + 1, ...row.map(escapeCSVField)]
+    // Convert the array to a CSV string and add it to the CSV content
+    csvContent += rowData.join(",") + "\n"
+  })
 
-  return csvContent;
+  return csvContent
+}
+
+// ************** utility functions for page speed assessment tool ***************
+export async function getPageSpeedData(urls) {
+  window["desktopDevice"] = false
+  window["mobileDevice"] = false
+
+  const getModifiedURLs = (urls, strategy) => {
+    return urls.map(url => {
+      const httpUrl = addHttpPrefix(url)
+      return `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(
+        httpUrl,
+      )}&strategy=${strategy}`
+    })
+  }
+
+  const urlsDesktop = getModifiedURLs(urls, "DESKTOP")
+  const urlsMobile = getModifiedURLs(urls, "MOBILE")
+  const allURLsArray = [...urlsDesktop, ...urlsMobile]
+  // console.log("all urls", allURLsArray)
+
+  // Return a Promise from the getPageSpeedData function
+  return Promise.all(
+    allURLsArray.map(url => fetch(url).then(response => response.json())),
+  )
+    .then(responses => {
+      const myCWVData = generateResult(responses)
+      // console.log("MyCWVData", myCWVData)
+      return myCWVData // Returning the result so that the calling function can use it
+    })
+    .catch(error => {
+      console.error("Error fetching PageSpeed data:", error)
+      throw error
+    })
+}
+const generateResult = responses => {
+  const responseResults = responses.map(items => {
+    const url = items.id
+    const strategy = items.lighthouseResult.configSettings.emulatedFormFactor
+    let fcp, lcp, cls, inp
+    const lighthouseMetrics = {}
+    if (items.loadingExperience) {
+      const metrics = items.loadingExperience.metrics
+      fcp = metrics?.FIRST_CONTENTFUL_PAINT_MS?.percentile || "N/A"
+      inp = metrics?.INTERACTION_TO_NEXT_PAINT?.percentile || "N/A"
+      lcp = metrics?.LARGEST_CONTENTFUL_PAINT_MS?.percentile || "N/A"
+      cls = metrics?.CUMULATIVE_LAYOUT_SHIFT_SCORE?.percentile || "N/A"
+
+      const audits = items.lighthouseResult.audits
+      lighthouseMetrics.FCP =
+        audits["first-contentful-paint"].numericValue.toFixed(0)
+      lighthouseMetrics.SI = audits["speed-index"].numericValue.toFixed(0)
+      lighthouseMetrics.TBT =
+        audits["total-blocking-time"].numericValue.toFixed(0)
+      lighthouseMetrics.LCP =
+        audits["largest-contentful-paint"].numericValue.toFixed(0)
+      lighthouseMetrics.CLS =
+        audits["cumulative-layout-shift"].numericValue.toFixed(3)
+      lighthouseMetrics.device = strategy
+      // const domain = url.split('//')[1].split('/')[0];
+      if (!window[strategy + "Device"]) {
+        window[strategy + "Device"] = true
+        // showLighthouseContent(lighthouseMetrics, url)
+        const newSiteData = {}
+        newSiteData[url] = lighthouseMetrics
+        localStorage.setItem(strategy, JSON.stringify([newSiteData]), 100000)
+      } else {
+        let oldAppData = localStorage.getItem(strategy)
+        if (oldAppData) {
+          let Array = JSON.parse(oldAppData)
+          const newSiteData = {}
+          newSiteData[url] = lighthouseMetrics
+          Array.unshift(newSiteData)
+          let uniqueArray = Array.filter(
+            (item, index) =>
+              Array.findIndex(
+                obj => JSON.stringify(obj) === JSON.stringify(item),
+              ) === index,
+          )
+          localStorage.setItem(strategy, JSON.stringify(uniqueArray))
+        } else {
+          const newSiteData = {}
+          newSiteData[url] = lighthouseMetrics
+          localStorage.setItem(strategy, JSON.stringify([newSiteData]), 100000)
+        }
+      }
+    } else {
+      fcp = lcp = cls = fid = "N/A"
+    }
+    let webVitalsResult = showVitalsResult(items)
+    const responseData = {
+      url: url,
+      strategy: strategy,
+      FCP: fcp,
+      LCP: lcp,
+      CLS: cls,
+      INP: inp,
+      result: webVitalsResult,
+    }
+    return responseData
+  })
+  // createSiteSelectBoxOptions(responses)
+  return responseResults
 }
 
 
+function addHttpPrefix(url) {
+  if (!url.startsWith("http://") && !url.startsWith("https://")) {
+    url = "http://" + url
+  }
+  return url
+}
+function createSiteSelectBoxOptions(response) {
+  const domainsArray = []
+  response.map(item => {
+    domainsArray.push(item.id)
+  })
+  const uniqueArray = [...new Set(domainsArray)]
+  const previewsDiv = document.querySelector("#custom-select-box")
+  if (!previewsDiv.innerHTML.includes('id="website"')) {
+    let div = document.createElement("div")
+    div.style.display = "inline"
+    div.style.marginLeft = "15px"
+    div.innerHTML =
+      'Website: <select name="website" id="website" disable>' +
+      uniqueArray
+        .map(item => {
+          return '<option value="' + item + '">' + item + "</option>"
+        })
+        .join("") +
+      "</select>"
+    previewsDiv.appendChild(div)
+  } else {
+    let select = previewsDiv.querySelector("#website")
+    select.innerHTML =
+      'Website: <select name="website" id="website" disable>' +
+      uniqueArray
+        .map(item => {
+          return '<option value="' + item + '">' + item + "</option>"
+        })
+        .join("") +
+      "</select>"
+  }
+}
+
+function showLighthouseContent(cwvData, domain) {
+  const DefaultDevice = document.querySelector("select#device").value
+  if (DefaultDevice == cwvData.device) {
+    changeChart(cwvData)
+  }
+}
+
+function showVitalsResult(json) {
+
+  // console.log('Show vitals result', json);
+  
+  const metrics = json.loadingExperience.metrics
+  let desktopVitalResult = ""
+  let clsScore = metrics?.CUMULATIVE_LAYOUT_SHIFT_SCORE?.percentile || 40
+  let lcpScore = metrics?.LARGEST_CONTENTFUL_PAINT_MS?.percentile || 5000
+  let inpScore = metrics?.INTERACTION_TO_NEXT_PAINT?.percentile || 0
+  if (lcpScore == 0 && inpScore == 0 && clsScore == 0) {
+    desktopVitalResult = "N/A"
+  } else if (lcpScore <= 2500 && inpScore <= 200 && clsScore <= 10) {
+    desktopVitalResult = "Passed"
+  } else {
+    desktopVitalResult = "Failed"
+  }
+  // console.log("Desktop", desktopVitalResult)
+
+  return desktopVitalResult
+}
+
+// **************************************************

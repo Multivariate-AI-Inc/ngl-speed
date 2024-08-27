@@ -530,7 +530,7 @@ h6 {
 }
 
 .color-danger {
-  color: #ef476f;
+  color: #ef476f !important;
 }
 
 .color-mutted {
@@ -3061,6 +3061,10 @@ input[type=text]::placeholder {
 
 .flex-row-reverse {
   flex-direction: row-reverse !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
 }
 
 .box-container-sw {
@@ -7505,6 +7509,91 @@ textarea.textarea-control {
   --bgColor: #024430;
   --goldenColor: #ffe7bb;
   --lightGreen: #06d6a0;
+}
+
+.metric__score-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.metric--pass .metric__score-icon {
+  border-radius: 100%;
+  background: #0CCE6B;
+}
+
+.metric--fail .metric__score-icon,
+.metric--error .metric__score-icon {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid #FF4E42;
+}
+
+.metric--average .metric__score-icon {
+  background: #FFA400;
+  width: 10.56px;
+  height: 10.56px;
+}
+
+.range-picker-table {
+  table-layout: fixed;
+  border: 0px !important;
+  width: auto !important;
+}
+
+.range-picker-table th,
+.controls {
+  font-weight: normal;
+  color: #757575;
+  word-break: normal;
+}
+
+.range-picker-table tr:first-child td {
+  border-top: 8px solid transparent;
+  border-bottom: none;
+}
+
+.range-picker-table td {
+  vertical-align: top;
+  padding: 0 5px !important;
+  border: none;
+}
+
+.range-picker-table tbody {
+  border: none;
+}
+
+.range-picker-table tbody td:nth-child(1) {
+  width: 16px;
+}
+
+.range-picker-table tbody td:nth-child(3) {
+  text-align: right;
+}
+
+.range-picker-table tbody td:nth-child(2) {
+  text-align: left;
+}
+
+.range-picker-table input.metric-value {
+  max-width: 210px;
+  width: 18vw;
+}
+
+.range-picker-table output {
+  display: block;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+tr.mobile_row:nth-child(even),
+tr.desktop_row:nth-child(even) {
+  background-color: aliceblue;
+}
+
+tr.mobile_row:nth-child(odd),
+tr.desktop_row:nth-child(odd) {
+  background: #fafbfd;
 }
 
 .tabs_menu-service {

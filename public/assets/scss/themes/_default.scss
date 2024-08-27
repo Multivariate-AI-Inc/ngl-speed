@@ -1,4 +1,4 @@
-  .justify-content-evenly {
+  .justify-content-evenly{
     justify-content: space-evenly !important;
   }
   .justify-content-end {
@@ -43,4 +43,7 @@ input[type ="text"]::placeholder{
 }
 .flex-row-reverse {
   flex-direction: row-reverse!important;
+}
+.justify-content-start{
+  justify-content: flex-start !important;
 }

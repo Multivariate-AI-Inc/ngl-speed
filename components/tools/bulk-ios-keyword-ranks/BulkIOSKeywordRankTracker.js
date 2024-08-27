@@ -247,7 +247,7 @@ const BulkIOSKeywordRankTracker = () => {
               ref={textAriaRef}
             ></textarea>
 
-            <div className="text-center">
+            <div className="text-center color-grey-400">
               <small>Separate each keywords with comma(,).</small>
             </div>
             <div className="d-flex justify-content-end">
