@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }) {
     }
   }, [gtmLoaded])
 
+
   useEffect(() => {
     function loadFont() {
       if (!window.fontLoaded) {
