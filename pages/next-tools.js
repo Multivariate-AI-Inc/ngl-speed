@@ -14,7 +14,7 @@ const GscPagesInsights = () => {
 
             <Layout>
                 <div className="container mt-40">
-                    <Image src="/assets/imgs/page/next-tool/next-tool.webp" alt="Next Tool" width={1000} height={450} />
+                    <Image src="/assets/imgs/page/next-tool/next-tool.webp" className="bd-rd8" alt="Next Tool" width={1000} height={450} layout="responsive" />
                     <h1 className="font-4xl-bold color-brand-1 mb-20 mt-10">Next Tool</h1>
                     <p className="font-md color-grey-400 mb-20">
                         Welcome to <b>Next Tool!</b> Whether you’re a digital marketer, content creator, or website owner, this tool is designed to elevate your website analysis experience. With its user-friendly interface, you can easily merge data from Google Search Console and Google Analytics, gaining valuable insights into your site’s performance. Effortlessly track top-performing pages, analyze organic traffic, and enhance your content strategy with our intuitive data table. Dive into a more insightful and data-driven approach to optimizing your online presence today!
