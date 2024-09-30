@@ -41,18 +41,23 @@ const Layout = ({ children }) => {
   };
   return (
     <>
-      <div className="text-center bg-brand-1 pt-20 pb-20 color-white">
-        <h6 className="color-white">Important Notice</h6>
+      <div
+        className="text-center bg-brand-1 pt-20 pb-20 color-white"
+        style={{ fontSize: "11.8px" }}
+      >
+        <h4 className="color-white">Important Notice!</h4>
         <p>
           It has come to our attention that certain websites are falsely
           claiming to have ties or affiliations with us, especially regarding
-          remote work opportunities.
+          remote work opportunities. We would like to clarify that
+          <strong>
+            <em>*we have no association*</em>{" "}
+          </strong>
+          with any such sites or entities.
         </p>
         <p>
-          We would like to clarify that **we have no association** with any such
-          sites or entities. Please verify any information directly with us
-          through our official website to avoid potential scams or
-          misinformation.
+          Please verify any information directly with us through our official
+          website to avoid potential scams or misinformation.
         </p>
       </div>
       <Header
