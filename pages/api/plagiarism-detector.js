@@ -16,8 +16,6 @@ export default async function handler(req) {
 
   try {
     const data = await getPlagiarismDetectorData(input)
-    console.log('Data', data);
-
     return new Response(JSON.stringify(data), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -54,7 +52,6 @@ async function getPlagiarismDetectorData(input) {
       throw new Error('Unable to make the API request.');
     }
     const responseData = await response.text();
-    console.log('Response data', responseData);
     return responseData;
   } catch (error) {
     throw new Error(`Error: ${error}`)
