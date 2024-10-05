@@ -1,13 +1,12 @@
 export const runtime = "edge"
 export default async function handler(req) {
-    if (req.method !== "POST") {
-      return new Response(JSON.stringify({ error: "Method not allowed" }), {
-        status: 405,
-        headers: { "Content-Type": "application/json" },
-      })
-    }
-    // const { input } = req.body;
-    const { input } = await req.json();
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    })
+  }
+  const { input } = await req.json();
   if (!input) {
     return new Response(JSON.stringify({ error: "Missing parameters" }), {
       status: 400,
@@ -16,8 +15,9 @@ export default async function handler(req) {
   }
 
   try {
-    // const data = await detectPlagiarism(input)
     const data = await getPlagiarismDetectorData(input)
+    console.log('Data', data);
+
     return new Response(JSON.stringify(data), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -32,27 +32,32 @@ export default async function handler(req) {
 }
 
 async function getPlagiarismDetectorData(input) {
-  const encodedDynamicText = encodeURIComponent(input);
   const url = 'https://mltools.ws.multivariate.ai/plagiarism_detector';
-  const data = `text=${encodedDynamicText}&submit=Display%20Output`;
   const headers = {
     'Authorization': 'Basic bWx0b29sc191c2VyOnk0WVU1R3RnbldxOW8wakxyUzMrVzNKNzJsdWVjWG56eEJYVTczSnVlWTQ9',
     'Content-Type': 'application/x-www-form-urlencoded'
   };
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: headers,
-      body: data
-    });
+  const urlencoded = new URLSearchParams();
+  urlencoded.append("submit", "Submit");
+  urlencoded.append("text", input);
+  urlencoded.append("api", "true");
 
+  const requestOptions = {
+    method: "POST",
+    headers: headers,
+    body: urlencoded,
+    redirect: "follow"
+  };
+  try {
+    const response = await fetch(url, requestOptions);
     if (!response.ok) {
       throw new Error('Unable to make the API request.');
     }
-
     const responseData = await response.text();
+    console.log('Response data', responseData);
     return responseData;
   } catch (error) {
     throw new Error(`Error: ${error}`)
   }
 }
+
