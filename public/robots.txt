@@ -6,4 +6,4 @@ Allow: /
 Host: https://nextgrowthlabs.com
 
 # Sitemaps
-Sitemap: https://nextgrowthlabs.com/sitemap.xml
+Sitemap: https://nextgrowthlabs.com/sitemap-index.xml

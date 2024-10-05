@@ -9,11 +9,11 @@ const EditableTable = ({ data, onChange }) => {
   };
 
   const updateData = (data, path, newValue) => {
-    const keys = path.split('.');
+    const keys = path.split(".");
     const lastKey = keys.pop();
     let obj = data;
 
-    keys.forEach(key => {
+    keys.forEach((key) => {
       obj = obj[key];
     });
 
@@ -31,8 +31,11 @@ const EditableTable = ({ data, onChange }) => {
       <ul>
         {data.map((item, index) => (
           <li key={index}>
-            {typeof item === 'object' ? (
-              <EditableTable data={item} onChange={(newData) => handleChange(`${index}`, newData)} />
+            {typeof item === "object" ? (
+              <EditableTable
+                data={item}
+                onChange={(newData) => handleChange(`${index}`, newData)}
+              />
             ) : (
               <input
                 type="text"
@@ -53,8 +56,11 @@ const EditableTable = ({ data, onChange }) => {
           <tr key={key}>
             <td>{key}</td>
             <td>
-              {typeof value === 'object' ? (
-                <EditableTable data={value} onChange={(newData) => handleChange(`${key}`, newData)} />
+              {typeof value === "object" ? (
+                <EditableTable
+                  data={value}
+                  onChange={(newData) => handleChange(`${key}`, newData)}
+                />
               ) : (
                 <input
                   type="text"
@@ -102,12 +108,12 @@ const JsonToHtmlTableEditor = () => {
 
   const downloadJSON = (data) => {
     const blob = new Blob([JSON.stringify(data, null, 2)], {
-      type: 'application/json',
+      type: "application/json",
     });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'data.json';
+    a.download = "data.json";
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -119,10 +125,16 @@ const JsonToHtmlTableEditor = () => {
           JSON to HTML Table Editor
         </h1>
       </div>
-      <div style={{ borderRight: "1px solid #ccc", borderLeft: "1px solid #ccc", padding: "15px 30px" }}>
+      <div
+        style={{
+          borderRight: "1px solid #ccc",
+          borderLeft: "1px solid #ccc",
+          padding: "15px 30px",
+        }}
+      >
         <p className="font-md color-grey-500 text-center">
-          "JSON to HTML Table Two-way Editor" is a versatile tool that enables
-          easy conversion between JSON data and HTML tables. Users can
+          &quot;JSON to HTML Table Two-way Editor&quot; is a versatile tool that
+          enables easy conversion between JSON data and HTML tables. Users can
           effortlessly transform JSON data into a structured HTML table and edit
           table content interactively. It also allows for the reverse operation,
           converting HTML tables back into JSON format. This tool simplifies
@@ -147,7 +159,9 @@ const JsonToHtmlTableEditor = () => {
           Submit
         </button>
         <div id="tableContainer">
-        {tableData && <EditableTable data={tableData} onChange={setTableData} />}
+          {tableData && (
+            <EditableTable data={tableData} onChange={setTableData} />
+          )}
         </div>
         {tableData && (
           <button

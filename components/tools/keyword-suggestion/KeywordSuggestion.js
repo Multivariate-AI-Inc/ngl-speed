@@ -1,17 +1,18 @@
-import Link from "next/link"
-import Country from "../../aso/elements/Country"
+import Link from "next/link";
+import Country from "../../aso/elements/Country";
 // import ReCaptcha from "../elements/Recaptcha"
-import PlateFormTabs from "../elements/PlateFormTabs"
-import DefaultMessage from "../elements/DefaultMessage"
-import { useQuery } from "@tanstack/react-query"
-import { useState } from "react"
-import { selectedCountryAtom } from "../../../state/atoms"
-import Loader from "../../elements/Loader"
-import { useAtom } from "jotai"
-import DisplaySuggestion from "./DisplaySuggestion"
-import { toast } from "react-toastify"
+import PlateFormTabs from "../elements/PlateFormTabs";
+import DefaultMessage from "../elements/DefaultMessage";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import { selectedCountryAtom } from "../../../state/atoms";
+import Loader from "../../elements/Loader";
+import { useAtom } from "jotai";
+import DisplaySuggestion from "./DisplaySuggestion";
+import { toast } from "react-toastify";
 
 const KeywordSuggestion = () => {
+<<<<<<< HEAD
   const [selectedCountry] = useAtom(selectedCountryAtom)
   const [searchKeyword, setSearchKeyword] = useState("")
   const [selectedSource, setSelectedSource] = useState("play")
@@ -36,6 +37,29 @@ async function handleCaptchaSubmission(token) {
       } else {
         setIsVerified(false)
       }
+=======
+  const [selectedCountry] = useAtom(selectedCountryAtom);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [selectedSource, setSelectedSource] = useState("play");
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
+
+  // google recatcha
+  async function handleCaptchaSubmission(token) {
+    try {
+      if (token) {
+        await fetch("/api/verify-recaptcha", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+        setIsVerified(true);
+      }
+    } catch (e) {
+      setIsVerified(false);
+>>>>>>> ssr-dynamic
     }
   } catch (error) {
     console.error("Captcha verification failed:", error)
@@ -44,11 +68,11 @@ async function handleCaptchaSubmission(token) {
 }
 
 
-  const handleChange = token => {
-    handleCaptchaSubmission(token)
-  }
+  const handleChange = (token) => {
+    handleCaptchaSubmission(token);
+  };
   function handleExpired() {
-    setIsVerified(false)
+    setIsVerified(false);
   }
 
   // query for the keywords data
@@ -71,18 +95,18 @@ async function handleCaptchaSubmission(token) {
           selectedSource: selectedSource,
           lang: "en",
         }),
-      }).then(res => {
+      }).then((res) => {
         if (!res.ok) {
           // Throw an error if the response status is not successful
-          throw new Error(`HTTP error! status: ${res.status}`)
+          throw new Error(`HTTP error! status: ${res.status}`);
         }
-        return res.json()
+        return res.json();
       }),
     staleTime: Infinity,
     cacheTime: 10 * 60 * 1000,
     enabled: false,
     retry: 0,
-  })
+  });
 
   const getSuggestion = async () => {
     // Check if the reCAPTCHA token is available
@@ -92,30 +116,27 @@ async function handleCaptchaSubmission(token) {
     // }
 
     try {
-      setIsProcessing(true)
+      setIsProcessing(true);
       // Check if searchKeyword is valid
       if (searchKeyword.length <= 1) {
-        toast.warning("Please enter a keyword", { autoClose: 2000 })
-        return
+        toast.warning("Please enter a keyword", { autoClose: 2000 });
+        return;
       }
 
-      await refetch()
+      await refetch();
     } catch (error) {
-      console.error("Error fetching suggestions:", error)
+      console.error("Error fetching suggestions:", error);
       toast.error("An error occurred while fetching suggestions", {
         autoClose: 2000,
-      })
+      });
     } finally {
-      setIsProcessing(false)
+      setIsProcessing(false);
     }
-  }
+  };
 
   return (
     <>
-      <section
-        className="section"
-        style={{ backgroundColor: "#E0F1F4" }}
-      >
+      <section className="section" style={{ backgroundColor: "#E0F1F4" }}>
         <div className="container text-center">
           <div className="row mt-50">
             <div className="col-xl-8 col-lg-10 m-auto">
@@ -128,8 +149,8 @@ async function handleCaptchaSubmission(token) {
                 keyword. Users have the option to select their desired source
                 for suggestions, including Google, YouTube, Play Store, Apple
                 Store, and Bing. After completing the reCAPTCHA verification,
-                users can click the "Get Suggestions" button to receive the most
-                relevant keywords as suggestions.
+                users can click the &quot;Get Suggestions&quot; button to
+                receive the most relevant keywords as suggestions.
               </p>
               <div className="aso-input-form mb-25 main-box-holder">
                 <div className="search-box-suggestion">
@@ -141,7 +162,7 @@ async function handleCaptchaSubmission(token) {
                       className="search-input"
                       placeholder="Enter the keyword"
                       value={searchKeyword}
-                      onChange={e => setSearchKeyword(e.target.value)}
+                      onChange={(e) => setSearchKeyword(e.target.value)}
                     />
                   </div>
                 </div>
@@ -207,7 +228,7 @@ async function handleCaptchaSubmission(token) {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default KeywordSuggestion
+export default KeywordSuggestion;

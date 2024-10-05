@@ -78,7 +78,7 @@ const Terms = () => {
             </div>
             <div className="content-main mt-50">
               <div className="text-center">
-                <h2 className="color-brand-1 mb-10">Terms and Condition</h2>
+                <h1 className="color-brand-1 mb-10">Terms and Conditions</h1>
                 <p className="font-lg color-grey-500">
                   Please read and acquaint yourself with our Terms & Conditions.
                 </p>

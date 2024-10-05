@@ -99,11 +99,7 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2154_3098">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -195,11 +191,7 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2154_3141">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -246,11 +238,7 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2155_54831">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -409,11 +397,7 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2155_54875">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -584,11 +568,7 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2155_54158">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -715,18 +695,10 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2155_55163">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
           <clipPath id="clip1_2155_55163">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -906,11 +878,7 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2158_55306">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -1022,18 +990,10 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2158_55229">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
           <clipPath id="clip1_2158_55229">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -1158,18 +1118,10 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2158_55236">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
           <clipPath id="clip1_2158_55236">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -1274,18 +1226,10 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2158_55243">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
           <clipPath id="clip1_2158_55243">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -1405,18 +1349,10 @@ export const data = [
         </g>
         <defs>
           <clipPath id="clip0_2158_55250">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
           <clipPath id="clip1_2158_55250">
-            <rect
-              width="75"
-              height="75"
-              fill="white"
-            />
+            <rect width="75" height="75" fill="white" />
           </clipPath>
         </defs>
       </svg>
@@ -1424,7 +1360,8 @@ export const data = [
     toolLink: "/contact",
     tag: "Enterprise",
   },
-]
+];
+
 // Countries list
 export const countries = [
   { name: "Afghanistan", code: "af", flag: "af.png" },
@@ -1549,7 +1486,7 @@ export const countries = [
   { name: "Yemen", code: "ye", flag: "ye.png" },
   { name: "Zambia", code: "zm", flag: "zm.png" },
   { name: "Zimbabwe", code: "zw", flag: "zw.png" },
-]
+];
 export const stopwords = [
   "a",
   "b",
@@ -1691,40 +1628,41 @@ export const stopwords = [
   "now",
   "use",
   "it's",
-]
+];
 // funcion for getting recent apps data
 export function getRecentAppData() {
   const recentSelectedApp = JSON.parse(
-    localStorage.getItem("Recent Selected App"),
-  )
-  const recentSuggestion = recentSelectedApp?.map(item => {
-    let deviceIcon
+    localStorage.getItem("Recent Selected App")
+  );
+  const recentSuggestion = recentSelectedApp?.map((item) => {
+    let deviceIcon;
     if (item.device === "apple")
       deviceIcon =
-        "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f645042f50918e6e390f_app-store.svg"
+        "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f645042f50918e6e390f_app-store.svg";
     else
       deviceIcon =
-        "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f644817f822625b18bb6_google-play-store.svg"
-    item.deviceIcon = deviceIcon
-    return item
-  })
-  const uniqueRecentAppsArray = uniqueArray(recentSuggestion, "app-package-id")
-  return uniqueRecentAppsArray
+        "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f644817f822625b18bb6_google-play-store.svg";
+    item.deviceIcon = deviceIcon;
+    return item;
+  });
+  const uniqueRecentAppsArray = uniqueArray(recentSuggestion, "app-package-id");
+  return uniqueRecentAppsArray;
 }
 
 function uniqueArray(arr, key) {
-  const seen = new Set()
-  return arr?.filter(item => {
-    const keyValue = item[key]
+  const seen = new Set();
+  return arr?.filter((item) => {
+    const keyValue = item[key];
     if (seen.has(keyValue)) {
-      return false
+      return false;
     } else {
-      seen.add(keyValue)
-      return true
+      seen.add(keyValue);
+      return true;
     }
-  })
+  });
 }
 
+<<<<<<< HEAD
 // ******************** old app search functionality *************************
 // // data fetching
 // function encodingName(e) {
@@ -1854,10 +1792,38 @@ export async function prepareDataForRequests(
   let playQuery = `https://store.maakeetoo.com/apps/search/?q=${currentPlayKeyword}&gl=${country}`
   if (
     playQuery.trim() ===
+=======
+// data fetching
+function encodingName(e) {
+  return encodeURIComponent(e);
+}
+export async function prepareDataForRequests(
+  searchKeyword,
+  selectedCountryCode
+) {
+  let currentNameIOS = searchKeyword;
+  let currentNamePlay = encodingName(searchKeyword);
+  let country = selectedCountryCode;
+  if (currentNameIOS.trim().length < 2 && currentNameIOS.trim() === "") {
+    return false;
+  }
+  const newKeyword = currentNameIOS.split(" ").join("+");
+  const requestIOS = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`;
+  if (
+    requestIOS.trim() ===
+    `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=&country=&limit=30`
+  ) {
+    return false;
+  }
+  let requestPlay = `https://store.maakeetoo.com/apps/search/?q=${currentNamePlay}&gl=${country}`;
+  if (
+    requestPlay.trim() ===
+>>>>>>> ssr-dynamic
     `https://store.maakeetoo.com/apps/search/?q=&gl=${country}`
   ) {
-    return false
+    return false;
   }
+<<<<<<< HEAD
   //   preparing query for app store
   const newKeyword = searchKeyword.split(" ").join("+")
   const iosQuery = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`
@@ -1892,10 +1858,15 @@ export async function prepareDataForRequests(
     )
     return listData
   }
+=======
+  let listData = await handleRequestsAndProcessData(requestPlay, requestIOS);
+  return listData;
+>>>>>>> ssr-dynamic
 }
 
 async function handleRequestsAndProcessData(playData = [], iosData = {}) {
   try {
+<<<<<<< HEAD
     const hasPlayData = playData.length > 0
     const hasIOSData =
       iosData && Array.isArray(iosData.results) && iosData.results.length > 0
@@ -1910,9 +1881,25 @@ async function handleRequestsAndProcessData(playData = [], iosData = {}) {
     // Create suggestion list with device info
     const suggestionList = createListWithDevice(fullAppData)
     return suggestionList
+=======
+    const response1 = await fetch(requestIOS);
+    const response2 = await fetch(requestPlay);
+    const iOSResponse = await response1.json();
+    const playResponse = await response2.json();
+
+    const mergedData = {
+      iOSResponse: iOSResponse,
+      playResponse: playResponse,
+    };
+
+    const fullAppData = mergedExtractedData(mergedData);
+    const suggestionList = createListWithDevice(fullAppData);
+
+    return suggestionList;
+>>>>>>> ssr-dynamic
   } catch (error) {
-    console.error("Error:", error)
-    return false
+    console.error("Error:", error);
+    return false;
   }
 }
 
@@ -1938,6 +1925,7 @@ const searchAppStore = async query => {
 }
 // merging fetched data
 function mergedExtractedData(rowData) {
+<<<<<<< HEAD
   let appDataMain = []
   let appDataA = []
   let appDataP = []
@@ -1960,6 +1948,26 @@ function mergedExtractedData(rowData) {
     })
   }
   rowData.playResponse.map(item => {
+=======
+  let appDataMain = [];
+  let appDataA = [];
+  let appDataP = [];
+  rowData.iOSResponse.results.map((item) => {
+    if (item.trackViewUrl) {
+      let iosData = {
+        dataPackageUrl: item.trackViewUrl,
+        appPackageId: item.trackViewUrl.split("/")[5],
+        app_icon: item.artworkUrl100,
+        appName: item.trackName,
+        developer: "By " + item.artistName,
+        device: "apple",
+        deviceIcon: "apple_icon.svg",
+      };
+      appDataA.push(iosData);
+    }
+  });
+  rowData.playResponse.map((item) => {
+>>>>>>> ssr-dynamic
     let playData = {
       dataPackageUrl:
         "https://play.google.com/store/apps/details?id=" + item.package_id,
@@ -1969,139 +1977,139 @@ function mergedExtractedData(rowData) {
       developer: "By " + item.developer_name,
       device: "android",
       deviceIcon: "android_icon.svg",
-    }
-    appDataP.push(playData)
-  })
+    };
+    appDataP.push(playData);
+  });
   appDataA.map((app, index) => {
-    appDataMain.push(appDataA[index])
+    appDataMain.push(appDataA[index]);
     if (appDataP[index]) {
-      appDataMain.push(appDataP[index])
+      appDataMain.push(appDataP[index]);
     }
-  })
-  if (appDataA.length === 0) appDataMain = appDataP
-  return appDataMain
+  });
+  if (appDataA.length === 0) appDataMain = appDataP;
+  return appDataMain;
 }
 //app list with device icon and type
 function createListWithDevice(data) {
-  const formattedData = data.map(item => {
+  const formattedData = data.map((item) => {
     if (item.appName !== undefined) {
-      let deviceIcon
+      let deviceIcon;
       if (item.device == "apple")
         deviceIcon =
-          "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f645042f50918e6e390f_app-store.svg"
+          "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f645042f50918e6e390f_app-store.svg";
       else
         deviceIcon =
-          "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f644817f822625b18bb6_google-play-store.svg"
-      item.deviceIcon = deviceIcon
-      return item
+          "https://uploads-ssl.webflow.com/63806eb7687817f7f9be26de/6492f644817f822625b18bb6_google-play-store.svg";
+      item.deviceIcon = deviceIcon;
+      return item;
     }
-  })
-  return formattedData
+  });
+  return formattedData;
 }
 
 // *********************************************
 
 // generating seo data
-const removeStopwords = str => {
-  let res = []
-  let words = str.split(" ")
+const removeStopwords = (str) => {
+  let res = [];
+  let words = str.split(" ");
   for (let word of words) {
-    let wordClean = word.split(".").join("")
+    let wordClean = word.split(".").join("");
     if (!stopwords.includes(wordClean)) {
-      res.push(wordClean)
+      res.push(wordClean);
     }
   }
-  return res.join(" ")
-}
+  return res.join(" ");
+};
 
-export const generateKeywordTable = description => {
-  let keyword = description.toLowerCase().replace(/[,.():<>?;/:!*\n]+/g, " ")
-  keyword = removeStopwords(keyword)
-  const filteredKeyword = keyword.split(" ").filter(item => item.length > 2)
+export const generateKeywordTable = (description) => {
+  let keyword = description.toLowerCase().replace(/[,.():<>?;/:!*\n]+/g, " ");
+  keyword = removeStopwords(keyword);
+  const filteredKeyword = keyword.split(" ").filter((item) => item.length > 2);
 
-  const countFreq = arr => {
-    const keywordTable = []
-    const visited = Array(arr.length).fill(false)
+  const countFreq = (arr) => {
+    const keywordTable = [];
+    const visited = Array(arr.length).fill(false);
 
     for (let i = 0; i < arr.length; i++) {
-      if (visited[i]) continue
-      let count = 1
+      if (visited[i]) continue;
+      let count = 1;
       for (let j = i + 1; j < arr.length; j++) {
         if (arr[i] === arr[j]) {
-          visited[j] = true
-          count++
+          visited[j] = true;
+          count++;
         }
       }
-      keywordTable.push({ keyword: arr[i], count })
+      keywordTable.push({ keyword: arr[i], count });
     }
-    return keywordTable
-  }
+    return keywordTable;
+  };
 
-  const keywordWithCount = countFreq(filteredKeyword)
+  const keywordWithCount = countFreq(filteredKeyword);
   let finalKeywordTable = keywordWithCount
     .sort((a, b) => b.count - a.count)
-    .slice(0, 10)
+    .slice(0, 10);
 
-  return finalKeywordTable
-}
+  return finalKeywordTable;
+};
 
 // fetch and render app data
 export async function fetchAndStoreAppDataToBox(
   appPackageURL,
   applicationId,
   device,
-  country,
+  country
 ) {
   if (device == "apple") {
-    let result = await fetchAppleAppData(appPackageURL, country)
-    const appData = JSON.stringify({ apple: result })
-    localStorage.setItem("selectedAppData", appData)
-    return result
+    let result = await fetchAppleAppData(appPackageURL, country);
+    const appData = JSON.stringify({ apple: result });
+    localStorage.setItem("selectedAppData", appData);
+    return result;
   } else {
-    let result = await fetchPlayStoreAppData(applicationId, country)
-    const appData = JSON.stringify({ android: result })
-    localStorage.setItem("selectedAppData", appData)
-    return result
+    let result = await fetchPlayStoreAppData(applicationId, country);
+    const appData = JSON.stringify({ android: result });
+    localStorage.setItem("selectedAppData", appData);
+    return result;
   }
 }
 
 // fetch app data
 async function fetchPlayStoreAppData(applicationId, t) {
-  const url = `https://store.maakeetoo.com/apps/details/?id=${applicationId}&gl=${t}`
+  const url = `https://store.maakeetoo.com/apps/details/?id=${applicationId}&gl=${t}`;
   try {
-    const response = await fetch(url)
-    const data = await response.json()
+    const response = await fetch(url);
+    const data = await response.json();
     // return data;
     if (data.url) {
-      let dataObject = {}
-      dataObject.packageURL = data.url
-      dataObject.packageId = data.appId
-      dataObject.appIcon = data.icon
-      dataObject.appName = data.title
-      dataObject.appPrice = data.priceText
-      dataObject.userRating = data.score.toFixed(2)
-      dataObject.genresName = data.genre
-      dataObject.appFileSize = (parseInt(data.size) / (1000 * 1000)).toFixed(2)
-      let date = new Date(data.updated)
-      dataObject.lastUpdateDate = date.toDateString()
-      dataObject.lastUpdateNotes = data.recentChanges
-      dataObject.appScreenshot = data.screenshots
-      dataObject.screenshotCount = data.screenshots.length
-      dataObject.appDescription = data.description
-      dataObject.appReleaseDate = data.released || "2021-01-01"
+      let dataObject = {};
+      dataObject.packageURL = data.url;
+      dataObject.packageId = data.appId;
+      dataObject.appIcon = data.icon;
+      dataObject.appName = data.title;
+      dataObject.appPrice = data.priceText;
+      dataObject.userRating = data.score.toFixed(2);
+      dataObject.genresName = data.genre;
+      dataObject.appFileSize = (parseInt(data.size) / (1000 * 1000)).toFixed(2);
+      let date = new Date(data.updated);
+      dataObject.lastUpdateDate = date.toDateString();
+      dataObject.lastUpdateNotes = data.recentChanges;
+      dataObject.appScreenshot = data.screenshots;
+      dataObject.screenshotCount = data.screenshots.length;
+      dataObject.appDescription = data.description;
+      dataObject.appReleaseDate = data.released || "2021-01-01";
       let copyright =
         "© " +
         new Date(dataObject.appReleaseDate).getFullYear() +
         " " +
-        data.developer
-      dataObject.appCopyright = copyright
-      dataObject.type = "play"
-      return dataObject
+        data.developer;
+      dataObject.appCopyright = copyright;
+      dataObject.type = "play";
+      return dataObject;
     } else {
-      window.alert("Warning! Please select the app from the dropdown menu.")
+      window.alert("Warning! Please select the app from the dropdown menu.");
     }
   } catch (error) {
-    throw new Error(`Error fetching Play Store app data: ${error}`)
+    throw new Error(`Error fetching Play Store app data: ${error}`);
   }
 }
 
@@ -2109,48 +2117,48 @@ async function fetchAppleAppData(appPackageURL, t) {
   const requestOptions = {
     method: "GET",
     redirect: "follow",
-  }
-  const regex = /\/id(\d+)/
-  const id = appPackageURL.match(regex)[1]
-  const requestURL = `https://itunes.apple.com/lookup?id=${id}&country=${t}`
+  };
+  const regex = /\/id(\d+)/;
+  const id = appPackageURL.match(regex)[1];
+  const requestURL = `https://itunes.apple.com/lookup?id=${id}&country=${t}`;
   try {
-    const response = await fetch(requestURL, requestOptions)
-    const data = await response.json()
-    const row_data = data["results"][0]
-    let AppURL = row_data.trackViewUrl
+    const response = await fetch(requestURL, requestOptions);
+    const data = await response.json();
+    const row_data = data["results"][0];
+    let AppURL = row_data.trackViewUrl;
     if (AppURL) {
-      let dataObject = {}
-      dataObject.packageURL = row_data.trackViewUrl
-      dataObject.packageId = row_data.trackId
-      dataObject.appIcon = row_data.artworkUrl100
-      dataObject.appName = row_data.trackCensoredName
-      dataObject.appPrice = row_data.formattedPrice
-      dataObject.userRating = row_data.averageUserRating.toFixed(2)
-      dataObject.genresName = row_data.genres.join(", ")
+      let dataObject = {};
+      dataObject.packageURL = row_data.trackViewUrl;
+      dataObject.packageId = row_data.trackId;
+      dataObject.appIcon = row_data.artworkUrl100;
+      dataObject.appName = row_data.trackCensoredName;
+      dataObject.appPrice = row_data.formattedPrice;
+      dataObject.userRating = row_data.averageUserRating.toFixed(2);
+      dataObject.genresName = row_data.genres.join(", ");
       dataObject.appFileSize = (
         parseInt(row_data.fileSizeBytes) /
         (1000 * 1000)
-      ).toFixed(2)
+      ).toFixed(2);
       dataObject.lastUpdateDate =
-        row_data.currentVersionReleaseDate.split("T")[0]
-      dataObject.lastUpdateNotes = row_data.releaseNotes
-      dataObject.appScreenshot = row_data.screenshotUrls
-      dataObject.screenshotCount = row_data.screenshotUrls.length
-      dataObject.appDescription = row_data.description
-      dataObject.appReleaseDate = row_data.releaseDate
+        row_data.currentVersionReleaseDate.split("T")[0];
+      dataObject.lastUpdateNotes = row_data.releaseNotes;
+      dataObject.appScreenshot = row_data.screenshotUrls;
+      dataObject.screenshotCount = row_data.screenshotUrls.length;
+      dataObject.appDescription = row_data.description;
+      dataObject.appReleaseDate = row_data.releaseDate;
       let copyright =
         "© " +
         new Date(row_data.releaseDate).getFullYear() +
         " " +
-        row_data.sellerName
-      dataObject.appCopyright = copyright
-      dataObject.type = "ios"
-      return dataObject
+        row_data.sellerName;
+      dataObject.appCopyright = copyright;
+      dataObject.type = "ios";
+      return dataObject;
     } else {
-      window.alert("Warning! Please select the app from the dropdown menu.")
+      window.alert("Warning! Please select the app from the dropdown menu.");
     }
   } catch (error) {
-    throw new Error(`Error fetching Apple app data: ${error}`)
+    throw new Error(`Error fetching Apple app data: ${error}`);
   }
 }
 
@@ -2158,45 +2166,46 @@ async function fetchAppleAppData(appPackageURL, t) {
 // utils/jsonp.js
 export function jsonp(url, callbackName) {
   return new Promise((resolve, reject) => {
-    const script = document.createElement("script")
-    const callbackFunction = `${callbackName}_${Date.now()}`
+    const script = document.createElement("script");
+    const callbackFunction = `${callbackName}_${Date.now()}`;
 
-    window[callbackFunction] = data => {
-      resolve(data)
-      delete window[callbackFunction]
-      script.remove()
-    }
+    window[callbackFunction] = (data) => {
+      resolve(data);
+      delete window[callbackFunction];
+      script.remove();
+    };
 
-    script.src = `${url}?callback=${callbackFunction}`
-    script.onerror = error => {
-      reject(error)
-      delete window[callbackFunction]
-      script.remove()
-    }
+    script.src = `${url}?callback=${callbackFunction}`;
+    script.onerror = (error) => {
+      reject(error);
+      delete window[callbackFunction];
+      script.remove();
+    };
 
-    document.body.appendChild(script)
-  })
+    document.body.appendChild(script);
+  });
 }
 // format URL
 export function formatURL(url) {
-  let userInput = url.trim()
+  let userInput = url.trim();
   if (
     userInput &&
     !userInput.startsWith("https://www.") &&
     !userInput.startsWith("https://")
   ) {
     if (userInput && userInput.startsWith("www.")) {
-      userInput = "https://" + userInput
-      return userInput
+      userInput = "https://" + userInput;
+      return userInput;
     }
-    userInput = "https://" + userInput
-    return userInput
+    userInput = "https://" + userInput;
+    return userInput;
   }
 
-  return userInput
+  return userInput;
 }
 
 // check url is valid or not
+<<<<<<< HEAD
 export const isValidUrl = url => {
   // old regex
   // const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
@@ -2206,6 +2215,13 @@ export const isValidUrl = url => {
   const valid = urlRegex.test(url)
   return valid
 }
+=======
+export const isValidUrl = (url) => {
+  const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
+  const valid = urlRegex.test(url);
+  return valid;
+};
+>>>>>>> ssr-dynamic
 
 // extract main domain
 export function extractMainDomain(url) {
@@ -2213,28 +2229,28 @@ export function extractMainDomain(url) {
     // Check if the URL starts with "https://" or "http://"
     if (!url.startsWith("https://") && !url.startsWith("http://")) {
       // If not, prepend "https://"
-      url = "https://" + url
+      url = "https://" + url;
     }
 
-    const parsedUrl = new URL(url)
-    const hostnameParts = parsedUrl.hostname.split(".")
+    const parsedUrl = new URL(url);
+    const hostnameParts = parsedUrl.hostname.split(".");
 
     // If the hostname consists of more than two parts, consider the last three parts
-    let mainDomain = ""
+    let mainDomain = "";
     if (hostnameParts.length > 2) {
-      mainDomain = hostnameParts.slice(-3).join(".")
+      mainDomain = hostnameParts.slice(-3).join(".");
     } else {
-      mainDomain = hostnameParts.join(".")
+      mainDomain = hostnameParts.join(".");
     }
 
     // Prepend "https://" if the mainDomain doesn't contain it
     if (!mainDomain.startsWith("https://")) {
-      mainDomain = "https://" + mainDomain
+      mainDomain = "https://" + mainDomain;
     }
 
-    return mainDomain
+    return mainDomain;
   } catch (error) {
-    return null
+    return null;
   }
 }
 
@@ -2242,242 +2258,243 @@ export function extractMainDomain(url) {
 
 // syllable count
 export function syllablesTotal(inString) {
-  let syllablesTotal = 0
-  let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g)
+  let syllablesTotal = 0;
+  let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
   if (wordList) {
-    wordList.forEach(word => {
+    wordList.forEach((word) => {
       if (word === "'" || word === "’") {
-        return
+        return;
       } //bandaid solution.
       if (word.length <= 2) {
-        syllablesTotal += 1
-        return
+        syllablesTotal += 1;
+        return;
       } //quick return on short words
-      let syllables = 0
+      let syllables = 0;
       if (word.endsWith("s'") || word.endsWith("s’")) {
-        word.slice(-1)
+        word.slice(-1);
       } //ending with s'
       if (word.endsWith("s's") || word.endsWith("s’s")) {
-        word.slice(-1, -3)
+        word.slice(-1, -3);
       } //ending with s's
       const cEndings = word.match(
-        /(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|anne)s?$/im,
-      )
+        /(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|anne)s?$/im
+      );
       if (cEndings) {
-        word = word.replace(cEndings[0], "\n" + cEndings[0])
+        word = word.replace(cEndings[0], "\n" + cEndings[0]);
       } //Splits into two words and evaluates them as such
       const cBeginnings = word.match(
-        /^(ware|side(?![sd]$)|p?re(?!ach|agan|al|au)|[rf]ace(?!([sd]|tte)$)|place[^nsd])/im,
-      )
+        /^(ware|side(?![sd]$)|p?re(?!ach|agan|al|au)|[rf]ace(?!([sd]|tte)$)|place[^nsd])/im
+      );
       if (cBeginnings) {
-        word = word.replace(cBeginnings[0], "")
-        syllables++
+        word = word.replace(cBeginnings[0], "");
+        syllables++;
       }
       const esylp = word.match(
-        /ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gim,
-      )
+        /ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gim
+      );
       if (esylp) {
-        syllables += esylp.length
+        syllables += esylp.length;
       } //E clustered positive
       const esylm = word.match(
-        /every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gim,
-      )
+        /every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gim
+      );
       if (esylm) {
-        syllables -= esylm.length
+        syllables -= esylm.length;
       } //E clustered negative
       const isylp = word.match(
-        /rie[^sndfvtl]|(?<=^|[^tcs]|st)ia|siai|[^ct]ious|quie|[lk]ier|settli|[^cn]ien[^d]|[aeio]ing$|dei[tf]|isms?$/gim,
-      )
+        /rie[^sndfvtl]|(?<=^|[^tcs]|st)ia|siai|[^ct]ious|quie|[lk]ier|settli|[^cn]ien[^d]|[aeio]ing$|dei[tf]|isms?$/gim
+      );
       if (isylp) {
-        syllables += isylp.length
+        syllables += isylp.length;
       } //I clustered positive
       const osylp = word.match(
-        /nyo|osm(s$|$)|oinc|ored(?!$)|(^|[^ts])io|oale|[aeiou]yoe|^m[ia]cro([aiouy]|e)|roe(v|$)|ouel|^proa|oolog/gim,
-      )
+        /nyo|osm(s$|$)|oinc|ored(?!$)|(^|[^ts])io|oale|[aeiou]yoe|^m[ia]cro([aiouy]|e)|roe(v|$)|ouel|^proa|oolog/gim
+      );
       if (osylp) {
-        syllables += osylp.length
+        syllables += osylp.length;
       } //O clustered positive
-      const osylm = word.match(/[^f]ore(?!$|[vcaot]|d$|tte)|fore|llio/gim)
+      const osylm = word.match(/[^f]ore(?!$|[vcaot]|d$|tte)|fore|llio/gim);
       if (osylm) {
-        syllables -= osylm.length
+        syllables -= osylm.length;
       } //O clustered negative
       const asylp = word.match(
-        /asm(s$|$)|ausea|oa$|anti[aeiou]|raor|intra[ou]|iae|ahe$|dais|(?<!p)ea(l(?!m)|$)|(?<!j)ean|(?<!il)eage/gim,
-      )
+        /asm(s$|$)|ausea|oa$|anti[aeiou]|raor|intra[ou]|iae|ahe$|dais|(?<!p)ea(l(?!m)|$)|(?<!j)ean|(?<!il)eage/gim
+      );
       if (asylp) {
-        syllables += asylp.length
+        syllables += asylp.length;
       } //A clustered positive
-      const asylm = word.match(/aste(?!$|ful|s$|r)|[^r]ared$/gim)
+      const asylm = word.match(/aste(?!$|ful|s$|r)|[^r]ared$/gim);
       if (asylm) {
-        syllables -= asylm.length
+        syllables -= asylm.length;
       } //A clustered negative
       const usylp = word.match(
-        /uo[^y]|[^gq]ua(?!r)|uen|[^g]iu|uis(?![aeiou]|se)|ou(et|ille)|eu(ing|er)|uye[dh]|nuine|ucle[aeiuy]/gim,
-      )
+        /uo[^y]|[^gq]ua(?!r)|uen|[^g]iu|uis(?![aeiou]|se)|ou(et|ille)|eu(ing|er)|uye[dh]|nuine|ucle[aeiuy]/gim
+      );
       if (usylp) {
-        syllables += usylp.length
+        syllables += usylp.length;
       } //U clustered positive
-      const usylm = word.match(/geous|busi|logu(?!e|i)/gim)
+      const usylm = word.match(/geous|busi|logu(?!e|i)/gim);
       if (usylm) {
-        syllables -= usylm.length
+        syllables -= usylm.length;
       } //U clustered negative
       const ysylp = word.match(
-        /[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|pye|dy[ae]|oye[exu]|lye[nlrs]|olye|aye(k|r|$|u[xr]|da)|saye\w|iye|wy[ae]|[^aiou]ying/gim,
-      )
+        /[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|pye|dy[ae]|oye[exu]|lye[nlrs]|olye|aye(k|r|$|u[xr]|da)|saye\w|iye|wy[ae]|[^aiou]ying/gim
+      );
       if (ysylp) {
-        syllables += ysylp.length
+        syllables += ysylp.length;
       } //Y clustered positive
-      const ysylm = word.match(/arley|key|ney$/gim)
+      const ysylm = word.match(/arley|key|ney$/gim);
       if (ysylm) {
-        syllables -= ysylm.length
+        syllables -= ysylm.length;
       }
       const essuffix = word.match(
-        /((?<!c[hrl]|sh|[iszxgej]|[niauery]c|do)es$)/gim,
-      )
+        /((?<!c[hrl]|sh|[iszxgej]|[niauery]c|do)es$)/gim
+      );
       if (essuffix) {
-        syllables--
+        syllables--;
       } //es suffix
       const edsuffix = word.match(
-        /([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtbm]|ll|bb|ield|[ou]rb)ed$|[^cbda]red$/gim,
-      )
+        /([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtbm]|ll|bb|ield|[ou]rb)ed$|[^cbda]red$/gim
+      );
       if (edsuffix) {
-        syllables--
+        syllables--;
       }
-      const csylp = word.match(/chn[^eai]|mc|thm/gim)
+      const csylp = word.match(/chn[^eai]|mc|thm/gim);
       if (csylp) {
-        syllables += csylp.length
+        syllables += csylp.length;
       } //Consonant clustered negative
-      const eVowels = word.match(/[aiouy](?![aeiouy])|ee|e(?!$|-|[iua])/gim)
+      const eVowels = word.match(/[aiouy](?![aeiouy])|ee|e(?!$|-|[iua])/gim);
       if (eVowels) {
-        syllables += eVowels.length
+        syllables += eVowels.length;
       } //Applicable vowel count (all but e at end of word)
       if (syllables <= 0) {
-        syllables = 1
+        syllables = 1;
       } //catch-all
       if (word.match(/[^aeiou]n['’]t$/i)) {
-        syllables++
+        syllables++;
       } //ending in n't, but not en't
       if (word.match(/en['’]t$/i)) {
-        syllables--
+        syllables--;
       } //ending in en't
-      syllablesTotal += syllables
-    })
+      syllablesTotal += syllables;
+    });
   }
-  return syllablesTotal
+  return syllablesTotal;
 }
 // keywords changes
 export function keywordChanges(values) {
-  let keyword = []
-  values = values.toLowerCase().trim()
+  let keyword = [];
+  values = values.toLowerCase().trim();
   try {
-    let pattern = /\[.*?\]/g
-    let elements = values.match(pattern)
-    values = values.replace(pattern, "")
-    elements.map(word => {
-      keyword.push(word.trim())
-    })
+    let pattern = /\[.*?\]/g;
+    let elements = values.match(pattern);
+    values = values.replace(pattern, "");
+    elements.map((word) => {
+      keyword.push(word.trim());
+    });
   } catch {}
-  let myArray = values.split(",")
-  myArray.map(word => {
-    word == " " || word == "" ? null : keyword.push(word.trim())
-  })
-  let jkeywords = JSON.stringify(keyword)
+  let myArray = values.split(",");
+  myArray.map((word) => {
+    word == " " || word == "" ? null : keyword.push(word.trim());
+  });
+  let jkeywords = JSON.stringify(keyword);
   // console.log("JSON Stringify : " + jkeywords)
-  return jkeywords
+  return jkeywords;
 }
 
 // generate max score
 export function generateMaxScore(keyword) {
-  const arrayKeyword = JSON.parse(keyword)
-  let maxPowerScore = 0
-  const keywordScore = {}
+  const arrayKeyword = JSON.parse(keyword);
+  let maxPowerScore = 0;
+  const keywordScore = {};
   for (let p = 0; p < arrayKeyword.length; p++) {
-    const innerArray = arrayKeyword[p].split(",")
-    const score = innerArray.length * (arrayKeyword.length - p)
-    maxPowerScore += score
-    keywordScore[arrayKeyword[p]] = score
+    const innerArray = arrayKeyword[p].split(",");
+    const score = innerArray.length * (arrayKeyword.length - p);
+    maxPowerScore += score;
+    keywordScore[arrayKeyword[p]] = score;
   }
-  return { keywordScore, maxPowerScore }
+  return { keywordScore, maxPowerScore };
 }
 // find matched value
 export function findMatchedValues(words, content) {
-  let included = []
-  let notIncluded = []
-  let keywords = JSON.parse(words)
-  content = content.toLowerCase()
-  let multipleWord = content.replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+  let included = [];
+  let notIncluded = [];
+  let keywords = JSON.parse(words);
+  content = content.toLowerCase();
+  let multipleWord = content.replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g, "");
   let singleWord = content
     .replace(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-    .split(/\s+/)
-  let matchedValues = keywords.map(keyword => {
-    keyword = keyword.replace(/(\r\n|\n|\r)/gm, "").trim()
-    let count = 0
+    .split(/\s+/);
+  let matchedValues = keywords.map((keyword) => {
+    keyword = keyword.replace(/(\r\n|\n|\r)/gm, "").trim();
+    let count = 0;
     if (keyword.match(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g) == null) {
       if (keyword.indexOf(" ") >= 0) {
-        let term = false
+        let term = false;
         if (keyword.includes("[")) {
-          keyword = keyword.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
-          term = true
+          keyword = keyword.replace(/\[/g, "\\[").replace(/\]/g, "\\]");
+          term = true;
         }
-        const regex = new RegExp(keyword, "g")
-        count = (multipleWord.match(regex) || []).length
+        const regex = new RegExp(keyword, "g");
+        count = (multipleWord.match(regex) || []).length;
         if (term == true) {
-          keyword = keyword.replace(/\\/g, "").replace(/\\/g, "")
+          keyword = keyword.replace(/\\/g, "").replace(/\\/g, "");
         }
       } else {
-        singleWord.map(word => {
-          if (word.includes(keyword) && word.length == keyword.length) count++
-        })
+        singleWord.map((word) => {
+          if (word.includes(keyword) && word.length == keyword.length) count++;
+        });
       }
     }
     if (keyword.match(/[.,?\/#!$%\^&\*;:{}=\-_`~()]/g) != null) {
       if (keyword.indexOf(",") >= 0) {
-        let word = keyword.replace(/[\[\]]/g, "")
-        word = word.split(",")
-        word.map(item => {
-          item = item.trim()
+        let word = keyword.replace(/[\[\]]/g, "");
+        word = word.split(",");
+        word.map((item) => {
+          item = item.trim();
           if (item.indexOf(" ") >= 0) {
-            const regex = new RegExp(item, "g")
-            count += (multipleWord.match(regex) || []).length
+            const regex = new RegExp(item, "g");
+            count += (multipleWord.match(regex) || []).length;
           } else {
-            singleWord.map(single => {
-              if (single.includes(item) && single.length == item.length) count++
-            })
+            singleWord.map((single) => {
+              if (single.includes(item) && single.length == item.length)
+                count++;
+            });
           }
-        })
+        });
       } else {
-        singleWord.map(word => {
+        singleWord.map((word) => {
           if (word.includes(keyword[0]) && word.length == keyword[0].length)
-            count++
-        })
+            count++;
+        });
       }
     }
 
-    if (count == 0 && keyword) notIncluded.push(keyword)
-    else if (keyword) included.push(" " + keyword + " (" + count + ")")
-  })
+    if (count == 0 && keyword) notIncluded.push(keyword);
+    else if (keyword) included.push(" " + keyword + " (" + count + ")");
+  });
 
   // console.log(included + " ... " + notIncluded);
-  matchedValues = { included, notIncluded }
-  return matchedValues
+  matchedValues = { included, notIncluded };
+  return matchedValues;
 }
 
 //included string
 export function includedToString(findValues) {
-  let content = ""
+  let content = "";
   for (let i = 0; i < findValues.included.length; i++) {
-    content = content + findValues.included[i] + "\n"
+    content = content + findValues.included[i] + "\n";
   }
-  return content
+  return content;
 }
 
 // not included to string
 export function notIncludedToString(findValues) {
-  let content = ""
+  let content = "";
   for (let i = 0; i < findValues.notIncluded.length; i++) {
-    content = content + findValues.notIncluded[i] + ", "
+    content = content + findValues.notIncluded[i] + ", ";
   }
-  return content
+  return content;
 }
 
 // *************** used in keyword generator tool ******************
@@ -2486,14 +2503,20 @@ export function customSortSuggestion(array, name) {
   const result = {}
   const mixed = []
 
+<<<<<<< HEAD
   array.forEach(value => {
     const namePosition = value.indexOf(name)
+=======
+  array.forEach((value) => {
+    const namePosition = value.indexOf(name);
+>>>>>>> ssr-dynamic
 
     if (
       namePosition !== -1 &&
       namePosition < value.length - name.length &&
       value[namePosition + name.length] === " "
     ) {
+<<<<<<< HEAD
       const spacePosition = namePosition + name.length + 1
       const keyword = value.substring(spacePosition)
 
@@ -2508,15 +2531,36 @@ export function customSortSuggestion(array, name) {
         } else {
           if (value.includes(name)) {
             mixed.push(value)
+=======
+      const spacePosition = namePosition + name.length + 1;
+      const keyword = value.substring(spacePosition);
+
+      if (keyword) {
+        const groupKey = keyword[0].toLowerCase();
+
+        if (/[a-zA-Z]/.test(groupKey)) {
+          if (!result[groupKey]) {
+            result[groupKey] = [];
+          }
+          result[groupKey].push(value);
+        } else {
+          if (value.includes(name)) {
+            mixed.push(value);
+>>>>>>> ssr-dynamic
           }
         }
       } else {
         if (value.includes(name)) {
+<<<<<<< HEAD
           mixed.push(value)
+=======
+          mixed.push(value);
+>>>>>>> ssr-dynamic
         }
       }
     } else {
       if (value.includes(name)) {
+<<<<<<< HEAD
         mixed.push(value)
       }
     }
@@ -2526,11 +2570,23 @@ export function customSortSuggestion(array, name) {
   Object.keys(result).forEach(key => {
     result[key].sort()
   })
+=======
+        mixed.push(value);
+      }
+    }
+  });
+
+  // Sort each group
+  Object.keys(result).forEach((key) => {
+    result[key].sort();
+  });
+>>>>>>> ssr-dynamic
 
   // Sort the groups by their keys
   const sortedResult = Object.keys(result)
     .sort()
     .reduce((acc, key) => {
+<<<<<<< HEAD
       acc[key] = result[key]
       return acc
     }, {})
@@ -2538,6 +2594,15 @@ export function customSortSuggestion(array, name) {
   if (mixed.length > 0) {
     mixed.sort()
     sortedResult["Mixed"] = mixed
+=======
+      acc[key] = result[key];
+      return acc;
+    }, {});
+
+  if (mixed.length > 0) {
+    mixed.sort();
+    sortedResult["Mixed"] = mixed;
+>>>>>>> ssr-dynamic
   }
 
   return sortedResult
@@ -2615,12 +2680,12 @@ export const suggestionTabData = [
     imageWidth: 30,
     imageHeight: 30,
   },
-]
+];
 
 // get random 3 digits number
 export const getRandomNumber = () => {
-  return Math.floor(Math.random() * 900) + 100
-}
+  return Math.floor(Math.random() * 900) + 100;
+};
 
 // Download CSV file
 export function DownloadCSVTable(button) {
@@ -2628,12 +2693,21 @@ export function DownloadCSVTable(button) {
   // let name = localStorage.getItem("userFullName")
   // if (name && email) {
   // dataLayer.push({ "event": "seo-download-csv", "gtm.uniqueAnalyticsReports": "SEO_Download_CSVLiveWeb", "keyword": button.getAttribute('text'), "gtm.email": email, "gtm.username": name })
+<<<<<<< HEAD
   const text = button.getAttribute("text")
   // console.log("Text", text)
   if (text == "search") {
     copyButtonFunction(button)
   } else {
     downloadAsCSVforSuggestion(button)
+=======
+  const text = button.getAttribute("text");
+  console.log("Text", text);
+  if (text == "search") {
+    copyButtonFunction(button);
+  } else {
+    downloadAsCSVforSuggestion(button);
+>>>>>>> ssr-dynamic
   }
   // } else {
   // document.querySelector('.sign-in-button.rank-sign-in').classList.remove('hidden');
@@ -2642,46 +2716,55 @@ export function DownloadCSVTable(button) {
 }
 // play and app store data handler
 function copyButtonFunction(button) {
-  let btnText = button.getAttribute("btn-hint")
-  let parentElement = button.parentNode
-  let listArray = parentElement.querySelectorAll("li")
+  let btnText = button.getAttribute("btn-hint");
+  let parentElement = button.parentNode;
+  let listArray = parentElement.querySelectorAll("li");
   if (btnText.includes("play") || btnText.includes("apple")) {
-    downloadAsCSVStore(listArray)
+    downloadAsCSVStore(listArray);
   } else {
-    downloadAsCSVEngine(listArray, btnText)
+    downloadAsCSVEngine(listArray, btnText);
   }
 }
 // downloading app data (play and app store)
 function downloadAsCSVStore(Array) {
-  let csvContent = ",Package Name,Developer Name,Package URL,Image URL\n"
+  let csvContent = ",Package Name,Developer Name,Package URL,Image URL\n";
   Array.forEach(function (liElement, item) {
-    let packageURL = liElement.getAttribute("data-url")
-    let appName = liElement.querySelector("strong").textContent
+    let packageURL = liElement.getAttribute("data-url");
+    let appName = liElement.querySelector("strong").textContent;
     let developer = liElement
       .querySelector("span")
-      .textContent.replace("By ", "")
-    let image = liElement.querySelector("img").getAttribute("src")
+      .textContent.replace("By ", "");
+    let image = liElement.querySelector("img").getAttribute("src");
     csvContent += `"${
       item + 1
-    }","${appName}","${developer}","${packageURL}","${image}"\n`
-  })
-  let blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
-  let link = document.createElement("a")
-  link.href = URL.createObjectURL(blob)
-  link.setAttribute("download", "app_data.csv")
-  link.click()
+    }","${appName}","${developer}","${packageURL}","${image}"\n`;
+  });
+  let blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  let link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.setAttribute("download", "app_data.csv");
+  link.click();
 }
 // downloading serp data
 function downloadAsCSVEngine(Array, text) {
+<<<<<<< HEAD
   const csvData = []
   Array.forEach(li => {
     const mainLink = li.querySelector("h5 > a").innerText
     const secondaryLink = li.querySelector("#multi-tool-search-link").innerText
     const description = li.querySelector("div").innerText
+=======
+  const csvData = [];
+  Array.forEach((li) => {
+    const mainLink = li.querySelector("h5 > a").innerText;
+    const secondaryLink = li.querySelector("#multi-tool-search-link").innerText;
+    const description = li.querySelector("div").innerText;
+>>>>>>> ssr-dynamic
     csvData.push([
       mainLink.replace(/\n/g, ""),
       secondaryLink.replace(/\n/g, ""),
       description.replace(/\n/g, ""),
+<<<<<<< HEAD
     ])
   })
   const csvContent = convertToCSV(csvData)
@@ -2694,6 +2777,20 @@ function downloadAsCSVEngine(Array, text) {
   a.click()
   document.body.removeChild(a)
   URL.revokeObjectURL(a.href)
+=======
+    ]);
+  });
+  const csvContent = convertToCSV(csvData);
+  const blob = new Blob([csvContent], { type: "text/csv" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${text}-data.csv`;
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+>>>>>>> ssr-dynamic
 }
 // convert data to csv
 function convertToCSV(data) {
@@ -2706,21 +2803,53 @@ function convertToCSV(data) {
   function escapeCSVField(field) {
     // Escape double quotes by doubling them and wrap the field in quotes
     if (field.includes(",") || field.includes('"') || field.includes("\n")) {
+<<<<<<< HEAD
       field = '"' + field.replace(/"/g, '""') + '"'
     }
     return field
+=======
+      field = '"' + field.replace(/"/g, '""') + '"';
+    }
+    return field;
+>>>>>>> ssr-dynamic
   }
 
   // Iterate over the data array and append each row to the CSV content
   data.forEach((row, index) => {
     // Create a new array with the serial number and the escaped row data
+<<<<<<< HEAD
     const rowData = [index + 1, ...row.map(escapeCSVField)]
     // Convert the array to a CSV string and add it to the CSV content
     csvContent += rowData.join(",") + "\n"
   })
+=======
+    const rowData = [index + 1, ...row.map(escapeCSVField)];
+    // Convert the array to a CSV string and add it to the CSV content
+    csvContent += rowData.join(",") + "\n";
+  });
+>>>>>>> ssr-dynamic
 
   return csvContent
 }
 
+// select highest resolution image
+export const getLargestResolutionImage = (imageData) => {
+  if (!imageData?.featuredImage?.node?.mediaDetails?.sizes) {
+    return null;
+  }
 
+<<<<<<< HEAD
 // **************************************************
+=======
+  const sizes = imageData.featuredImage.node.mediaDetails.sizes;
+  let largestImage = sizes[0];
+
+  for (let i = 1; i < sizes.length; i++) {
+    if (parseInt(sizes[i].width, 10) > parseInt(largestImage.width, 10)) {
+      largestImage = sizes[i];
+    }
+  }
+
+  return largestImage;
+};
+>>>>>>> ssr-dynamic

@@ -1,5 +1,5 @@
-import Link from "next/link"
-import React from "react"
+import Link from "next/link";
+import React from "react";
 
 const WordToHtmlArticle = () => {
   return (
@@ -10,10 +10,10 @@ const WordToHtmlArticle = () => {
       <p className="font-md color-grey-400 mb-20">
         When it comes to crafting and editing HTML code, the NextGrowth Labs
         HTML Editor stands as a powerful online tool that offers a seamless and
-        user-friendly experience. Whether you're a seasoned developer or just
-        embarking on your HTML journey, our editor caters to all skill levels,
-        providing a comprehensive solution for generating, modifying, and
-        creating HTML code.
+        user-friendly experience. Whether you&apos;re a seasoned developer or
+        just embarking on your HTML journey, our editor caters to all skill
+        levels, providing a comprehensive solution for generating, modifying,
+        and creating HTML code.
       </p>
       <h3 className="color-brand-1 mb-20">Your HTML Journey Made Effortless</h3>
       <p className="font-md color-grey-400 mb-20">
@@ -30,10 +30,7 @@ const WordToHtmlArticle = () => {
         making it a valuable asset for various users. Let’s check some of the
         key advantages you can gain from an online word to HTML converter:
       </p>
-      <ul
-        style={{ listStyle: "disc" }}
-        className="color-brand-1"
-      >
+      <ul style={{ listStyle: "disc" }} className="color-brand-1">
         <li className="font-md color-grey-400 mb-20 ml-20">
           <b>Preserves Formatting: </b>
           By using a text to HTML tool, you can maintain the formatting,
@@ -142,21 +139,18 @@ const WordToHtmlArticle = () => {
 
       <h3 className="color-brand-1 mb-20">Features of HTML Word Editor</h3>
 
-      <ul
-        style={{ listStyle: "disc" }}
-        className="color-brand-1"
-      >
+      <ul style={{ listStyle: "disc" }} className="color-brand-1">
         <li className="font-md color-grey-400 mb-20 ml-20">
           <p className="font-md color-grey-400 mb-20">
             <b>Real-Time Output Preview</b>
           </p>
           <p className="font-md color-grey-400 mb-20">
             One standout feature of our online HTML editor is the real-time
-            output preview. Here's where the magic happens. As you write your
-            HTML code, you can instantly preview how it will look on a webpage.
-            No need to switch between coding and preview modes; see the results
-            as you go. This feature significantly accelerates the development
-            process, helping you create stunning web content faster.
+            output preview. Here&apos;s where the magic happens. As you write
+            your HTML code, you can instantly preview how it will look on a
+            webpage. No need to switch between coding and preview modes; see the
+            results as you go. This feature significantly accelerates the
+            development process, helping you create stunning web content faster.
           </p>
         </li>
         <li className="font-md color-grey-400 mb-20 ml-20">
@@ -172,10 +166,7 @@ const WordToHtmlArticle = () => {
           </p>
           <p className="font-md color-grey-400 mb-20">
             Alternatively, you also use our{" "}
-            <Link
-              href={"/html-editor"}
-              className="color-info"
-            >
+            <Link href={"/html-editor"} className="color-info">
               HTML Editor tool
             </Link>{" "}
             to make changes to your HTML content. This tool allows word to clean
@@ -190,18 +181,18 @@ const WordToHtmlArticle = () => {
       <p className="font-md color-grey-400 mb-20">
         In summary, the NextGrowth Labs Word to HTML Editor is a versatile and
         user-friendly online tool that caters to a wide range of users, from
-        beginners to experienced developers and designers. Whether you're
+        beginners to experienced developers and designers. Whether you&apos;re
         crafting a simple webpage or working on a complex web application, this
         tool is your indispensable resource for writing, editing, and generating
         HTML code.
       </p>
       <p className="font-md color-grey-400 mb-20">
-        Don't let coding complexities hold you back. Embrace the simplicity and
-        efficiency of the NextGrowth Labs HTML Editor for a smoother web
+        Don&apos;t let coding complexities hold you back. Embrace the simplicity
+        and efficiency of the NextGrowth Labs HTML Editor for a smoother web
         development journey.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default WordToHtmlArticle
+export default WordToHtmlArticle;

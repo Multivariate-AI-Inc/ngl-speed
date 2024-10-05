@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
-import FontTable from "./FontTable"
+import React, { useState, useEffect } from "react";
+import FontTable from "./FontTable";
 
 const FontChanger = () => {
-  const [fonts, setFonts] = useState([])
-  const [input, setInput] = useState("NextGrowthLabs")
+  const [fonts, setFonts] = useState([]);
+  const [input, setInput] = useState("NextGrowthLabs");
   useEffect(() => {
     const fetchFonts = async () => {
       try {
@@ -13,22 +13,22 @@ const FontChanger = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ input }),
-        }
-        const response = await fetch("/api/fetch-font", requestOptions)
-        const data = await response.json()
+        };
+        const response = await fetch("/api/fetch-font", requestOptions);
+        const data = await response.json();
         const formattedFonts = Object.entries(data).map(([name, text]) => ({
           name,
           text,
-        }))
+        }));
 
-        setFonts(formattedFonts)
+        setFonts(formattedFonts);
       } catch (error) {
-        console.error("Failed to fetch fonts: ", error)
+        console.error("Failed to fetch fonts: ", error);
       }
-    }
+    };
 
-    fetchFonts()
-  }, [input])
+    fetchFonts();
+  }, [input]);
 
   return (
     <section className="mt-90">
@@ -46,7 +46,7 @@ const FontChanger = () => {
             id="user_data"
             placeholder="Type Something"
             value={input}
-            onChange={e => setInput(e.target.value)}
+            onChange={(e) => setInput(e.target.value)}
           />
         </div>
         <div>{fonts.length !== 0 && <FontTable fonts={fonts} />}</div>
@@ -67,18 +67,19 @@ const FontChanger = () => {
           </p>
           <p className="color-grey-400 mb-20">
             You have access to a wide range of fonts to choose from, including
-            "Fullwidth Letters," "Mathematics Bold Letters," "Monospace
-            Letters," "Sans-serif Letters," and many more. Some fonts are
-            created by combining characters.
+            &quot;Fullwidth Letters,&quot; &quot;Mathematics Bold Letters,&quot;
+            &quot;Monospace Letters,&quot; &quot;Sans-serif Letters,&quot; and
+            many more. Some fonts are created by combining characters.
           </p>
           <p className="color-grey-400 mb-20">
             Additionally, this tool offers a selection of unique fonts that
             feature peculiar Unicode glyphs resembling regular letters. For
-            example, the letter "A" is represented as "ል" and "B" is represented
-            as "乃". You can switch between 32 different fonts or choose to
-            generate all of them simultaneously by selecting the "Use All Fonts
-            At Once" option. Furthermore, you can enable the randomization mode,
-            which randomly assigns a different font to each letter.
+            example, the letter &quot;A&quot; is represented as &quot;ል&quot;
+            and &quot;B&quot; is represented as &quot;乃&quot;. You can switch
+            between 32 different fonts or choose to generate all of them
+            simultaneously by selecting the &quot;Use All Fonts At Once&quot;
+            option. Furthermore, you can enable the randomization mode, which
+            randomly assigns a different font to each letter.
           </p>
           <p className="color-grey-400 mb-20">
             If you prefer to exclude non-letter characters from the output, you
@@ -90,7 +91,7 @@ const FontChanger = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FontChanger
+export default FontChanger;

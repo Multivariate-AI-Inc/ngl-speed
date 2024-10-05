@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Button from "../elements/Button"
-import Link from "next/link"
+import Image from "next/image";
+import Button from "../elements/Button";
+import Link from "next/link";
 
 const GetInTouch = () => {
   return (
@@ -26,10 +26,10 @@ const GetInTouch = () => {
                   Join Our Growing Team!
                 </h2>
                 <p className="font-md color-grey-500">
-                  We're always looking for talented individuals to join the
-                  NextGrowth Labs family. Even if you don't see a perfect fit
-                  right now, upload your resume and let us know your areas of
-                  interest. We might have the perfect opportunity waiting for
+                  We&apos;re always looking for talented individuals to join the
+                  NextGrowth Labs family. Even if you don&apos;t see a perfect
+                  fit right now, upload your resume and let us know your areas
+                  of interest. We might have the perfect opportunity waiting for
                   you!
                 </p>
                 <div className="box-button text-start mt-65">
@@ -45,7 +45,7 @@ const GetInTouch = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default GetInTouch
+export default GetInTouch;

@@ -20,7 +20,33 @@
   margin: 0px;
   li {
     margin-bottom: 20px;
-    padding-left: 40px;
+    margin-left: 40px;
+    position: relative;
+    // background: url(../imgs/page/about/check.svg) no-repeat top left;
+    .ticked {
+      position: absolute;
+      border-radius: 50%;
+      top: 0px;
+      left: 0px;
+      height: 27px;
+      width: 27px;
+      background: $color-gray-60 url(../imgs/page/about/tick.svg) no-repeat
+        center;
+    }
+    &:last-child {
+      .box-border-dashed {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+.list-core-value-left {
+  list-style: circle;
+  padding: 0px;
+  margin: 0px;
+  li {
+    margin-bottom: 20px;
+    margin-left: 80px;
     position: relative;
     // background: url(../imgs/page/about/check.svg) no-repeat top left;
     .ticked {

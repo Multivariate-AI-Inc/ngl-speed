@@ -1,20 +1,5 @@
 import Image from "next/image";
-const getLargestResolutionImage = (imageData) => {
-  if (!imageData?.featuredImage?.node?.mediaDetails?.sizes) {
-    return null;
-  }
-
-  const sizes = imageData.featuredImage.node.mediaDetails.sizes;
-  let largestImage = sizes[0];
-
-  for (let i = 1; i < sizes.length; i++) {
-    if (parseInt(sizes[i].width, 10) > parseInt(largestImage.width, 10)) {
-      largestImage = sizes[i];
-    }
-  }
-
-  return largestImage;
-};
+import { getLargestResolutionImage } from "../utils";
 const FeaturedImage = ({ post, styleClasses, priority, height, width }) => {
   let img = "";
   const defaultFeaturedImage =

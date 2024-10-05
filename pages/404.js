@@ -1,7 +1,7 @@
-import Link from "next/link"
-import PageHead from "../components/elements/PageHead"
-import Image from "next/legacy/image"
-import Layout from "../components/layout/Layout"
+import Link from "next/link";
+import PageHead from "../components/elements/PageHead";
+import Image from "next/legacy/image";
+import Layout from "../components/layout/Layout";
 
 const CustomError404 = () => {
   return (
