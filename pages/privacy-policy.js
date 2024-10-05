@@ -439,8 +439,7 @@ const Privacy = () => {
                   </h5>
                   <p className="font-md color-grey-500 mb-30">
                     NextLabs may work with and share your Personal Information
-                    with our third party advertisinsite-section bg-lightg
-                    partners to provide you with advertisements regarding
+                    with our third party advertising partners to provide you with advertisements regarding
                     NextLabs&apos;s Services. For more information about our
                     advertising and marketing practices and those of the third
                     party advertising partners, please see the Cookies and
