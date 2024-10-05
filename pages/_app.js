@@ -18,9 +18,10 @@ function loadGTM(gtmId) {
 
 function MyApp({ Component, pageProps }) {
   const [gtmLoaded, setGtmLoaded] = useState(false)
+
   useEffect(() => {
     const handleScroll = () => {
-      if (!gtmLoaded) {
+      if (!gtmLoaded && window.location.hostname !== 'localhost') {
         loadGTM("GTM-538RX7C")
         setGtmLoaded(true)
         window.removeEventListener("scroll", handleScroll)
@@ -33,6 +34,8 @@ function MyApp({ Component, pageProps }) {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [gtmLoaded])
+
+
 
   useEffect(() => {
     function loadFont() {

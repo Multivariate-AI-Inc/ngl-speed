@@ -7519,18 +7519,18 @@ textarea.textarea-control {
 
 .metric--pass .metric__score-icon {
   border-radius: 100%;
-  background: #0CCE6B;
+  background: #0cce6b;
 }
 
 .metric--fail .metric__score-icon,
 .metric--error .metric__score-icon {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 12px solid #FF4E42;
+  border-bottom: 12px solid #ff4e42;
 }
 
 .metric--average .metric__score-icon {
-  background: #FFA400;
+  background: #ffa400;
   width: 10.56px;
   height: 10.56px;
 }
@@ -7641,7 +7641,8 @@ tr.desktop_row:nth-child(odd) {
   background-color: #ddd;
 }
 
-.w-tab-link, .w-tab-menu {
+.w-tab-link,
+.w-tab-menu {
   position: relative;
 }
 
@@ -8266,7 +8267,7 @@ table#response-table {
 }
 
 #response-table .header-row {
-  background-color: #17a2b8;
+  background-color: var(--lightGreen);
   font-size: 1.2rem;
   line-height: 2rem;
 }
@@ -8277,15 +8278,15 @@ table#response-table {
 
 #response-table .respEven_row {
   background-color: rgba(221, 221, 221, 0.3607843137);
-  color: #17a2b8 !important;
+  color: var(--lightGreen) !important;
 }
 
 #response-table tr:last-of-type {
-  border-bottom: 3px solid #17a2b8;
+  border-bottom: 3px solid var(--lightGreen);
 }
 
 #response-table tr {
-  border-bottom: 1px solid rgba(28, 125, 248, 0.2509803922);
+  border-bottom: 1px solid var(--lightGreen);
 }
 
 #table-container {
@@ -8314,7 +8315,7 @@ table#response-table {
 
 .content-right-side {
   flex: 30%;
-  background-color: #17a2b8;
+  background-color: var(--lightGreen);
   padding: 10px;
   border: 1px solid rgb(185, 185, 201);
 }
@@ -8336,6 +8337,10 @@ table#response-table {
   padding: 10px;
   border-radius: 5px;
   background-color: white;
+}
+
+.sub-button {
+  border: 1px solid var(--bs-warning);
 }
 
 .textbox-title {
@@ -8484,17 +8489,20 @@ table#response-table {
     flex-wrap: wrap !important;
     justify-content: center;
   }
-  .w-tab-link, .w-tab-menu {
+  .w-tab-link,
+  .w-tab-menu {
     flex-direction: column;
     min-width: 275px;
     border-radius: 10px;
     gap: 12px;
   }
-  .w-tab-link .tabs1_link-service.first_tab, .w-tab-menu .tabs1_link-service.first_tab {
+  .w-tab-link .tabs1_link-service.first_tab,
+  .w-tab-menu .tabs1_link-service.first_tab {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
-  .w-tab-link .tabs1_link-service._3rd, .w-tab-menu .tabs1_link-service._3rd {
+  .w-tab-link .tabs1_link-service._3rd,
+  .w-tab-menu .tabs1_link-service._3rd {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -9196,7 +9204,8 @@ div.output {
   flex-direction: column;
 }
 
-.search-box-suggestion, .main-search-bar {
+.search-box-suggestion,
+.main-search-bar {
   display: flex;
   align-items: center;
   width: inherit;
@@ -9214,7 +9223,7 @@ div.output {
 }
 
 .search-input::placeholder {
-  color: #8ea4ac !important;
+  color: grey;
 }
 
 .app-output-box {
