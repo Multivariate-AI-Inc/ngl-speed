@@ -9,6 +9,7 @@ import {
 } from "../../utils"
 import TableComponent from "./TableComponent"
 import Loader from "../../elements/Loader"
+import { toast } from "react-toastify"
 
 const ContentAssistTool = () => {
   const [readingTime, setReadingTime] = useState("")
@@ -40,7 +41,7 @@ const ContentAssistTool = () => {
     const reading = Math.ceil(wordCount / 3.3)
     let min = Math.ceil(reading / 60)
     let sec = Math.ceil(reading % 60)
-    if (wordCount > 100) setReadingTime(min + "min" + sec + "sec")
+    if (wordCount > 100) setReadingTime(min + "min" + " " + sec + "sec")
     else if (wordCount > 25) setReadingTime("30 Sec")
     else setReadingTime("0")
     if (text.trim() == "") {
@@ -110,6 +111,25 @@ const ContentAssistTool = () => {
     return color_code_range[value]
   }
 
+  const parseCSV = (csvString) => {
+    const [headerLine, ...lines] = csvString.split("\n");
+    const headers = headerLine.split(",");
+
+    return lines
+      .filter(line => line.trim() !== "") // Filter out empty lines
+      .map(line => {
+        const values = line.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/); // Handles commas inside quotes
+
+        // Create an object for each row and match values to headers
+        return headers.reduce((obj, header, index) => {
+          const value = values[index] !== undefined ? values[index].replace(/(^"|"$)/g, "").trim() : ""; // Default to empty string if undefined
+          obj[header.trim()] = value;
+          return obj;
+        }, {});
+      })
+      .filter(row => Object.values(row).some(value => value !== "")); // Filter out rows with only empty values
+  };
+
   // generate included score and store
   function generateIncludedScoreAndStore(data, scores) {
     let score = 0
@@ -122,7 +142,7 @@ const ContentAssistTool = () => {
     const finalScore = ((score / scores.maxPowerScore) * 100).toFixed(2)
     setRecommendationsScore(finalScore + "%")
   }
-  
+
   const handlePlagiarismCheck = async () => {
     let confirmation = confirm(
       "Are you sure you want to check whether similar text appears elsewhere on the web?",
@@ -151,51 +171,12 @@ const ContentAssistTool = () => {
         }
         const response = await fetch("/api/plagiarism-detector", requestOptions)
         const result = await response.json()
-
-        let parser = new DOMParser()
-        let doc = parser.parseFromString(result, "text/html")
-        let table = doc.querySelector("table")
-        let rows = table.querySelectorAll("tr")
-        if (rows.length > 1) {
-          // Loop through the rows and extract the data
-          let tableDataArray = []
-          rows.forEach((row, rowCount) => {
-            if (rowCount !== 0) {
-              let cells = row.querySelectorAll("td")
-              let cellArray = []
-              // Loop through the cells and extract the cell data
-              cells.forEach(cell => {
-                if (cell.textContent !== "Scraping")
-                  cellArray.push(cell.textContent)
-              })
-              tableDataArray.push(cellArray)
-            } else {
-              let thCells = row.querySelectorAll("th")
-              let headerArray = []
-              thCells.forEach(cell => {
-                if (cell.textContent !== "Method")
-                  headerArray.push(cell.textContent)
-              })
-              tableDataArray.push(headerArray)
-            }
-          })
-          setTableData(tableDataArray)
-        } else {
-          if (input.trim() !== "") {
-            if (rows.length == 1) {
-              const paragraph =
-                "Currently, we are in high demand. Please try again later."
-              setError(paragraph)
-            } else {
-              throw new Error("Something went Wrong!")
-            }
-          } else {
-            throw new Error("Something went Wrong!")
-          }
-        }
+        const jsonData = await parseCSV(result)
+        setTableData(jsonData)
       } catch (error) {
         console.error(error)
-        alert("Something went Wrong!")
+        // alert("Something went Wrong!")
+        setError("Something went Wrong! Please try again")
       } finally {
         setLoading(false)
       }
@@ -215,15 +196,15 @@ const ContentAssistTool = () => {
         </div>
         <div className="tool-row">
           <div className="content-left-side-main">
-            <h5 className="mb-10">Enter content below</h5>
+            <h5 className="mb-10 color-brand-1">Enter content below</h5>
             <div className="d-flex mb-20 content-subtitiles">
               <p className="read">
                 Reading Time:{" "}
-                <span className="reading_time">{readingTime}</span>
+                <span className="font-sm-bold color-brand-1">{readingTime}</span>
               </p>
               <p className="read">
                 Readability Score:{" "}
-                <span className="readability_score">{readabilityScore}</span>
+                <span className="font-sm-bold color-brand-1">{readabilityScore}</span>
                 <span
                   className="square"
                   style={{ backgroundColor: colorCode(readabilityScore) }}
@@ -231,7 +212,7 @@ const ContentAssistTool = () => {
               </p>
               <p className="read">
                 Implementation Score:{" "}
-                <span className="recommendations_score">
+                <span className="font-sm-bold color-brand-1">
                   {recommendationsScore}
                 </span>
               </p>
@@ -248,11 +229,11 @@ const ContentAssistTool = () => {
               aria-label="Write your content here...">
             </textarea>
             <div className="main-sub-options">
-              <p className="read">
-                Characters: <span id="char_count">{charCount}</span>
+              <p className="font-sm-bold color-brand-1">
+                Characters: <span className="font-lg-bold">{charCount}</span>
               </p>
-              <p className="read">
-                Words: <span id="word_count">{wordCount}</span>
+              <p className="font-sm-bold color-brand-1">
+                Words: <span className="font-lg-bold">{wordCount}</span>
               </p>
             </div>
           </div>
@@ -275,7 +256,7 @@ const ContentAssistTool = () => {
               ></textarea>
               <input
                 type="button"
-                className="textAreaFontSize sub-button"
+                className="textAreaFontSize sub-button font-lg-bold"
                 value="Submit"
                 onClick={handleKeywordsSubmit}
               />
@@ -313,7 +294,7 @@ const ContentAssistTool = () => {
               ></textarea>
               <input
                 type="button"
-                className="textAreaFontSize cls-button"
+                className="textAreaFontSize sub-button font-lg-bold"
                 value="Clear"
                 onClick={handleClearBox}
               />
@@ -346,6 +327,13 @@ const ContentAssistTool = () => {
           <Loader />{" "}
         </div>
       )}
+      {
+        error && (
+          <p className="font-2xl-bold color-grey-400 text-center">
+            Something went wrong!! Please try again....
+          </p>
+        )
+      }
       <div
         id="table-container"
         className={tableData || error ? "" : "hidden"}
