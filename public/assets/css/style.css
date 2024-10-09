@@ -9402,7 +9402,7 @@ img.device-icon-logo {
     opacity: 1; /* Fully visible */
   }
   50% {
-    opacity: 0; /* Invisible */
+    opacity: 0.3; /* Invisible */
   }
 }
 /* purgecss end ignore */
