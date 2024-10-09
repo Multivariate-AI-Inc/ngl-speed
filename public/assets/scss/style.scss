@@ -79,20 +79,20 @@ TABLE CONTENT
   cursor: pointer;
 }
 
-.multi-tool-suggestions-items{
+.multi-tool-suggestions-items {
   margin: 10px 0;
   padding: 15px;
-  box-shadow: 2px 4px 8px rgba(0,0,0,.1);
-  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background-color: #fff;
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
-.multi-tool-suggestions-items:hover{
+.multi-tool-suggestions-items:hover {
   background-color: #e0f1f4;
 }
 // *************** keyword suggestion tool ******************
-.suggestion-tab{
+.suggestion-tab {
   // background-color: #fff;
   border-radius: 10px;
   justify-content: center;
@@ -103,7 +103,7 @@ TABLE CONTENT
   display: flex;
   cursor: pointer;
 }
-.suggestion-tab img{
+.suggestion-tab img {
   width: 30px;
   height: 30px;
 }
@@ -131,8 +131,8 @@ TABLE CONTENT
   padding-left: 20px;
   text-align: left;
   padding-bottom: 1em;
-  margin-block-start: .3em;
-  margin-block-end: .3em;
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
 }
 
 .chart-container {
@@ -168,7 +168,7 @@ TABLE CONTENT
 }
 
 // *************** word to html converter tool ******************
-.output-box{
+.output-box {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   padding: 20px 10px 30px 10px;
@@ -1239,7 +1239,7 @@ div.output {
   font-size: 18px;
 }
 
-.search-input::placeholder{
+.search-input::placeholder {
   color: grey;
 }
 .app-output-box {
@@ -1892,5 +1892,23 @@ img.device-icon-logo {
 /* purgecss start ignore */
 .wp-block-table {
   overflow-x: auto;
+}
+// custom css for disclaimer
+.blinking-text {
+  color: red; /* Text color */
+  animation: blink 1s infinite; /* Blinking effect */
+  h4 {
+    color: red;
+  }
+}
+/* Blinking animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0; /* Invisible */
+  }
 }
 /* purgecss end ignore */
