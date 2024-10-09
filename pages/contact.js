@@ -22,7 +22,7 @@ const ContactUs = () => {
                 <div className="col-lg-7">
                   <span className="title-line line-48">Get in Touch</span>
                   <h1 className="color-brand-1 mb-20 mt-10">
-                    We’d love to hear
+                    We’d love to hear&nbsp;
                     <br className="d-none d-lg-block" />
                     from you.
                   </h1>

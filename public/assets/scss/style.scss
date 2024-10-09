@@ -1899,4 +1899,22 @@ img.device-icon-logo {
 .wp-block-table {
   overflow-x: auto;
 }
+// custom css for disclaimer
+.blinking-text {
+  color: red; /* Text color */
+  animation: blink 1s infinite; /* Blinking effect */
+  h4 {
+    color: red;
+  }
+}
+/* Blinking animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0.3; /* Invisible */
+  }
+}
 /* purgecss end ignore */

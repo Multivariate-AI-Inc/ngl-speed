@@ -9392,6 +9392,23 @@ img.device-icon-logo {
   overflow-x: auto;
 }
 
+.blinking-text {
+  color: red; /* Text color */
+  animation: blink 1s infinite; /* Blinking effect */
+}
+.blinking-text h4 {
+  color: red;
+}
+
+/* Blinking animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0.3; /* Invisible */
+  }
+}
 /* purgecss end ignore */
 
 /*# sourceMappingURL=style.css.map */
