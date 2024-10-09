@@ -353,7 +353,8 @@ table#response-table {
 }
 
 #response-table .header-row {
-  background-color: #17a2b8;
+  // background-color: #17a2b8;
+  background-color: var(--lightGreen);
   font-size: 1.2rem;
   line-height: 2rem;
 }
@@ -363,15 +364,16 @@ table#response-table {
 
 #response-table .respEven_row {
   background-color: #dddddd5c;
-  color: #17a2b8 !important;
+  color: var(--lightGreen) !important;
 }
 
 #response-table tr:last-of-type {
-  border-bottom: 3px solid #17a2b8;
+  // border-bottom: 3px solid #17a2b8;
+  border-bottom: 3px solid var(--lightGreen);
 }
 
 #response-table tr {
-  border-bottom: 1px solid #1c7df840;
+  border-bottom: 1px solid var(--lightGreen);
 }
 
 #table-container {
@@ -405,7 +407,8 @@ table#response-table {
 }
 .content-right-side {
   flex: 30%;
-  background-color: #17a2b8;
+  // background-color: #17a2b8;
+  background-color: var(--lightGreen);
   padding: 10px;
   border: 1px solid rgb(185, 185, 201);
 }
@@ -426,6 +429,9 @@ table#response-table {
   padding: 10px;
   border-radius: 5px;
   background-color: white;
+}
+.sub-button {
+  border: 1px solid var(--bs-warning);
 }
 .textbox-title {
   color: #fff;
