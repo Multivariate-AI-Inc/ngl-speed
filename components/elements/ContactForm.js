@@ -163,8 +163,13 @@ const ContactForm = () => {
                 with any such sites or entities.
               </p>
               <p>
-                Please verify any information directly with us through our
-                official website to avoid potential scams or misinformation.
+                Please verify any information directly via email -{" "}
+                <strong>contact@nextgrowthlabs.com</strong> to avoid potential
+                scams or misinformation.
+              </p>
+              <p>
+                Please do not use the below form for any non business queries as
+                these emails are handled by a separate team.
               </p>
             </div>
             <div className="col-lg-6 col-sm-6">
