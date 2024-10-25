@@ -43,7 +43,7 @@ const CloudDataCostCalculator = () => {
             <div className="input-grid">
               <div className="input-container" id="middle-input">
                 <div className="input-group">
-                  <label for="monthlyData">Monthly Data in GB:</label>
+                  <label htmlFor="monthlyData">Monthly Data in GB:</label>
                   <input
                     type="number"
                     id="monthlyData"
@@ -68,7 +68,7 @@ const CloudDataCostCalculator = () => {
 
               <div className="input-container">
                 <div className="input-group">
-                  <label for="queryMultiplier">Query Multiplier:</label>
+                  <label htmlFor="queryMultiplier">Query Multiplier:</label>
                   <input
                     type="number"
                     id="queryMultiplier"
@@ -96,7 +96,7 @@ const CloudDataCostCalculator = () => {
               </div>
               <div className="input-container">
                 <div className="input-group">
-                  <label for="numberOfUsers">Number of Users:</label>
+                  <label htmlFor="numberOfUsers">Number of Users:</label>
                   <input
                     type="number"
                     id="numberOfUsers"
@@ -120,7 +120,7 @@ const CloudDataCostCalculator = () => {
               </div>
               <div className="input-container">
                 <div className="input-group">
-                  <label for="numberOfRows">Number of rows in Million:</label>
+                  <label htmlFor="numberOfRows">Number of rows in Million:</label>
                   <input
                     type="number"
                     id="numberOfRows"

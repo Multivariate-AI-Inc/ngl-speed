@@ -4,7 +4,7 @@ const CloudDataToolArticle = () => {
   return (
     <>
       <div className="container mt-90">
-        <h3 class="color-brand-1 mb-25 mt-10">
+        <h3 className="color-brand-1 mb-25 mt-10">
           <b>Overview</b>
         </h3>
         <p className="font-md color-grey-400 mb-20">
