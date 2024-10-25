@@ -9,7 +9,9 @@ const GscPagesInsights = () => {
         <>
             <PageHead
                 title={"Next Tool"}
-                canonical={"https://nextgrowthlabs.com/gsc-page-insights"}
+                ogDescription="Next Tool seamlessly integrates Google Search Console, Analytics, and Ads to provide valuable insights for optimizing website performance and ad effectiveness."
+                ogType="article"
+                canonical={"https://intelligence.nextgrowthlabs.com/tools/gsc-page-insights"}
             />
 
             <Layout>
