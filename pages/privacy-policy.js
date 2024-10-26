@@ -352,7 +352,7 @@ const Privacy = () => {
                     We collect Google user data solely to enhance the functionality of our application. This includes using data to provide users with interactive analytics, data tables, filters, and other features that allow for in-depth analysis and insights. All user data is processed and displayed solely within the application to improve performance and user experience. We do not use Google user data for any purposes beyond delivering a robust and insightful user experience.
                   </p>
                   <h5 className="color-brand-1 mb-20">
-                    1.4.2. Data Security and Compliance
+                    1.4.2. Transfer of Google User Data to Third Parties
                   </h5>
                   <p className="font-md color-grey-500 mb-30">
                     We use Google user data exclusively in an analytics capacity within our tool and do not transfer or share this data with any third parties. No data is used for advertising, marketing, or any purposes outside of the application’s performance and analytics features. All data handling remains strictly within the scope of improving the user’s experience and delivering analytical insights within the application.
