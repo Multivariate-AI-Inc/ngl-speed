@@ -1,9 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-// import PageHead from "../components/elements/PageHead";
-// import Layout from "../components/layout/Layout";
-// import Image from "next/image";
 const PageHead = dynamic(() => import("../components/elements/PageHead"));
 const Layout = dynamic(() => import("../components/layout/Layout"));
 const Image = dynamic(() => import("next/image"));
@@ -343,6 +340,22 @@ const Privacy = () => {
                     receive information when you register through a NextLabs
                     partner (e.g., a partner who co-hosts an event, webinar, or
                     whitepaper).
+                  </p>
+                  {/* added this next tool auth verification */}
+                  <h5 className="color-brand-1 mb-20">
+                    1.4. Google User Data Usage and Sharing
+                  </h5>
+                  <h5 className="color-brand-1 mb-20">
+                    1.4.1. Purpose of Google User Data Collection
+                  </h5>
+                  <p className="font-md color-grey-500 mb-30">
+                    We collect Google user data solely to enhance the functionality of our application. This includes using data to provide users with interactive analytics, data tables, filters, and other features that allow for in-depth analysis and insights. All user data is processed and displayed solely within the application to improve performance and user experience. We do not use Google user data for any purposes beyond delivering a robust and insightful user experience.
+                  </p>
+                  <h5 className="color-brand-1 mb-20">
+                    1.4.2. Data Security and Compliance
+                  </h5>
+                  <p className="font-md color-grey-500 mb-30">
+                    We use Google user data exclusively in an analytics capacity within our tool and do not transfer or share this data with any third parties. No data is used for advertising, marketing, or any purposes outside of the application’s performance and analytics features. All data handling remains strictly within the scope of improving the user’s experience and delivering analytical insights within the application.
                   </p>
                   <h4 className="color-brand-1 mb-20" id="section2">
                     2. How NextLabs Uses Information
