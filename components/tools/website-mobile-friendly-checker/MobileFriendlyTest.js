@@ -22,8 +22,17 @@ const MobileFriendlyTest = () => {
     }
     setInputUrl(mainUrl)
     try {
-      const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`
-      const response = await fetch(apiUrl)
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: mainUrl }),
+      }
+      const response = await fetch("/api/get-page", requestOptions)
+      if (!response.ok) {
+        throw new Error("Network response was not ok")
+      }
       const htmlContent = await response.json()
       const parser = new DOMParser()
       const doc = parser.parseFromString(htmlContent.body, "text/html")
@@ -35,14 +44,14 @@ const MobileFriendlyTest = () => {
         stylesheets: Array.from(stylesheets).map(sheet => sheet.href),
         mediaQueries: findMediaQueriesInHTML(htmlContent),
       }
-      
+
       setResult(resultData)
     } catch (error) {
       console.error("Error fetching URL:", error)
       setError(true)
       setLoading(false)
 
-    }finally{
+    } finally {
       setLoading(false)
     }
   }
@@ -65,8 +74,8 @@ const MobileFriendlyTest = () => {
     return match ? parseInt(match[1]) : 0
   }
 
-  const createTableRow = (type, value, isSupported) => (
-    <tr className="table_row">
+  const createTableRow = (type, value, isSupported, key) => (
+    <tr className="table_row" key={key}>
       <td style={{ textAlign: "center" }}>{type}</td>
       <td>{value}</td>
       <td style={{ textAlign: "center" }}>
@@ -77,7 +86,8 @@ const MobileFriendlyTest = () => {
         )}
       </td>
     </tr>
-  )
+  );
+
 
   const checkMobileFriendlyStylesheet = async stylesheet => {
     if (!stylesheet) {
@@ -110,11 +120,6 @@ const MobileFriendlyTest = () => {
             Free Mobile Friendly Test
           </h1>
           <p className="font-md color-grey-500 mb-25">
-            {/* Test the mobile-friendliness of your website with our easy-to-use
-            tool. Simply enter your website's URL and our tool will analyze it
-            for mobile compatibility, providing a report on its performance and
-            suggesting any necessary changes. Improve your website's mobile
-            experience for your users today! */}
             Ensure your website is optimized for mobile users with our powerful
             and intuitive mobile-friendly test tool. Simply enter your website's
             URL, and let our advanced analysis deliver a comprehensive report on
@@ -165,21 +170,20 @@ const MobileFriendlyTest = () => {
               >
                 <div>
                   <div
-                    className={`${"tick-cell"} ${
-                      result.viewportMetaTag &&
+                    className={`${"tick-cell"} ${result.viewportMetaTag &&
                       result.viewportMetaTag.includes("width=device-width")
-                        ? "✔"
-                        : "✘"
-                    }`}
+                      ? "✔"
+                      : "✘"
+                      }`}
                   >
                     {result.viewportMetaTag &&
-                    result.viewportMetaTag.includes("width=device-width")
+                      result.viewportMetaTag.includes("width=device-width")
                       ? "✔"
                       : "✘"}
                   </div>
                   <div className="mt-10">
                     {result.viewportMetaTag &&
-                    result.viewportMetaTag.includes("width=device-width")
+                      result.viewportMetaTag.includes("width=device-width")
                       ? "The website supports mobile devices"
                       : "The website does not support mobile devices"}
                   </div>
@@ -205,17 +209,26 @@ const MobileFriendlyTest = () => {
                     <tbody>
                       {result.viewportMetaTag &&
                         createTableRow("Meta", result.viewportMetaTag, true)}
-                      {result.stylesheets.map(sheet =>
+
+                      {result.stylesheets.map((sheet, index) =>
                         createTableRow(
                           "Stylesheet",
                           sheet,
                           checkMobileFriendlyStylesheet(sheet),
+                          { key: `stylesheet-${index}` },
                         ),
                       )}
-                      {result.mediaQueries.map(query =>
-                        createTableRow("Media Query", query, true),
+
+                      {result.mediaQueries.map((query, index) =>
+                        createTableRow(
+                          "Media Query",
+                          query,
+                          true,
+                          { key: `mediaquery-${index}` },
+                        ),
                       )}
                     </tbody>
+
                   </table>
                 </div>
               </div>

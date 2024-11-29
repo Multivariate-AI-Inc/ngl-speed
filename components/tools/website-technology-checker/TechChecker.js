@@ -20,28 +20,28 @@ import RenderData from "./RenderData"
 
 
 const initialStateTechStack = {
-    Analytics: null,
-    TagManagers: null,
-    Widgets: null,
-    CDN: null,
-    PAAS: null,
-    SEO: null,
-    Databases: null,
-    FontScript: null,
-    ProgrammingLanguages: null,
-    JavaScriptLibraries: null,
-    WordpressPlugins: null,
-    CMS: null,
-    Blogs: null,
-  };
-  
-  const initialStateAbout = {
-    Title: null,
-    Description: null,
-    Tags: null,
-    Language: null,
-    Country: null,
-  };
+  Analytics: null,
+  TagManagers: null,
+  Widgets: null,
+  CDN: null,
+  PAAS: null,
+  SEO: null,
+  Databases: null,
+  FontScript: null,
+  ProgrammingLanguages: null,
+  JavaScriptLibraries: null,
+  WordpressPlugins: null,
+  CMS: null,
+  Blogs: null,
+};
+
+const initialStateAbout = {
+  Title: null,
+  Description: null,
+  Tags: null,
+  Language: null,
+  Country: null,
+};
 
 const TechChecker = () => {
   const [inputUrl, setInputUrl] = useState("")
@@ -80,9 +80,14 @@ const TechChecker = () => {
     setInputUrl(url)
     setOldUrl(url)
     try {
-      const response = await fetch(
-        "https://js-apis.maakeetoo.com/page-seo/get-page?url=" + url,
-      )
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      }
+      const response = await fetch("/api/get-page", requestOptions)
       if (!response.ok) {
         throw new Error("Network response was not ok")
       }
@@ -287,12 +292,12 @@ const TechChecker = () => {
         )}
 
         {/* ************************** */}
-        { 
-        (aboutData.Title !== null) &&
-            <RenderData
+        {
+          (aboutData.Title !== null) &&
+          <RenderData
             techstackData={techStack}
             aboutData={aboutData}
-            />
+          />
         }
 
         {/* ************************** */}

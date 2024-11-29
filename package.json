@@ -15,6 +15,7 @@
     "@wordpress/block-library": "^9.3.0",
     "cheerio": "^1.0.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
     "echarts-for-react": "^3.0.2",
     "jodit-react": "^4.1.2",
     "jotai": "^2.8.3",
