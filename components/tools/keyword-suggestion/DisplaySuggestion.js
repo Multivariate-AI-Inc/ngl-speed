@@ -21,7 +21,7 @@ const DisplaySuggestion = ({ suggestions, selectedSource }) => {
     if (selectedSuggestions.length > 0) {
       downloadCsvFile(selectedSuggestions)
     } else {
-      console.log("No suggestions selected for download.")
+      // console.log("No suggestions selected for download.")
       toast.error("Please select keywords first!", { autoClose: 2000 })
     }
   }
