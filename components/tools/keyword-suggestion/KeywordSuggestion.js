@@ -17,8 +17,8 @@ const KeywordSuggestion = () => {
   const [selectedSource, setSelectedSource] = useState("play")
   const [isProcessing, setIsProcessing] = useState(false)
   const [isVerified, setIsVerified] = useState(false)
-  
-// google recatcha 
+
+  // google recatcha 
   async function handleCaptchaSubmission(token) {
     try {
       if (token) {
@@ -74,6 +74,10 @@ const KeywordSuggestion = () => {
     cacheTime: 10 * 60 * 1000,
     enabled: false,
     retry: 0,
+    onError: (error) => {
+      // Log the error to the console on the client side
+      console.error("Error fetching keyword suggestion:", error);
+    },
   })
 
   const getSuggestion = async () => {
