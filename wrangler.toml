@@ -1,1 +1,16 @@
-compatibility_flags = [ "nodejs_compat" ]
+name = "ngl-speed"
+type = "javascript"
+
+[env.production]
+workers_dev = false
+route = "nextgrowthlabs.com/*"
+
+[build]
+  command = "npm run build"
+  output_dir = "out"
+
+[compatibility_flags]
+  nodejs_compat = true
+
+[build.upload]
+  pages_build_output_dir = "./out"
