@@ -1,5 +1,5 @@
-const userName = process.env.JS_API_USER_NAME || "Not Set";
-const password = process.env.JS_API_PASSWORD || "Not Set";
+const userName = process.env.NEXT_PUBLIC_JS_API_USER_NAME || "Not Set";
+const password = process.env.NEXT_PUBLIC_JS_API_PASSWORD || "Not Set";
 export const runtime = "edge"
 export default function handler(req, res) {
     console.log("Username:", userName);

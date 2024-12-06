@@ -40,7 +40,7 @@ export default async function handler(req) {
 async function googleSuggestionFull(baseUrl, term, country, lang) {
   const url = `${baseUrl}g-suggestion?keyword=${term}&gl=${country}&hl=${lang}`
   const myHeaders = new Headers()
-  const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
+  const authHeader = 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_JS_API_USER_NAME}:${process.env.NEXT_PUBLIC_JS_API_PASSWORD}`).toString('base64');
   myHeaders.append("Content-Type", "application/json")
   myHeaders.append("Authorization", authHeader)
   const requestOptions = {

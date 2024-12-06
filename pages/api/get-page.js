@@ -36,7 +36,7 @@ export default async function handler(req) {
 const getPageContent = async (url, robotTxt = false) => {
     try {
         let apiUrl = robotTxt ? `https://js-apis.maakeetoo.com/page-seo/get-page?url=${url}/robots.txt` : `https://js-apis.maakeetoo.com/page-seo/get-page?url=${url}`;
-        const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
+        const authHeader = 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_JS_API_USER_NAME}:${process.env.NEXT_PUBLIC_JS_API_PASSWORD}`).toString('base64');
         const requestOptions = {
             method: "GET",
             headers: {

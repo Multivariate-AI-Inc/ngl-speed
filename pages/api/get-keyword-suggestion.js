@@ -38,7 +38,7 @@ export default async function handler(req, res) {
 
 const getSuggestion = async (url, requestBody, selectedSource) => {
   try {
-    const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
+    const authHeader = 'Basic ' + Buffer.from(`${process.env.NEXT_PUBLIC_JS_API_USER_NAME}:${process.env.NEXT_PUBLIC_JS_API_PASSWORD}`).toString('base64');
     const response = await fetch(url, {
       method: 'POST',
       headers: {
