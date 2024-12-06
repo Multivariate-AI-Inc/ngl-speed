@@ -64,6 +64,7 @@ const KeywordSuggestion = () => {
           lang: "en",
         }),
       }).then(res => {
+        console.log('res error', res.error || res);
         if (!res.ok) {
           // Throw an error if the response status is not successful
           throw new Error(`HTTP error! status: ${res.status}`)
