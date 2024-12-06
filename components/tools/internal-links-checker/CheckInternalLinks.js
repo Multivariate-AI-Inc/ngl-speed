@@ -16,12 +16,12 @@ const CheckInternalLinks = () => {
   const [linkDetails, setLinkDetails] = useState([])
 
   const handleSubmit = async () => {
-setLinkCount({
-  total: 0,
-  internal: 0,
-  external: 0,
-})
-setLinkDetails([])
+    setLinkCount({
+      total: 0,
+      internal: 0,
+      external: 0,
+    })
+    setLinkDetails([])
     setError(false)
     setLoading(true)
     const mainUrl = await formatURL(inputUrl)
@@ -31,9 +31,15 @@ setLinkDetails([])
       return
     }
     setInputUrl(mainUrl)
-    const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`
     try {
-      const response = await fetch(apiUrl)
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: mainUrl }),
+      }
+      const response = await fetch("/api/get-page", requestOptions)
       if (!response.ok) {
         throw new Error("Network response was not ok")
       }
@@ -44,59 +50,56 @@ setLinkDetails([])
       setLoading(false)
     }
   }
-const parseHtml = (htmlString, url) => {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, "text/html");
-  const allLinks = doc.getElementsByTagName("a");
-  const linkData = [];
-  let internalLinks = 0;
-  let externalLinks = 0;
+  const parseHtml = (htmlString, url) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    const allLinks = doc.getElementsByTagName("a");
+    const linkData = [];
+    let internalLinks = 0;
+    let externalLinks = 0;
 
-  const maxCharacterLimit = 30; 
-  const hostname = new URL(url).hostname;
+    const maxCharacterLimit = 30;
+    const hostname = new URL(url).hostname;
 
-  for (let i = 0; i < allLinks.length; i++) {
+    for (let i = 0; i < allLinks.length; i++) {
       const link = allLinks[i];
       let href = link.getAttribute("href");
       if (!href || href.startsWith("http://support.google.com/websearch/") || href.startsWith("http://webcache.googleusercontent.com/search")) {
-          continue;
+        continue;
       }
 
       if (href.startsWith("/")) {
-          href = `https://${hostname}${href}`;
+        href = `https://${hostname}${href}`;
       } else if (href.startsWith("#")) {
-          href = `https://${hostname}${href}`;
+        href = `https://${hostname}${href}`;
       }
 
       const anchorText = link.textContent ? link.textContent.trim() : "";
-      const modifiedAnchorText = link.querySelector("img") 
-          ? "Image" 
-          : anchorText.length > maxCharacterLimit 
-              ? anchorText.substring(0, maxCharacterLimit) 
-              : anchorText;
+      const modifiedAnchorText = link.querySelector("img")
+        ? "Image"
+        : anchorText.length > maxCharacterLimit
+          ? anchorText.substring(0, maxCharacterLimit)
+          : anchorText;
       const isInternalLink = href.includes(hostname);
       const type = isInternalLink ? "Internal" : "External";
       const follow = link.getAttribute("rel") === "nofollow" ? "✘" : "✔";
 
       if (type === "Internal") {
-          internalLinks++;
+        internalLinks++;
       } else {
-          externalLinks++;
+        externalLinks++;
       }
 
       linkData.push({ href, anchorText: modifiedAnchorText, type, follow });
-  }
-
-  console.log("link data", linkData);
-  setLinkCount({
+    }
+    setLinkCount({
       total: allLinks.length,
       internal: internalLinks,
       external: externalLinks,
-  });
-  setLinkDetails(linkData);
-  setLoading(false);
-  console.log("link", linkDetails);
-};
+    });
+    setLinkDetails(linkData);
+    setLoading(false);
+  };
 
 
 
@@ -162,7 +165,7 @@ const parseHtml = (htmlString, url) => {
           {/* ************************** */}
           {linkCount.total > 0 && (
             <div id="link_count" className="result-section">
-             <span className="color-brand-1"> {linkCount.total} </span> <br />
+              <span className="color-brand-1"> {linkCount.total} </span> <br />
               Total Links <br />
               <span className="color-brand-1"> {linkCount.internal} </span> <br />
               Internal Links

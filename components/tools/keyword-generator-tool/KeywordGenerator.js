@@ -15,8 +15,8 @@ function KeywordGenerator() {
       toast.warning("Please enter keyword first !", { autoClose: 2000 })
       return
     }
-    if(inputKeyword === keyValue){
-      toast.warning("Please enter new keyword", {autoClose:2000})
+    if (inputKeyword === keyValue) {
+      toast.warning("Please enter new keyword", { autoClose: 2000 })
       return
     }
 
@@ -29,7 +29,6 @@ function KeywordGenerator() {
     async function fetchSuggestions() {
       try {
         const response = await getKeywordResults({ keyword: inputKeyword })
-        console.log("response data", response)
         resultsKeywordObj = response
       } catch (err) {
         setLoading(false)
@@ -45,7 +44,6 @@ function KeywordGenerator() {
 
   async function getKeywordResults(data) {
     const apiURL = "/api/keyword-generator"
-    console.log(data)
     let keywords
     await fetch(apiURL, {
       method: "POST",

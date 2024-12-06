@@ -60,8 +60,8 @@ const fetchMetaData = async url => {
         title.length < 50
           ? "Too Short"
           : title.length > 63
-          ? "Too Long"
-          : "Good Title"
+            ? "Too Long"
+            : "Good Title"
       let descriptionLength = meta_description.length
       let descriptionStatus
       if (descriptionLength < 100) {
@@ -80,6 +80,6 @@ const fetchMetaData = async url => {
     }
   } catch (error) {
     console.error(error)
-    throw new Error(`Error fetching rating trends for android: ${error}`)
+    throw new Error(`Error fetching meta data: ${error}`)
   }
 }
