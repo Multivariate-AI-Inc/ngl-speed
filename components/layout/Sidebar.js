@@ -11,7 +11,7 @@ const Sidebar = ({ openClass }) => {
             <div className="mobile-logo">
               <Link className="d-flex" href="/">
                 <Image
-                  alt="logo"
+                  alt="Nextlabs"
                   src="/assets/imgs/template/logo.svg"
                   width={40}
                   height={40}
@@ -36,6 +36,11 @@ const Sidebar = ({ openClass }) => {
                         <li>
                           <Link href="/free-app-store-optimization-tool">
                             Tools
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/get-free-aso-analysis">
+                            Get Free ASO Analysis
                           </Link>
                         </li>
                         <li>
