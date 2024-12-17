@@ -9,56 +9,56 @@ const Marquee = () => {
             src="/images/HDFC.svg"
             width={120}
             height={120}
-            alt=""
+            alt="HDFC"
             className="marquee-image"
           />
           <Image
             src="/images/Groww.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Groww"
             className="marquee-image"
           />
           <Image
             src="/images/Bajaj-Finserve.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Bajaj-Finserve"
             className="marquee-image"
           />
           <Image
             src="/images/B612.svg"
             width={120}
             height={120}
-            alt=""
+            alt="B612"
             className="marquee-image"
           />
           <Image
             src="/images/Alibabagroup.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Alibabagroup"
             className="marquee-image"
           />
           <Image
             src="/images/Cred.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Cred"
             className="marquee-image"
           />
           <Image
             src="/images/Tata-1mg.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Tata-1mg"
             className="marquee-image"
           />
           <Image
             src="/images/Urban-company.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Urban company"
             className="marquee-image"
           />
         </div>
@@ -67,56 +67,56 @@ const Marquee = () => {
             src="/images/Kotak.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Kotak"
             className="marquee-image"
           />
           <Image
             src="/images/Dunzo.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Dunzo"
             className="marquee-image"
           />
           <Image
             src="/images/Dream11.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Dream11"
             className="marquee-image"
           />
           <Image
             src="/images/Airtel.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Airtel"
             className="marquee-image"
           />
           <Image
             src="/images/ZEE.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Zee"
             className="marquee-image"
           />
           <Image
             src="/images/OYO.svg"
             width={120}
             height={120}
-            alt=""
+            alt="OYO"
             className="marquee-image"
           />
           <Image
             src="/images/Josh.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Josh"
             className="marquee-image"
           />
           <Image
             src="/images/Share-Chat.svg"
             width={120}
             height={120}
-            alt=""
+            alt="Share-chat"
             className="marquee-image"
           />
         </div>
@@ -127,7 +127,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Make-my-trip"
             className="marquee-image"
           />
           <Image
@@ -135,7 +135,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Goibibo"
             className="marquee-image"
           />
           <Image
@@ -143,7 +143,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="ixigo"
             className="marquee-image"
           />
           <Image
@@ -151,7 +151,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Yatra"
             className="marquee-image"
           />
           <Image
@@ -159,7 +159,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Nykaa"
             className="marquee-image"
           />
           <Image
@@ -167,7 +167,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Myntra"
             className="marquee-image"
           />
           <Image
@@ -175,7 +175,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Snapdeal"
             className="marquee-image"
           />
         </div>
@@ -185,7 +185,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="IDFC"
             className="marquee-image"
           />
           <Image
@@ -193,7 +193,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Yes bank"
             className="marquee-image"
           />
           <Image
@@ -201,7 +201,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Edelweiss"
             className="marquee-image"
           />
           <Image
@@ -209,7 +209,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="ELSA"
             className="marquee-image"
           />
           <Image
@@ -217,7 +217,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="CoinMarketcap"
             className="marquee-image"
           />
           <Image
@@ -225,7 +225,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="SimpleLearn"
             className="marquee-image"
           />
           <Image
@@ -233,7 +233,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="BYJUs Exam Prep"
             className="marquee-image"
           />
           <Image
@@ -241,7 +241,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Mint"
             className="marquee-image"
           />
         </div>
@@ -251,7 +251,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Magicbricks"
             className="marquee-image"
           />
           <Image
@@ -259,7 +259,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Housing"
             className="marquee-image"
           />
           <Image
@@ -267,7 +267,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Nobroker"
             className="marquee-image"
           />
           <Image
@@ -275,7 +275,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Ultrahuman"
             className="marquee-image"
           />
           <Image
@@ -283,7 +283,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Fynd"
             className="marquee-image"
           />
           <Image
@@ -291,7 +291,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Fancode"
             className="marquee-image"
           />
           <Image
@@ -299,7 +299,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Fectar"
             className="marquee-image"
           />
           <Image
@@ -307,7 +307,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="One code ZET"
             className="marquee-image"
           />
         </div>
@@ -317,7 +317,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="HDFC"
             className="marquee-image"
           />
           <Image
@@ -325,7 +325,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Groww"
             className="marquee-image"
           />
           <Image
@@ -333,7 +333,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Bajaj-Finserve"
             className="marquee-image"
           />
           <Image
@@ -341,7 +341,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="B612"
             className="marquee-image"
           />
           <Image
@@ -349,7 +349,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Alibabagroup"
             className="marquee-image"
           />
           <Image
@@ -357,7 +357,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Cred"
             className="marquee-image"
           />
           <Image
@@ -365,7 +365,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Tata-1mg"
             className="marquee-image"
           />
           <Image
@@ -373,7 +373,7 @@ const Marquee = () => {
             loading="eager"
             width={120}
             height={120}
-            alt=""
+            alt="Urban-company"
             className="marquee-image"
           />
         </div>

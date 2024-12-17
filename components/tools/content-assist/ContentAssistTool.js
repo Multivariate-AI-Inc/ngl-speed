@@ -171,8 +171,9 @@ const ContentAssistTool = () => {
         }
         const response = await fetch("/api/plagiarism-detector", requestOptions)
         const result = await response.json()
-        const jsonData = await parseCSV(result)
-        setTableData(jsonData)
+        // const jsonData = await parseCSV(result)
+        // setTableData(jsonData)
+        setTableData(JSON.parse(result))
       } catch (error) {
         console.error(error)
         // alert("Something went Wrong!")
