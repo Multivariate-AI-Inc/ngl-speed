@@ -26,7 +26,7 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
               <div className="header-logo-mobile">
                 <Link className="d-flex" href="/">
                   <Image
-                    alt="Ecom"
+                    alt="nextgrowthlabs"
                     src="/assets/imgs/template/logo.svg"
                     width={40}
                     height={40}
@@ -37,7 +37,7 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                 <div className="header-logo d-flex header-logo-lg-xxl">
                   <Link className="d-flex" href="/">
                     <Image
-                      alt="Ecom"
+                      alt="nextgrowthlabs"
                       src="/assets/imgs/template/logo.svg"
                       width={40}
                       height={40}
@@ -64,6 +64,11 @@ const Header = ({ handleOpen, handleRemove, openClass, addClass }) => {
                     <li>
                       <Link href="/get-free-aso-analysis">
                         Get Free ASO Analysis
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/case-study">
+                        Case Study
                       </Link>
                     </li>
                     <li>

@@ -11,7 +11,7 @@ const Sidebar = ({ openClass }) => {
             <div className="mobile-logo">
               <Link className="d-flex" href="/">
                 <Image
-                  alt="Nextlabs"
+                  alt="nextgrowthlabs"
                   src="/assets/imgs/template/logo.svg"
                   width={40}
                   height={40}
@@ -42,6 +42,11 @@ const Sidebar = ({ openClass }) => {
                           <Link href="/get-free-aso-analysis">
                             Get Free ASO Analysis
                           </Link>
+                        </li>
+                        <li>
+                            <Link href="/case-study">
+                            Case Study
+                            </Link>
                         </li>
                         <li>
                           <Link href="http://blog.nextgrowthlabs.com/">
