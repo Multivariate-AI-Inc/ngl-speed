@@ -44,8 +44,8 @@ const Sidebar = ({ openClass }) => {
                           </Link>
                         </li>
                         <li>
-                            <Link href="/case-study">
-                            Case Study
+                            <Link href="/case-studies">
+                            Case Studies
                             </Link>
                         </li>
                         <li>
