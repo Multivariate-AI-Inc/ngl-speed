@@ -1,5 +1,6 @@
 import "../public/assets/css/style.css"
 import "react-toastify/dist/ReactToastify.css";
+import "swiper/css";
 import { useState, useEffect } from "react"
 function loadGTM(gtmId) {
   const script = document.createElement("script")

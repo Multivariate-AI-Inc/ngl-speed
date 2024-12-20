@@ -434,43 +434,75 @@
     }
   }
 }
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  .card-offer-style-3 {
-    border-radius: 8px;
-    width: 30%;
-    margin: 10px;
-    border: 1px solid $color-gray-80;
-    padding: 0px;
-    margin-bottom: 30px;
-    .card-head {
+
+// .card-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: flex-start;
+//   .card-offer-style-3 {
+//     border-radius: 8px;
+//     width: 30%;
+//     margin: 10px;
+//     border: 1px solid $color-gray-80;
+//     padding: 0px;
+//     margin-bottom: 30px;
+//     .card-head {
+//       padding: 30px;
+//       background-color: $color-white;
+//       display: flex;
+//       flex-direction: column;
+//       .card-image {
+//         max-width: 104px;
+//         width: 100%;
+//         min-width: 104px;
+//         height: 115px;
+//         line-height: 85px;
+//         margin-right: 15px;
+//         padding: 15px 20px;
+//         text-align: center;
+//         background-color: $background-white;
+//         border-radius: 8px;
+//         img {
+//           // display: inline-block;
+//           vertical-align: middle;
+//         }
+//       }
+//     }
+//     .card-info {
+//       padding: 30px 30px 15px 30px;
+//     }
+//   }
+// }
+.card-offer-style-3 {
+  border-radius: 8px;
+  border: 1px solid $color-gray-80;
+  padding: 0px;
+  margin-bottom: 30px;
+  .card-head {
       padding: 30px;
-      background-color: $color-white;
+      background-color: $color-gray-60;
       display: flex;
-      flex-direction: column;
+      align-items: flex-end;
       .card-image {
-        max-width: 104px;
-        width: 100%;
-        min-width: 104px;
-        height: 115px;
-        line-height: 85px;
-        margin-right: 15px;
-        padding: 15px 20px;
-        text-align: center;
-        background-color: $background-white;
-        border-radius: 8px;
-        img {
-          // display: inline-block;
-          vertical-align: middle;
-        }
+          max-width: 104px;
+          width: 100%;
+          min-width: 104px;
+          height: 115px;
+          line-height: 85px;
+          margin-right: 15px;
+          padding: 15px 20px;
+          text-align: center;
+          background-color: $background-white;
+          border-radius: 8px;
+          img {
+              display: inline-block;
+              vertical-align: middle;
+          }
       }
-    }
-    .card-info {
+  }
+  .card-info {
       padding: 30px 30px 15px 30px;
-    }
   }
 }
 .card-support {
