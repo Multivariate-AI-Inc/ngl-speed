@@ -1,4 +1,9 @@
-import Stories from "./Stories";
+
+import dynamic from 'next/dynamic'
+ 
+const Stories = dynamic(() => import('./Stories'), { ssr: false })
+
+// import Stories from "./Stories";
 
 const LatestStories = ()=>{
     return(

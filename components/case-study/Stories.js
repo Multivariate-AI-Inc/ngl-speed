@@ -32,7 +32,7 @@ const Stories = () => {
     return (
         <>
             <Swiper
-                slidesPerView={2}
+                slidesPerView={3}
                 spaceBetween={30}
                 loop={true}
                 autoplay={{
@@ -64,25 +64,25 @@ const Stories = () => {
                         slidesPerView: 3,
                         spaceBetween: 30,
                     },
-                    1350: {
-                        slidesPerView: 4,
-                        spaceBetween: 30,
-                    },
+                    // 1350: {
+                    //     slidesPerView: 3,
+                    //     spaceBetween: 30,
+                    // },
                 }}
                 className="swiper-wrapper"
             >
                 {data.map((item, i) => (
-                    <SwiperSlide className={`swiper-slide ${item.color}`} key={item.title}>
+                    <SwiperSlide className={`swiper-slide ${item.color}`} key={i}>
                         
                         <div className="card-offer-style-3">
                             <div className="card-head">
-                                <div className="card-image"><img src={`assets/imgs/page/homepage1/${item.img}`} alt="iori" /></div>
+                                <div className="card-image"><img src={`/assets/imgs/page/homepage1/${item.img}`} alt="iori" /></div>
                                 <div className="carrd-title">
                                     <h4 className="color-brand-1">{item.title}</h4>
                                 </div>
                             </div>
                             <div className="card-info">
-                                <p className="font-sm color-grey-500 mb-15">Discover powerful features to boost your productivit. You are always welcome to visit our little den. Professional in teir craft! All products were super amazing with strong attension to details, comps and overall vibe.</p>
+                                <p className="font-sm color-grey-500 mb-15">Discover powerful features to boost your productivit. You are always welcome to visit our little den. Professional in teir craft.</p>
                                 <div className="box-button-offer"><Link href='#' className="btn btn-default font-sm-bold pl-0 color-brand-1 hover-up">Learn More
                                     <svg className="w-6 h-6 icon-16 ml-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

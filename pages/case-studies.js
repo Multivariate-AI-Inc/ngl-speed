@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Banner from "../components/case-study/Banner";
 import CaseStudies from "../components/case-study/CaseStudies";
-import LatestStories from "../components/case-study/LatestStories";
+const LatestStories = dynamic(()=> import("../components/case-study/LatestStories"), {ssr:false});
 const PageHead = dynamic(() => import("../components/elements/PageHead"));
 const Layout = dynamic(() => import("../components/layout/Layout"));
 const Contact = dynamic(()=> import("../components/home/Contact"))
@@ -18,8 +18,8 @@ const CaseStudy = () => {
 
             <Layout>
                 <Banner />
-                {/* <CaseStudies /> */}
                 <LatestStories />
+                <CaseStudies />
                 <Contact />
             </Layout>
         </>
