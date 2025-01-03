@@ -25,6 +25,8 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "imagedelivery.net",
+        port: "",
+        pathname: "/**",
       },
       {
         protocol: "https",

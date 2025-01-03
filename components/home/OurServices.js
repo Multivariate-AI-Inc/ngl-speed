@@ -31,7 +31,7 @@ const SERVICES_DATA = [
 const OurServices = () => {
   return (
     <>
-      <section className="section mt-80 content custom-section-css">
+      <section className="section mt-80">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
