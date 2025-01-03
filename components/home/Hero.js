@@ -1,17 +1,22 @@
 import Button from "../elements/Button"
 import Image from "next/image"
 import heroBG from "/public/assets/imgs/page/homepage12/hero-bg.png"
-
+import { useState } from "react";
 const Hero = () => {
+  const fallbackHeroBG = heroBG;
+  const primaryImage = "https://imagedelivery.net/q3BXzhW6eZtLKizEPWZsTQ/cd3908b7-3a5e-4e39-5461-2b59f1cfa900/public";
+  const [imgSrc, setImgSrc] = useState(primaryImage);
+
   return (
     <section className="section banner-12 mb-100">
       <Image
-        src="https://imagedelivery.net/q3BXzhW6eZtLKizEPWZsTQ/cd3908b7-3a5e-4e39-5461-2b59f1cfa900/public"
+        src={imgSrc}
         layout="responsive"
         alt="Hero"
         priority
         width={100}
         height={100}
+        onError={() => setImgSrc(fallbackHeroBG)}
       />
       <div className="asset-1 shape-1"></div>
       <div className="asset-2 shape-2"></div>
