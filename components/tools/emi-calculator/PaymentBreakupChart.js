@@ -1,7 +1,7 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
 
-const PaymentBreakupChart = ({ principal = "5000000", totalInterest = "6985673" }) => {
+const PaymentBreakUpChart = ({ principal = "5000000", totalInterest = "6985673" }) => {
   const getOption = () => {
     return {
       color: ["#ED8C2B", "#82A825", "#F67280"],
@@ -66,4 +66,4 @@ const PaymentBreakupChart = ({ principal = "5000000", totalInterest = "6985673" 
   );
 };
 
-export default PaymentBreakupChart;
+export default PaymentBreakUpChart;

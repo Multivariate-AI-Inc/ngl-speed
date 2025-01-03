@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
-import PaymentBreakupChart from "./PaymentBreakupChart"
+import PaymentBreakUpChart from "./PaymentBreakUpChart"
 const EmiCalculator = () => {
   const [loanAmount, setLoanAmount] = useState(5000000)
   const [loanInterest, setLoanInterest] = useState(14)
@@ -385,7 +385,7 @@ const EmiCalculator = () => {
                   style={{ width: "99%", height: "350px" }}
                   className="mt-40"
                 >
-                  <PaymentBreakupChart principal={loanAmount} totalInterest={totalInterestPayable} />
+                  <PaymentBreakUpChart principal={loanAmount} totalInterest={totalInterestPayable} />
                 </div>
               </div>
             </div>
