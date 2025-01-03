@@ -1662,7 +1662,6 @@ function uniqueArray(arr, key) {
   });
 }
 
-<<<<<<< HEAD
 // ******************** old app search functionality *************************
 // // data fetching
 // function encodingName(e) {
@@ -1792,38 +1791,10 @@ export async function prepareDataForRequests(
   let playQuery = `https://store.maakeetoo.com/apps/search/?q=${currentPlayKeyword}&gl=${country}`
   if (
     playQuery.trim() ===
-=======
-// data fetching
-function encodingName(e) {
-  return encodeURIComponent(e);
-}
-export async function prepareDataForRequests(
-  searchKeyword,
-  selectedCountryCode
-) {
-  let currentNameIOS = searchKeyword;
-  let currentNamePlay = encodingName(searchKeyword);
-  let country = selectedCountryCode;
-  if (currentNameIOS.trim().length < 2 && currentNameIOS.trim() === "") {
-    return false;
-  }
-  const newKeyword = currentNameIOS.split(" ").join("+");
-  const requestIOS = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`;
-  if (
-    requestIOS.trim() ===
-    `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=&country=&limit=30`
-  ) {
-    return false;
-  }
-  let requestPlay = `https://store.maakeetoo.com/apps/search/?q=${currentNamePlay}&gl=${country}`;
-  if (
-    requestPlay.trim() ===
->>>>>>> ssr-dynamic
     `https://store.maakeetoo.com/apps/search/?q=&gl=${country}`
   ) {
     return false;
   }
-<<<<<<< HEAD
   //   preparing query for app store
   const newKeyword = searchKeyword.split(" ").join("+")
   const iosQuery = `https://itunes.apple.com/search?media=software&entity=software%2CiPadSoftware%2CsoftwareDeveloper&term=${newKeyword}&country=${country}&limit=30`
@@ -1858,15 +1829,10 @@ export async function prepareDataForRequests(
     )
     return listData
   }
-=======
-  let listData = await handleRequestsAndProcessData(requestPlay, requestIOS);
-  return listData;
->>>>>>> ssr-dynamic
 }
 
 async function handleRequestsAndProcessData(playData = [], iosData = {}) {
   try {
-<<<<<<< HEAD
     const hasPlayData = playData.length > 0
     const hasIOSData =
       iosData && Array.isArray(iosData.results) && iosData.results.length > 0
@@ -1881,22 +1847,6 @@ async function handleRequestsAndProcessData(playData = [], iosData = {}) {
     // Create suggestion list with device info
     const suggestionList = createListWithDevice(fullAppData)
     return suggestionList
-=======
-    const response1 = await fetch(requestIOS);
-    const response2 = await fetch(requestPlay);
-    const iOSResponse = await response1.json();
-    const playResponse = await response2.json();
-
-    const mergedData = {
-      iOSResponse: iOSResponse,
-      playResponse: playResponse,
-    };
-
-    const fullAppData = mergedExtractedData(mergedData);
-    const suggestionList = createListWithDevice(fullAppData);
-
-    return suggestionList;
->>>>>>> ssr-dynamic
   } catch (error) {
     console.error("Error:", error);
     return false;
@@ -1925,7 +1875,6 @@ const searchAppStore = async query => {
 }
 // merging fetched data
 function mergedExtractedData(rowData) {
-<<<<<<< HEAD
   let appDataMain = []
   let appDataA = []
   let appDataP = []
@@ -1948,26 +1897,6 @@ function mergedExtractedData(rowData) {
     })
   }
   rowData.playResponse.map(item => {
-=======
-  let appDataMain = [];
-  let appDataA = [];
-  let appDataP = [];
-  rowData.iOSResponse.results.map((item) => {
-    if (item.trackViewUrl) {
-      let iosData = {
-        dataPackageUrl: item.trackViewUrl,
-        appPackageId: item.trackViewUrl.split("/")[5],
-        app_icon: item.artworkUrl100,
-        appName: item.trackName,
-        developer: "By " + item.artistName,
-        device: "apple",
-        deviceIcon: "apple_icon.svg",
-      };
-      appDataA.push(iosData);
-    }
-  });
-  rowData.playResponse.map((item) => {
->>>>>>> ssr-dynamic
     let playData = {
       dataPackageUrl:
         "https://play.google.com/store/apps/details?id=" + item.package_id,
@@ -2205,7 +2134,6 @@ export function formatURL(url) {
 }
 
 // check url is valid or not
-<<<<<<< HEAD
 export const isValidUrl = url => {
   // old regex
   // const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/
@@ -2215,13 +2143,6 @@ export const isValidUrl = url => {
   const valid = urlRegex.test(url)
   return valid
 }
-=======
-export const isValidUrl = (url) => {
-  const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
-  const valid = urlRegex.test(url);
-  return valid;
-};
->>>>>>> ssr-dynamic
 
 // extract main domain
 export function extractMainDomain(url) {
@@ -2503,20 +2424,14 @@ export function customSortSuggestion(array, name) {
   const result = {}
   const mixed = []
 
-<<<<<<< HEAD
   array.forEach(value => {
     const namePosition = value.indexOf(name)
-=======
-  array.forEach((value) => {
-    const namePosition = value.indexOf(name);
->>>>>>> ssr-dynamic
 
     if (
       namePosition !== -1 &&
       namePosition < value.length - name.length &&
       value[namePosition + name.length] === " "
     ) {
-<<<<<<< HEAD
       const spacePosition = namePosition + name.length + 1
       const keyword = value.substring(spacePosition)
 
@@ -2531,36 +2446,15 @@ export function customSortSuggestion(array, name) {
         } else {
           if (value.includes(name)) {
             mixed.push(value)
-=======
-      const spacePosition = namePosition + name.length + 1;
-      const keyword = value.substring(spacePosition);
-
-      if (keyword) {
-        const groupKey = keyword[0].toLowerCase();
-
-        if (/[a-zA-Z]/.test(groupKey)) {
-          if (!result[groupKey]) {
-            result[groupKey] = [];
-          }
-          result[groupKey].push(value);
-        } else {
-          if (value.includes(name)) {
-            mixed.push(value);
->>>>>>> ssr-dynamic
           }
         }
       } else {
         if (value.includes(name)) {
-<<<<<<< HEAD
           mixed.push(value)
-=======
-          mixed.push(value);
->>>>>>> ssr-dynamic
         }
       }
     } else {
       if (value.includes(name)) {
-<<<<<<< HEAD
         mixed.push(value)
       }
     }
@@ -2570,23 +2464,11 @@ export function customSortSuggestion(array, name) {
   Object.keys(result).forEach(key => {
     result[key].sort()
   })
-=======
-        mixed.push(value);
-      }
-    }
-  });
-
-  // Sort each group
-  Object.keys(result).forEach((key) => {
-    result[key].sort();
-  });
->>>>>>> ssr-dynamic
 
   // Sort the groups by their keys
   const sortedResult = Object.keys(result)
     .sort()
     .reduce((acc, key) => {
-<<<<<<< HEAD
       acc[key] = result[key]
       return acc
     }, {})
@@ -2594,15 +2476,6 @@ export function customSortSuggestion(array, name) {
   if (mixed.length > 0) {
     mixed.sort()
     sortedResult["Mixed"] = mixed
-=======
-      acc[key] = result[key];
-      return acc;
-    }, {});
-
-  if (mixed.length > 0) {
-    mixed.sort();
-    sortedResult["Mixed"] = mixed;
->>>>>>> ssr-dynamic
   }
 
   return sortedResult
@@ -2693,21 +2566,12 @@ export function DownloadCSVTable(button) {
   // let name = localStorage.getItem("userFullName")
   // if (name && email) {
   // dataLayer.push({ "event": "seo-download-csv", "gtm.uniqueAnalyticsReports": "SEO_Download_CSVLiveWeb", "keyword": button.getAttribute('text'), "gtm.email": email, "gtm.username": name })
-<<<<<<< HEAD
   const text = button.getAttribute("text")
   // console.log("Text", text)
   if (text == "search") {
     copyButtonFunction(button)
   } else {
     downloadAsCSVforSuggestion(button)
-=======
-  const text = button.getAttribute("text");
-  console.log("Text", text);
-  if (text == "search") {
-    copyButtonFunction(button);
-  } else {
-    downloadAsCSVforSuggestion(button);
->>>>>>> ssr-dynamic
   }
   // } else {
   // document.querySelector('.sign-in-button.rank-sign-in').classList.remove('hidden');
@@ -2747,24 +2611,15 @@ function downloadAsCSVStore(Array) {
 }
 // downloading serp data
 function downloadAsCSVEngine(Array, text) {
-<<<<<<< HEAD
   const csvData = []
   Array.forEach(li => {
     const mainLink = li.querySelector("h5 > a").innerText
     const secondaryLink = li.querySelector("#multi-tool-search-link").innerText
     const description = li.querySelector("div").innerText
-=======
-  const csvData = [];
-  Array.forEach((li) => {
-    const mainLink = li.querySelector("h5 > a").innerText;
-    const secondaryLink = li.querySelector("#multi-tool-search-link").innerText;
-    const description = li.querySelector("div").innerText;
->>>>>>> ssr-dynamic
     csvData.push([
       mainLink.replace(/\n/g, ""),
       secondaryLink.replace(/\n/g, ""),
       description.replace(/\n/g, ""),
-<<<<<<< HEAD
     ])
   })
   const csvContent = convertToCSV(csvData)
@@ -2777,20 +2632,6 @@ function downloadAsCSVEngine(Array, text) {
   a.click()
   document.body.removeChild(a)
   URL.revokeObjectURL(a.href)
-=======
-    ]);
-  });
-  const csvContent = convertToCSV(csvData);
-  const blob = new Blob([csvContent], { type: "text/csv" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `${text}-data.csv`;
-  a.style.display = "none";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(a.href);
->>>>>>> ssr-dynamic
 }
 // convert data to csv
 function convertToCSV(data) {
@@ -2803,31 +2644,18 @@ function convertToCSV(data) {
   function escapeCSVField(field) {
     // Escape double quotes by doubling them and wrap the field in quotes
     if (field.includes(",") || field.includes('"') || field.includes("\n")) {
-<<<<<<< HEAD
       field = '"' + field.replace(/"/g, '""') + '"'
     }
     return field
-=======
-      field = '"' + field.replace(/"/g, '""') + '"';
-    }
-    return field;
->>>>>>> ssr-dynamic
   }
 
   // Iterate over the data array and append each row to the CSV content
   data.forEach((row, index) => {
     // Create a new array with the serial number and the escaped row data
-<<<<<<< HEAD
     const rowData = [index + 1, ...row.map(escapeCSVField)]
     // Convert the array to a CSV string and add it to the CSV content
     csvContent += rowData.join(",") + "\n"
   })
-=======
-    const rowData = [index + 1, ...row.map(escapeCSVField)];
-    // Convert the array to a CSV string and add it to the CSV content
-    csvContent += rowData.join(",") + "\n";
-  });
->>>>>>> ssr-dynamic
 
   return csvContent
 }
@@ -2838,9 +2666,6 @@ export const getLargestResolutionImage = (imageData) => {
     return null;
   }
 
-<<<<<<< HEAD
-// **************************************************
-=======
   const sizes = imageData.featuredImage.node.mediaDetails.sizes;
   let largestImage = sizes[0];
 
@@ -2852,4 +2677,3 @@ export const getLargestResolutionImage = (imageData) => {
 
   return largestImage;
 };
->>>>>>> ssr-dynamic

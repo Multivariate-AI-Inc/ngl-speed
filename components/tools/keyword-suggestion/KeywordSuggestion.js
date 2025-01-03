@@ -12,7 +12,6 @@ import DisplaySuggestion from "./DisplaySuggestion";
 import { toast } from "react-toastify";
 
 const KeywordSuggestion = () => {
-<<<<<<< HEAD
   const [selectedCountry] = useAtom(selectedCountryAtom)
   const [searchKeyword, setSearchKeyword] = useState("")
   const [selectedSource, setSelectedSource] = useState("play")
@@ -37,29 +36,6 @@ async function handleCaptchaSubmission(token) {
       } else {
         setIsVerified(false)
       }
-=======
-  const [selectedCountry] = useAtom(selectedCountryAtom);
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const [selectedSource, setSelectedSource] = useState("play");
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
-
-  // google recatcha
-  async function handleCaptchaSubmission(token) {
-    try {
-      if (token) {
-        await fetch("/api/verify-recaptcha", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token }),
-        });
-        setIsVerified(true);
-      }
-    } catch (e) {
-      setIsVerified(false);
->>>>>>> ssr-dynamic
     }
   } catch (error) {
     console.error("Captcha verification failed:", error)

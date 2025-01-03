@@ -79,11 +79,6 @@ const TechChecker = () => {
     setInputUrl(url);
     setOldUrl(url);
     try {
-<<<<<<< HEAD
-      const response = await fetch(
-        "https://js-apis.maakeetoo.com/page-seo/get-page?url=" + url
-      );
-=======
       const requestOptions = {
         method: "POST",
         headers: {
@@ -92,7 +87,6 @@ const TechChecker = () => {
         body: JSON.stringify({ url: url }),
       }
       const response = await fetch("/api/get-page", requestOptions)
->>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -294,19 +288,9 @@ const TechChecker = () => {
         )}
 
         {/* ************************** */}
-<<<<<<< HEAD
         {aboutData.Title !== null && (
           <RenderData techstackData={techStack} aboutData={aboutData} />
         )}
-=======
-        {
-          (aboutData.Title !== null) &&
-          <RenderData
-            techstackData={techStack}
-            aboutData={aboutData}
-          />
-        }
->>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
         {/* ************************** */}
         <div className="mb-50 mt-30">

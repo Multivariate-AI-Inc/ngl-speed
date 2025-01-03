@@ -21,15 +21,6 @@ const MobileFriendlyTest = () => {
     }
     setInputUrl(mainUrl);
     try {
-<<<<<<< HEAD
-      const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`;
-      const response = await fetch(apiUrl);
-      const htmlContent = await response.json();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlContent.body, "text/html");
-      const viewportMetaTag = doc.querySelector("meta[name='viewport']");
-      const stylesheets = doc.querySelectorAll('link[rel*="stylesheet"]');
-=======
       const requestOptions = {
         method: "POST",
         headers: {
@@ -46,13 +37,11 @@ const MobileFriendlyTest = () => {
       const doc = parser.parseFromString(htmlContent.body, "text/html")
       const viewportMetaTag = doc.querySelector("meta[name='viewport']")
       const stylesheets = doc.querySelectorAll('link[rel*="stylesheet"]')
->>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
       const resultData = {
         viewportMetaTag: viewportMetaTag ? viewportMetaTag.outerHTML : null,
         stylesheets: Array.from(stylesheets).map((sheet) => sheet.href),
         mediaQueries: findMediaQueriesInHTML(htmlContent),
-<<<<<<< HEAD
       };
 
       setResult(resultData);
@@ -62,18 +51,6 @@ const MobileFriendlyTest = () => {
       setLoading(false);
     } finally {
       setLoading(false);
-=======
-      }
-
-      setResult(resultData)
-    } catch (error) {
-      console.error("Error fetching URL:", error)
-      setError(true)
-      setLoading(false)
-
-    } finally {
-      setLoading(false)
->>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
     }
   };
   // find media queries
@@ -108,10 +85,6 @@ const MobileFriendlyTest = () => {
       </td>
     </tr>
   );
-<<<<<<< HEAD
-=======
-
->>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
   const checkMobileFriendlyStylesheet = async (stylesheet) => {
     if (!stylesheet) {
@@ -229,7 +202,6 @@ const MobileFriendlyTest = () => {
                     <tbody>
                       {result.viewportMetaTag &&
                         createTableRow("Meta", result.viewportMetaTag, true)}
-<<<<<<< HEAD
                       {result.stylesheets.map((sheet) =>
                         createTableRow(
                           "Stylesheet",
@@ -239,25 +211,6 @@ const MobileFriendlyTest = () => {
                       )}
                       {result.mediaQueries.map((query) =>
                         createTableRow("Media Query", query, true)
-=======
-
-                      {result.stylesheets.map((sheet, index) =>
-                        createTableRow(
-                          "Stylesheet",
-                          sheet,
-                          checkMobileFriendlyStylesheet(sheet),
-                          { key: `stylesheet-${index}` },
-                        ),
-                      )}
-
-                      {result.mediaQueries.map((query, index) =>
-                        createTableRow(
-                          "Media Query",
-                          query,
-                          true,
-                          { key: `mediaquery-${index}` },
-                        ),
->>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
                       )}
                     </tbody>
 
