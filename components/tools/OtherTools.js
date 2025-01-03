@@ -1118,7 +1118,7 @@ const data = [
         </defs>
       </svg>
     ),
-    toolLink: "https://tools.nextgrowthlabs.com/emi-calculator/",
+    toolLink: "/emi-calculator",
   },
   {
     name: "iOS Keyword Search",

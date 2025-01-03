@@ -154,7 +154,7 @@ const Footer = () => {
                     </Link>
                   </li> */}
                   <li>
-                    <Link href="https://tools.nextgrowthlabs.com/emi-calculator/">
+                    <Link href="/emi-calculator">
                       Emi Calculator
                     </Link>
                   </li>
