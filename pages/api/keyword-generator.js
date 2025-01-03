@@ -39,8 +39,16 @@ export default async function handler(req) {
 // google suggestion
 async function googleSuggestionFull(baseUrl, term, country, lang) {
   const url = `${baseUrl}g-suggestion?keyword=${term}&gl=${country}&hl=${lang}`
+  const myHeaders = new Headers()
+  const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
+  myHeaders.append("Content-Type", "application/json")
+  myHeaders.append("Authorization", authHeader)
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+  }
   try {
-    const response = await fetch(url)
+    const response = await fetch(url, requestOptions)
     const data = await response.json()
     return data
   } catch (error) {
@@ -52,8 +60,16 @@ async function googleSuggestionFull(baseUrl, term, country, lang) {
 // play suggestion
 async function playSuggestionFull(baseUrl, term, country, lang) {
   const url = `${baseUrl}p-suggestion?keyword=${term}&gl=${country}&hl=${lang}`
+  const myHeaders = new Headers()
+  const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
+  myHeaders.append("Content-Type", "application/json")
+  myHeaders.append("Authorization", authHeader)
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+  }
   try {
-    const response = await fetch(url)
+    const response = await fetch(url, requestOptions)
     const data = await response.json()
     return data
   } catch (error) {

@@ -16,8 +16,13 @@ function KeywordGenerator() {
       return;
     }
     if (inputKeyword === keyValue) {
+<<<<<<< HEAD
       toast.warning("Please enter new keyword", { autoClose: 2000 });
       return;
+=======
+      toast.warning("Please enter new keyword", { autoClose: 2000 })
+      return
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
     }
 
     setGeneratedKeywords([]);
@@ -28,9 +33,14 @@ function KeywordGenerator() {
     // Create an async function to use await inside the loop
     async function fetchSuggestions() {
       try {
+<<<<<<< HEAD
         const response = await getKeywordResults({ keyword: inputKeyword });
         console.log("response data", response);
         resultsKeywordObj = response;
+=======
+        const response = await getKeywordResults({ keyword: inputKeyword })
+        resultsKeywordObj = response
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
       } catch (err) {
         setLoading(false);
       }
@@ -44,9 +54,14 @@ function KeywordGenerator() {
   }
 
   async function getKeywordResults(data) {
+<<<<<<< HEAD
     const apiURL = "/api/keyword-generator";
     console.log(data);
     let keywords;
+=======
+    const apiURL = "/api/keyword-generator"
+    let keywords
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
     await fetch(apiURL, {
       method: "POST",
       headers: {

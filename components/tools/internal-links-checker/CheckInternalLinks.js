@@ -20,20 +20,41 @@ const CheckInternalLinks = () => {
       total: 0,
       internal: 0,
       external: 0,
+<<<<<<< HEAD
     });
     setLinkDetails([]);
     setError(false);
     setLoading(true);
     const mainUrl = await formatURL(inputUrl);
+=======
+    })
+    setLinkDetails([])
+    setError(false)
+    setLoading(true)
+    const mainUrl = await formatURL(inputUrl)
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
     if (!isValidUrl(mainUrl)) {
       setIsValidURL(true);
       setLoading(false);
       return;
     }
+<<<<<<< HEAD
     setInputUrl(mainUrl);
     const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`;
     try {
       const response = await fetch(apiUrl);
+=======
+    setInputUrl(mainUrl)
+    try {
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: mainUrl }),
+      }
+      const response = await fetch("/api/get-page", requestOptions)
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -43,7 +64,11 @@ const CheckInternalLinks = () => {
       setError(true);
       setLoading(false);
     }
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
   const parseHtml = (htmlString, url) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
@@ -58,11 +83,15 @@ const CheckInternalLinks = () => {
     for (let i = 0; i < allLinks.length; i++) {
       const link = allLinks[i];
       let href = link.getAttribute("href");
+<<<<<<< HEAD
       if (
         !href ||
         href.startsWith("http://support.google.com/websearch/") ||
         href.startsWith("http://webcache.googleusercontent.com/search")
       ) {
+=======
+      if (!href || href.startsWith("http://support.google.com/websearch/") || href.startsWith("http://webcache.googleusercontent.com/search")) {
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
         continue;
       }
 
@@ -76,8 +105,13 @@ const CheckInternalLinks = () => {
       const modifiedAnchorText = link.querySelector("img")
         ? "Image"
         : anchorText.length > maxCharacterLimit
+<<<<<<< HEAD
         ? anchorText.substring(0, maxCharacterLimit)
         : anchorText;
+=======
+          ? anchorText.substring(0, maxCharacterLimit)
+          : anchorText;
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
       const isInternalLink = href.includes(hostname);
       const type = isInternalLink ? "Internal" : "External";
       const follow = link.getAttribute("rel") === "nofollow" ? "✘" : "✔";
@@ -90,8 +124,11 @@ const CheckInternalLinks = () => {
 
       linkData.push({ href, anchorText: modifiedAnchorText, type, follow });
     }
+<<<<<<< HEAD
 
     console.log("link data", linkData);
+=======
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
     setLinkCount({
       total: allLinks.length,
       internal: internalLinks,
@@ -99,8 +136,15 @@ const CheckInternalLinks = () => {
     });
     setLinkDetails(linkData);
     setLoading(false);
+<<<<<<< HEAD
     console.log("link", linkDetails);
   };
+=======
+  };
+
+
+
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
   return (
     <section className="section" style={{ backgroundColor: "#E0F1F4" }}>

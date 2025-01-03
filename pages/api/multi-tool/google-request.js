@@ -27,7 +27,9 @@ export default async function handler(req) {
 const fetchGoogleSerpData = async (keyword, country) => {
   const myHeaders = new Headers()
   const keywords = [keyword]
+  const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
   myHeaders.append("Content-Type", "application/json")
+  myHeaders.append("Authorization", authHeader)
   const raw = JSON.stringify({
     keywords: keywords,
   })

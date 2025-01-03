@@ -1,29 +1,29 @@
-import React, { useRef, useEffect, useState } from "react"
-import { useAtom } from "jotai"
+import React, { useRef, useEffect, useState } from "react";
+import { useAtom } from "jotai";
 import {
   formSubmitted,
   formInputData,
   formError,
   formSuccess,
-} from "../../state/atoms"
-import Loader from "./Loader"
+} from "../../state/atoms";
+import Loader from "./Loader";
 const ContactForm = () => {
-  const [isSubmitted, setIsSubmitted] = useAtom(formSubmitted)
-  const [formInput, setFormInput] = useAtom(formInputData)
-  const [isError, setIsError] = useAtom(formError)
-  const [isSuccess, setIsSuccess] = useAtom(formSuccess)
-  const [isLoading, setLoading] = useState(false)
-  const formRef = useRef(null)
+  const [isSubmitted, setIsSubmitted] = useAtom(formSubmitted);
+  const [formInput, setFormInput] = useAtom(formInputData);
+  const [isError, setIsError] = useAtom(formError);
+  const [isSuccess, setIsSuccess] = useAtom(formSuccess);
+  const [isLoading, setLoading] = useState(false);
+  const formRef = useRef(null);
 
-  const handleInput = e => {
-    setFormInput({ ...formInput, [e.target.name]: e.target.value })
-  }
-  const handleFormSubmission = e => {
-    e.preventDefault()
-    setLoading(true)
-    hideForm()
-    const { name, email, phone, message, appURL } = formInput
-    const pageURL = window.location.href
+  const handleInput = (e) => {
+    setFormInput({ ...formInput, [e.target.name]: e.target.value });
+  };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    hideForm();
+    const { name, email, phone, message, appURL } = formInput;
+    const pageURL = window.location.href;
 
     const domains = [
       "yahoo",
@@ -36,15 +36,15 @@ const ContactForm = () => {
       "zoho",
       "icloud",
       "gmx",
-    ]
-    const domain = email.slice(email.indexOf("@") + 1, email.lastIndexOf("."))
-    let con_value
+    ];
+    const domain = email.slice(email.indexOf("@") + 1, email.lastIndexOf("."));
+    let con_value;
     if (domains.includes(domain)) {
-      con_value = 331
+      con_value = 331;
     } else if (email === "") {
-      con_value = 331
+      con_value = 331;
     } else {
-      con_value = 1237
+      con_value = 1237;
     }
 
     // const eventNameW = appURL.includes("apple")
@@ -65,8 +65,8 @@ const ContactForm = () => {
     //   })
     // }
 
-    const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/json")
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
     const fields = [
       { name: "firstname", value: name },
@@ -74,71 +74,68 @@ const ContactForm = () => {
       { name: "phone", value: phone },
       { name: "appURL", value: appURL },
       { name: "message", value: message },
-    ]
+    ];
 
     const raw = JSON.stringify({
       fields,
       context: { pageUri: pageURL },
-    })
+    });
 
     const requestOptions = {
       method: "POST",
       headers: myHeaders,
       body: raw,
       redirect: "follow",
-    }
+    };
     fetch(
       "https://api.hsforms.com/submissions/v3/integration/submit/3885214/efaf7e24-de65-496d-9983-ffb476f65524",
-      requestOptions,
+      requestOptions
     )
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
-          response.text().then(result => {
-            setLoading(false)
-            setIsSubmitted(true)
-            localStorage.setItem("userMailId", formInput.email)
-            console.log(result)
-          })
+          response.text().then((result) => {
+            setLoading(false);
+            setIsSubmitted(true);
+            localStorage.setItem("userMailId", formInput.email);
+            console.log(result);
+          });
         } else {
-          setLoading(false)
-          showErrorMessage()
-          localStorage.setItem("userMailId", formInput.email)
+          setLoading(false);
+          showErrorMessage();
+          localStorage.setItem("userMailId", formInput.email);
         }
       })
-      .catch(error => {
-        setLoading(false)
-        showErrorMessage()
-        localStorage.setItem("userMailId", formInput.email)
-      })
-  }
+      .catch((error) => {
+        setLoading(false);
+        showErrorMessage();
+        localStorage.setItem("userMailId", formInput.email);
+      });
+  };
 
   const showErrorMessage = () => {
-    unHideForm()
-    setIsError(true)
-  }
+    unHideForm();
+    setIsError(true);
+  };
 
   const hideForm = () => {
-    formRef.current.style.display = "none"
-  }
+    formRef.current.style.display = "none";
+  };
   const unHideForm = () => {
-    formRef.current.style.display = "block"
-  }
+    formRef.current.style.display = "block";
+  };
 
   useEffect(() => {
     const submitted = () => {
-      setIsSuccess(true)
-      hideForm()
-    }
+      setIsSuccess(true);
+      hideForm();
+    };
     if (isSubmitted) {
-      submitted()
+      submitted();
     }
-  }, [isSubmitted])
+  }, [isSubmitted]);
 
   return (
-    <div
-      className="col-lg-7"
-      id="contact"
-    >
+    <div className="col-lg-7" id="contact">
       {isLoading && <Loader />}
       <form
         id="contact-form"
@@ -150,6 +147,31 @@ const ContactForm = () => {
       >
         <div className="box-form-contact">
           <div className="row">
+            <div
+              className="text-center pb-20 blinking-text"
+              style={{ fontSize: "11.8px" }}
+            >
+              <h4>Important Notice!</h4>
+              <p>
+                It has come to our attention that certain websites are falsely
+                claiming to have ties or affiliations with us, especially
+                regarding remote work opportunities. We would like to clarify
+                that
+                <strong>
+                  <em>*we have no association*</em>
+                </strong>
+                with any such sites or entities.
+              </p>
+              <p>
+                Please verify any information directly via email -{" "}
+                <strong>contact@nextgrowthlabs.com</strong> to avoid potential
+                scams or misinformation.
+              </p>
+              <p>
+                Please do not use the below form for any non business queries as
+                these emails are handled by a separate team.
+              </p>
+            </div>
             <div className="col-lg-6 col-sm-6">
               <div className="form-group mb-25">
                 <input
@@ -217,10 +239,7 @@ const ContactForm = () => {
 
             <div className="form-group">
               {/* <Button text={"Send message"} showIcon={false} onClick={handleFormSubmission} customBtnSize={false} /> */}
-              <input
-                type="submit"
-                className="btn btn-brand-1-full hover-up"
-              />
+              <input type="submit" className="btn btn-brand-1-full hover-up" />
             </div>
           </div>
           {isError && (
@@ -238,7 +257,7 @@ const ContactForm = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

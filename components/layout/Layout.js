@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import Preloader from "../elements/Preloader";
 import Footer from "./Footer";
 import { ToastContainer } from "react-toastify";
-
+import Link from "next/link";
 import { useRouter } from "next/router";
 const Layout = ({ children }) => {
   const [openClass, setOpenClass] = useState("");
@@ -56,8 +56,9 @@ const Layout = ({ children }) => {
           with any such sites or entities.
         </p>
         <p>
-          Please verify any information directly with us through our official
-          website to avoid potential scams or misinformation.
+          Please verify any information directly via email -
+          <strong>&nbsp;contact@nextgrowthlabs.com&nbsp;</strong>
+          to avoid potential scams or misinformation
         </p>
       </div>
       <Header

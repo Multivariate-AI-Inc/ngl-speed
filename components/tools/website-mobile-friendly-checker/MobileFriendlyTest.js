@@ -21,6 +21,7 @@ const MobileFriendlyTest = () => {
     }
     setInputUrl(mainUrl);
     try {
+<<<<<<< HEAD
       const apiUrl = `https://js-apis.maakeetoo.com/page-seo/get-page?url=${mainUrl}`;
       const response = await fetch(apiUrl);
       const htmlContent = await response.json();
@@ -28,11 +29,30 @@ const MobileFriendlyTest = () => {
       const doc = parser.parseFromString(htmlContent.body, "text/html");
       const viewportMetaTag = doc.querySelector("meta[name='viewport']");
       const stylesheets = doc.querySelectorAll('link[rel*="stylesheet"]');
+=======
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: mainUrl }),
+      }
+      const response = await fetch("/api/get-page", requestOptions)
+      if (!response.ok) {
+        throw new Error("Network response was not ok")
+      }
+      const htmlContent = await response.json()
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(htmlContent.body, "text/html")
+      const viewportMetaTag = doc.querySelector("meta[name='viewport']")
+      const stylesheets = doc.querySelectorAll('link[rel*="stylesheet"]')
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
       const resultData = {
         viewportMetaTag: viewportMetaTag ? viewportMetaTag.outerHTML : null,
         stylesheets: Array.from(stylesheets).map((sheet) => sheet.href),
         mediaQueries: findMediaQueriesInHTML(htmlContent),
+<<<<<<< HEAD
       };
 
       setResult(resultData);
@@ -42,6 +62,18 @@ const MobileFriendlyTest = () => {
       setLoading(false);
     } finally {
       setLoading(false);
+=======
+      }
+
+      setResult(resultData)
+    } catch (error) {
+      console.error("Error fetching URL:", error)
+      setError(true)
+      setLoading(false)
+
+    } finally {
+      setLoading(false)
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
     }
   };
   // find media queries
@@ -63,8 +95,8 @@ const MobileFriendlyTest = () => {
     return match ? parseInt(match[1]) : 0;
   };
 
-  const createTableRow = (type, value, isSupported) => (
-    <tr className="table_row">
+  const createTableRow = (type, value, isSupported, key) => (
+    <tr className="table_row" key={key}>
       <td style={{ textAlign: "center" }}>{type}</td>
       <td>{value}</td>
       <td style={{ textAlign: "center" }}>
@@ -76,6 +108,10 @@ const MobileFriendlyTest = () => {
       </td>
     </tr>
   );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
   const checkMobileFriendlyStylesheet = async (stylesheet) => {
     if (!stylesheet) {
@@ -105,11 +141,6 @@ const MobileFriendlyTest = () => {
             Free Mobile Friendly Test
           </h1>
           <p className="font-md color-grey-500 mb-25">
-            {/* Test the mobile-friendliness of your website with our easy-to-use
-            tool. Simply enter your website's URL and our tool will analyze it
-            for mobile compatibility, providing a report on its performance and
-            suggesting any necessary changes. Improve your website's mobile
-            experience for your users today! */}
             Ensure your website is optimized for mobile users with our powerful
             and intuitive mobile-friendly test tool. Simply enter your
             website&apos;s URL, and let our advanced analysis deliver a
@@ -162,21 +193,20 @@ const MobileFriendlyTest = () => {
               <div className="row" id="mobile_friendliness_status">
                 <div>
                   <div
-                    className={`${"tick-cell"} ${
-                      result.viewportMetaTag &&
+                    className={`${"tick-cell"} ${result.viewportMetaTag &&
                       result.viewportMetaTag.includes("width=device-width")
-                        ? "✔"
-                        : "✘"
-                    }`}
+                      ? "✔"
+                      : "✘"
+                      }`}
                   >
                     {result.viewportMetaTag &&
-                    result.viewportMetaTag.includes("width=device-width")
+                      result.viewportMetaTag.includes("width=device-width")
                       ? "✔"
                       : "✘"}
                   </div>
                   <div className="mt-10">
                     {result.viewportMetaTag &&
-                    result.viewportMetaTag.includes("width=device-width")
+                      result.viewportMetaTag.includes("width=device-width")
                       ? "The website supports mobile devices"
                       : "The website does not support mobile devices"}
                   </div>
@@ -199,6 +229,7 @@ const MobileFriendlyTest = () => {
                     <tbody>
                       {result.viewportMetaTag &&
                         createTableRow("Meta", result.viewportMetaTag, true)}
+<<<<<<< HEAD
                       {result.stylesheets.map((sheet) =>
                         createTableRow(
                           "Stylesheet",
@@ -208,8 +239,28 @@ const MobileFriendlyTest = () => {
                       )}
                       {result.mediaQueries.map((query) =>
                         createTableRow("Media Query", query, true)
+=======
+
+                      {result.stylesheets.map((sheet, index) =>
+                        createTableRow(
+                          "Stylesheet",
+                          sheet,
+                          checkMobileFriendlyStylesheet(sheet),
+                          { key: `stylesheet-${index}` },
+                        ),
+                      )}
+
+                      {result.mediaQueries.map((query, index) =>
+                        createTableRow(
+                          "Media Query",
+                          query,
+                          true,
+                          { key: `mediaquery-${index}` },
+                        ),
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
                       )}
                     </tbody>
+
                   </table>
                 </div>
               </div>

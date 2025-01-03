@@ -9,7 +9,9 @@ const GscPagesInsights = () => {
         <>
             <PageHead
                 title={"Next Tool"}
-                canonical={"https://nextgrowthlabs.com/gsc-page-insights"}
+                ogDescription="Next Tool seamlessly integrates Google Search Console, Analytics, and Ads to provide valuable insights for optimizing website performance and ad effectiveness."
+                ogType="article"
+                canonical={"https://intelligence.nextgrowthlabs.com/tools/gsc-page-insights"}
             />
 
             <Layout>
@@ -17,20 +19,20 @@ const GscPagesInsights = () => {
                     <Image src="/assets/imgs/page/next-tool/next-tool.webp" className="bd-rd8" alt="Next Tool" width={1000} height={450} layout="responsive" />
                     <h1 className="font-4xl-bold color-brand-1 mb-20 mt-10">Next Tool</h1>
                     <p className="font-md color-grey-400 mb-20">
-                        Welcome to <b>Next Tool!</b> Whether you’re a digital marketer, content creator, or website owner, this tool is designed to elevate your website analysis experience. With its user-friendly interface, you can easily merge data from Google Search Console and Google Analytics, gaining valuable insights into your site’s performance. Effortlessly track top-performing pages, analyze organic traffic, and enhance your content strategy with our intuitive data table. Dive into a more insightful and data-driven approach to optimizing your online presence today!
+                        Welcome to <b>Next Tool!</b> Whether you’re a digital marketer, content creator, or website owner, this tool is designed to elevate your website analysis experience. With its user-friendly interface, you can seamlessly merge data from Google Search Console, Google Analytics, and Google Ads, gaining comprehensive insights into your site's performance. Track top-performing pages, analyze organic traffic, enhance your content strategy, and monitor ad campaign success—all through an intuitive data table. Dive into a more data-driven approach to optimizing your online presence today!
                     </p>
                     <h3 className="color-brand-1 mb-10">
                         Overview
                     </h3>
                     <p className="font-md color-grey-400 mb-20">
-                        Next Tool is a powerful analytics tool that seamlessly combines data from Google Search Console and Google Analytics to provide comprehensive insights into your website’s performance. With an intuitive interface, users can easily explore a dynamic data table showcasing key metrics, such as top-performing pages, organic traffic, and engagement metrics. This tool empowers webmasters and marketers to make informed decisions, optimize their content strategy, and enhance overall website visibility. Uncover valuable insights and drive your online success with Next Tool.
+                        Next Tool is a powerful analytics platform that combines data from Google Search Console, Google Analytics, and Google Ads to provide an in-depth view of your website’s performance and ad effectiveness. With an intuitive interface, users can easily explore a dynamic data table showcasing essential metrics, such as top-performing pages, organic traffic, and ad campaign performance. This tool empowers webmasters and marketers to make informed decisions, optimize content strategies, and improve overall website visibility and ad ROI. Uncover valuable insights and drive your online success with Next Tool.
                     </p>
                     <h3 className="color-brand-1 mb-20">Key Features:</h3>
                     <ul style={{ listStyle: "disc" }} className="color-brand-1">
                         <li className="font-md color-grey-400 mb-10 ml-20">
                             <p className="font-md color-grey-400 mb-10">
-                                <span className="font-md-bold">Seamless Data Integration: </span>
-                                Effortlessly combine data from Google Search Console and Google Analytics to gain a holistic view of your website's performance.
+                                <span className="font-md-bold">Comprehensive Data Integration: </span>
+                                Effortlessly combine data from Google Search Console, Google Analytics, and Google Ads to get a complete view of your website's performance and ad effectiveness.
                             </p>
                         </li>
                         <li className="font-md color-grey-400 mb-10 ml-20">
@@ -120,7 +122,8 @@ const GscPagesInsights = () => {
                     </p>
                     <h3 className="color-brand-1 mb-10">Privacy:</h3>
                     <p className="font-md color-grey-400 mb-20">
-                        ✅ We are committed to ensuring that Next Tool does not collect or misuse your personal data. To learn more, please see our comprehensive{" "}<Link className="utm-link font-md-bold" href="/privacy-policy">
+                        ✅ We are committed to ensuring that Next Tool does not collect or misuse your personal data. The addition of Google Ads data adheres to the same privacy standards as other integrated services. To learn more, please see our comprehensive{" "}
+                        <Link className="utm-link font-md-bold" href="/privacy-policy">
                             privacy policy.
                         </Link>
                     </p>
@@ -148,7 +151,10 @@ const GscPagesInsights = () => {
                         </li>
                         <h3 className="color-brand-1 mb-10">Contact Us:</h3>
                         <p className="font-md color-grey-400 mb-10">
-                            For any questions, feedback, or support related to the  <b>Next Tool</b>, please don't hesitate to contact us at <Link className="utm-link font-md-bold" href="/contact">
+                            For any questions, feedback, or support related to the{" "}
+                            <Link className="utm-link font-md-bold" href="https://intelligence.nextgrowthlabs.com/">
+                                <b>Next Tool</b>
+                            </Link>, please don't hesitate to contact us at <Link className="utm-link font-md-bold" href="/contact">
                                 https://nextgrowthlabs.com
                             </Link>
                         </p>

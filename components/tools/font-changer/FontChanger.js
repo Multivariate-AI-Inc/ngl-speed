@@ -2,8 +2,25 @@ import React, { useState, useEffect } from "react";
 import FontTable from "./FontTable";
 
 const FontChanger = () => {
+<<<<<<< HEAD
   const [fonts, setFonts] = useState([]);
   const [input, setInput] = useState("NextGrowthLabs");
+=======
+  const [input, setInput] = useState("NextGrowthLabs")
+  const [debouncedInput, setDebouncedInput] = useState(input);
+  const [fonts, setFonts] = useState([])
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedInput(input);
+    }, 300);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [input]);
+
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
   useEffect(() => {
     const fetchFonts = async () => {
       try {
@@ -12,7 +29,11 @@ const FontChanger = () => {
           headers: {
             "Content-Type": "application/json",
           },
+<<<<<<< HEAD
           body: JSON.stringify({ input }),
+=======
+          body: JSON.stringify({ input: debouncedInput }),
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
         };
         const response = await fetch("/api/fetch-font", requestOptions);
         const data = await response.json();
@@ -27,8 +48,15 @@ const FontChanger = () => {
       }
     };
 
+<<<<<<< HEAD
     fetchFonts();
   }, [input]);
+=======
+    if (debouncedInput) {
+      fetchFonts();
+    }
+  }, [debouncedInput]);
+>>>>>>> 4e83810e85beab3f4b01c5a1a78ae5959391dd52
 
   return (
     <section className="mt-90">

@@ -38,10 +38,12 @@ export default async function handler(req, res) {
 
 const getSuggestion = async (url, requestBody, selectedSource) => {
   try {
-    const response = await fetch(url,{
+    const authHeader = 'Basic ' + Buffer.from(`${process.env.JS_API_USER_NAME}:${process.env.JS_API_PASSWORD}`).toString('base64');
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': authHeader,
       },
       body: JSON.stringify(requestBody),
     });

@@ -6,7 +6,6 @@ const AppRanks = ({ data, device }) => {
   const [countryCode] = useAtom(selectedCountryAtom)
   const handleDownloadClick = e => {
     e.preventDefault()
-    console.log("Target", e.target)
     DownloadCSVTable(e.target)
   }
   return (
